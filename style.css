@@ -253,7 +253,7 @@ body {
 
 .category-tabs {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
 }
 
@@ -850,6 +850,30 @@ kbd {
 .footer-title {
   font-weight: 700;
   color: var(--text-secondary);
+}
+
+.sources-details {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.sources-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-secondary);
+  user-select: none;
+}
+
+.sources-list {
+  margin-top: 10px;
+  padding-left: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 4px 20px;
+  list-style: none;
+  font-size: 0.78rem;
+  color: var(--text-muted);
 }
 
 .toast {

@@ -46,6 +46,12 @@
   function init() {
     initTheme();
     initViewSwitcher();
+    const totalEl = document.getElementById('totalShortcutCount');
+    if (totalEl) totalEl.textContent = SHORTCUTS_DATA.length;
+    const sourcesEl = document.getElementById('researchedSourcesList');
+    if (sourcesEl && typeof RESEARCHED_SOURCES !== 'undefined') {
+      sourcesEl.innerHTML = RESEARCHED_SOURCES.map(s => `<li>✓ ${escapeHtml(s)}</li>`).join('');
+    }
     renderCategoryTabs();
     renderSubcategoryBar();
     updateFavBadge();
@@ -632,8 +638,8 @@
         return;
       }
 
-      // 1〜6キーでカテゴリ切り替え（入力中でない時）
-      if (!isTyping && !e.ctrlKey && !e.altKey && !e.metaKey && /^[1-6]$/.test(e.key)) {
+      // 1〜7キーでカテゴリ切り替え（入力中でない時）
+      if (!isTyping && !e.ctrlKey && !e.altKey && !e.metaKey && /^[1-7]$/.test(e.key)) {
         const idx = Number(e.key) - 1;
         if (CATEGORIES[idx]) {
           state.category = CATEGORIES[idx].id;
