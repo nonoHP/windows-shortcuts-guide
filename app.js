@@ -126,10 +126,12 @@
   }
 
   function renderSubcategoryBar() {
-    const targetItems = state.category === 'all'
-      ? SHORTCUTS_DATA
-      : SHORTCUTS_DATA.filter(item => item.category === state.category);
+    if (state.category === 'all') {
+      subcategoryBarEl.classList.add('hidden');
+      return;
+    }
 
+    const targetItems = SHORTCUTS_DATA.filter(item => item.category === state.category);
     const subcats = Array.from(new Set(targetItems.map(item => item.subcategory)));
 
     if (subcats.length <= 1) {
@@ -139,7 +141,7 @@
 
     subcategoryBarEl.classList.remove('hidden');
     const pillsHtml = [
-      `<span class="subcat-label">キー分類で絞り込み:</span>`,
+      `<span class="subcat-label">ジャンルで絞り込み:</span>`,
       `<button type="button" class="subcat-pill ${state.subcategory === 'all' ? 'active' : ''}" data-subcat="all">すべて</button>`,
       ...subcats.map(sub => `
         <button
@@ -181,6 +183,7 @@
           item.memory || '',
           item.subcategory,
           item.funcGroup || '',
+          item.keyGroup || '',
           item.keys.join(' '),
           item.keys.join('+')
         ].join(' ').toLowerCase();
@@ -242,17 +245,17 @@
 
   function groupShortcuts(items) {
     const map = new Map();
-    const activeCat = CATEGORIES.find(c => c.id === state.category);
 
     items.forEach(item => {
-      const groupKey = item.subcategory;
+      const catMeta = CATEGORIES.find(c => c.id === item.category);
+      const groupKey = `${item.category}__${item.subcategory}`;
 
       if (!map.has(groupKey)) {
         map.set(groupKey, {
           key: groupKey,
-          categoryName: state.category === 'all' ? 'キー系統順' : (activeCat ? activeCat.name : ''),
-          categoryIcon: state.category === 'all' ? '⌨️' : (activeCat ? activeCat.icon : ''),
-          color: state.category === 'all' ? '#2563eb' : (activeCat ? activeCat.color : '#2563eb'),
+          categoryName: catMeta ? catMeta.name : item.category,
+          categoryIcon: catMeta ? catMeta.icon : '⌨️',
+          color: catMeta ? catMeta.color : '#2563eb',
           subcategory: item.subcategory,
           items: []
         });
@@ -280,13 +283,10 @@
     const cardsHtml = group.items.map(item => {
       const isFav = state.favorites.has(item.id);
       const comboText = item.keys.join(' + ');
-      const itemCat = CATEGORIES.find(c => c.id === item.category);
-      const cardColor = itemCat ? itemCat.color : group.color;
-      const catTagHtml = state.category === 'all' && itemCat
-        ? `<span class="item-cat-tag" style="--tag-color: ${cardColor}">${escapeHtml(itemCat.icon)} ${escapeHtml(itemCat.name)}</span>`
-        : (item.funcGroup ? `<span class="item-func-tag">${escapeHtml(item.funcGroup)}</span>` : '');
+      const shortKeyGroup = item.keyGroup ? item.keyGroup.replace(/^[①-⑩]\s*/, '').replace(/（.*?）/g, '') : '';
+      const keyTagHtml = shortKeyGroup ? `<span class="item-func-tag">${escapeHtml(shortKeyGroup)}</span>` : '';
       return `
-        <article class="shortcut-card" style="--card-accent: ${cardColor}">
+        <article class="shortcut-card" style="--card-accent: ${group.color}">
           <div>
             <div class="card-top">
               <div
@@ -297,7 +297,7 @@
                 ${renderKeysHtml(item.keys)}
               </div>
               <div class="card-meta-right">
-                ${catTagHtml}
+                ${keyTagHtml}
                 ${renderLevelBadge(item.level)}
                 <button
                   type="button"
@@ -347,10 +347,6 @@
     const rowsHtml = group.items.map(item => {
       const isFav = state.favorites.has(item.id);
       const comboText = item.keys.join(' + ');
-      const itemCat = CATEGORIES.find(c => c.id === item.category);
-      const catLabel = state.category === 'all' && itemCat
-        ? `<span class="item-cat-tag" style="--tag-color: ${itemCat.color}">${escapeHtml(itemCat.icon)} ${escapeHtml(itemCat.name)}</span> `
-        : '';
       return `
         <tr>
           <td class="table-keys-cell">
@@ -362,7 +358,7 @@
               ${renderKeysHtml(item.keys)}
             </div>
           </td>
-          <td class="table-title-cell">${catLabel}${escapeHtml(item.title)}</td>
+          <td class="table-title-cell">${escapeHtml(item.title)}</td>
           <td class="table-desc-cell">
             ${escapeHtml(item.desc)}
             ${item.memory ? `<br><span class="table-memory-line">🧠 覚え方: ${escapeHtml(item.memory)}</span>` : ''}

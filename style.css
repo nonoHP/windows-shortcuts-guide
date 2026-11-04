@@ -64,6 +64,14 @@
   padding: 0;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Meiryo", sans-serif;
   background-color: var(--bg-body);
@@ -565,7 +573,7 @@ body {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
   gap: 14px;
 }
 
@@ -579,6 +587,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   gap: 10px;
+  min-width: 0;
+  max-width: 100%;
   box-shadow: var(--shadow-sm);
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
@@ -592,17 +602,20 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 10px;
+  gap: 8px;
+  min-width: 0;
 }
 
 .keys-combo {
   display: inline-flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 4px;
   cursor: pointer;
-  padding: 3px 6px;
-  margin: -3px -6px;
+  padding: 2px 4px;
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
   border-radius: var(--radius-sm);
   transition: background-color 0.15s ease;
 }
@@ -613,18 +626,20 @@ body {
 
 kbd {
   display: inline-block;
-  padding: 4px 9px;
+  padding: 4px 8px;
   font-family: "Consolas", "Monaco", "Segoe UI Semibold", monospace;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
   color: var(--kbd-text);
   background-color: var(--kbd-bg);
   border: 1px solid var(--kbd-border);
   border-bottom: 3px solid var(--kbd-shadow);
   border-radius: 6px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
-  white-space: nowrap;
+  max-width: 100%;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .key-plus {
@@ -792,7 +807,7 @@ kbd {
 
 .memory-rules-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: 12px;
   margin-top: 14px;
   padding-top: 14px;
@@ -978,7 +993,7 @@ kbd {
   margin-top: 10px;
   padding-left: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
   gap: 4px 20px;
   list-style: none;
   font-size: 0.78rem;
@@ -1009,31 +1024,240 @@ kbd {
 }
 
 /* ==========================================
-   レスポンシブ対応
+   レスポンシブ対応（スマホ・タブレット最適化）
    ========================================== */
 @media (max-width: 960px) {
   .category-tabs {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 640px) {
-  .category-tabs {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 768px) {
+  .container {
+    padding: 0 12px;
   }
 
-  .cards-grid {
-    grid-template-columns: 1fr;
+  /* スマホでは上部ヘッダーを固定せず最小限の1行に圧縮 */
+  .site-header {
+    position: static;
   }
 
   .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .brand {
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .brand-icon,
+  .site-subtitle,
+  #keyTesterBtn,
+  #printBtn {
+    display: none;
+  }
+
+  .site-title {
+    font-size: 0.96rem;
+    line-height: 1.25;
+    gap: 6px;
+  }
+
+  .badge-perfect {
+    font-size: 0.6rem;
+    padding: 1px 6px;
   }
 
   .header-actions {
-    width: 100%;
-    justify-content: flex-end;
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .action-btn.icon-only {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+
+  /* メイン上部エリアの省スペース化 */
+  .main-content {
+    padding-top: 10px;
+    padding-bottom: 32px;
+  }
+
+  .category-nav {
+    margin-bottom: 10px;
+  }
+
+  .category-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .cat-tab {
+    padding: 6px 4px;
+    font-size: 0.74rem;
+    gap: 3px;
+    border-width: 1.5px;
+    border-radius: 8px;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .cat-tab .cat-icon {
+    font-size: 0.88rem;
+    flex-shrink: 0;
+  }
+
+  .cat-tab .cat-count {
+    font-size: 0.65rem;
+    padding: 0 4px;
+    flex-shrink: 0;
+  }
+
+  .category-desc {
+    display: none;
+  }
+
+  .memory-rules-box {
+    padding: 7px 10px;
+    margin-bottom: 10px;
+  }
+
+  .memory-rules-summary {
+    font-size: 0.78rem;
+    gap: 6px;
+  }
+
+  .memory-rules-toggle-hint {
+    font-size: 0.7rem;
+  }
+
+  .memory-rules-grid,
+  .cards-grid,
+  .sources-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .controls-bar {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: var(--radius-md);
+  }
+
+  .search-wrapper {
+    margin-bottom: 8px;
+  }
+
+  /* iOSの自動ズームによる画面横揺れを防ぐため16pxを指定 */
+  .search-input {
+    font-size: 16px;
+    padding: 8px 32px 8px 34px;
+  }
+
+  .filters-row {
+    gap: 8px;
+  }
+
+  .level-filters {
+    gap: 4px;
+  }
+
+  .filter-chip {
+    padding: 4px 8px;
+    font-size: 0.74rem;
+  }
+
+  .view-btn {
+    padding: 4px 8px;
+    font-size: 0.74rem;
+  }
+
+  .subcategory-bar {
+    margin-top: 8px;
+    padding-top: 8px;
+    gap: 4px;
+  }
+
+  .subcat-pill {
+    padding: 3px 8px;
+    font-size: 0.73rem;
+  }
+
+  .status-bar {
+    margin-bottom: 10px;
+    font-size: 0.78rem;
+  }
+
+  .status-hint {
+    display: none;
+  }
+
+  .category-section {
+    margin-bottom: 22px;
+  }
+
+  .section-header {
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+  }
+
+  .section-title-wrap {
+    gap: 6px;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+
+  .section-badge {
+    font-size: 0.72rem;
+    padding: 2px 7px;
+  }
+
+  .section-title {
+    font-size: 0.96rem;
+  }
+
+  .shortcut-card {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .card-top {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .card-meta-right {
+    margin-left: auto;
+  }
+
+  kbd {
+    font-size: 0.78rem;
+    padding: 3px 7px;
+  }
+
+  .card-title {
+    font-size: 0.94rem;
+  }
+
+  .card-desc {
+    font-size: 0.82rem;
+  }
+
+  .toast {
+    left: 12px;
+    right: 12px;
+    bottom: 14px;
+    text-align: center;
   }
 }
 
