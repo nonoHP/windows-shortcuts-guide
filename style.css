@@ -710,6 +710,93 @@ kbd {
   color: var(--text-secondary);
 }
 
+.card-memory {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  background-color: var(--accent-primary-soft);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.card-memory-label {
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.table-memory-line {
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+/* 覚え方の6大法則ボックス */
+.memory-rules-box {
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--accent-primary);
+  border-radius: var(--radius-md);
+  padding: 11px 16px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.memory-rules-summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  list-style: none;
+  user-select: none;
+}
+
+.memory-rules-summary::-webkit-details-marker {
+  display: none;
+}
+
+.memory-rules-toggle-hint {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  white-space: nowrap;
+}
+
+.memory-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.memory-rule-card {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 11px 13px;
+}
+
+.memory-rule-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-bottom: 4px;
+}
+
+.memory-rule-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
 .card-tip {
   font-size: 0.78rem;
   color: var(--text-muted);

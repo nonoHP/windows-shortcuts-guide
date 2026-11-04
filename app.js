@@ -52,6 +52,15 @@
     if (sourcesEl && typeof RESEARCHED_SOURCES !== 'undefined') {
       sourcesEl.innerHTML = RESEARCHED_SOURCES.map(s => `<li>✓ ${escapeHtml(s)}</li>`).join('');
     }
+    const rulesEl = document.getElementById('memoryRulesGrid');
+    if (rulesEl && typeof MEMORY_RULES !== 'undefined') {
+      rulesEl.innerHTML = MEMORY_RULES.map(r => `
+        <div class="memory-rule-card">
+          <div class="memory-rule-title">${escapeHtml(r.title)}</div>
+          <div class="memory-rule-desc">${escapeHtml(r.desc)}</div>
+        </div>
+      `).join('');
+    }
     renderCategoryTabs();
     renderSubcategoryBar();
     updateFavBadge();
@@ -169,6 +178,7 @@
           item.title,
           item.desc,
           item.tip || '',
+          item.memory || '',
           item.subcategory,
           item.keys.join(' '),
           item.keys.join('+')
@@ -296,6 +306,12 @@
             <h3 class="card-title">${escapeHtml(item.title)}</h3>
             <p class="card-desc">${escapeHtml(item.desc)}</p>
           </div>
+          ${item.memory ? `
+            <div class="card-memory">
+              <span class="card-memory-label">🧠 覚え方:</span>
+              <span>${escapeHtml(item.memory)}</span>
+            </div>
+          ` : ''}
           ${item.tip ? `
             <div class="card-tip">
               <span class="card-tip-icon" aria-hidden="true">💡</span>
@@ -340,6 +356,7 @@
           <td class="table-title-cell">${escapeHtml(item.title)}</td>
           <td class="table-desc-cell">
             ${escapeHtml(item.desc)}
+            ${item.memory ? `<br><span class="table-memory-line">🧠 覚え方: ${escapeHtml(item.memory)}</span>` : ''}
             ${item.tip ? `<br><small style="color: var(--text-muted)">💡 ${escapeHtml(item.tip)}</small>` : ''}
           </td>
           <td class="table-level-cell">${renderLevelBadge(item.level)}</td>
