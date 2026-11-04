@@ -253,25 +253,26 @@ body {
 
 .category-tabs {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px;
 }
 
 .cat-tab {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 12px 10px;
+  gap: 6px;
+  padding: 10px 8px;
   background-color: var(--bg-surface);
   border: 2px solid var(--border-color);
   border-radius: var(--radius-md);
   color: var(--text-main);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.15s ease;
   box-shadow: var(--shadow-sm);
+  white-space: nowrap;
 }
 
 .cat-tab:hover {
