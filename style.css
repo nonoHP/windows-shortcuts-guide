@@ -640,6 +640,27 @@ kbd {
   flex-shrink: 0;
 }
 
+.item-cat-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: var(--tag-color, var(--accent-primary));
+  padding: 2px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.item-func-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  padding: 1px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
 .level-badge {
   font-size: 0.7rem;
   font-weight: 700;

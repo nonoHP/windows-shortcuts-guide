@@ -139,7 +139,7 @@
 
     subcategoryBarEl.classList.remove('hidden');
     const pillsHtml = [
-      `<span class="subcat-label">分類で絞り込み:</span>`,
+      `<span class="subcat-label">キー分類で絞り込み:</span>`,
       `<button type="button" class="subcat-pill ${state.subcategory === 'all' ? 'active' : ''}" data-subcat="all">すべて</button>`,
       ...subcats.map(sub => `
         <button
@@ -180,6 +180,7 @@
           item.tip || '',
           item.memory || '',
           item.subcategory,
+          item.funcGroup || '',
           item.keys.join(' '),
           item.keys.join('+')
         ].join(' ').toLowerCase();
@@ -241,19 +242,17 @@
 
   function groupShortcuts(items) {
     const map = new Map();
+    const activeCat = CATEGORIES.find(c => c.id === state.category);
 
     items.forEach(item => {
-      const catMeta = CATEGORIES.find(c => c.id === item.category);
-      const groupKey = state.category === 'all'
-        ? `${item.category}__${item.subcategory}`
-        : item.subcategory;
+      const groupKey = item.subcategory;
 
       if (!map.has(groupKey)) {
         map.set(groupKey, {
           key: groupKey,
-          categoryName: catMeta ? catMeta.name : '',
-          categoryIcon: catMeta ? catMeta.icon : '',
-          color: catMeta ? catMeta.color : '#2563eb',
+          categoryName: state.category === 'all' ? 'キー系統順' : (activeCat ? activeCat.name : ''),
+          categoryIcon: state.category === 'all' ? '⌨️' : (activeCat ? activeCat.icon : ''),
+          color: state.category === 'all' ? '#2563eb' : (activeCat ? activeCat.color : '#2563eb'),
           subcategory: item.subcategory,
           items: []
         });
@@ -281,8 +280,13 @@
     const cardsHtml = group.items.map(item => {
       const isFav = state.favorites.has(item.id);
       const comboText = item.keys.join(' + ');
+      const itemCat = CATEGORIES.find(c => c.id === item.category);
+      const cardColor = itemCat ? itemCat.color : group.color;
+      const catTagHtml = state.category === 'all' && itemCat
+        ? `<span class="item-cat-tag" style="--tag-color: ${cardColor}">${escapeHtml(itemCat.icon)} ${escapeHtml(itemCat.name)}</span>`
+        : (item.funcGroup ? `<span class="item-func-tag">${escapeHtml(item.funcGroup)}</span>` : '');
       return `
-        <article class="shortcut-card" style="--card-accent: ${group.color}">
+        <article class="shortcut-card" style="--card-accent: ${cardColor}">
           <div>
             <div class="card-top">
               <div
@@ -293,6 +297,7 @@
                 ${renderKeysHtml(item.keys)}
               </div>
               <div class="card-meta-right">
+                ${catTagHtml}
                 ${renderLevelBadge(item.level)}
                 <button
                   type="button"
@@ -342,6 +347,10 @@
     const rowsHtml = group.items.map(item => {
       const isFav = state.favorites.has(item.id);
       const comboText = item.keys.join(' + ');
+      const itemCat = CATEGORIES.find(c => c.id === item.category);
+      const catLabel = state.category === 'all' && itemCat
+        ? `<span class="item-cat-tag" style="--tag-color: ${itemCat.color}">${escapeHtml(itemCat.icon)} ${escapeHtml(itemCat.name)}</span> `
+        : '';
       return `
         <tr>
           <td class="table-keys-cell">
@@ -353,7 +362,7 @@
               ${renderKeysHtml(item.keys)}
             </div>
           </td>
-          <td class="table-title-cell">${escapeHtml(item.title)}</td>
+          <td class="table-title-cell">${catLabel}${escapeHtml(item.title)}</td>
           <td class="table-desc-cell">
             ${escapeHtml(item.desc)}
             ${item.memory ? `<br><span class="table-memory-line">🧠 覚え方: ${escapeHtml(item.memory)}</span>` : ''}

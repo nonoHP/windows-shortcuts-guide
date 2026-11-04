@@ -1,19 +1,34 @@
-# ⌨️ Windows ショートカットキー パーフェクトガイド（全10カテゴリ・265種 完全網羅）
+# ⌨️ Windows ショートカットキー パーフェクトガイド（全10カテゴリ・357種・キー分類順）
 
-Microsoft公式サポート（Windows 11 / エクスプローラー / Excel / Word / PowerPoint / Outlook / OneNote / Edge）、Adobe公式ヘルプ（Acrobat / Reader）、Google Chrome公式ヘルプ、および国内の主要PC解説サイト計20サイトの情報を徹底調査し、漏れなく統合・体系化したショートカットキー紹介サイトです。
+Microsoft公式サポート（Windows 11 / エクスプローラー / Excel / Word / PowerPoint / Outlook / OneNote / Edge）、Adobe公式ヘルプ（Acrobat / Reader）、Google Chrome公式ヘルプ、および国内の主要PC解説サイト計20サイトの情報を徹底調査し、**「キー分類順（1キー → Fn → Ctrl+数字 → Ctrl+英字…）」**かつ**「全件に覚え方（語源・ゴロ合わせ）付き」**で体系化したショートカットキー紹介サイトです。
 
 - **公開Webサイト**: https://nonohp.github.io/windows-shortcuts-guide/
 - **GitHubリポジトリ**: https://github.com/nonoHP/windows-shortcuts-guide
 
-## ✨ 収録カテゴリ（全10カテゴリ・265種）
+## 🔢 キー分類順の並び構成（10段階）
 
-- 🪟 **Windows 11（40種）**: クリップボード履歴、スクショ・画面録画（Snipping Tool / Game Bar）、スナップレイアウト、マルチモニター移動、仮想デスクトップ、システム設定、管理者メニュー、拡大鏡・アクセシビリティなど
-- 📁 **エクスプローラー（20種・独立カテゴリ）**: タブ追加・切替（`Ctrl+T` / `Ctrl+Tab`）、同じフォルダを別ウィンドウ起動（`Ctrl+N`）、新規フォルダ作成（`Ctrl+Shift+N`）、連続リネーム（`F2`+`Tab`）、フルパスコピー（`Ctrl+Shift+C`）、階層移動（`Alt+↑/←/→`）、プレビューウィンドウ（`Alt+P`）、詳細ウィンドウ（`Alt+Shift+P`）、表示レイアウト一発切替（`Ctrl+Shift+1〜8`）など
-- 📊 **Excel（51種）**: データ端ジャンプ・範囲選択、可視セル選択、フラッシュフィル、絶対参照（`F4`）、オートSUM、名前定義、数式トレース、値のみ貼り付け、表示形式（カンマ・日付・通貨・%）、行・列の非表示＆グループ化、ウィンドウ枠固定、列幅自動調整、テーブル・フィルタ・ピボット・グラフ作成など
-- 📝 **Word（35種）**: 文字装飾、文字書式クリア（`Ctrl+Space`）、段落書式クリア（`Ctrl+Q`）、配置揃え、インデント・ぶら下げインデント、改ページ・行区切り、見出し1〜3適用、段落・表の行の上下移動、表の分割、脚注・文末脚注、拡張選択（`F8`）・矩形選択、前回編集位置へジャンプ（`Shift+F5`）、変更履歴・コメント・フィールド更新（`F9`）など
-- 📽️ **PowerPoint（16種）**: 新規スライド挿入（`Ctrl+M`）、図形・スライドの複製（`Ctrl+D`）、水平垂直複製ドラッグ、グループ化・解除、最前面/最背面移動、書式のコピー＆適用、スライドショー制御（`F5` / `Shift+F5` / `Alt+F5` / スライド番号ジャンプ / 黒白画面 / レーザーポインター）など
-- 📧 **Outlook（20種・新規追加）**: どこからでも新規メール（`Ctrl+Shift+M`）、送信（`Ctrl+Enter`）、返信（`Ctrl+R`）・全員に返信（`Ctrl+Shift+R`）・転送（`Ctrl+F`）、会議出席依頼で全員に返信（`Ctrl+Alt+R`）、既読（`Ctrl+Q`）・未読（`Ctrl+U`）、フラグ設定、フォルダ移動（`Ctrl+Shift+V`）、メール/予定表/連絡先の画面切替（`Ctrl+1〜4`）、予定作成（`Ctrl+Shift+A`）・会議招待（`Ctrl+Shift+Q`）など
-- 📓 **OneNote（14種・新規追加）**: ページ追加（`Ctrl+N`）、セクション追加（`Ctrl+T`）、全ノート横断検索（`Ctrl+E`）、ToDoチェックボックス付与・完了（`Ctrl+1`）、重要・質問タグ（`Ctrl+2〜5`）、日時スタンプ挿入（`Alt+Shift+F / D / T`）、`Tab`キー即席テーブル作成、段落上下移動（`Alt+Shift+↑/↓`）、サブ階層の折りたたみ（`Alt+Shift+-/+`）など
-- 📄 **Adobe PDF / Acrobat（12種・新規追加）**: 1ページ全体表示（`Ctrl+0`）、幅に合わせる（`Ctrl+2`）、ページの90度回転（`Ctrl+Shift++/-`）、指定ページ番号ジャンプ（`Ctrl+Shift+N`）、直前の表示ページ位置へ戻る（`Alt+←`）、しおりパネル開閉（`F4`）、複数PDF一括の高度な検索（`Ctrl+Shift+F`）、手のひらツール一時切替（`Space`長押し）、ノート注釈・文書プロパティ確認など
-- 🌐 **ブラウザ（32種）**: Chrome / Edge 共通のタブ管理、閉じたタブ復元、タブ検索（`Ctrl+Shift+A`）、タブ順序移動、アドレスバー操作（`Ctrl+L` / `Alt+Enter` / `Ctrl+K`）、スーパーリロード、イマーシブリーダー・音声読み上げ、ブックマーク一括保存、開発者ツール・ブラウザタスクマネージャーなど
-- ⌨️ **共通・文字入力（25種）**: コピー・切り取り・貼り付け、書式なし貼り付け（`Ctrl+Shift+V`）、名前を付けて保存（`F12`）、ファンクションキー変換（`F6`〜`F10`）、ホームポジション変換（`Ctrl+U/I/O/P`）、再変換（`Win+/`）、確定直後の取り消し（`Ctrl+Backspace`）など
+すべてのカテゴリ内で、以下のキー系統順に整然と並んでいます（ピルボタンで特定のキー分類だけに絞り込むことも可能です）：
+
+1. **① 単独キー（1キー）**: `Esc` → `Tab` → `Space` → `Enter` → `Backspace` → `Delete` → `Insert` → `Home / End` → `PageUp / PageDown` → 単一文字キー
+2. **② ファンクションキー（F1〜F12）**: `F1` → `F2` → `F3` → `F4` → `F5` → `F6` → `F7` → `F8` → `F9` → `F10` → `F11` → `F12`
+3. **③ Ctrl ＋ 数字（Ctrl + 0〜9）**: `Ctrl + 0` → `Ctrl + 1` → `Ctrl + 2` ... → `Ctrl + 9`
+4. **④ Ctrl ＋ 英字（Ctrl + A〜Z）**: `Ctrl + A` → `Ctrl + B` → `Ctrl + C` ... → `Ctrl + Z`
+5. **⑤ Ctrl ＋ 記号・特殊キー・Fキー**: `Ctrl + F1〜F12` → `Ctrl + Space / Enter / Backspace / Home / End / PageUp / PageDown / 矢印` → `Ctrl + 記号（+ / - / ; / : / [ / ]）`
+6. **⑥ Shift ＋ キー**: `Shift + F2〜F11` → `Shift + Space / Enter / Esc / Delete / 矢印`
+7. **⑦ Alt ＋ キー（Alt組み合わせ・順押し）**: `Alt + D` → `Alt + P` → `Alt + F1〜F11` → `Alt + Space / Enter / Tab / 矢印` → `Alt 順押しコマンド`
+8. **⑧ Ctrl ＋ Shift ＋ キー**: `Ctrl + Shift + 1〜9` → `Ctrl + Shift + A〜Z` → `Ctrl + Shift + 記号・特殊キー`
+9. **⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー**: `Ctrl + Alt + 1〜4 / A〜Z` → `Alt + Shift + D / F / T / 矢印 / 記号`
+10. **⑩ Win ＋ キー（Windowsキー）**: `Win（単独）` → `Win + 1〜9` → `Win + A〜Z` → `Win + 記号・特殊キー・矢印` → `Win + Shift / Ctrl / Alt`
+
+## ✨ 収録カテゴリ（全10カテゴリ・357種）
+
+- 🪟 **Windows 11（49種）**
+- 📁 **エクスプローラー（28種）**
+- 📊 **Excel（65種）**
+- 📝 **Word（45種）**
+- 📽️ **PowerPoint（24種）**
+- 📧 **Outlook（28種）**
+- 📓 **OneNote（21種）**
+- 📄 **Adobe PDF / Acrobat（20種）**
+- 🌐 **ブラウザ / Chrome・Edge（40種）**
+- ⌨️ **共通・文字入力 / IME（37種）**
