@@ -877,11 +877,12 @@
           data-card-id="${item.id}"
           data-jump-index="${globalIdx}"
         >
-          <div class="card-title-header">
-            <h3 class="card-title">${escapeHtml(item.title)}</h3>
-            <div class="card-meta-right">
+          <div class="single-card-header">
+            <div class="single-card-badges">
               ${state.isRandomMode && catMeta ? `<span class="section-badge" style="background:${cardColor}">${escapeHtml(catMeta.icon)} ${escapeHtml(catMeta.name)}</span>` : ''}
               <span class="single-genre-badge">${escapeHtml(item.subcategory)}</span>
+            </div>
+            <div class="single-card-right-top">
               ${renderLevelBadge(item.level)}
               <button
                 type="button"
@@ -891,6 +892,10 @@
                 title="${isFav ? 'お気に入りから解除' : 'お気に入りに追加'}"
               >${isFav ? '★' : '☆'}</button>
             </div>
+          </div>
+
+          <div class="card-title-header">
+            <h3 class="card-title">${escapeHtml(item.title)}</h3>
           </div>
 
           <div class="card-keys-row">
