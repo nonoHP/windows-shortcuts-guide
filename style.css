@@ -789,43 +789,58 @@ body.is-swipe-mode .site-header {
   color: var(--text-main);
 }
 
-.single-card-main-head {
+/* 1段目：題名ヘッダー（スワイプカード内） */
+.card-title-banner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  padding: 8px 10px;
-}
-
-.single-keys-combo kbd {
-  font-size: 0.96rem;
-  padding: 4px 10px;
-}
-
-.single-card-title-wrap {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-  flex: 1 1 auto;
-  justify-content: flex-end;
+  gap: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1.5px solid var(--border-color);
 }
 
 .single-card-title {
   font-size: 1.04rem;
   font-weight: 800;
   color: var(--text-main);
-  line-height: 1.25;
+  line-height: 1.3;
+  border-left: 4px solid var(--card-accent, var(--accent-primary));
+  padding-left: 8px;
+}
+
+/* 2段目：キーボタン専用行（横幅100%を使って1行にスッキリ収め、改行を防ぐ） */
+.card-keys-row {
+  width: 100%;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+}
+
+.single-keys-combo kbd {
+  font-size: 0.94rem;
+  padding: 4px 10px;
+}
+
+/* 3段目：説明ボックス（題名との境目がひと目でわかる独立ボックス） */
+.card-desc-box {
+  width: 100%;
+  background-color: rgba(148, 163, 184, 0.08);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+}
+
+[data-theme="dark"] .card-desc-box {
+  background-color: rgba(15, 23, 42, 0.55);
 }
 
 .single-card-desc {
-  font-size: 0.86rem;
-  color: var(--text-main);
-  line-height: 1.45;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.48;
+  margin: 0;
 }
 
 /* ==========================================
@@ -890,7 +905,7 @@ body.is-swipe-mode .site-header {
   padding: 12px 13px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 7px;
   min-width: 0;
   max-width: 100%;
   box-shadow: var(--shadow-sm);
@@ -901,24 +916,27 @@ body.is-swipe-mode .site-header {
   box-shadow: 0 0 0 2px var(--accent-primary-soft), var(--shadow-md);
 }
 
-.card-top {
+/* 1段目：題名ヘッダー（一覧カード内：題名と説明の境目を明確化） */
+.card-title-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 8px;
   min-width: 0;
+  padding-bottom: 6px;
+  border-bottom: 1.5px solid var(--border-color);
 }
 
 .keys-combo {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 5px;
   cursor: pointer;
-  padding: 2px 4px;
+  padding: 0;
   border-radius: var(--radius-sm);
   min-width: 0;
-  max-width: 100%;
+  width: 100%;
 }
 
 kbd {
@@ -934,12 +952,11 @@ kbd {
   border-bottom: 3px solid var(--kbd-shadow);
   border-radius: 6px;
   max-width: 100%;
-  white-space: normal;
-  word-break: break-word;
+  white-space: nowrap;
 }
 
 .key-plus {
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   font-weight: 700;
   color: var(--text-muted);
 }
@@ -1010,15 +1027,19 @@ kbd {
 }
 
 .card-title {
-  font-size: 0.94rem;
+  font-size: 0.98rem;
   font-weight: 800;
   color: var(--text-main);
+  line-height: 1.3;
+  border-left: 4px solid var(--card-accent, var(--accent-primary));
+  padding-left: 8px;
 }
 
 .card-desc {
-  font-size: 0.83rem;
-  color: var(--text-main);
-  line-height: 1.45;
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.48;
+  margin: 0;
 }
 
 /* 🧠 覚え方ボックス（「覚え方:」の文字を無くし、横幅100%でコンパクトに表示） */
@@ -1442,9 +1463,8 @@ kbd {
     gap: 6px;
   }
 
-  .single-card-main-head {
-    padding: 6px 8px;
-    gap: 6px;
+  .card-keys-row {
+    padding: 5px 8px;
   }
 
   .single-keys-combo kbd {
@@ -1452,15 +1472,20 @@ kbd {
     padding: 3px 8px;
   }
 
-  .single-card-title-wrap {
-    justify-content: flex-start;
-  }
-
   .single-card-title {
     font-size: 0.96rem;
   }
 
-  .single-card-desc {
+  .card-title {
+    font-size: 0.93rem;
+  }
+
+  .card-desc-box {
+    padding: 5px 8px;
+  }
+
+  .single-card-desc,
+  .card-desc {
     font-size: 0.81rem;
   }
 

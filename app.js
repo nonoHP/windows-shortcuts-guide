@@ -448,7 +448,6 @@
       const cardColor = catMeta ? catMeta.color : '#2563eb';
       const isFav = state.favorites.has(item.id);
       const comboText = item.keys.join(' + ');
-      const shortKeyGroup = item.keyGroup ? item.keyGroup.replace(/^[①-⑩]\s*/, '').replace(/（.*?）/g, '') : '';
 
       return `
         <article
@@ -461,10 +460,10 @@
             <div class="single-card-badges">
               ${catMeta ? `<span class="section-badge" style="background:${cardColor}">${escapeHtml(catMeta.icon)} ${escapeHtml(catMeta.name)}</span>` : ''}
               <span class="single-genre-badge">${escapeHtml(item.subcategory)}</span>
-              ${shortKeyGroup ? `<span class="item-func-tag">${escapeHtml(shortKeyGroup)}</span>` : ''}
             </div>
             <div class="single-card-right-top">
-              <span class="single-card-counter"><strong>${itemIdx + 1}</strong>/${total}</span>
+              <span class="single-card-counter"><strong>${itemIdx + 1}</strong> / ${total}</span>
+              ${renderLevelBadge(item.level)}
               <button
                 type="button"
                 class="fav-btn single-top-fav-btn ${isFav ? 'is-fav' : ''}"
@@ -474,7 +473,11 @@
             </div>
           </div>
 
-          <div class="single-card-main-head">
+          <div class="card-title-banner">
+            <h2 class="single-card-title">${escapeHtml(item.title)}</h2>
+          </div>
+
+          <div class="card-keys-row">
             <div
               class="keys-combo single-keys-combo"
               data-copy="${escapeHtml(comboText)}"
@@ -482,13 +485,11 @@
             >
               ${renderKeysHtml(item.keys)}
             </div>
-            <div class="single-card-title-wrap">
-              <h2 class="single-card-title">${escapeHtml(item.title)}</h2>
-              ${renderLevelBadge(item.level)}
-            </div>
           </div>
 
-          <p class="single-card-desc">${escapeHtml(item.desc)}</p>
+          <div class="card-desc-box">
+            <p class="single-card-desc">${escapeHtml(item.desc)}</p>
+          </div>
 
           ${item.memory ? `
             <div class="card-memory single-card-memory">
@@ -600,7 +601,6 @@
       const isFav = state.favorites.has(item.id);
       const isCurrent = activeItem && activeItem.id === item.id;
       const comboText = item.keys.join(' + ');
-      const shortKeyGroup = item.keyGroup ? item.keyGroup.replace(/^[①-⑩]\s*/, '').replace(/（.*?）/g, '') : '';
       const globalIdx = currentFilteredItems.findIndex(x => x.id === item.id);
 
       return `
@@ -610,16 +610,9 @@
           data-card-id="${item.id}"
           data-jump-index="${globalIdx}"
         >
-          <div class="card-top">
-            <div
-              class="keys-combo"
-              data-copy="${escapeHtml(comboText)}"
-              title="タップして「${escapeHtml(comboText)}」をコピー"
-            >
-              ${renderKeysHtml(item.keys)}
-            </div>
+          <div class="card-title-header">
+            <h3 class="card-title">${escapeHtml(item.title)}</h3>
             <div class="card-meta-right">
-              ${shortKeyGroup ? `<span class="item-func-tag">${escapeHtml(shortKeyGroup)}</span>` : ''}
               ${renderLevelBadge(item.level)}
               <button
                 type="button"
@@ -631,8 +624,19 @@
             </div>
           </div>
 
-          <h3 class="card-title">${escapeHtml(item.title)}</h3>
-          <p class="card-desc">${escapeHtml(item.desc)}</p>
+          <div class="card-keys-row">
+            <div
+              class="keys-combo"
+              data-copy="${escapeHtml(comboText)}"
+              title="タップして「${escapeHtml(comboText)}」をコピー"
+            >
+              ${renderKeysHtml(item.keys)}
+            </div>
+          </div>
+
+          <div class="card-desc-box">
+            <p class="card-desc">${escapeHtml(item.desc)}</p>
+          </div>
 
           ${item.memory ? `
             <div class="card-memory">
