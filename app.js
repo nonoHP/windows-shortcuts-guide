@@ -14,6 +14,8 @@
     viewMode: localStorage.getItem(STORAGE_KEY_VIEW) || 'swipe', // 'swipe' | 'card' | 'table'
     favorites: new Set(JSON.parse(localStorage.getItem(STORAGE_KEY_FAVS) || '[]')),
     keyTesterActive: false,
+    isRandomMode: false,
+    randomItems: [],
     currentIndex: 0
   };
 
@@ -23,21 +25,27 @@
   const controlsBarEl = document.getElementById('controlsBar');
   const searchInputEl = document.getElementById('searchInput');
   const clearSearchBtnEl = document.getElementById('clearSearchBtn');
-  const levelFiltersEl = document.getElementById('levelFilters');
+
+  const subcatSelectWrapEl = document.getElementById('subcatSelectWrap');
+  const subcatSelectEl = document.getElementById('subcatSelect');
+  const levelSelectEl = document.getElementById('levelSelect');
+
   const favCountBadgeEl = document.getElementById('favCountBadge');
-  const favCountBadgeChipEl = document.getElementById('favCountBadgeChip');
   const favOnlyHeaderBtn = document.getElementById('favOnlyHeaderBtn');
   const favHeaderBtnTextEl = document.getElementById('favHeaderBtnText');
   const favModeBannerEl = document.getElementById('favModeBanner');
   const favBannerCountEl = document.getElementById('favBannerCount');
   const exitFavModeBtn = document.getElementById('exitFavModeBtn');
 
-  const subcategoryBarEl = document.getElementById('subcategoryBar');
-  const statusBarEl = document.getElementById('statusBar');
+  const randomHeaderBtn = document.getElementById('randomHeaderBtn');
+  const randomModeBannerEl = document.getElementById('randomModeBanner');
+  const nextRandomBtn = document.getElementById('nextRandomBtn');
+  const exitRandomModeBtn = document.getElementById('exitRandomModeBtn');
+  const swipeRandomFabBtn = document.getElementById('swipeRandomFabBtn');
+
   const resultCountNumEl = document.getElementById('resultCountNum');
   const activeFilterSummaryEl = document.getElementById('activeFilterSummary');
   const shortcutsContainerEl = document.getElementById('shortcutsContainer');
-  const siteFooterEl = document.getElementById('siteFooter');
   const toastEl = document.getElementById('toast');
 
   const toggleSearchPanelBtn = document.getElementById('toggleSearchPanelBtn');
@@ -54,7 +62,6 @@
   const clearKeyTesterBtn = document.getElementById('clearKeyTesterBtn');
   const closeKeyTesterBtn = document.getElementById('closeKeyTesterBtn');
 
-  const mobileSwipeBarEl = document.getElementById('mobileSwipeBar');
   const swipePrevBtn = document.getElementById('swipePrevBtn');
   const swipeNextBtn = document.getElementById('swipeNextBtn');
   const swipePrevNameEl = document.getElementById('swipePrevName');
@@ -87,7 +94,7 @@
       `).join('');
     }
     renderCategoryTabs();
-    renderSubcategoryBar();
+    renderSubcategorySelect();
     updateFavBadge();
     renderShortcuts();
     bindEvents();
@@ -120,18 +127,13 @@
   }
 
   // ==========================================
-  // カテゴリタブ＆サブカテゴリバー描画
+  // カテゴリタブ＆ジャンルセレクト描画（スッキリ整理版）
   // ==========================================
-  function getCategoryCount(catId) {
-    if (catId === 'all') return SHORTCUTS_DATA.length;
-    return SHORTCUTS_DATA.filter(item => item.category === catId).length;
-  }
-
   function renderCategoryTabs() {
     const isFavMode = state.level === 'fav';
+    const isRandom = state.isRandomMode;
     categoryTabsEl.innerHTML = CATEGORIES.map(cat => {
-      const isActive = !isFavMode && state.category === cat.id;
-      const count = getCategoryCount(cat.id);
+      const isActive = !isFavMode && !isRandom && state.category === cat.id;
       return `
         <button
           type="button"
@@ -143,14 +145,15 @@
         >
           <span class="cat-icon" aria-hidden="true">${cat.icon}</span>
           <span class="cat-name">${escapeHtml(cat.name)}</span>
-          <span class="cat-count">${count}</span>
         </button>
       `;
     }).join('');
 
     const currentCat = CATEGORIES.find(c => c.id === state.category);
     if (activeCategoryLabelEl) {
-      if (isFavMode) {
+      if (isRandom) {
+        activeCategoryLabelEl.innerHTML = `<span class="active-cat-dot" style="background:#8b5cf6"></span>🎲 全カテゴリ・ランダム順: `;
+      } else if (isFavMode) {
         activeCategoryLabelEl.innerHTML = `<span class="active-cat-dot" style="background:#eab308"></span>★ お気に入り一覧: `;
       } else if (currentCat) {
         activeCategoryLabelEl.innerHTML = `<span class="active-cat-dot" style="background:${currentCat.color}"></span>${escapeHtml(currentCat.icon)} ${escapeHtml(currentCat.name)}: `;
@@ -169,9 +172,11 @@
     categoryTabsEl.scrollTo({ left: targetScroll, behavior: 'smooth' });
   }
 
-  function renderSubcategoryBar() {
-    if (state.category === 'all' || state.level === 'fav') {
-      subcategoryBarEl.classList.add('hidden');
+  function renderSubcategorySelect() {
+    if (!subcatSelectEl || !subcatSelectWrapEl) return;
+
+    if (state.category === 'all' || state.level === 'fav' || state.isRandomMode) {
+      subcatSelectWrapEl.classList.add('hidden');
       return;
     }
 
@@ -179,24 +184,79 @@
     const subcats = Array.from(new Set(targetItems.map(item => item.subcategory)));
 
     if (subcats.length <= 1) {
-      subcategoryBarEl.classList.add('hidden');
+      subcatSelectWrapEl.classList.add('hidden');
       return;
     }
 
-    subcategoryBarEl.classList.remove('hidden');
-    const pillsHtml = [
-      `<span class="subcat-label">ジャンル:</span>`,
-      `<button type="button" class="subcat-pill ${state.subcategory === 'all' ? 'active' : ''}" data-subcat="all">すべて</button>`,
-      ...subcats.map(sub => `
-        <button
-          type="button"
-          class="subcat-pill ${state.subcategory === sub ? 'active' : ''}"
-          data-subcat="${escapeHtml(sub)}"
-        >${escapeHtml(sub)}</button>
-      `)
+    subcatSelectWrapEl.classList.remove('hidden');
+    subcatSelectEl.innerHTML = [
+      `<option value="all" ${state.subcategory === 'all' ? 'selected' : ''}>ジャンル: すべて (${targetItems.length})</option>`,
+      ...subcats.map(sub => {
+        const cnt = targetItems.filter(i => i.subcategory === sub).length;
+        return `<option value="${escapeHtml(sub)}" ${state.subcategory === sub ? 'selected' : ''}>${escapeHtml(sub)} (${cnt})</option>`;
+      })
     ].join('');
+  }
 
-    subcategoryBarEl.innerHTML = pillsHtml;
+  // ==========================================
+  // 🎲 全ショートカットをランダムで出す機能
+  // ==========================================
+  function shuffleArray(arr) {
+    const copy = arr.slice();
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = copy[i];
+      copy[i] = copy[j];
+      copy[j] = tmp;
+    }
+    return copy;
+  }
+
+  function activateRandomShortcuts() {
+    state.isRandomMode = true;
+    state.level = 'all';
+    state.subcategory = 'all';
+    state.searchQuery = '';
+    if (searchInputEl) searchInputEl.value = '';
+    if (clearSearchBtnEl) clearSearchBtnEl.classList.add('hidden');
+    if (levelSelectEl) levelSelectEl.value = 'all';
+
+    state.randomItems = shuffleArray(SHORTCUTS_DATA);
+    state.currentIndex = 0;
+
+    syncFavModeUI();
+    syncRandomModeUI();
+    renderCategoryTabs();
+    renderSubcategorySelect();
+    renderShortcuts();
+
+    const picked = state.randomItems[0];
+    if (picked) {
+      showToast(`🎲 ランダム選出：「${picked.keys.join(' + ')}」${picked.title}`);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function exitRandomMode() {
+    state.isRandomMode = false;
+    state.randomItems = [];
+    state.currentIndex = 0;
+    syncRandomModeUI();
+    renderCategoryTabs();
+    renderSubcategorySelect();
+    renderShortcuts();
+    showToast('通常のジャンル・キー順表示に戻しました');
+  }
+
+  function syncRandomModeUI() {
+    const isRand = state.isRandomMode;
+    if (randomHeaderBtn) {
+      randomHeaderBtn.classList.toggle('active', isRand);
+      randomHeaderBtn.setAttribute('aria-pressed', String(isRand));
+    }
+    if (randomModeBannerEl) {
+      randomModeBannerEl.classList.toggle('hidden', !isRand);
+    }
   }
 
   // ==========================================
@@ -217,18 +277,22 @@
     if (favBannerCountEl) {
       favBannerCountEl.textContent = `（全 ${state.favorites.size} 件登録）`;
     }
-    document.querySelectorAll('.filter-chip').forEach(chip => {
-      chip.classList.toggle('active', chip.dataset.level === state.level);
-    });
+    if (levelSelectEl && levelSelectEl.value !== state.level) {
+      levelSelectEl.value = state.level;
+    }
   }
 
   function toggleFavOnlyMode(forceFav) {
     const nextIsFav = typeof forceFav === 'boolean' ? forceFav : state.level !== 'fav';
+    if (nextIsFav) {
+      state.isRandomMode = false;
+      syncRandomModeUI();
+    }
     state.level = nextIsFav ? 'fav' : 'all';
     state.currentIndex = 0;
     syncFavModeUI();
     renderCategoryTabs();
-    renderSubcategoryBar();
+    renderSubcategorySelect();
     renderShortcuts();
     if (nextIsFav) {
       showToast(`★ お気に入り（${state.favorites.size}件）を開きました`);
@@ -239,6 +303,13 @@
   // フィルタリング処理
   // ==========================================
   function getFilteredShortcuts() {
+    if (state.isRandomMode && !state.searchQuery.trim() && state.level === 'all') {
+      if (state.randomItems.length === 0) {
+        state.randomItems = shuffleArray(SHORTCUTS_DATA);
+      }
+      return state.randomItems;
+    }
+
     const query = state.searchQuery.trim().toLowerCase();
     const queryTokens = query ? query.split(/[\s+＋]+/).filter(Boolean) : [];
 
@@ -353,15 +424,6 @@
       swipeProgressFillEl.style.width = `${pct}%`;
     }
 
-    const stagePrevSub = document.getElementById('stagePrevSubText');
-    const stageNextSub = document.getElementById('stageNextSubText');
-    if (stagePrevSub && prevItem) {
-      stagePrevSub.textContent = `${prevItem.keys.join('+')}：${prevItem.title}`;
-    }
-    if (stageNextSub && nextItem) {
-      stageNextSub.textContent = `${nextItem.keys.join('+')}：${nextItem.title}`;
-    }
-
     if (state.viewMode === 'card' && currentItem) {
       shortcutsContainerEl.querySelectorAll('.shortcut-card.full-visible-card').forEach(card => {
         card.classList.toggle('active-shortcut-card', card.dataset.cardId === currentItem.id);
@@ -383,14 +445,17 @@
     }
 
     const summaryParts = [];
-    if (state.searchQuery.trim()) {
+    if (state.isRandomMode) {
+      summaryParts.push('🎲 ランダムシャッフル中');
+    } else if (state.searchQuery.trim()) {
       summaryParts.push(`検索:「${state.searchQuery.trim()}」`);
     } else if (state.subcategory !== 'all' && state.level !== 'fav') {
       summaryParts.push(state.subcategory);
     }
     if (state.level === 'fav') summaryParts.push('★お気に入りのみ');
     else if (state.level === '3') summaryParts.push('★★★必須のみ');
-    else if (state.level !== 'all') summaryParts.push(`★${state.level}`);
+    else if (state.level === '2') summaryParts.push('★★便利のみ');
+    else if (state.level === '1') summaryParts.push('★玄人のみ');
 
     activeFilterSummaryEl.textContent = summaryParts.length > 0
       ? `（${summaryParts.join(' / ')}）`
@@ -405,7 +470,7 @@
           <p class="empty-title">${isFavEmpty ? 'まだお気に入りが登録されていません' : '一致するショートカットキーが見つかりませんでした'}</p>
           <p class="empty-desc">${
             isFavEmpty
-              ? '各ショートカットカードの「☆ お気に入りに追加」ボタンを押すと、ここにお気に入りだけを集めてスワイプでいつでも見返せます。'
+              ? '各ショートカットカードの「☆」ボタンを押すと、ここにお気に入りだけを集めてスワイプでいつでも見返せます。'
               : '検索キーワードを変えるか、絞り込み条件をリセットしてお試しください。'
           }</p>
           <button type="button" class="reset-btn" id="resetFiltersBtn">${isFavEmpty ? 'すべてのショートカットを見る' : '条件をリセット'}</button>
@@ -427,11 +492,29 @@
         syncActiveIndexUI();
       }
     } else if (state.viewMode === 'table') {
-      const groups = groupShortcuts(currentFilteredItems);
+      const groups = state.isRandomMode
+        ? [{
+            key: 'random_all',
+            categoryName: '全カテゴリ横断',
+            categoryIcon: '🎲',
+            color: '#8b5cf6',
+            subcategory: 'ランダムシャッフル一覧',
+            items: currentFilteredItems
+          }]
+        : groupShortcuts(currentFilteredItems);
       shortcutsContainerEl.innerHTML = groups.map(group => renderTableGroup(group)).join('');
       syncActiveIndexUI();
     } else {
-      const groups = groupShortcuts(currentFilteredItems);
+      const groups = state.isRandomMode
+        ? [{
+            key: 'random_all',
+            categoryName: '全カテゴリ横断',
+            categoryIcon: '🎲',
+            color: '#8b5cf6',
+            subcategory: 'ランダムシャッフル一覧',
+            items: currentFilteredItems
+          }]
+        : groupShortcuts(currentFilteredItems);
       shortcutsContainerEl.innerHTML = groups.map(group => renderCardGroup(group)).join('');
       syncActiveIndexUI();
     }
@@ -506,8 +589,16 @@
       `;
     }).join('');
 
-    // スワイプ表示カードの下にもジャンル別の全体表示カードを配置（上部固定スワイプ＋全体表示）
-    const groups = groupShortcuts(items);
+    const groups = state.isRandomMode
+      ? [{
+          key: 'random_all',
+          categoryName: '全カテゴリ横断',
+          categoryIcon: '🎲',
+          color: '#8b5cf6',
+          subcategory: 'ランダムシャッフル一覧（タップで上のカードへ連動）',
+          items
+        }]
+      : groupShortcuts(items);
     const fullCardsBelowHtml = groups.map(group => renderCardGroup(group)).join('');
 
     return `
@@ -518,7 +609,7 @@
         </div>
       </div>
 
-      <!-- 下部に全ショートカットをジャンル別に全体表示 -->
+      <!-- 下部に全ショートカットを全体表示 -->
       <div class="swipe-below-full-list">
         ${fullCardsBelowHtml}
       </div>
@@ -557,6 +648,143 @@
   }
 
   // ==========================================
+  // 本物のキーボード形状を再現するキーキャップ描画エンジン
+  // - 基本キー：正方形（.keycap-square）
+  // - Fn / F1〜F12 / Esc / Del：横長（.keycap-fn）
+  // - Enter：専用の逆L字/段付き形状（.keycap-enter）
+  // - Shift：専用のワイド横長形状（.keycap-shift）
+  // - Space：専用の超横長スペースバー形状（.keycap-space）
+  // ==========================================
+  function renderSingleKeycap(rawToken) {
+    const token = String(rawToken).trim();
+
+    // 括弧つきの補足（例: "0 (ゼロ)", "4 ($)", "Space（長押し）"）をメイン刻印とサブ刻印に分離
+    let mainText = token;
+    let subText = '';
+    const parenMatch = token.match(/^(.+?)\s*[（(](.+?)[）)]$/);
+    if (parenMatch) {
+      mainText = parenMatch[1].trim();
+      subText = parenMatch[2].trim();
+    }
+
+    const upper = mainText.toUpperCase();
+
+    // 1. Enterキー（専用の逆L字エンター形状）
+    if (upper === 'ENTER') {
+      return `
+        <kbd class="keycap keycap-enter" title="Enterキー">
+          <span class="enter-top-label">Enter</span>
+          <span class="enter-return-symbol">↵</span>
+        </kbd>
+      `;
+    }
+
+    // 2. Shiftキー（専用の横長ワイドシフト形状）
+    if (upper === 'SHIFT') {
+      return `
+        <kbd class="keycap keycap-shift" title="Shiftキー">
+          <span class="shift-arrow">⇧</span>
+          <span class="key-main">Shift</span>
+        </kbd>
+      `;
+    }
+
+    // 3. Spaceキー（専用の超横長スペースバー形状）
+    if (upper === 'SPACE') {
+      return `
+        <kbd class="keycap keycap-space" title="スペースバー">
+          <span class="key-main">Space</span>
+          ${subText ? `<span class="key-sub">${escapeHtml(subText)}</span>` : ''}
+          <span class="space-convex-bar" aria-hidden="true"></span>
+        </kbd>
+      `;
+    }
+
+    // 4. ファンクションキー・最上段キー（F1〜F12, Fn, Esc, Delete, Insert, PrintScreen, Pause, 半角/全角）→ 横長形状
+    if (
+      /^F([1-9]|1[0-2])$/.test(upper) ||
+      ['FN', 'ESC', 'DELETE', 'DEL', 'INSERT', 'INS', 'PRINTSCREEN', 'PAUSE', '半角/全角'].includes(upper)
+    ) {
+      const displayLabel = upper === 'PRINTSCREEN' ? 'PrtSc' : mainText;
+      return `
+        <kbd class="keycap keycap-fn">
+          <span class="key-main">${escapeHtml(displayLabel)}</span>
+          ${subText ? `<span class="key-sub">${escapeHtml(subText)}</span>` : ''}
+        </kbd>
+      `;
+    }
+
+    // 5. Tab / Backspace（1.4U 中幅キー）
+    if (upper === 'TAB' || upper === 'BACKSPACE') {
+      const icon = upper === 'TAB' ? '⇥' : '⌫';
+      const label = upper === 'BACKSPACE' ? 'Back' : 'Tab';
+      return `
+        <kbd class="keycap keycap-tab-back" title="${escapeHtml(mainText)}">
+          <span class="key-icon-mini">${icon}</span>
+          <span class="key-main">${label}</span>
+        </kbd>
+      `;
+    }
+
+    // 6. マウス操作・特殊アクション（ドラッグ、マウスホイール、クリック）
+    if (['ドラッグ', 'マウスホイール', 'クリック'].includes(mainText)) {
+      return `
+        <kbd class="keycap keycap-mouse">
+          <span class="key-main">🖱️ ${escapeHtml(mainText)}</span>
+        </kbd>
+      `;
+    }
+
+    // 7. Winキー（正方形＋Windowsロゴマーク）
+    if (upper === 'WIN' || upper === 'WINDOWS') {
+      return `
+        <kbd class="keycap keycap-square keycap-win" title="Windowsキー">
+          <span class="win-logo" aria-hidden="true">⊞</span>
+          <span class="key-sub-bottom">Win</span>
+        </kbd>
+      `;
+    }
+
+    // 8. 基本キー（文字キー・数字・記号・Ctrl・Alt・矢印 等）→ 本物のキーボードと同じ1:1正方形
+    const isLongSquare = mainText.length >= 4;
+    return `
+      <kbd class="keycap keycap-square ${isLongSquare ? 'keycap-square-fit' : ''}">
+        <span class="key-main">${escapeHtml(mainText)}</span>
+        ${subText ? `<span class="key-sub">${escapeHtml(subText)}</span>` : ''}
+      </kbd>
+    `;
+  }
+
+  function renderKeyTokenWithSplits(rawKey) {
+    const str = String(rawKey).trim();
+
+    // 順押し（例: "H → O → I"）が含まれる場合は矢印で繋いで各キーを正方形表示
+    if (str.includes('→') && !['← / →', '→ / ←', '↑ / ↓ / ← / →', '←', '→'].includes(str)) {
+      return str
+        .split(/\s*→\s*/)
+        .map(part => renderSingleKeycap(part))
+        .join('<span class="key-seq-arrow">→</span>');
+    }
+
+    // 複数候補（例: "J / L" や "F1 / F2"）はスラッシュで区切って個別キーキャップに分解
+    if (str.includes(' / ')) {
+      return str
+        .split(/\s*\/\s*/)
+        .map(part => renderSingleKeycap(part))
+        .join('<span class="key-or-slash">/</span>');
+    }
+
+    return renderSingleKeycap(str);
+  }
+
+  function renderKeysHtml(keys) {
+    return keys.map((k, idx) => {
+      const kbdHtml = renderKeyTokenWithSplits(k);
+      return idx < keys.length - 1 ? `${kbdHtml}<span class="key-plus">+</span>` : kbdHtml;
+    }).join('');
+  }
+
+  // ==========================================
   // 2. 全件一覧（クリック不要で全情報を常時全体表示）
   // ==========================================
   function groupShortcuts(items) {
@@ -582,13 +810,6 @@
     return Array.from(map.values());
   }
 
-  function renderKeysHtml(keys) {
-    return keys.map((k, idx) => {
-      const kbd = `<kbd>${escapeHtml(k)}</kbd>`;
-      return idx < keys.length - 1 ? `${kbd}<span class="key-plus">+</span>` : kbd;
-    }).join('');
-  }
-
   function renderLevelBadge(level) {
     if (level === 3) return `<span class="level-badge level-3" title="毎日使う最重要ショートカット">★★★ 必須</span>`;
     if (level === 2) return `<span class="level-badge level-2" title="作業速度が上がる便利ショートカット">★★ 便利</span>`;
@@ -598,6 +819,8 @@
   function renderCardGroup(group) {
     const activeItem = currentFilteredItems[state.currentIndex];
     const cardsHtml = group.items.map(item => {
+      const catMeta = CATEGORIES.find(c => c.id === item.category);
+      const cardColor = catMeta ? catMeta.color : group.color;
       const isFav = state.favorites.has(item.id);
       const isCurrent = activeItem && activeItem.id === item.id;
       const comboText = item.keys.join(' + ');
@@ -606,13 +829,14 @@
       return `
         <article
           class="shortcut-card full-visible-card ${isCurrent ? 'active-shortcut-card' : ''}"
-          style="--card-accent: ${group.color}"
+          style="--card-accent: ${cardColor}"
           data-card-id="${item.id}"
           data-jump-index="${globalIdx}"
         >
           <div class="card-title-header">
             <h3 class="card-title">${escapeHtml(item.title)}</h3>
             <div class="card-meta-right">
+              ${state.isRandomMode && catMeta ? `<span class="section-badge" style="background:${cardColor}">${escapeHtml(catMeta.icon)} ${escapeHtml(catMeta.name)}</span>` : ''}
               ${renderLevelBadge(item.level)}
               <button
                 type="button"
@@ -761,7 +985,6 @@
   function updateFavBadge() {
     const count = state.favorites.size;
     if (favCountBadgeEl) favCountBadgeEl.textContent = count;
-    if (favCountBadgeChipEl) favCountBadgeChipEl.textContent = count;
   }
 
   function copyShortcutText(text) {
@@ -792,20 +1015,24 @@
     if (toastTimer) clearTimeout(toastTimer);
     toastTimer = setTimeout(() => {
       toastEl.classList.remove('show');
-    }, 2000);
+    }, 2200);
   }
 
   function resetAllFilters() {
+    state.isRandomMode = false;
+    state.randomItems = [];
     state.subcategory = 'all';
     state.level = 'all';
     state.searchQuery = '';
     state.currentIndex = 0;
-    searchInputEl.value = '';
-    clearSearchBtnEl.classList.add('hidden');
+    if (searchInputEl) searchInputEl.value = '';
+    if (clearSearchBtnEl) clearSearchBtnEl.classList.add('hidden');
+    if (levelSelectEl) levelSelectEl.value = 'all';
 
     syncFavModeUI();
+    syncRandomModeUI();
     renderCategoryTabs();
-    renderSubcategoryBar();
+    renderSubcategorySelect();
     renderShortcuts();
   }
 
@@ -862,6 +1089,10 @@
     categoryTabsEl.addEventListener('click', e => {
       const btn = e.target.closest('.cat-tab');
       if (!btn) return;
+      state.isRandomMode = false;
+      state.randomItems = [];
+      syncRandomModeUI();
+
       state.category = btn.dataset.cat;
       state.subcategory = 'all';
       if (state.level === 'fav') {
@@ -870,10 +1101,32 @@
       }
       state.currentIndex = 0;
       renderCategoryTabs();
-      renderSubcategoryBar();
+      renderSubcategorySelect();
       renderShortcuts();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // 🎲 ランダムボタン（ヘッダー・バナー・下部バー）
+    if (randomHeaderBtn) {
+      randomHeaderBtn.addEventListener('click', () => {
+        activateRandomShortcuts();
+      });
+    }
+    if (nextRandomBtn) {
+      nextRandomBtn.addEventListener('click', () => {
+        activateRandomShortcuts();
+      });
+    }
+    if (swipeRandomFabBtn) {
+      swipeRandomFabBtn.addEventListener('click', () => {
+        activateRandomShortcuts();
+      });
+    }
+    if (exitRandomModeBtn) {
+      exitRandomModeBtn.addEventListener('click', () => {
+        exitRandomMode();
+      });
+    }
 
     // ヘッダー「★ お気に入り」ボタン
     if (favOnlyHeaderBtn) {
@@ -925,27 +1178,31 @@
       swipeNextBtn.addEventListener('click', () => stepShortcut(1));
     }
 
-    // サブカテゴリ（ジャンル）切替
-    subcategoryBarEl.addEventListener('click', e => {
-      const btn = e.target.closest('.subcat-pill');
-      if (!btn) return;
-      state.subcategory = btn.dataset.subcat;
-      state.currentIndex = 0;
-      renderSubcategoryBar();
-      renderShortcuts();
-    });
+    // ジャンル（サブカテゴリ）セレクト変更
+    if (subcatSelectEl) {
+      subcatSelectEl.addEventListener('change', () => {
+        state.subcategory = subcatSelectEl.value;
+        state.currentIndex = 0;
+        renderShortcuts();
+      });
+    }
 
-    // 重要度・お気に入りフィルタ
-    levelFiltersEl.addEventListener('click', e => {
-      const btn = e.target.closest('.filter-chip');
-      if (!btn) return;
-      state.level = btn.dataset.level;
-      state.currentIndex = 0;
-      syncFavModeUI();
-      renderCategoryTabs();
-      renderSubcategoryBar();
-      renderShortcuts();
-    });
+    // 重要度・お気に入りセレクト変更
+    if (levelSelectEl) {
+      levelSelectEl.addEventListener('change', () => {
+        const nextLevel = levelSelectEl.value;
+        if (nextLevel === 'fav') {
+          state.isRandomMode = false;
+          syncRandomModeUI();
+        }
+        state.level = nextLevel;
+        state.currentIndex = 0;
+        syncFavModeUI();
+        renderCategoryTabs();
+        renderSubcategorySelect();
+        renderShortcuts();
+      });
+    }
 
     // 表示形式切替
     document.querySelectorAll('.view-btn').forEach(btn => {
@@ -1043,7 +1300,7 @@
         return;
       }
 
-      const isTyping = ['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName);
+      const isTyping = ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName);
 
       if (!isTyping && !e.ctrlKey && !e.altKey && !e.metaKey) {
         if (e.key === 'ArrowRight') {

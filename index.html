@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- 上部固定ヘッダー（タイトル・カテゴリタブ・表示切替・フィルタを上部に固定） -->
+  <!-- 上部固定ヘッダー（スッキリ整理された2段ナビ＋操作バー） -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
@@ -23,11 +23,14 @@
       </div>
 
       <div class="header-actions">
+        <button type="button" id="randomHeaderBtn" class="action-btn random-header-btn" aria-pressed="false" title="全510種のショートカットをランダム順で出題・表示します">
+          <span>🎲</span> <span class="random-btn-text">ランダム</span>
+        </button>
         <button type="button" id="favOnlyHeaderBtn" class="action-btn fav-header-btn" aria-pressed="false" title="登録したお気に入りのショートカットだけを開きます">
           <span>★</span> <span id="favHeaderBtnText">お気に入り</span>
           <span id="favCountBadge" class="fav-count">0</span>
         </button>
-        <button type="button" id="toggleSearchPanelBtn" class="action-btn" aria-expanded="false" title="検索ボックスを開く">
+        <button type="button" id="toggleSearchPanelBtn" class="action-btn" aria-expanded="false" title="キーワード検索ボックスを開く">
           <span>🔍</span> <span class="btn-label-text">検索</span>
         </button>
         <button type="button" id="toggleRulesBtn" class="action-btn" aria-expanded="false" title="ショートカットキーの覚え方・6大法則を見る">
@@ -45,7 +48,7 @@
       </div>
     </div>
 
-    <!-- カテゴリ選択タブ（横スクロール対応） -->
+    <!-- カテゴリ選択タブ（スッキリ見やすい横スクロール） -->
     <div class="category-bar-wrap">
       <div class="container">
         <nav class="category-nav" aria-label="カテゴリ選択">
@@ -56,36 +59,41 @@
       </div>
     </div>
 
-    <!-- 表示モード切替＆重要度・ジャンル絞り込みバー（上部固定） -->
+    <!-- 表示モード切替＆スッキリ1行のジャンル・重要度セレクトバー -->
     <div class="header-controls-wrap">
       <div class="container">
         <div class="quick-bar">
           <div class="view-switcher" role="group" aria-label="表示形式の切り替え">
             <button type="button" class="view-btn active" data-view="swipe" title="左右スワイプで次のショートカットへ1つずつ進む表示">
-              <span>👆</span> スワイプ表示
+              <span>👆</span> スワイプ
             </button>
             <button type="button" class="view-btn" data-view="card" title="全ショートカットをジャンル別に全体表示">
-              <span>📑</span> 全件一覧
+              <span>📑</span> 一覧
             </button>
             <button type="button" class="view-btn" data-view="table" title="一覧早見表（テーブル表示）">
               <span>📋</span> 早見表
             </button>
           </div>
 
-          <div class="level-filters" id="levelFilters" role="group" aria-label="重要度フィルタ">
-            <button type="button" class="filter-chip active" data-level="all">すべて</button>
-            <button type="button" class="filter-chip level-3-chip" data-level="3">★★★ 必須</button>
-            <button type="button" class="filter-chip level-2-chip" data-level="2">★★ 便利</button>
-            <button type="button" class="filter-chip level-1-chip" data-level="1">★ 玄人</button>
-            <button type="button" class="filter-chip fav-chip" data-level="fav">
-              ★ お気に入り <span id="favCountBadgeChip" class="fav-count">0</span>
-            </button>
-          </div>
-        </div>
+          <div class="compact-selects-wrap">
+            <label class="select-pill-wrap" id="subcatSelectWrap" title="ジャンル（サブカテゴリ）で絞り込み">
+              <span class="select-pill-icon">📂</span>
+              <select id="subcatSelect" class="clean-select" aria-label="ジャンル選択">
+                <option value="all">すべてのジャンル</option>
+              </select>
+            </label>
 
-        <!-- ジャンル（サブカテゴリ）絞り込みピル -->
-        <div class="subcategory-bar" id="subcategoryBar">
-          <!-- JSで動的生成 -->
+            <label class="select-pill-wrap" title="重要度で絞り込み">
+              <span class="select-pill-icon">⭐</span>
+              <select id="levelSelect" class="clean-select" aria-label="重要度フィルタ">
+                <option value="all">重要度: すべて</option>
+                <option value="3">★★★ 必須のみ</option>
+                <option value="2">★★ 便利のみ</option>
+                <option value="1">★ 玄人のみ</option>
+                <option value="fav">★ お気に入りのみ</option>
+              </select>
+            </label>
+          </div>
         </div>
 
         <!-- 検索バー（🔍検索ボタンで開閉） -->
@@ -96,7 +104,7 @@
               type="search"
               id="searchInput"
               class="search-input"
-              placeholder="全カテゴリから検索（例: スクショ, 値貼り付け, タブ, F2）"
+              placeholder="全510件から検索（例: スクショ, 値貼り付け, タブ, F2）"
               autocomplete="off"
             >
             <button type="button" id="clearSearchBtn" class="clear-search-btn hidden" aria-label="検索クリア">✕</button>
@@ -146,6 +154,18 @@
       <button type="button" id="exitFavModeBtn" class="exit-fav-btn">✕ すべて表示に戻る</button>
     </div>
 
+    <!-- ランダム表示モードバナー -->
+    <div id="randomModeBanner" class="random-mode-banner hidden">
+      <div class="random-banner-left">
+        <span>🎲</span>
+        <strong>全510種からランダム順で表示中</strong>
+      </div>
+      <div class="random-banner-actions">
+        <button type="button" id="nextRandomBtn" class="next-random-btn">🎲 シャッフルし直す</button>
+        <button type="button" id="exitRandomModeBtn" class="exit-random-btn">✕ 通常順に戻す</button>
+      </div>
+    </div>
+
     <!-- ステータスバー -->
     <div class="status-bar" id="statusBar">
       <div class="result-count">
@@ -164,7 +184,7 @@
     </div>
   </main>
 
-  <!-- 画面下部固定・左右スワイプ「前のショートカット / 次のショートカット」移動バー -->
+  <!-- 画面下部固定・左右スワイプ「前のショートカット / ランダム / 次のショートカット」移動バー -->
   <div class="mobile-swipe-bar" id="mobileSwipeBar" aria-label="前後のショートカットへ移動">
     <button type="button" class="swipe-nav-btn prev" id="swipePrevBtn" aria-label="前のショートカットへ">
       <span class="swipe-arrow">◀</span>
@@ -176,6 +196,9 @@
         <div class="swipe-progress-fill" id="swipeProgressFill"></div>
       </div>
     </div>
+    <button type="button" class="swipe-random-fab" id="swipeRandomFabBtn" title="全ショートカットからランダムに1つ出す">
+      🎲
+    </button>
     <button type="button" class="swipe-nav-btn next" id="swipeNextBtn" aria-label="次のショートカットへ">
       <span class="swipe-target-name" id="swipeNextName">次へ</span>
       <span class="swipe-arrow">▶</span>

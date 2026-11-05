@@ -1,76 +1,104 @@
 :root {
-  --bg-body: #f1f5f9;
+  /* 背景とカードのコントラストを明確化し、境目がひと目でわかる配色 */
+  --bg-body: #dde5ef;
+  --bg-header: #ffffff;
   --bg-surface: #ffffff;
-  --bg-subtle: #f8fafc;
+  --bg-subtle: #f1f5f9;
   --bg-hover: #e2e8f0;
+
   --text-main: #0f172a;
   --text-secondary: #1e293b;
-  --text-muted: #64748b;
+  --text-muted: #475569;
+
   --border-color: #cbd5e1;
   --border-strong: #94a3b8;
+  --card-outer-border: #94a3b8;
 
   --accent-primary: #2563eb;
-  --accent-primary-soft: #eff6ff;
+  --accent-primary-soft: rgba(37, 99, 235, 0.14);
 
-  --kbd-bg: #ffffff;
-  --kbd-border: #cbd5e1;
-  --kbd-shadow: #94a3b8;
+  /* キーボードプレート（筐体）と立体キーキャップの色 */
+  --keyplate-bg: #cbd5e1;
+  --keyplate-border: #94a3b8;
+  --kbd-bg: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  --kbd-border: #94a3b8;
+  --kbd-shadow: #64748b;
   --kbd-text: #0f172a;
+  --kbd-sub-text: #475569;
 
-  /* 覚え方ボックス（ライトモード：淡いグリーン背景＋くっきり濃い黒文字） */
-  --memory-bg: #f0fdf4;
-  --memory-border: #86efac;
-  --memory-accent: #16a34a;
-  --memory-label: #15803d;
+  /* 説明文ボックス */
+  --desc-box-bg: #f1f5f9;
+  --desc-box-border: #cbd5e1;
+  --desc-box-accent: #2563eb;
+
+  /* 覚え方ボックス（ライトモード：淡いグリーン背景＋濃い黒文字） */
+  --memory-bg: #ecfdf5;
+  --memory-border: #6ee7b7;
+  --memory-accent: #059669;
+  --memory-label: #047857;
   --memory-text: #0f172a;
 
-  /* ワンポイントボックス（ライトモード：淡いクリーム背景＋くっきり濃い黒文字） */
+  /* ワンポイントボックス（ライトモード：淡いアンバー背景＋濃い黒文字） */
   --tip-bg: #fffbeb;
   --tip-border: #fcd34d;
-  --tip-accent: #f59e0b;
+  --tip-accent: #d97706;
   --tip-text: #0f172a;
 
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
-  --shadow-md: 0 6px 18px rgba(15, 23, 42, 0.12);
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
+  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 8px 22px rgba(15, 23, 42, 0.16);
+  --radius-sm: 7px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
 }
 
 [data-theme="dark"] {
-  --bg-body: #0b1120;
+  /* ダークモード：背景(漆黒) ＜ ヘッダー(濃紺) ＜ カード(明紺) ＜ 内部ボックス の階層差をクッキリ分離 */
+  --bg-body: #060a12;
+  --bg-header: #0f172a;
   --bg-surface: #1e293b;
-  --bg-subtle: #0f172a;
+  --bg-subtle: #131c2e;
   --bg-hover: #334155;
+
   --text-main: #ffffff;
-  --text-secondary: #e2e8f0;
+  --text-secondary: #f1f5f9;
   --text-muted: #94a3b8;
+
   --border-color: #334155;
-  --border-strong: #475569;
+  --border-strong: #64748b;
+  --card-outer-border: #64748b;
 
   --accent-primary: #3b82f6;
-  --accent-primary-soft: rgba(59, 130, 246, 0.2);
+  --accent-primary-soft: rgba(59, 130, 246, 0.24);
 
-  --kbd-bg: #0f172a;
-  --kbd-border: #64748b;
+  /* キーボードプレート（黒い凹みプレートの上に明るい立体キーが浮き上がる） */
+  --keyplate-bg: #090e1a;
+  --keyplate-border: #475569;
+  --kbd-bg: linear-gradient(180deg, #334155 0%, #1e293b 100%);
+  --kbd-border: #94a3b8;
   --kbd-shadow: #020617;
   --kbd-text: #ffffff;
+  --kbd-sub-text: #cbd5e1;
 
-  /* 覚え方ボックス（ダークモード：濃紺背景＋エメラルド枠＋くっきり真っ白文字） */
-  --memory-bg: #0f172a;
+  /* 説明文ボックス（カード背景#1e293bより一段明るいパネル色で境目を明確化） */
+  --desc-box-bg: #29384e;
+  --desc-box-border: #475569;
+  --desc-box-accent: #38bdf8;
+
+  /* 覚え方ボックス（ダークモード：エメラルド背景トーン＋白文字） */
+  --memory-bg: rgba(16, 185, 129, 0.14);
   --memory-border: #10b981;
   --memory-accent: #34d399;
   --memory-label: #6ee7b7;
   --memory-text: #ffffff;
 
-  /* ワンポイントボックス（ダークモード：濃紺背景＋ゴールド枠＋くっきり真っ白文字） */
-  --tip-bg: #0f172a;
+  /* ワンポイントボックス（ダークモード：アンバー背景トーン＋白文字） */
+  --tip-bg: rgba(245, 158, 11, 0.14);
   --tip-border: #f59e0b;
   --tip-accent: #fbbf24;
   --tip-text: #ffffff;
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 8px 22px rgba(0, 0, 0, 0.55);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.65);
 }
 
 * {
@@ -114,18 +142,17 @@ body {
 }
 
 /* ==========================================
-   ヘッダー＆カテゴリタブ＆コントロールバー
+   ヘッダー＆スッキリ整理されたタブ・操作バー
    ========================================== */
 .site-header {
-  background-color: var(--bg-surface);
-  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-header);
+  border-bottom: 2px solid var(--accent-primary);
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: var(--shadow-sm);
 }
 
-/* スワイプ表示モード時はスワイプカード自体を上部に固定するため、ヘッダーは通常スクロールさせて画面を広く使う */
 body.is-swipe-mode .site-header {
   position: relative;
 }
@@ -154,13 +181,13 @@ body.is-swipe-mode .site-header {
 }
 
 .brand-icon {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   line-height: 1;
   flex-shrink: 0;
 }
 
 .site-title {
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   display: flex;
@@ -176,11 +203,11 @@ body.is-swipe-mode .site-header {
 }
 
 .badge-perfect {
-  font-size: 0.65rem;
-  font-weight: 700;
+  font-size: 0.66rem;
+  font-weight: 800;
   background: linear-gradient(135deg, #2563eb, #7c3aed);
   color: #fff;
-  padding: 2px 7px;
+  padding: 2px 8px;
   border-radius: 999px;
 }
 
@@ -200,7 +227,7 @@ body.is-swipe-mode .site-header {
   font-weight: 700;
   color: var(--text-main);
   background-color: var(--bg-subtle);
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--border-color);
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 0.15s ease;
@@ -217,6 +244,25 @@ body.is-swipe-mode .site-header {
   border-color: var(--accent-primary);
 }
 
+/* 🎲 ランダムボタン（目を引くパープルグラデーション） */
+.random-header-btn {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  border-color: #8b5cf6;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+}
+
+.random-header-btn:hover {
+  filter: brightness(1.1);
+}
+
+.random-header-btn.active {
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  border-color: #f472b6;
+  box-shadow: 0 0 0 2px rgba(236, 72, 153, 0.35);
+}
+
+/* ★ お気に入りボタン */
 .fav-header-btn {
   background-color: rgba(234, 179, 8, 0.16);
   border-color: #eab308;
@@ -233,29 +279,38 @@ body.is-swipe-mode .site-header {
   background-color: #eab308;
   border-color: #ca8a04;
   color: #ffffff;
-  box-shadow: 0 2px 10px rgba(234, 179, 8, 0.35);
+}
+
+.fav-count {
+  font-size: 0.66rem;
+  padding: 0 5px;
+  border-radius: 999px;
+  background-color: rgba(234, 179, 8, 0.25);
+  color: inherit;
 }
 
 .action-btn.icon-only {
   padding: 5px 8px;
 }
 
-/* カテゴリバー（滑らかな横スクロール） */
+/* カテゴリタブバー（ごちゃごちゃ感をなくし、選択中タブがクッキリ浮き出るデザイン） */
 .category-bar-wrap {
   background-color: var(--bg-subtle);
   border-top: 1px solid var(--border-color);
-  padding: 5px 0;
+  border-bottom: 1px solid var(--border-color);
+  padding: 6px 0;
 }
 
 .category-tabs {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   overflow-x: auto;
   scroll-snap-type: x proximity;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  padding: 1px 2px;
 }
 
 .category-tabs::-webkit-scrollbar {
@@ -267,12 +322,12 @@ body.is-swipe-mode .site-header {
   scroll-snap-align: center;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 5px 11px;
+  gap: 5px;
+  padding: 6px 12px;
   background-color: var(--bg-surface);
   border: 1.5px solid var(--border-color);
   border-radius: 999px;
-  color: var(--text-main);
+  color: var(--text-secondary);
   font-size: 0.8rem;
   font-weight: 700;
   cursor: pointer;
@@ -280,35 +335,26 @@ body.is-swipe-mode .site-header {
   white-space: nowrap;
 }
 
+.cat-tab:hover {
+  border-color: var(--border-strong);
+  color: var(--text-main);
+}
+
 .cat-tab.active {
   background-color: var(--cat-color, var(--accent-primary));
-  border-color: var(--cat-color, var(--accent-primary));
+  border-color: #ffffff;
   color: #ffffff;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.28);
+  transform: translateY(-1px);
 }
 
 .cat-tab .cat-icon {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
 }
 
-.cat-tab .cat-count {
-  font-size: 0.68rem;
-  font-weight: 700;
-  padding: 0 5px;
-  border-radius: 999px;
-  background-color: var(--bg-subtle);
-  color: var(--text-secondary);
-}
-
-.cat-tab.active .cat-count {
-  background-color: rgba(255, 255, 255, 0.24);
-  color: #ffffff;
-}
-
-/* ヘッダー内コントロール（表示切替・重要度・ジャンル） */
+/* スッキリ1行のコントロールバー（表示切替 ＋ ジャンル＆重要度セレクト） */
 .header-controls-wrap {
-  background-color: var(--bg-surface);
-  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-header);
   padding: 6px 0;
 }
 
@@ -325,7 +371,7 @@ body.is-swipe-mode .site-header {
   background-color: var(--bg-subtle);
   padding: 2px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border-color);
+  border: 1.5px solid var(--border-color);
 }
 
 .view-btn {
@@ -335,7 +381,7 @@ body.is-swipe-mode .site-header {
   color: var(--text-secondary);
   background: transparent;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -348,107 +394,48 @@ body.is-swipe-mode .site-header {
   color: #ffffff;
 }
 
-.level-filters {
+.compact-selects-wrap {
   display: flex;
   align-items: center;
-  gap: 5px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+  gap: 6px;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+  min-width: 0;
 }
 
-.level-filters::-webkit-scrollbar {
-  display: none;
-}
-
-.filter-chip {
-  flex: 0 0 auto;
-  padding: 4px 9px;
-  font-size: 0.74rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border-color);
-  border-radius: 999px;
-  cursor: pointer;
+.select-pill-wrap {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  white-space: nowrap;
+  background-color: var(--bg-subtle);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+  min-width: 0;
+  max-width: 100%;
 }
 
-.filter-chip.active {
-  background-color: var(--text-main);
-  color: var(--bg-surface);
-  border-color: var(--text-main);
-}
-
-.filter-chip.fav-chip.active {
-  background-color: #eab308;
-  border-color: #ca8a04;
-  color: #ffffff;
-}
-
-.fav-count {
-  font-size: 0.66rem;
-  padding: 0 5px;
-  border-radius: 999px;
-  background-color: rgba(234, 179, 8, 0.22);
-  color: #92400e;
-}
-
-[data-theme="dark"] .fav-count {
-  color: #fef08a;
-}
-
-.fav-header-btn.active .fav-count,
-.filter-chip.active .fav-count {
-  background-color: rgba(255, 255, 255, 0.28);
-  color: #ffffff;
-}
-
-/* ジャンルピル */
-.subcategory-bar {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  margin-top: 6px;
-}
-
-.subcategory-bar::-webkit-scrollbar {
-  display: none;
-}
-
-.subcat-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--text-muted);
+.select-pill-icon {
+  font-size: 0.78rem;
   flex-shrink: 0;
 }
 
-.subcat-pill {
-  flex: 0 0 auto;
-  padding: 3px 9px;
-  font-size: 0.73rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border-color);
-  border-radius: 999px;
+.clean-select {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-size: 0.76rem;
+  font-weight: 700;
+   outline: none;
   cursor: pointer;
-  white-space: nowrap;
+  min-width: 0;
+  max-width: 190px;
+  text-overflow: ellipsis;
 }
 
-.subcat-pill.active {
-  background-color: var(--accent-primary);
-  color: #ffffff;
-  border-color: var(--accent-primary);
-  font-weight: 700;
+.clean-select option {
+  background-color: var(--bg-surface);
+  color: var(--text-main);
 }
 
 /* 検索バー */
@@ -476,7 +463,7 @@ body.is-swipe-mode .site-header {
   font-size: 16px;
   color: var(--text-main);
   background-color: var(--bg-subtle);
-  border: 1.5px solid var(--border-color);
+  border: 1.5px solid var(--border-strong);
   border-radius: var(--radius-sm);
   outline: none;
 }
@@ -519,17 +506,20 @@ body.is-swipe-mode .site-header {
 }
 
 .key-tester-display {
-  background: rgba(15, 23, 42, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 5px 14px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 14px;
   border-radius: var(--radius-sm);
   min-width: 200px;
-  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   font-weight: 700;
 }
 
 .key-tester-display .placeholder {
-  color: #94a3b8;
+  color: #cbd5e1;
   font-weight: 400;
   font-size: 0.82rem;
 }
@@ -551,15 +541,14 @@ body.is-swipe-mode .site-header {
 }
 
 /* ==========================================
-   メインエリア
+   メインエリア・バナー
    ========================================== */
 .main-content {
-  padding-top: 8px;
+  padding-top: 10px;
   padding-bottom: 40px;
   flex: 1;
 }
 
-/* 6大法則パネル */
 .memory-rules-box {
   background-color: var(--bg-surface);
   border: 2px solid var(--memory-accent);
@@ -616,35 +605,59 @@ body.is-swipe-mode .site-header {
   color: var(--memory-text);
 }
 
-/* お気に入り表示中バナー */
-.fav-mode-banner {
+/* お気に入り＆ランダム表示中バナー */
+.fav-mode-banner,
+.random-mode-banner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  background: linear-gradient(90deg, rgba(234, 179, 8, 0.2), rgba(245, 158, 11, 0.12));
-  border: 1.5px solid #eab308;
   border-radius: var(--radius-md);
-  padding: 7px 11px;
-  margin-bottom: 8px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
   font-size: 0.82rem;
 }
 
-.fav-banner-left {
+.fav-mode-banner {
+  background: linear-gradient(90deg, rgba(234, 179, 8, 0.22), rgba(245, 158, 11, 0.14));
+  border: 2px solid #eab308;
+}
+
+.random-mode-banner {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.24), rgba(236, 72, 153, 0.16));
+  border: 2px solid #8b5cf6;
+}
+
+.fav-banner-left,
+.random-banner-left {
   display: flex;
   align-items: center;
   gap: 6px;
   color: var(--text-main);
 }
 
-.fav-banner-count {
-  font-size: 0.76rem;
-  color: var(--text-secondary);
+.random-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.exit-fav-btn {
-  padding: 3px 9px;
-  font-size: 0.73rem;
+.next-random-btn {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  color: #ffffff;
+  border: 1px solid #a78bfa;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.exit-fav-btn,
+.exit-random-btn {
+  padding: 4px 10px;
+  font-size: 0.74rem;
   font-weight: 700;
   background-color: var(--bg-surface);
   color: var(--text-main);
@@ -659,7 +672,7 @@ body.is-swipe-mode .site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   font-size: 0.78rem;
   color: var(--text-secondary);
   gap: 8px;
@@ -674,8 +687,8 @@ body.is-swipe-mode .site-header {
 }
 
 .active-cat-dot {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   display: inline-block;
 }
@@ -692,23 +705,23 @@ body.is-swipe-mode .site-header {
 
 /* ==========================================
    1. 上部固定のスワイプカードステージ ＋ 下に全体表示リスト
+   （背景やヘッダーと色が溶け込まないよう、独立した枠とシャドウでクッキリ分離）
    ========================================== */
 .swipe-single-stage {
   position: sticky;
   top: 0;
   z-index: 90;
   background-color: var(--bg-body);
-  padding: 6px 0 8px 0;
-  margin-bottom: 12px;
-  border-bottom: 2px solid var(--border-color);
-  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+  padding: 8px 0 10px 0;
+  margin-bottom: 16px;
+  border-bottom: 3px solid var(--accent-primary);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
 }
 
 [data-theme="dark"] .swipe-single-stage {
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.7);
 }
 
-/* 指に追従して滑らかにスクロール＆スナップする横トラック */
 .swipe-carousel-track {
   display: flex;
   flex-wrap: nowrap;
@@ -718,7 +731,7 @@ body.is-swipe-mode .site-header {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
-  gap: 12px;
+  gap: 14px;
   scrollbar-width: none;
 }
 
@@ -726,6 +739,7 @@ body.is-swipe-mode .site-header {
   display: none;
 }
 
+/* スワイプカード本体：外枠・カテゴリカラー上部バー・立体影で背景から明確に浮き上がらせる */
 .Single-shortcut-card {
   flex: 0 0 100%;
   width: 100%;
@@ -733,11 +747,11 @@ body.is-swipe-mode .site-header {
   scroll-snap-align: center;
   scroll-snap-stop: always;
   background-color: var(--bg-surface);
-  border: 2px solid var(--border-color);
-  border-top: 5px solid var(--card-accent, var(--accent-primary));
+  border: 2px solid var(--card-outer-border);
+  border-top: 6px solid var(--card-accent, var(--accent-primary));
   border-radius: var(--radius-md);
   padding: 12px 14px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -753,7 +767,7 @@ body.is-swipe-mode .site-header {
 .single-card-badges {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   flex-wrap: wrap;
   min-width: 0;
 }
@@ -763,7 +777,7 @@ body.is-swipe-mode .site-header {
   font-weight: 700;
   color: var(--text-main);
   background-color: var(--bg-subtle);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-strong);
   padding: 1px 8px;
   border-radius: 999px;
 }
@@ -782,72 +796,278 @@ body.is-swipe-mode .site-header {
   background-color: var(--bg-subtle);
   padding: 1px 8px;
   border-radius: 999px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-strong);
 }
 
 .single-card-counter strong {
   color: var(--text-main);
 }
 
-/* 1段目：題名ヘッダー（スワイプカード内） */
+/* 1段目：題名ヘッダー（カテゴリ色のアクセント帯で説明文との境目を一目瞭然にする） */
 .card-title-banner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  padding-bottom: 6px;
-  border-bottom: 1.5px solid var(--border-color);
+  padding: 6px 10px;
+  background: linear-gradient(90deg, var(--accent-primary-soft), transparent);
+  border-left: 5px solid var(--card-accent, var(--accent-primary));
+  border-radius: 4px var(--radius-sm) var(--radius-sm) 4px;
 }
 
 .single-card-title {
-  font-size: 1.04rem;
+  font-size: 1.06rem;
   font-weight: 800;
   color: var(--text-main);
   line-height: 1.3;
-  border-left: 4px solid var(--card-accent, var(--accent-primary));
-  padding-left: 8px;
 }
 
-/* 2段目：キーボタン専用行（横幅100%を使って1行にスッキリ収め、改行を防ぐ） */
+/* 2段目：キーボードプレート専用行（凹んだキーボード筐体の上にリアルなキーキャップが並ぶ） */
 .card-keys-row {
   width: 100%;
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border-color);
+  background-color: var(--keyplate-bg);
+  border: 1.5px solid var(--keyplate-border);
   border-radius: var(--radius-sm);
-  padding: 6px 10px;
+  padding: 8px 12px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.25);
 }
 
-.single-keys-combo kbd {
-  font-size: 0.94rem;
-  padding: 4px 10px;
-}
-
-/* 3段目：説明ボックス（題名との境目がひと目でわかる独立ボックス） */
+/* 3段目：説明ボックス（カード背景とは別色の独立パネル） */
 .card-desc-box {
   width: 100%;
-  background-color: rgba(148, 163, 184, 0.08);
-  border: 1px solid var(--border-color);
-  border-left: 3px solid var(--border-strong);
+  background-color: var(--desc-box-bg);
+  border: 1px solid var(--desc-box-border);
+  border-left: 4px solid var(--desc-box-accent);
   border-radius: var(--radius-sm);
-  padding: 6px 10px;
-}
-
-[data-theme="dark"] .card-desc-box {
-  background-color: rgba(15, 23, 42, 0.55);
+  padding: 7px 10px;
 }
 
 .single-card-desc {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
+  font-size: 0.86rem;
+  color: var(--text-main);
   line-height: 1.48;
   margin: 0;
 }
 
 /* ==========================================
-   2. 全件一覧＆スワイプ下部全体表示（クリック不要で常時全体表示）
+   🎹 本物の物理キーボードと同じ形状のキーキャップ群
+   1. 基本キー (.keycap-square) : 正方形 (1:1)
+   2. Fn / F1〜F12 (.keycap-fn) : 横長ロープロファイル
+   3. Enter (.keycap-enter)     : 専用の段付き逆L字エンター形状
+   4. Shift (.keycap-shift)     : 専用のワイド横長形状
+   5. Space (.keycap-space)     : 専用の超横長スペースバー形状
+   ========================================== */
+.keys-combo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  cursor: pointer;
+  padding: 0;
+  min-width: 0;
+  width: 100%;
+}
+
+kbd.keycap {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI Semibold", "Consolas", "Monaco", "Meiryo", sans-serif;
+  font-weight: 800;
+  color: var(--kbd-text);
+  background: var(--kbd-bg);
+  border: 1.5px solid var(--kbd-border);
+  border-bottom: 4px solid var(--kbd-shadow);
+  border-radius: 7px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 2px 4px rgba(0, 0, 0, 0.25);
+  user-select: none;
+  flex-shrink: 0;
+  line-height: 1.1;
+  transition: transform 0.08s ease, border-bottom-width 0.08s ease;
+}
+
+.keys-combo:active kbd.keycap {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+}
+
+.keycap .key-main {
+  font-size: 0.86rem;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.keycap .key-sub {
+  font-size: 0.56rem;
+  font-weight: 700;
+  color: var(--kbd-sub-text);
+  margin-top: 1px;
+  white-space: nowrap;
+}
+
+/* ① 基本キー：本物のキーボードと同じ「正方形（42px × 42px）」 */
+kbd.keycap-square {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  padding: 2px;
+}
+
+/* 4文字以上の範囲表記（例: 1〜9, Home）でも高さを42pxに揃えて正方形ベースを維持 */
+kbd.keycap-square.keycap-square-fit {
+  width: auto;
+  min-width: 42px;
+  height: 42px;
+  padding: 2px 7px;
+}
+
+/* Windowsキー（正方形＋窓ロゴ） */
+kbd.keycap-win .win-logo {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+kbd.keycap-win .key-sub-bottom {
+  font-size: 0.58rem;
+  font-weight: 800;
+  color: var(--kbd-sub-text);
+  margin-top: 1px;
+}
+
+/* ② Fn・F1〜F12・Esc・Delキー：本物の最上段と同じ「横長ロープロファイル（54px × 29px）」 */
+kbd.keycap-fn {
+  min-width: 54px;
+  height: 29px;
+  padding: 0 9px;
+  border-radius: 6px;
+  border-bottom-width: 3px;
+}
+
+kbd.keycap-fn .key-main {
+  font-size: 0.78rem;
+}
+
+/* ③ Shiftキー：専用の「ワイド横長キー形状（82px × 42px・左寄せ⇧アイコン付き）」 */
+kbd.keycap-shift {
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5px;
+  min-width: 82px;
+  height: 42px;
+  padding: 0 11px;
+}
+
+kbd.keycap-shift .shift-arrow {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ④ Enterキー：専用の「JIS逆L字（段付き）エンターキー形状」 */
+kbd.keycap-enter {
+  width: 60px;
+  height: 48px;
+  padding: 4px 8px 6px 12px;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-radius: 7px 7px 7px 4px;
+  /* 左下を切り欠いた逆L字風の段付きシルエットを表現 */
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    18% 100%,
+    18% 58%,
+    0% 58%
+  );
+  background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+  border-color: #60a5fa;
+  border-bottom-color: #1e3a8a;
+}
+
+kbd.keycap-enter .enter-top-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  align-self: flex-start;
+}
+
+kbd.keycap-enter .enter-return-symbol {
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* ⑤ Spaceキー：専用の「超横長スペースバー形状（120px × 38px・中央突起バー付き）」 */
+kbd.keycap-space {
+  min-width: 120px;
+  height: 38px;
+  padding: 2px 16px 6px 16px;
+  border-radius: 7px;
+}
+
+kbd.keycap-space .space-convex-bar {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 2.5px;
+  border-radius: 999px;
+  background-color: var(--kbd-sub-text);
+  opacity: 0.65;
+}
+
+/* Tab / Backspace（1.4U 中幅キー） */
+kbd.keycap-tab-back {
+  flex-direction: row;
+  gap: 4px;
+  min-width: 62px;
+  height: 42px;
+  padding: 0 9px;
+}
+
+kbd.keycap-tab-back .key-icon-mini {
+  font-size: 0.88rem;
+}
+
+/* マウス操作バッジ */
+kbd.keycap-mouse {
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 999px;
+}
+
+.key-plus {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--text-muted);
+  padding: 0 1px;
+}
+
+.key-seq-arrow {
+  font-size: 0.82rem;
+  font-weight: 900;
+  color: var(--accent-primary);
+  padding: 0 2px;
+}
+
+.key-or-slash {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  padding: 0 2px;
+}
+
+/* ==========================================
+   2. 全件一覧＆スワイプ下部全体表示
    ========================================== */
 .category-section {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .section-header {
@@ -855,8 +1075,12 @@ body.is-swipe-mode .site-header {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
-  padding-bottom: 5px;
-  border-bottom: 2px solid var(--section-color, var(--border-strong));
+  padding: 6px 10px;
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--border-color);
+  border-left: 6px solid var(--section-color, var(--accent-primary));
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
   gap: 8px;
 }
 
@@ -868,12 +1092,12 @@ body.is-swipe-mode .site-header {
 }
 
 .section-badge {
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 800;
   color: #ffffff;
   background-color: var(--section-color, var(--accent-primary));
-  padding: 2px 7px;
-  border-radius: 5px;
+  padding: 2px 8px;
+  border-radius: 6px;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -885,27 +1109,28 @@ body.is-swipe-mode .site-header {
 }
 
 .section-count {
-  font-size: 0.74rem;
-  color: var(--text-muted);
-  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 800;
   flex-shrink: 0;
 }
 
 .full-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
-  gap: 10px;
+  gap: 12px;
 }
 
+/* 一覧カード本体：背景との境界がくっきり分かる2px外枠＋左アクセント太線＋シャドウ */
 .shortcut-card.full-visible-card {
   background-color: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-left: 4px solid var(--card-accent, var(--accent-primary));
+  border: 2px solid var(--card-outer-border);
+  border-left: 6px solid var(--card-accent, var(--accent-primary));
   border-radius: var(--radius-md);
   padding: 12px 13px;
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 8px;
   min-width: 0;
   max-width: 100%;
   box-shadow: var(--shadow-sm);
@@ -913,52 +1138,19 @@ body.is-swipe-mode .site-header {
 
 .shortcut-card.full-visible-card.active-shortcut-card {
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 2px var(--accent-primary-soft), var(--shadow-md);
+  box-shadow: 0 0 0 3px var(--accent-primary-soft), var(--shadow-md);
 }
 
-/* 1段目：題名ヘッダー（一覧カード内：題名と説明の境目を明確化） */
 .card-title-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
   min-width: 0;
-  padding-bottom: 6px;
-  border-bottom: 1.5px solid var(--border-color);
-}
-
-.keys-combo {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 5px;
-  cursor: pointer;
-  padding: 0;
-  border-radius: var(--radius-sm);
-  min-width: 0;
-  width: 100%;
-}
-
-kbd {
-  display: inline-block;
-  padding: 3px 8px;
-  font-family: "Consolas", "Monaco", "Segoe UI Semibold", monospace;
-  font-size: 0.82rem;
-  font-weight: 700;
-  line-height: 1.25;
-  color: var(--kbd-text);
-  background-color: var(--kbd-bg);
-  border: 1.5px solid var(--kbd-border);
-  border-bottom: 3px solid var(--kbd-shadow);
-  border-radius: 6px;
-  max-width: 100%;
-  white-space: nowrap;
-}
-
-.key-plus {
-  font-size: 0.76rem;
-  font-weight: 700;
-  color: var(--text-muted);
+  padding: 5px 9px;
+  background: linear-gradient(90deg, var(--accent-primary-soft), transparent);
+  border-left: 4px solid var(--card-accent, var(--accent-primary));
+  border-radius: 4px var(--radius-sm) var(--radius-sm) 4px;
 }
 
 .card-meta-right {
@@ -968,54 +1160,48 @@ kbd {
   flex-shrink: 0;
 }
 
-.item-func-tag {
-  font-size: 0.66rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border-color);
-  padding: 1px 6px;
-  border-radius: 999px;
-  white-space: nowrap;
-}
-
 .level-badge {
   font-size: 0.66rem;
-  font-weight: 700;
-  padding: 1px 6px;
+  font-weight: 800;
+  padding: 2px 7px;
   border-radius: 999px;
   white-space: nowrap;
 }
 
 .level-3 {
-  background-color: rgba(220, 38, 38, 0.14);
+  background-color: rgba(220, 38, 38, 0.16);
   color: #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.35);
 }
 
 [data-theme="dark"] .level-3 {
-  background-color: rgba(248, 113, 113, 0.24);
-  color: #fca5a5;
+  background-color: rgba(248, 113, 113, 0.25);
+  color: #fecaca;
+  border-color: #f87171;
 }
 
 .level-2 {
-  background-color: rgba(16, 185, 129, 0.14);
+  background-color: rgba(16, 185, 129, 0.16);
   color: #047857;
+  border: 1px solid rgba(16, 185, 129, 0.35);
 }
 
 [data-theme="dark"] .level-2 {
-  background-color: rgba(52, 211, 153, 0.22);
-  color: #6ee7b7;
+  background-color: rgba(52, 211, 153, 0.24);
+  color: #a7f3d0;
+  border-color: #34d399;
 }
 
 .level-1 {
-  background-color: rgba(100, 116, 139, 0.16);
+  background-color: rgba(100, 116, 139, 0.2);
   color: var(--text-secondary);
+  border: 1px solid var(--border-strong);
 }
 
 .fav-btn {
   background: none;
   border: none;
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   line-height: 1;
   color: var(--border-strong);
   cursor: pointer;
@@ -1031,18 +1217,16 @@ kbd {
   font-weight: 800;
   color: var(--text-main);
   line-height: 1.3;
-  border-left: 4px solid var(--card-accent, var(--accent-primary));
-  padding-left: 8px;
 }
 
 .card-desc {
   font-size: 0.84rem;
-  color: var(--text-secondary);
+  color: var(--text-main);
   line-height: 1.48;
   margin: 0;
 }
 
-/* 🧠 覚え方ボックス（「覚え方:」の文字を無くし、横幅100%でコンパクトに表示） */
+/* 🧠 覚え方ボックス */
 .card-memory {
   display: block;
   width: 100%;
@@ -1053,11 +1237,11 @@ kbd {
   border: 1px solid var(--memory-border);
   border-left: 4px solid var(--memory-accent);
   border-radius: var(--radius-sm);
-  padding: 5px 9px;
+  padding: 6px 10px;
   line-height: 1.4;
 }
 
-/* 💡 ワンポイントボックス（横幅100%でコンパクトに表示） */
+/* 💡 ワンポイントボックス */
 .card-tip {
   display: block;
   width: 100%;
@@ -1067,7 +1251,7 @@ kbd {
   border: 1px solid var(--tip-border);
   border-left: 4px solid var(--tip-accent);
   border-radius: var(--radius-sm);
-  padding: 5px 9px;
+  padding: 6px 10px;
   line-height: 1.4;
 }
 
@@ -1076,10 +1260,11 @@ kbd {
    ========================================== */
 .shortcuts-table-wrap {
   background-color: var(--bg-surface);
-  border: 1px solid var(--border-color);
+  border: 2px solid var(--card-outer-border);
   border-radius: var(--radius-md);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  box-shadow: var(--shadow-sm);
 }
 
 .shortcuts-table {
@@ -1092,25 +1277,25 @@ kbd {
 .shortcuts-table th {
   background-color: var(--bg-subtle);
   color: var(--text-secondary);
-  font-weight: 700;
-  padding: 9px 12px;
-  border-bottom: 1px solid var(--border-color);
+  font-weight: 800;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--border-strong);
   white-space: nowrap;
 }
 
 .shortcuts-table td {
-  padding: 9px 12px;
+  padding: 10px 12px;
   border-bottom: 1px solid var(--border-color);
   vertical-align: middle;
 }
 
 .table-keys-cell {
   white-space: nowrap;
-  width: 210px;
+  width: 240px;
 }
 
 .table-title-cell {
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text-main);
   min-width: 170px;
 }
@@ -1122,7 +1307,7 @@ kbd {
 
 .table-memory-line {
   display: inline-block;
-  margin-top: 3px;
+  margin-top: 4px;
   padding: 2px 7px;
   border-radius: 4px;
   background-color: var(--memory-bg);
@@ -1140,24 +1325,24 @@ kbd {
 }
 
 .table-level-cell {
-  width: 70px;
+  width: 75px;
   text-align: center;
 }
 
 .table-fav-cell {
-  width: 40px;
+  width: 42px;
   text-align: center;
 }
 
 /* ==========================================
-   画面下部固定・前後ショートカット移動バー
+   画面下部固定・前後ショートカット＆ランダム移動バー
    ========================================== */
 .mobile-swipe-bar {
   position: fixed;
   bottom: 8px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(calc(100% - 16px), 600px);
+  width: min(calc(100% - 16px), 620px);
   z-index: 900;
   display: flex;
   align-items: center;
@@ -1166,16 +1351,17 @@ kbd {
   background-color: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1.5px solid var(--border-strong);
+  border: 2px solid var(--border-strong);
   border-radius: 999px;
   padding: 5px 8px;
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.18);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.22);
   user-select: none;
 }
 
 [data-theme="dark"] .mobile-swipe-bar {
-  background-color: rgba(30, 41, 59, 0.96);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55);
+  background-color: rgba(15, 23, 42, 0.96);
+  border-color: #64748b;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.65);
 }
 
 .swipe-nav-btn {
@@ -1190,7 +1376,7 @@ kbd {
   border: 1px solid var(--border-color);
   border-radius: 999px;
   cursor: pointer;
-  max-width: 34%;
+  max-width: 30%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1199,6 +1385,26 @@ kbd {
 .swipe-nav-btn:active {
   background-color: var(--accent-primary);
   color: #fff;
+}
+
+.swipe-random-fab {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid #a78bfa;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  color: #ffffff;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(124, 58, 237, 0.35);
+}
+
+.swipe-random-fab:active {
+  transform: scale(0.92);
 }
 
 .swipe-target-name {
@@ -1255,7 +1461,7 @@ kbd {
   text-align: center;
   padding: 40px 16px;
   background-color: var(--bg-surface);
-  border: 1px dashed var(--border-strong);
+  border: 2px dashed var(--border-strong);
   border-radius: var(--radius-md);
 }
 
@@ -1288,7 +1494,7 @@ kbd {
 
 .site-footer {
   background-color: var(--bg-surface);
-  border-top: 1px solid var(--border-color);
+  border-top: 2px solid var(--border-color);
   padding: 18px 0 76px 0;
   font-size: 0.78rem;
   color: var(--text-muted);
@@ -1335,11 +1541,12 @@ kbd {
   right: 16px;
   background-color: #0f172a;
   color: #ffffff;
+  border: 1.5px solid #38bdf8;
   padding: 8px 14px;
   border-radius: var(--radius-md);
   font-size: 0.82rem;
-  font-weight: 600;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
   opacity: 0;
   transform: translateY(10px);
   pointer-events: none;
@@ -1363,7 +1570,7 @@ kbd {
   .header-inner {
     padding-top: 6px;
     padding-bottom: 6px;
-    gap: 5px;
+    gap: 4px;
     flex-wrap: nowrap;
   }
 
@@ -1371,7 +1578,8 @@ kbd {
   .pc-only-btn,
   .status-hint,
   .title-pc,
-  .badge-perfect {
+  .badge-perfect,
+  .btn-label-text {
     display: none !important;
   }
 
@@ -1380,7 +1588,7 @@ kbd {
   }
 
   .site-title {
-    font-size: 0.88rem;
+    font-size: 0.86rem;
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1393,23 +1601,18 @@ kbd {
 
   .action-btn {
     padding: 4px 7px;
-    font-size: 0.71rem;
+    font-size: 0.72rem;
     gap: 3px;
   }
 
   .category-bar-wrap {
-    padding: 4px 0;
+    padding: 5px 0;
   }
 
   .cat-tab {
-    padding: 4px 9px;
-    font-size: 0.74rem;
-    gap: 3px;
-  }
-
-  .cat-tab .cat-count {
-    font-size: 0.62rem;
-    padding: 0 4px;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    gap: 4px;
   }
 
   .header-controls-wrap {
@@ -1417,39 +1620,28 @@ kbd {
   }
 
   .quick-bar {
-    flex-direction: column;
-    align-items: stretch;
     gap: 5px;
   }
 
-  .view-switcher {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-  }
-
   .view-btn {
-    justify-content: center;
-    padding: 4px 6px;
+    padding: 4px 7px;
     font-size: 0.72rem;
   }
 
-  .level-filters {
+  .compact-selects-wrap {
     width: 100%;
+    justify-content: space-between;
   }
 
-  .filter-chip {
-    padding: 3px 8px;
-    font-size: 0.71rem;
+  .select-pill-wrap {
+    flex: 1 1 48%;
+    padding: 3px 6px;
   }
 
-  .subcategory-bar {
-    margin-top: 4px;
-  }
-
-  .subcat-pill {
-    padding: 2px 8px;
-    font-size: 0.71rem;
+  .clean-select {
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.72rem;
   }
 
   .main-content {
@@ -1457,19 +1649,50 @@ kbd {
     padding-bottom: 24px;
   }
 
-  /* 上部固定のスワイプカード（コンパクトで全体が見渡せるサイズ） */
+  /* スマホでのキーキャップサイズ（正方形・Fn横長・Enter/Shift/Spaceの比率を忠実に維持） */
+  kbd.keycap-square {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+
+  kbd.keycap-square.keycap-square-fit {
+    height: 38px;
+    min-width: 38px;
+  }
+
+  kbd.keycap-fn {
+    min-width: 48px;
+    height: 26px;
+  }
+
+  kbd.keycap-shift {
+    min-width: 72px;
+    height: 38px;
+  }
+
+  kbd.keycap-enter {
+    width: 54px;
+    height: 44px;
+  }
+
+  kbd.keycap-space {
+    min-width: 104px;
+    height: 34px;
+  }
+
+  kbd.keycap-tab-back {
+    min-width: 56px;
+    height: 38px;
+  }
+
   .Single-shortcut-card {
     padding: 10px 11px;
     gap: 6px;
   }
 
   .card-keys-row {
-    padding: 5px 8px;
-  }
-
-  .single-keys-combo kbd {
-    font-size: 0.88rem;
-    padding: 3px 8px;
+    padding: 6px 9px;
   }
 
   .single-card-title {
@@ -1481,7 +1704,7 @@ kbd {
   }
 
   .card-desc-box {
-    padding: 5px 8px;
+    padding: 6px 9px;
   }
 
   .single-card-desc,
@@ -1491,17 +1714,17 @@ kbd {
 
   .card-memory {
     font-size: 0.77rem;
-    padding: 4px 8px;
+    padding: 5px 8px;
   }
 
   .card-tip {
     font-size: 0.75rem;
-    padding: 4px 8px;
+    padding: 5px 8px;
   }
 
   .full-cards-grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: 8px;
+    gap: 10px;
   }
 
   .toast {
