@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows PC便利機能・マウス操作・裏ワザ120選 | ショートカット以外の神小技集</title>
+  <meta name="description" content="ショートカットキー以外のWindows 11便利設定、マウス・タッチパッドの裏ワザ、エクスプローラー整理術、Excel・Word・パワポ・ブラウザ・Outlook・Teamsの時短小技120選を網羅した独立ガイドページ。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 上部固定ヘッダー（ショートカット辞典との相互切替ナビ付き） -->
+  <header class="site-header">
+    <!-- ページ切り替えトップバー（ショートカット510選 ⇔ PC便利小技120選） -->
+    <div class="page-switch-bar">
+      <div class="container page-switch-inner">
+        <a href="index.html" class="page-switch-link">
+          <span>⌨️</span> ショートカット辞典（510選）
+        </a>
+        <a href="tips.html" class="page-switch-link active" aria-current="page">
+          <span>💡</span> PC便利機能・操作・小技集（120選）
+        </a>
+      </div>
+    </div>
+
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">💡</span>
+        <div class="brand-text-wrap">
+          <h1 class="site-title">
+            <span class="title-pc">PC便利機能・操作・裏ワザ辞典</span>
+            <span class="title-mobile">PC便利小技辞典</span>
+            <span class="badge-perfect">120選</span>
+          </h1>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button type="button" id="randomHeaderBtn" class="action-btn random-header-btn" aria-pressed="false" title="全120種の便利小技をランダム順で出題・表示します">
+          <span>🎲</span> <span class="random-btn-text">ランダム</span>
+        </button>
+        <button type="button" id="favOnlyHeaderBtn" class="action-btn fav-header-btn" aria-pressed="false" title="登録したお気に入りの小技だけを開きます">
+          <span>★</span> <span id="favHeaderBtnText">お気に入り</span>
+          <span id="favCountBadge" class="fav-count">0</span>
+        </button>
+        <button type="button" id="toggleSearchPanelBtn" class="action-btn" aria-expanded="false" title="キーワード検索ボックスを開く">
+          <span>🔍</span> <span class="btn-label-text">検索</span>
+        </button>
+        <button type="button" id="printBtn" class="action-btn pc-only-btn" title="現在表示中の小技一覧を印刷・PDF保存します">
+          <span>🖨️</span> 印刷
+        </button>
+        <button type="button" id="themeToggleBtn" class="action-btn icon-only" aria-label="テーマ切り替え" title="ダークモード / ライトモード切り替え">
+          <span id="themeIcon">🌙</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- カテゴリ選択タブ -->
+    <div class="category-bar-wrap">
+      <div class="container">
+        <nav class="category-nav" aria-label="カテゴリ選択">
+          <div class="category-tabs" id="categoryTabs" role="tablist">
+            <!-- JSで動的生成 -->
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- 表示モード切替＆スッキリ1行のジャンル・重要度セレクトバー -->
+    <div class="header-controls-wrap">
+      <div class="container">
+        <div class="quick-bar">
+          <div class="view-switcher" role="group" aria-label="表示形式の切り替え">
+            <button type="button" class="view-btn active" data-view="swipe" title="左右スワイプで次の小技へ1つずつ進む表示">
+              <span>👆</span> スワイプ
+            </button>
+            <button type="button" class="view-btn" data-view="card" title="全小技をジャンル別に全体表示">
+              <span>📑</span> 一覧
+            </button>
+            <button type="button" class="view-btn" data-view="table" title="一覧早見表（テーブル表示）">
+              <span>📋</span> 早見表
+            </button>
+          </div>
+
+          <div class="compact-selects-wrap">
+            <label class="select-pill-wrap" id="subcatSelectWrap" title="ジャンル（サブカテゴリ）で絞り込み">
+              <span class="select-pill-icon">📂</span>
+              <select id="subcatSelect" class="clean-select" aria-label="ジャンル選択">
+                <option value="all">すべてのジャンル</option>
+              </select>
+            </label>
+
+            <label class="select-pill-wrap" title="重要度で絞り込み">
+              <span class="select-pill-icon">⭐</span>
+              <select id="levelSelect" class="clean-select" aria-label="重要度フィルタ">
+                <option value="all">重要度: すべて</option>
+                <option value="3">★★★ 必須ワザのみ</option>
+                <option value="2">★★ 便利ワザのみ</option>
+                <option value="1">★ 裏ワザのみ</option>
+                <option value="fav">★ お気に入りのみ</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <!-- 検索バー（🔍検索ボタンで開閉） -->
+        <div id="controlsBar" class="controls-bar hidden" aria-label="検索">
+          <div class="search-wrapper">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input
+              type="search"
+              id="searchInput"
+              class="search-input"
+              placeholder="全120件の小技から検索（例: マウス, オートフィル, 誤送信, 文字起こし, 拡張子）"
+              autocomplete="off"
+            >
+            <button type="button" id="clearSearchBtn" class="clear-search-btn hidden" aria-label="検索クリア">✕</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="container main-content">
+    <!-- お気に入りモード表示中バナー -->
+    <div id="favModeBanner" class="fav-mode-banner hidden">
+      <div class="fav-banner-left">
+        <span>★</span>
+        <strong>お気に入りの小技だけ表示中</strong>
+        <span id="favBannerCount" class="fav-banner-count"></span>
+      </div>
+      <button type="button" id="exitFavModeBtn" class="exit-fav-btn">✕ すべて表示に戻る</button>
+    </div>
+
+    <!-- ランダム表示モードバナー -->
+    <div id="randomModeBanner" class="random-mode-banner hidden">
+      <div class="random-banner-left">
+        <span>🎲</span>
+        <strong>全120種からランダム順で表示中</strong>
+      </div>
+      <div class="random-banner-actions">
+        <button type="button" id="nextRandomBtn" class="next-random-btn">🎲 シャッフルし直す</button>
+        <button type="button" id="exitRandomModeBtn" class="exit-random-btn">✕ 通常順に戻す</button>
+      </div>
+    </div>
+
+    <!-- ステータスバー -->
+    <div class="status-bar" id="statusBar">
+      <div class="result-count">
+        <span id="activeCategoryLabel" class="active-cat-label"></span>
+        全 <strong id="resultCountNum">0</strong> 件
+        <span id="activeFilterSummary" class="filter-summary"></span>
+      </div>
+      <div class="status-hint">
+        💡 左右スワイプで次の小技へ移動・やり方ボックスタップでコピー
+      </div>
+    </div>
+
+    <!-- 小技カード表示コンテナ -->
+    <div id="tipsContainer" class="shortcuts-container">
+      <!-- JSで動的生成 -->
+    </div>
+  </main>
+
+  <!-- 画面下部固定・左右スワイプ「前の小技 / ランダム / 次の小技」移動バー -->
+  <div class="mobile-swipe-bar" id="mobileSwipeBar" aria-label="前後の小技へ移動">
+    <button type="button" class="swipe-nav-btn prev" id="swipePrevBtn" aria-label="前の小技へ">
+      <span class="swipe-arrow">◀</span>
+      <span class="swipe-target-name" id="swipePrevName">前へ</span>
+    </button>
+    <div class="swipe-center-info">
+      <span class="swipe-hint-text" id="swipeHintText">👆 左右スワイプで次の小技へ</span>
+      <div class="swipe-progress-track" aria-hidden="true">
+        <div class="swipe-progress-fill" id="swipeProgressFill"></div>
+      </div>
+    </div>
+    <button type="button" class="swipe-random-fab" id="swipeRandomFabBtn" title="全120種の小技からランダムに1つ出す">
+      🎲
+    </button>
+    <button type="button" class="swipe-nav-btn next" id="swipeNextBtn" aria-label="次の小技へ">
+      <span class="swipe-target-name" id="swipeNextName">次へ</span>
+      <span class="swipe-arrow">▶</span>
+    </button>
+  </div>
+
+  <!-- フッター -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-title">💡 Windows PC便利機能・マウス操作・裏ワザ辞典（全120種・10カテゴリ完全網羅版）</p>
+        <p class="footer-note">
+          <a href="index.html" style="color: var(--accent-primary); font-weight: 800;">⌨️ ショートカットキー辞典（全510種）はこちら</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- コピー通知トースト -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="tips-data.js"></script>
+  <script src="tips-app.js"></script>
+</body>
+</html>

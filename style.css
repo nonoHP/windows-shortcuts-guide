@@ -142,6 +142,84 @@ body {
 }
 
 /* ==========================================
+   2ページ相互切替ナビバー（ショートカット510選 ⇔ PC便利小技120選）
+   ========================================== */
+.page-switch-bar {
+  background: linear-gradient(90deg, #0f172a, #1e1b4b);
+  border-bottom: 1px solid #334155;
+  padding: 5px 0;
+}
+
+.page-switch-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.page-switch-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #cbd5e1;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.15s ease;
+}
+
+.page-switch-link:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.page-switch-link.active {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  border-color: #93c5fd;
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.4);
+}
+
+/* PC便利小技ページの「👆 やり方・場所」ボックス */
+.howto-action-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  background-color: var(--keyplate-bg);
+  border: 1.5px solid var(--keyplate-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 11px;
+  cursor: pointer;
+}
+
+.howto-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.howto-text {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+/* ==========================================
    ヘッダー＆スッキリ整理されたタブ・操作バー
    ========================================== */
 .site-header {
@@ -1565,6 +1643,25 @@ kbd.keycap-mouse {
 @media (max-width: 768px) {
   .container {
     padding: 0 10px;
+  }
+
+  .page-switch-bar {
+    padding: 4px 0;
+  }
+
+  .page-switch-link {
+    padding: 4px 6px;
+    font-size: 0.71rem;
+    gap: 3px;
+  }
+
+  .howto-action-box {
+    padding: 6px 9px;
+    gap: 6px;
+  }
+
+  .howto-text {
+    font-size: 0.8rem;
   }
 
   .header-inner {
