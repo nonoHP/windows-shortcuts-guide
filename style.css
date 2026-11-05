@@ -4,22 +4,32 @@
   --bg-subtle: #f8fafc;
   --bg-hover: #e2e8f0;
   --text-main: #0f172a;
-  --text-secondary: #334155;
+  --text-secondary: #1e293b;
   --text-muted: #64748b;
-  --border-color: #e2e8f0;
-  --border-strong: #cbd5e1;
+  --border-color: #cbd5e1;
+  --border-strong: #94a3b8;
 
   --accent-primary: #2563eb;
   --accent-primary-soft: #eff6ff;
+  --accent-text: #1d4ed8;
 
   --kbd-bg: #ffffff;
   --kbd-border: #cbd5e1;
   --kbd-shadow: #94a3b8;
   --kbd-text: #0f172a;
 
+  /* 覚え方ボックス（ライトモード：淡いグリーン背景＋くっきり濃い黒文字） */
+  --memory-bg: #f0fdf4;
+  --memory-border: #86efac;
+  --memory-accent: #16a34a;
+  --memory-label: #15803d;
+  --memory-text: #0f172a;
+
+  /* ワンポイントボックス（ライトモード：淡いクリーム背景＋くっきり濃い黒文字） */
   --tip-bg: #fffbeb;
-  --tip-border: #fde68a;
-  --tip-text: #92400e;
+  --tip-border: #fcd34d;
+  --tip-accent: #f59e0b;
+  --tip-text: #0f172a;
 
   --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
   --shadow-md: 0 6px 18px rgba(15, 23, 42, 0.09);
@@ -31,28 +41,38 @@
 [data-theme="dark"] {
   --bg-body: #0b1120;
   --bg-surface: #1e293b;
-  --bg-subtle: #152033;
+  --bg-subtle: #0f172a;
   --bg-hover: #334155;
-  --text-main: #f8fafc;
-  --text-secondary: #cbd5e1;
+  --text-main: #ffffff;
+  --text-secondary: #e2e8f0;
   --text-muted: #94a3b8;
   --border-color: #334155;
   --border-strong: #475569;
 
   --accent-primary: #3b82f6;
-  --accent-primary-soft: rgba(59, 130, 246, 0.16);
+  --accent-primary-soft: rgba(59, 130, 246, 0.2);
+  --accent-text: #93c5fd;
 
   --kbd-bg: #0f172a;
-  --kbd-border: #475569;
+  --kbd-border: #64748b;
   --kbd-shadow: #020617;
-  --kbd-text: #f8fafc;
+  --kbd-text: #ffffff;
 
-  --tip-bg: rgba(245, 158, 11, 0.12);
-  --tip-border: rgba(245, 158, 11, 0.3);
-  --tip-text: #fcd34d;
+  /* 覚え方ボックス（ダークモード：濃紺背景＋エメラルド枠＋くっきり真っ白文字） */
+  --memory-bg: #0f172a;
+  --memory-border: #10b981;
+  --memory-accent: #34d399;
+  --memory-label: #6ee7b7;
+  --memory-text: #ffffff;
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 22px rgba(0, 0, 0, 0.45);
+  /* ワンポイントボックス（ダークモード：濃紺背景＋ゴールド枠＋くっきり真っ白文字） */
+  --tip-bg: #0f172a;
+  --tip-border: #f59e0b;
+  --tip-accent: #fbbf24;
+  --tip-text: #ffffff;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 22px rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -61,8 +81,8 @@
   padding: 0;
 }
 
-html,
-body {
+html {
+  scroll-behavior: smooth;
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
@@ -70,6 +90,9 @@ body {
 }
 
 body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Meiryo", sans-serif;
   background-color: var(--bg-body);
   color: var(--text-main);
@@ -77,6 +100,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  -webkit-overflow-scrolling: touch;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -181,17 +205,16 @@ body {
   border-color: var(--accent-primary);
 }
 
-/* お気に入りだけ開く専用ヘッダーボタン */
 .fav-header-btn {
-  background-color: rgba(234, 179, 8, 0.14);
-  border-color: rgba(234, 179, 8, 0.45);
-  color: #b45309;
+  background-color: rgba(234, 179, 8, 0.16);
+  border-color: #eab308;
+  color: #92400e;
 }
 
 [data-theme="dark"] .fav-header-btn {
-  background-color: rgba(234, 179, 8, 0.18);
-  border-color: rgba(234, 179, 8, 0.45);
-  color: #fde047;
+  background-color: rgba(234, 179, 8, 0.2);
+  border-color: #facc15;
+  color: #fef08a;
 }
 
 .fav-header-btn.active {
@@ -209,7 +232,7 @@ body {
   display: none;
 }
 
-/* カテゴリバー（横スクロール対応） */
+/* カテゴリバー（滑らかな横スクロール） */
 .category-bar-wrap {
   background-color: var(--bg-subtle);
   border-top: 1px solid var(--border-color);
@@ -222,6 +245,7 @@ body {
   gap: 6px;
   overflow-x: auto;
   scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -265,7 +289,7 @@ body {
 
 .cat-tab .cat-count {
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 0 6px;
   border-radius: 999px;
   background-color: var(--bg-subtle);
@@ -342,7 +366,7 @@ body {
 /* 6大法則パネル */
 .memory-rules-box {
   background-color: var(--bg-surface);
-  border: 1.5px solid var(--accent-primary);
+  border: 2px solid var(--memory-accent);
   border-radius: var(--radius-md);
   padding: 12px 14px;
   margin-bottom: 12px;
@@ -355,13 +379,14 @@ body {
   justify-content: space-between;
   gap: 8px;
   font-size: 0.88rem;
+  color: var(--text-main);
   margin-bottom: 10px;
 }
 
 .panel-close-btn {
   background: var(--bg-subtle);
   border: 1px solid var(--border-color);
-  color: var(--text-secondary);
+  color: var(--text-main);
   font-size: 0.75rem;
   font-weight: 700;
   padding: 3px 9px;
@@ -376,22 +401,23 @@ body {
 }
 
 .memory-rule-card {
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border-color);
+  background-color: var(--memory-bg);
+  border: 1px solid var(--memory-border);
+  border-left: 4px solid var(--memory-accent);
   border-radius: var(--radius-sm);
   padding: 9px 11px;
 }
 
 .memory-rule-title {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--accent-primary);
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: var(--memory-label);
   margin-bottom: 3px;
 }
 
 .memory-rule-desc {
-  font-size: 0.76rem;
-  color: var(--text-secondary);
+  font-size: 0.78rem;
+  color: var(--memory-text);
 }
 
 /* 検索バー */
@@ -441,7 +467,7 @@ body {
   padding: 2px 6px;
 }
 
-/* クイックバー（表示切替＋重要度フィルタ） */
+/* クイックバー */
 .quick-bar {
   display: flex;
   align-items: center;
@@ -485,6 +511,7 @@ body {
   align-items: center;
   gap: 5px;
   overflow-x: auto;
+  scroll-behavior: smooth;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
@@ -526,11 +553,11 @@ body {
   padding: 0 5px;
   border-radius: 999px;
   background-color: rgba(234, 179, 8, 0.22);
-  color: #b45309;
+  color: #92400e;
 }
 
 [data-theme="dark"] .fav-count {
-  color: #fde047;
+  color: #fef08a;
 }
 
 .fav-header-btn.active .fav-count,
@@ -545,6 +572,7 @@ body {
   align-items: center;
   gap: 5px;
   overflow-x: auto;
+  scroll-behavior: smooth;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   margin-bottom: 8px;
@@ -576,8 +604,8 @@ body {
 }
 
 .subcat-pill.active {
-  background-color: var(--accent-primary-soft);
-  color: var(--accent-primary);
+  background-color: var(--accent-primary);
+  color: #ffffff;
   border-color: var(--accent-primary);
   font-weight: 700;
 }
@@ -588,7 +616,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  background: linear-gradient(90deg, rgba(234, 179, 8, 0.18), rgba(245, 158, 11, 0.1));
+  background: linear-gradient(90deg, rgba(234, 179, 8, 0.2), rgba(245, 158, 11, 0.12));
   border: 1.5px solid #eab308;
   border-radius: var(--radius-md);
   padding: 8px 12px;
@@ -657,14 +685,37 @@ body {
 }
 
 /* ==========================================
-   1. スワイプ表示モード（1枚ずつ全情報を大きく表示）
+   1. 滑らかな横スクロールスナップ・スワイプ表示モード
    ========================================== */
 .swipe-single-stage {
   max-width: 720px;
   margin: 0 auto;
 }
 
+/* 指に追従して滑らかにスクロール＆スナップする横トラック */
+.swipe-carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  gap: 14px;
+  padding: 2px 0 8px 0;
+  scrollbar-width: none;
+}
+
+.swipe-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
 .Single-shortcut-card {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
   background-color: var(--bg-surface);
   border: 2px solid var(--border-color);
   border-top: 6px solid var(--card-accent, var(--accent-primary));
@@ -674,7 +725,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  user-select: none;
 }
 
 .single-card-header {
@@ -695,7 +745,7 @@ body {
 .single-genre-badge {
   font-size: 0.76rem;
   font-weight: 700;
-  color: var(--text-secondary);
+  color: var(--text-main);
   background-color: var(--bg-subtle);
   border: 1px solid var(--border-color);
   padding: 2px 9px;
@@ -705,7 +755,7 @@ body {
 .single-card-counter {
   font-size: 0.84rem;
   font-weight: 700;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   background-color: var(--bg-subtle);
   padding: 3px 10px;
   border-radius: 999px;
@@ -713,8 +763,8 @@ body {
 }
 
 .single-card-counter strong {
-  color: var(--accent-primary);
-  font-size: 0.96rem;
+  color: var(--text-main);
+  font-size: 0.98rem;
 }
 
 .single-card-keys-area {
@@ -761,19 +811,19 @@ body {
 }
 
 .single-card-desc {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
+  font-size: 0.96rem;
+  color: var(--text-main);
   line-height: 1.6;
 }
 
 .single-card-memory {
-  font-size: 0.9rem !important;
-  padding: 10px 12px !important;
+  font-size: 0.94rem !important;
+  padding: 11px 13px !important;
 }
 
 .single-card-tip {
-  font-size: 0.85rem !important;
-  padding: 10px 12px !important;
+  font-size: 0.88rem !important;
+  padding: 10px 13px !important;
 }
 
 .single-card-footer {
@@ -785,7 +835,7 @@ body {
   padding: 10px 14px;
   font-size: 0.88rem;
   font-weight: 700;
-  color: var(--text-secondary);
+  color: var(--text-main);
   background-color: var(--bg-subtle);
   border: 1.5px solid var(--border-strong);
   border-radius: var(--radius-md);
@@ -798,13 +848,13 @@ body {
 }
 
 .single-fav-btn.is-fav {
-  background-color: rgba(234, 179, 8, 0.15);
+  background-color: rgba(234, 179, 8, 0.2);
   border-color: #eab308;
-  color: #b45309;
+  color: #92400e;
 }
 
 [data-theme="dark"] .single-fav-btn.is-fav {
-  color: #fde047;
+  color: #fef08a;
 }
 
 /* カード直下の「前のショートカット / 次のショートカット」ボタン */
@@ -812,7 +862,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .step-card-btn {
@@ -843,11 +893,11 @@ body {
 .step-btn-dir {
   font-size: 0.84rem;
   font-weight: 800;
-  color: var(--accent-primary);
+  color: var(--text-main);
 }
 
 .step-btn-sub {
-  font-size: 0.74rem;
+  font-size: 0.75rem;
   color: var(--text-secondary);
   white-space: nowrap;
   overflow: hidden;
@@ -897,6 +947,7 @@ body {
   padding: 8px 12px;
   background-color: var(--bg-subtle);
   font-size: 0.82rem;
+  color: var(--text-main);
   border-left: 4px solid var(--section-color, var(--accent-primary));
 }
 
@@ -930,7 +981,7 @@ body {
 }
 
 .dir-num {
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: var(--text-muted);
   min-width: 22px;
@@ -940,9 +991,9 @@ body {
   font-family: "Consolas", "Monaco", monospace;
   font-size: 0.76rem;
   font-weight: 700;
-  color: var(--accent-primary);
-  background-color: var(--bg-subtle);
-  border: 1px solid var(--border-color);
+  color: var(--kbd-text);
+  background-color: var(--kbd-bg);
+  border: 1px solid var(--kbd-border);
   padding: 1px 6px;
   border-radius: 4px;
   flex-shrink: 0;
@@ -1062,8 +1113,8 @@ kbd {
   line-height: 1.25;
   color: var(--kbd-text);
   background-color: var(--kbd-bg);
-  border: 1px solid var(--kbd-border);
-  border-bottom: 2px solid var(--kbd-shadow);
+  border: 1.5px solid var(--kbd-border);
+  border-bottom: 3px solid var(--kbd-shadow);
   border-radius: 6px;
   max-width: 100%;
   white-space: normal;
@@ -1085,8 +1136,8 @@ kbd {
 
 .item-func-tag {
   font-size: 0.68rem;
-  font-weight: 600;
-  color: var(--text-muted);
+  font-weight: 700;
+  color: var(--text-secondary);
   background-color: var(--bg-subtle);
   border: 1px solid var(--border-color);
   padding: 1px 6px;
@@ -1103,28 +1154,28 @@ kbd {
 }
 
 .level-3 {
-  background-color: rgba(220, 38, 38, 0.12);
+  background-color: rgba(220, 38, 38, 0.14);
   color: #dc2626;
 }
 
 [data-theme="dark"] .level-3 {
-  background-color: rgba(248, 113, 113, 0.2);
-  color: #f87171;
+  background-color: rgba(248, 113, 113, 0.24);
+  color: #fca5a5;
 }
 
 .level-2 {
-  background-color: rgba(37, 99, 235, 0.12);
-  color: #2563eb;
+  background-color: rgba(16, 185, 129, 0.14);
+  color: #047857;
 }
 
 [data-theme="dark"] .level-2 {
-  background-color: rgba(96, 165, 250, 0.18);
-  color: #60a5fa;
+  background-color: rgba(52, 211, 153, 0.22);
+  color: #6ee7b7;
 }
 
 .level-1 {
-  background-color: rgba(100, 116, 139, 0.14);
-  color: #64748b;
+  background-color: rgba(100, 116, 139, 0.16);
+  color: var(--text-secondary);
 }
 
 .fav-btn {
@@ -1148,42 +1199,58 @@ kbd {
 }
 
 .card-desc {
-  font-size: 0.84rem;
-  color: var(--text-secondary);
+  font-size: 0.86rem;
+  color: var(--text-main);
 }
 
+/* 🧠 覚え方ボックス（青文字を廃止し、くっきり見やすい黒/白文字＋グリーンアクセントへ改善） */
 .card-memory {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--accent-primary);
-  background-color: var(--accent-primary-soft);
-  border: 1px solid rgba(37, 99, 235, 0.2);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--memory-text);
+  background-color: var(--memory-bg);
+  border: 1.5px solid var(--memory-border);
+  border-left: 5px solid var(--memory-accent);
   border-radius: var(--radius-sm);
-  padding: 6px 10px;
+  padding: 8px 11px;
   display: flex;
   align-items: flex-start;
   gap: 6px;
+  line-height: 1.5;
 }
 
 .card-memory-label {
   flex-shrink: 0;
+  font-weight: 800;
+  color: var(--memory-label);
+}
+
+.card-memory-text {
+  color: var(--memory-text);
   font-weight: 700;
 }
 
+/* 💡 ワンポイントボックス（くっきり見やすい黒/白文字＋ゴールドアクセント） */
 .card-tip {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: var(--tip-text);
   background-color: var(--tip-bg);
-  border: 1px solid var(--tip-border);
+  border: 1.5px solid var(--tip-border);
+  border-left: 5px solid var(--tip-accent);
   border-radius: var(--radius-sm);
-  padding: 6px 10px;
+  padding: 7px 11px;
   display: flex;
   align-items: flex-start;
   gap: 6px;
+  line-height: 1.5;
 }
 
 .card-tip-icon {
   flex-shrink: 0;
+}
+
+.card-tip-text {
+  color: var(--tip-text);
 }
 
 /* ==========================================
@@ -1194,6 +1261,7 @@ kbd {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .shortcuts-table {
@@ -1230,16 +1298,27 @@ kbd {
 }
 
 .table-desc-cell {
-  color: var(--text-secondary);
-  font-size: 0.8rem;
+  color: var(--text-main);
+  font-size: 0.82rem;
 }
 
 .table-memory-line {
   display: inline-block;
-  margin-top: 2px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--accent-primary);
+  margin-top: 4px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: var(--memory-bg);
+  border-left: 3px solid var(--memory-accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--memory-text);
+}
+
+.table-tip-line {
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 0.76rem;
+  color: var(--text-secondary);
 }
 
 .table-level-cell {
@@ -1266,7 +1345,7 @@ kbd {
   align-items: center;
   justify-content: space-between;
   gap: 6px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1.5px solid var(--border-strong);
@@ -1277,8 +1356,8 @@ kbd {
 }
 
 [data-theme="dark"] .mobile-swipe-bar {
-  background-color: rgba(30, 41, 59, 0.95);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+  background-color: rgba(30, 41, 59, 0.96);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55);
 }
 
 .swipe-nav-btn {
@@ -1312,7 +1391,7 @@ kbd {
 
 .swipe-arrow {
   font-size: 0.68rem;
-  color: var(--accent-primary);
+  color: var(--memory-accent);
   flex-shrink: 0;
 }
 
@@ -1327,7 +1406,7 @@ kbd {
 }
 
 .swipe-hint-text {
-  font-size: 0.72rem;
+  font-size: 0.73rem;
   font-weight: 800;
   color: var(--text-main);
   white-space: nowrap;
@@ -1338,7 +1417,7 @@ kbd {
 
 .swipe-progress-track {
   width: 80%;
-  height: 4px;
+  height: 5px;
   background-color: var(--border-color);
   border-radius: 999px;
   overflow: hidden;
@@ -1347,72 +1426,8 @@ kbd {
 .swipe-progress-fill {
   height: 100%;
   width: 0%;
-  background-color: var(--accent-primary);
+  background-color: var(--memory-accent);
   transition: width 0.2s ease;
-}
-
-/* スワイプ中の画面端プレビューバッジ */
-.swipe-preview-indicator {
-  position: fixed;
-  top: 45%;
-  transform: translateY(-50%);
-  z-index: 950;
-  background-color: rgba(15, 23, 42, 0.92);
-  color: #ffffff;
-  font-size: 0.82rem;
-  font-weight: 700;
-  padding: 8px 14px;
-  border-radius: 999px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  pointer-events: none;
-  max-width: 88vw;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.swipe-preview-indicator.left-side {
-  left: 12px;
-}
-
-.swipe-preview-indicator.right-side {
-  right: 12px;
-}
-
-.swipe-preview-indicator.ready {
-  background-color: var(--accent-primary);
-  transform: translateY(-50%) scale(1.04);
-}
-
-/* スライドアニメーション */
-@keyframes slideInFromRight {
-  0% {
-    opacity: 0.3;
-    transform: translateX(34px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    opacity: 0.3;
-    transform: translateX(-34px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.swipe-slide-from-right {
-  animation: slideInFromRight 0.22s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.swipe-slide-from-left {
-  animation: slideInFromLeft 0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ==========================================
@@ -1577,7 +1592,6 @@ kbd {
     padding-bottom: 24px;
   }
 
-  /* スマホでは検索バーは🔍ボタンタップ時のみ展開 */
   .controls-bar {
     display: none;
     margin-bottom: 8px;
@@ -1617,31 +1631,30 @@ kbd {
     margin-bottom: 6px;
   }
 
-  /* 1枚表示カードのスマホ最適化 */
   .Single-shortcut-card {
-    padding: 14px 13px;
+    padding: 15px 14px;
     gap: 11px;
   }
 
   .single-keys-combo kbd {
-    font-size: 1.02rem;
+    font-size: 1.04rem;
     padding: 6px 11px;
   }
 
   .single-card-title {
-    font-size: 1.1rem;
+    font-size: 1.12rem;
   }
 
   .single-card-desc {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
   }
 
   .single-card-memory {
-    font-size: 0.83rem !important;
+    font-size: 0.86rem !important;
   }
 
   .single-card-tip {
-    font-size: 0.8rem !important;
+    font-size: 0.82rem !important;
   }
 
   .step-card-btn {
@@ -1685,7 +1698,6 @@ kbd {
   .quick-bar,
   .subcategory-bar,
   .mobile-swipe-bar,
-  .swipe-preview-indicator,
   .single-step-controls,
   .swipe-guide-note,
   .status-hint,
