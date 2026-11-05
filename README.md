@@ -1,4 +1,4 @@
-# ⌨️ Windows ショートカットキー パーフェクトガイド（全13カテゴリ・510種・ジャンル別＆キー分類順）
+# ⌨️ Windows ショートカットキー パーフェクトガイド（全13カテゴリ・550種・キーグループ別＆アルファベット順）
 
 Microsoft公式サポート（Windows 11 / エクスプローラー / Excel / Word / PowerPoint / Outlook / OneNote / Teams / Edge / VS Code / Terminal）、Adobe公式ヘルプ（Acrobat / Reader）、Google公式ヘルプ（Chrome / Gmail / スプレッドシート / ドキュメント）、Zoom公式サポート、および国内の主要PC解説サイト計20サイトの情報を徹底調査し、**「ジャンル別 × キー分類順」**かつ**「全件に覚え方（語源・ゴロ合わせ）付き」**で体系化したショートカットキー紹介サイトです。
 
@@ -20,18 +20,18 @@ Microsoft公式サポート（Windows 11 / エクスプローラー / Excel / Wo
 9. **⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー**: `Ctrl + Alt + 1〜4 / A〜Z` → `Alt + Shift + D / F / T / 矢印 / 記号`
 10. **⑩ Win ＋ キー（Windowsキー）**: `Win（単独）` → `Win + 1〜9` → `Win + A〜Z` → `Win + 記号・特殊キー・矢印` → `Win + Shift / Ctrl / Alt`
 
-## ✨ 収録カテゴリ（全13カテゴリ・510種）
+## ✨ 収録カテゴリ（全13カテゴリ・550種）
 
-- 🪟 **Windows 11（61種）**
+- 🪟 **Windows 11（59種）**
 - 📁 **エクスプローラー（34種）**
-- 📊 **Excel（83種）**
-- 📝 **Word（55種）**
-- 📽️ **PowerPoint（32種）**
-- 📧 **Outlook（35種）**
-- 📓 **OneNote（26種）**
+- 📊 **Excel（123種：Alt順押し・旧アクセラレータ・非リボン隠しワザ大幅強化）**
+- 📝 **Word（60種：スパイク・幽霊移動・クローバー印等の隠しコマンド収録）**
+- 📽️ **PowerPoint（35種：図形等間隔整列・スライドショー隠しコマンド収録）**
+- 📧 **Outlook（30種）**
+- 📓 **OneNote（24種）**
 - 💬 **Teams・Zoom / Web会議（23種）**
 - ☁️ **Google系ツール / Gmail・スプレッドシート・ドキュメント（22種）**
-- 💻 **VS Code・開発・ターミナル（24種）**
+- 💻 **VS Code・開発・ターミナル（26種）**
 - 📄 **Adobe PDF / Acrobat（25種）**
-- 🌐 **ブラウザ / Chrome・Edge・YouTube（48種）**
+- 🌐 **ブラウザ / Chrome・Edge・YouTube（47種）**
 - ⌨️ **共通・文字入力 / IME（42種）**
