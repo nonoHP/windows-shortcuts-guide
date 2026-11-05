@@ -206,7 +206,7 @@
       favOnlyHeaderBtn.setAttribute('aria-pressed', String(isFavMode));
     }
     if (favHeaderBtnTextEl) {
-      favHeaderBtnTextEl.textContent = isFavMode ? 'お気に入り表示中' : 'お気に入りだけ開く';
+      favHeaderBtnTextEl.textContent = 'お気に入り';
     }
     if (favModeBannerEl) {
       favModeBannerEl.classList.toggle('hidden', !isFavMode);

@@ -13,8 +13,12 @@
     <div class="container header-inner">
       <div class="brand">
         <span class="brand-icon" aria-hidden="true">⌨️</span>
-        <div>
-          <h1 class="site-title">Windows ショートカット辞典 <span class="badge-perfect">357選</span></h1>
+        <div class="brand-text-wrap">
+          <h1 class="site-title">
+            <span class="title-pc">Windows ショートカット辞典</span>
+            <span class="title-mobile">ショートカット辞典</span>
+            <span class="badge-perfect">357選</span>
+          </h1>
           <p class="site-subtitle">全10カテゴリ・ジャンル別＆キー分類順・覚え方付き完全網羅ガイド</p>
         </div>
       </div>
@@ -22,10 +26,10 @@
       <div class="header-actions">
         <!-- お気に入りだけ開く専用ボタン（常時表示） -->
         <button type="button" id="favOnlyHeaderBtn" class="action-btn fav-header-btn" aria-pressed="false" title="登録したお気に入りのショートカットだけを開きます">
-          <span>★</span> <span id="favHeaderBtnText">お気に入りだけ開く</span>
+          <span>★</span> <span id="favHeaderBtnText">お気に入り</span>
           <span id="favCountBadge" class="fav-count">0</span>
         </button>
-        <button type="button" id="toggleSearchPanelBtn" class="action-btn mobile-search-toggle" aria-expanded="false" title="検索・詳細フィルタを開く">
+        <button type="button" id="toggleSearchPanelBtn" class="action-btn mobile-search-toggle" aria-expanded="false" title="検索を開く">
           <span>🔍</span> <span class="btn-label-text">検索</span>
         </button>
         <button type="button" id="toggleRulesBtn" class="action-btn" aria-expanded="false" title="ショートカットキーの覚え方・6大法則を見る">
