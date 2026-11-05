@@ -669,7 +669,7 @@
 
     const upper = mainText.toUpperCase();
 
-    // 1. Enterキー（専用の逆L字エンター形状）
+    // 1. Enterキー（専用の段付きエンター形状・枠線が欠けない立体デザイン）
     if (upper === 'ENTER') {
       return `
         <kbd class="keycap keycap-enter" title="Enterキー">
@@ -703,9 +703,14 @@
     // 4. ファンクションキー・最上段キー（F1〜F12, Fn, Esc, Delete, Insert, PrintScreen, Pause, 半角/全角）→ 横長形状
     if (
       /^F([1-9]|1[0-2])$/.test(upper) ||
-      ['FN', 'ESC', 'DELETE', 'DEL', 'INSERT', 'INS', 'PRINTSCREEN', 'PAUSE', '半角/全角'].includes(upper)
+      ['FN', 'ESC', 'DELETE', 'DEL', 'INSERT', 'INS', 'PRINTSCREEN', 'PAUSE', '半角/全角', 'HOME', 'END', 'PAGEUP', 'PAGEDOWN'].includes(upper)
     ) {
-      const displayLabel = upper === 'PRINTSCREEN' ? 'PrtSc' : mainText;
+      const shortMap = {
+        'PRINTSCREEN': 'PrtSc',
+        'PAGEUP': 'PgUp',
+        'PAGEDOWN': 'PgDn'
+      };
+      const displayLabel = shortMap[upper] || mainText;
       return `
         <kbd class="keycap keycap-fn">
           <span class="key-main">${escapeHtml(displayLabel)}</span>
@@ -745,10 +750,10 @@
       `;
     }
 
-    // 8. 基本キー（文字キー・数字・記号・Ctrl・Alt・矢印 等）→ 本物のキーボードと同じ1:1正方形
-    const isLongSquare = mainText.length >= 4;
+    // 8. 基本キー（文字キー・数字・記号・Ctrl・Alt・矢印 等）→ 正方形ベース（長い文字や補足付きは枠内に収まるよう自動拡幅）
+    const needsAutoWidth = mainText.length >= 2 || subText.length > 0;
     return `
-      <kbd class="keycap keycap-square ${isLongSquare ? 'keycap-square-fit' : ''}">
+      <kbd class="keycap keycap-square ${needsAutoWidth ? 'keycap-square-fit' : ''}">
         <span class="key-main">${escapeHtml(mainText)}</span>
         ${subText ? `<span class="key-sub">${escapeHtml(subText)}</span>` : ''}
       </kbd>

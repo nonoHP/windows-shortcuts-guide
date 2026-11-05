@@ -987,40 +987,48 @@ kbd.keycap {
   white-space: nowrap;
 }
 
-/* ① 基本キー：本物のキーボードと同じ「正方形（42px × 42px）」 */
+/* ① 基本キー：本物のキーボードと同じ「正方形ベース（44px × 44px）」かつ文字が絶対にはみ出さない自動拡幅設計 */
 kbd.keycap-square {
-  width: 42px;
-  height: 42px;
-  min-width: 42px;
-  padding: 2px;
-}
-
-/* 4文字以上の範囲表記（例: 1〜9, Home）でも高さを42pxに揃えて正方形ベースを維持 */
-kbd.keycap-square.keycap-square-fit {
+  min-width: 44px;
+  min-height: 44px;
   width: auto;
-  min-width: 42px;
-  height: 42px;
-  padding: 2px 7px;
+  height: auto;
+  padding: 5px 8px;
 }
 
-/* Windowsキー（正方形＋窓ロゴ） */
+kbd.keycap-square.keycap-square-fit {
+  min-width: 44px;
+  min-height: 44px;
+  width: auto;
+  height: auto;
+  padding: 5px 9px;
+}
+
+/* Windowsキー（正方形内に余裕をもって窓ロゴ＋Winを収める） */
+kbd.keycap-win {
+  gap: 2px;
+  padding: 4px 8px;
+}
+
 kbd.keycap-win .win-logo {
-  font-size: 0.95rem;
+  font-size: 0.84rem;
   line-height: 1;
 }
 
 kbd.keycap-win .key-sub-bottom {
-  font-size: 0.58rem;
+  font-size: 0.62rem;
   font-weight: 800;
-  color: var(--kbd-sub-text);
-  margin-top: 1px;
+  line-height: 1;
+  color: var(--kbd-text);
 }
 
-/* ② Fn・F1〜F12・Esc・Delキー：本物の最上段と同じ「横長ロープロファイル（54px × 29px）」 */
+/* ② Fn・F1〜F12・Esc・Delキー：本物の最上段と同じ「横長ロープロファイル」 */
 kbd.keycap-fn {
-  min-width: 54px;
-  height: 29px;
-  padding: 0 9px;
+  min-width: 56px;
+  min-height: 31px;
+  width: auto;
+  height: auto;
+  padding: 4px 10px;
   border-radius: 6px;
   border-bottom-width: 3px;
 }
@@ -1029,62 +1037,60 @@ kbd.keycap-fn .key-main {
   font-size: 0.78rem;
 }
 
-/* ③ Shiftキー：専用の「ワイド横長キー形状（82px × 42px・左寄せ⇧アイコン付き）」 */
+/* ③ Shiftキー：専用の「ワイド横長キー形状（左寄せ⇧アイコン付き）」 */
 kbd.keycap-shift {
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 5px;
   min-width: 82px;
-  height: 42px;
-  padding: 0 11px;
+  min-height: 44px;
+  width: auto;
+  height: auto;
+  padding: 5px 12px;
 }
 
 kbd.keycap-shift .shift-arrow {
-  font-size: 1rem;
+  font-size: 0.96rem;
   line-height: 1;
 }
 
-/* ④ Enterキー：専用の「JIS逆L字（段付き）エンターキー形状」 */
+/* ④ Enterキー：枠線が一切欠けない専用の「段付きエンターキー形状（↵ Enter）」 */
 kbd.keycap-enter {
-  width: 60px;
-  height: 48px;
-  padding: 4px 8px 6px 12px;
-  align-items: flex-end;
-  justify-content: space-between;
-  border-radius: 7px 7px 7px 4px;
-  /* 左下を切り欠いた逆L字風の段付きシルエットを表現 */
-  clip-path: polygon(
-    0% 0%,
-    100% 0%,
-    100% 100%,
-    18% 100%,
-    18% 58%,
-    0% 58%
-  );
+  min-width: 64px;
+  min-height: 48px;
+  width: auto;
+  height: auto;
+  padding: 5px 11px;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border-radius: 7px 7px 7px 14px;
   background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%);
   color: #ffffff;
-  border-color: #60a5fa;
-  border-bottom-color: #1e3a8a;
+  border: 1.5px solid #60a5fa;
+  border-bottom: 4px solid #1e3a8a;
 }
 
 kbd.keycap-enter .enter-top-label {
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.02em;
-  align-self: flex-start;
+  line-height: 1.1;
 }
 
 kbd.keycap-enter .enter-return-symbol {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 900;
   line-height: 1;
 }
 
-/* ⑤ Spaceキー：専用の「超横長スペースバー形状（120px × 38px・中央突起バー付き）」 */
+/* ⑤ Spaceキー：専用の「超横長スペースバー形状（中央突起バー付き）」 */
 kbd.keycap-space {
-  min-width: 120px;
-  height: 38px;
-  padding: 2px 16px 6px 16px;
+  min-width: 116px;
+  min-height: 40px;
+  width: auto;
+  height: auto;
+  padding: 5px 16px 9px 16px;
   border-radius: 7px;
 }
 
@@ -1667,8 +1673,8 @@ kbd.keycap-mouse {
   .header-inner {
     padding-top: 6px;
     padding-bottom: 6px;
-    gap: 4px;
-    flex-wrap: nowrap;
+    gap: 6px;
+    flex-wrap: wrap;
   }
 
   .brand-icon,
@@ -1694,6 +1700,9 @@ kbd.keycap-mouse {
 
   .header-actions {
     gap: 4px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: 100%;
   }
 
   .action-btn {
@@ -1717,28 +1726,44 @@ kbd.keycap-mouse {
   }
 
   .quick-bar {
+    flex-direction: column;
+    align-items: stretch;
     gap: 5px;
   }
 
+  .view-switcher {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
+
   .view-btn {
-    padding: 4px 7px;
+    justify-content: center;
+    padding: 4px 6px;
     font-size: 0.72rem;
   }
 
   .compact-selects-wrap {
     width: 100%;
-    justify-content: space-between;
+    display: flex;
+    gap: 5px;
+    min-width: 0;
   }
 
   .select-pill-wrap {
-    flex: 1 1 48%;
-    padding: 3px 6px;
+    flex: 1 1 0;
+    min-width: 0;
+    overflow: hidden;
+    padding: 4px 6px;
   }
 
   .clean-select {
     width: 100%;
+    min-width: 0;
     max-width: 100%;
     font-size: 0.72rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .main-content {
@@ -1746,41 +1771,61 @@ kbd.keycap-mouse {
     padding-bottom: 24px;
   }
 
-  /* スマホでのキーキャップサイズ（正方形・Fn横長・Enter/Shift/Spaceの比率を忠実に維持） */
+  /* スマホでのキーキャップサイズ（正方形ベース・Fn横長・Enter/Shift/Spaceを維持し、文字が絶対にはみ出さない設計） */
   kbd.keycap-square {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
+    min-width: 40px;
+    min-height: 40px;
+    width: auto;
+    height: auto;
+    padding: 4px 7px;
   }
 
   kbd.keycap-square.keycap-square-fit {
-    height: 38px;
-    min-width: 38px;
+    min-width: 40px;
+    min-height: 40px;
+    width: auto;
+    height: auto;
+    padding: 4px 8px;
   }
 
   kbd.keycap-fn {
     min-width: 48px;
-    height: 26px;
+    min-height: 28px;
+    width: auto;
+    height: auto;
+    padding: 3px 8px;
   }
 
   kbd.keycap-shift {
     min-width: 72px;
-    height: 38px;
+    min-height: 40px;
+    width: auto;
+    height: auto;
+    padding: 4px 10px;
   }
 
   kbd.keycap-enter {
-    width: 54px;
-    height: 44px;
+    min-width: 56px;
+    min-height: 44px;
+    width: auto;
+    height: auto;
+    padding: 4px 9px;
   }
 
   kbd.keycap-space {
     min-width: 104px;
-    height: 34px;
+    min-height: 36px;
+    width: auto;
+    height: auto;
+    padding: 4px 14px 8px 14px;
   }
 
   kbd.keycap-tab-back {
     min-width: 56px;
-    height: 38px;
+    min-height: 40px;
+    width: auto;
+    height: auto;
+    padding: 4px 8px;
   }
 
   .Single-shortcut-card {
