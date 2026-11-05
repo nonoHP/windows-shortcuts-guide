@@ -805,16 +805,16 @@
     if (str.includes(' / ')) {
       return str
         .split(/\s*\/\s*/)
-        .map(part => {
-          if (part.includes(' + ') || /^Shift\+/i.test(part)) {
-            return part
-              .split(/\s*\+\s*/)
-              .map(sub => renderSingleKeycap(sub))
-              .join('<span class="key-plus">+</span>');
-          }
-          return renderSingleKeycap(part);
-        })
+        .map(part => renderKeyTokenWithSplits(part))
         .join('<span class="key-or-slash">/</span>');
+    }
+
+    // 同時押し結合（例: "Alt+S" や "Win + X" や "Ctrl + K"）はプラスで区切って個別キーキャップに分解
+    if (str.length > 1 && /^(?:Ctrl|Alt|Shift|Win)\s*\+/i.test(str)) {
+      return str
+        .split(/\s*\+\s*/)
+        .map(sub => renderSingleKeycap(sub))
+        .join('<span class="key-plus">+</span>');
     }
 
     return renderSingleKeycap(str);
