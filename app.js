@@ -3,30 +3,35 @@
 
   const STORAGE_KEY_FAVS = 'win_shortcuts_favorites_v1';
   const STORAGE_KEY_THEME = 'win_shortcuts_theme_v1';
-  const STORAGE_KEY_VIEW = 'win_shortcuts_view_v1';
+  const STORAGE_KEY_VIEW = 'win_shortcuts_view_v2';
 
-  // アプリケーション状態（初期表示は「Windows 11」にして見やすく整理）
+  // アプリケーション状態
   const state = {
     category: 'win11',
     subcategory: 'all',
     level: 'all', // 'all' | '3' | '2' | '1' | 'fav'
     searchQuery: '',
-    viewMode: localStorage.getItem(STORAGE_KEY_VIEW) || 'card', // 'card' | 'swipe' | 'table'
+    viewMode: localStorage.getItem(STORAGE_KEY_VIEW) || 'swipe', // 'swipe' | 'card' | 'table'
     favorites: new Set(JSON.parse(localStorage.getItem(STORAGE_KEY_FAVS) || '[]')),
     keyTesterActive: false,
-    expandAllDetails: false,
-    collapsedSections: new Set()
+    currentIndex: 0
   };
 
   // DOM要素
   const categoryTabsEl = document.getElementById('categoryTabs');
-  const categoryDescEl = document.getElementById('categoryDesc');
   const activeCategoryLabelEl = document.getElementById('activeCategoryLabel');
   const controlsBarEl = document.getElementById('controlsBar');
   const searchInputEl = document.getElementById('searchInput');
   const clearSearchBtnEl = document.getElementById('clearSearchBtn');
   const levelFiltersEl = document.getElementById('levelFilters');
   const favCountBadgeEl = document.getElementById('favCountBadge');
+  const favCountBadgeChipEl = document.getElementById('favCountBadgeChip');
+  const favOnlyHeaderBtn = document.getElementById('favOnlyHeaderBtn');
+  const favHeaderBtnTextEl = document.getElementById('favHeaderBtnText');
+  const favModeBannerEl = document.getElementById('favModeBanner');
+  const favBannerCountEl = document.getElementById('favBannerCount');
+  const exitFavModeBtn = document.getElementById('exitFavModeBtn');
+
   const subcategoryBarEl = document.getElementById('subcategoryBar');
   const resultCountNumEl = document.getElementById('resultCountNum');
   const activeFilterSummaryEl = document.getElementById('activeFilterSummary');
@@ -37,7 +42,6 @@
   const toggleRulesBtn = document.getElementById('toggleRulesBtn');
   const closeRulesBtn = document.getElementById('closeRulesBtn');
   const memoryRulesPanelEl = document.getElementById('memoryRulesPanel');
-  const expandAllDetailsBtn = document.getElementById('expandAllDetailsBtn');
 
   const themeToggleBtn = document.getElementById('themeToggleBtn');
   const themeIconEl = document.getElementById('themeIcon');
@@ -54,10 +58,11 @@
   const swipePrevNameEl = document.getElementById('swipePrevName');
   const swipeNextNameEl = document.getElementById('swipeNextName');
   const swipeHintTextEl = document.getElementById('swipeHintText');
-  const swipeDotsEl = document.getElementById('swipeDots');
+  const swipeProgressFillEl = document.getElementById('swipeProgressFill');
   const swipePreviewIndicatorEl = document.getElementById('swipePreviewIndicator');
 
   let toastTimer = null;
+  let currentFilteredItems = [];
 
   // ==========================================
   // 初期化
@@ -119,8 +124,9 @@
   }
 
   function renderCategoryTabs() {
+    const isFavMode = state.level === 'fav';
     categoryTabsEl.innerHTML = CATEGORIES.map(cat => {
-      const isActive = state.category === cat.id;
+      const isActive = !isFavMode && state.category === cat.id;
       const count = getCategoryCount(cat.id);
       return `
         <button
@@ -139,13 +145,13 @@
     }).join('');
 
     const currentCat = CATEGORIES.find(c => c.id === state.category);
-    if (categoryDescEl) {
-      categoryDescEl.textContent = currentCat ? currentCat.description : '';
+    if (activeCategoryLabelEl) {
+      if (isFavMode) {
+        activeCategoryLabelEl.innerHTML = `<span class="active-cat-dot" style="background:#eab308"></span>★ お気に入り一覧: `;
+      } else if (currentCat) {
+        activeCategoryLabelEl.innerHTML = `<span class="active-cat-dot" style="background:${currentCat.color}"></span>${escapeHtml(currentCat.icon)} ${escapeHtml(currentCat.name)}: `;
+      }
     }
-    if (activeCategoryLabelEl && currentCat) {
-      activeCategoryLabelEl.innerHTML = `<span class="active-cat-dot" style="background:${currentCat.color}"></span>${escapeHtml(currentCat.icon)} ${escapeHtml(currentCat.name)}: `;
-    }
-    updateMobileSwipeBar();
     scrollActiveCategoryTab();
   }
 
@@ -159,61 +165,8 @@
     categoryTabsEl.scrollTo({ left: targetScroll, behavior: 'smooth' });
   }
 
-  function updateMobileSwipeBar() {
-    if (!mobileSwipeBarEl) return;
-    const idx = Math.max(0, CATEGORIES.findIndex(c => c.id === state.category));
-    const prevIdx = (idx - 1 + CATEGORIES.length) % CATEGORIES.length;
-    const nextIdx = (idx + 1) % CATEGORIES.length;
-    const currentCat = CATEGORIES[idx];
-    const prevCat = CATEGORIES[prevIdx];
-    const nextCat = CATEGORIES[nextIdx];
-
-    if (swipePrevNameEl && prevCat) {
-      swipePrevNameEl.textContent = `${prevCat.icon} ${prevCat.name}`;
-    }
-    if (swipeNextNameEl && nextCat) {
-      swipeNextNameEl.textContent = `${nextCat.icon} ${nextCat.name}`;
-    }
-    if (swipeHintTextEl && currentCat) {
-      swipeHintTextEl.textContent = `${currentCat.icon} ${currentCat.name} (${idx + 1}/${CATEGORIES.length})`;
-    }
-    if (swipeDotsEl) {
-      swipeDotsEl.innerHTML = CATEGORIES.map((c, i) => `
-        <span
-          class="swipe-dot ${i === idx ? 'active' : ''}"
-          style="${i === idx ? `--dot-color: ${c.color}` : ''}"
-        ></span>
-      `).join('');
-    }
-  }
-
-  function switchCategoryByOffset(offset, showNotification = false) {
-    const idx = Math.max(0, CATEGORIES.findIndex(c => c.id === state.category));
-    const nextIdx = (idx + offset + CATEGORIES.length) % CATEGORIES.length;
-    const targetCat = CATEGORIES[nextIdx];
-    if (!targetCat) return;
-
-    state.category = targetCat.id;
-    state.subcategory = 'all';
-    state.collapsedSections.clear();
-    renderCategoryTabs();
-    renderSubcategoryBar();
-    renderShortcuts();
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    const animClass = offset > 0 ? 'swipe-slide-from-right' : 'swipe-slide-from-left';
-    shortcutsContainerEl.classList.remove('swipe-slide-from-right', 'swipe-slide-from-left');
-    void shortcutsContainerEl.offsetWidth;
-    shortcutsContainerEl.classList.add(animClass);
-
-    if (showNotification) {
-      showToast(`${targetCat.icon} 「${targetCat.name}」へ切り替えました`);
-    }
-  }
-
   function renderSubcategoryBar() {
-    if (state.category === 'all') {
+    if (state.category === 'all' || state.level === 'fav') {
       subcategoryBarEl.classList.add('hidden');
       return;
     }
@@ -243,6 +196,42 @@
   }
 
   // ==========================================
+  // お気に入りだけ開くモード制御
+  // ==========================================
+  function syncFavModeUI() {
+    const isFavMode = state.level === 'fav';
+    if (favOnlyHeaderBtn) {
+      favOnlyHeaderBtn.classList.toggle('active', isFavMode);
+      favOnlyHeaderBtn.setAttribute('aria-pressed', String(isFavMode));
+    }
+    if (favHeaderBtnTextEl) {
+      favHeaderBtnTextEl.textContent = isFavMode ? 'お気に入り表示中' : 'お気に入りだけ開く';
+    }
+    if (favModeBannerEl) {
+      favModeBannerEl.classList.toggle('hidden', !isFavMode);
+    }
+    if (favBannerCountEl) {
+      favBannerCountEl.textContent = `（全 ${state.favorites.size} 件登録）`;
+    }
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+      chip.classList.toggle('active', chip.dataset.level === state.level);
+    });
+  }
+
+  function toggleFavOnlyMode(forceFav) {
+    const nextIsFav = typeof forceFav === 'boolean' ? forceFav : state.level !== 'fav';
+    state.level = nextIsFav ? 'fav' : 'all';
+    state.currentIndex = 0;
+    syncFavModeUI();
+    renderCategoryTabs();
+    renderSubcategoryBar();
+    renderShortcuts();
+    if (nextIsFav) {
+      showToast(`★ お気に入り（${state.favorites.size}件）を開きました`);
+    }
+  }
+
+  // ==========================================
   // フィルタリング処理
   // ==========================================
   function getFilteredShortcuts() {
@@ -250,20 +239,22 @@
     const queryTokens = query ? query.split(/[\s+＋]+/).filter(Boolean) : [];
 
     return SHORTCUTS_DATA.filter(item => {
-      // 検索キーワード入力時は全カテゴリから横断検索、未入力時は選択中カテゴリで絞り込み
-      if (queryTokens.length === 0) {
-        if (state.category !== 'all' && item.category !== state.category) {
-          return false;
-        }
-        if (state.subcategory !== 'all' && item.subcategory !== state.subcategory) {
-          return false;
-        }
-      }
-
+      // お気に入りモード時は全カテゴリのお気に入りを一括表示
       if (state.level === 'fav') {
         if (!state.favorites.has(item.id)) return false;
-      } else if (state.level !== 'all') {
-        if (String(item.level) !== state.level) return false;
+      } else {
+        // 検索キーワード未入力時は選択中カテゴリ・ジャンルで絞り込み
+        if (queryTokens.length === 0) {
+          if (state.category !== 'all' && item.category !== state.category) {
+            return false;
+          }
+          if (state.subcategory !== 'all' && item.subcategory !== state.subcategory) {
+            return false;
+          }
+        }
+        if (state.level !== 'all' && String(item.level) !== state.level) {
+          return false;
+        }
       }
 
       if (queryTokens.length > 0) {
@@ -287,33 +278,110 @@
   }
 
   // ==========================================
-  // メイン一覧描画
+  // スワイプで前後のショートカットへ移動
   // ==========================================
-  function renderShortcuts() {
-    const filtered = getFilteredShortcuts();
-    resultCountNumEl.textContent = filtered.length;
+  function stepShortcut(offset, fromTouch = false) {
+    if (currentFilteredItems.length === 0) return;
+    const total = currentFilteredItems.length;
+    state.currentIndex = (state.currentIndex + offset + total) % total;
+
+    renderShortcuts(offset > 0 ? 'next' : 'prev');
+
+    // 全件一覧モードのときは対象のショートカットカードまでスムーズスクロール
+    if (state.viewMode === 'card') {
+      const activeItem = currentFilteredItems[state.currentIndex];
+      if (activeItem) {
+        const cardEl = shortcutsContainerEl.querySelector(`[data-card-id="${activeItem.id}"]`);
+        if (cardEl) {
+          cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    } else if (fromTouch) {
+      // スワイプ表示モード時はカード上部が見切れないよう調整
+      const stageEl = document.getElementById('swipeSingleStage');
+      if (stageEl) {
+        const rect = stageEl.getBoundingClientRect();
+        if (rect.top < 60) {
+          window.scrollTo({ top: Math.max(0, window.scrollY + rect.top - 90), behavior: 'smooth' });
+        }
+      }
+    }
+  }
+
+  function updateBottomSwipeBar() {
+    if (!mobileSwipeBarEl) return;
+    const total = currentFilteredItems.length;
+    if (total === 0) {
+      if (swipePrevNameEl) swipePrevNameEl.textContent = '前へ';
+      if (swipeNextNameEl) swipeNextNameEl.textContent = '次へ';
+      if (swipeHintTextEl) swipeHintTextEl.textContent = '該当なし (0/0)';
+      if (swipeProgressFillEl) swipeProgressFillEl.style.width = '0%';
+      return;
+    }
+
+    if (state.currentIndex >= total) state.currentIndex = 0;
+    const idx = state.currentIndex;
+    const prevIdx = (idx - 1 + total) % total;
+    const nextIdx = (idx + 1) % total;
+    const currentItem = currentFilteredItems[idx];
+    const prevItem = currentFilteredItems[prevIdx];
+    const nextItem = currentFilteredItems[nextIdx];
+
+    if (swipePrevNameEl && prevItem) {
+      swipePrevNameEl.textContent = `${prevItem.keys.join('+')} ${prevItem.title}`;
+    }
+    if (swipeNextNameEl && nextItem) {
+      swipeNextNameEl.textContent = `${nextItem.keys.join('+')} ${nextItem.title}`;
+    }
+    if (swipeHintTextEl && currentItem) {
+      swipeHintTextEl.textContent = `${idx + 1} / ${total} 件目：${currentItem.title}`;
+    }
+    if (swipeProgressFillEl) {
+      const pct = total > 1 ? Math.round(((idx + 1) / total) * 100) : 100;
+      swipeProgressFillEl.style.width = `${pct}%`;
+    }
+  }
+
+  // ==========================================
+  // メイン一覧・スワイプカード描画
+  // ==========================================
+  function renderShortcuts(slideDirection = null) {
+    currentFilteredItems = getFilteredShortcuts();
+    const total = currentFilteredItems.length;
+    resultCountNumEl.textContent = total;
+
+    if (state.currentIndex >= total) {
+      state.currentIndex = 0;
+    }
 
     const summaryParts = [];
     if (state.searchQuery.trim()) {
-      summaryParts.push(`全カテゴリ横断検索:「${state.searchQuery.trim()}」`);
-    } else if (state.subcategory !== 'all') {
+      summaryParts.push(`検索:「${state.searchQuery.trim()}」`);
+    } else if (state.subcategory !== 'all' && state.level !== 'fav') {
       summaryParts.push(state.subcategory);
     }
-    if (state.level === 'fav') summaryParts.push('保存済');
-    else if (state.level === '3') summaryParts.push('必須のみ');
+    if (state.level === 'fav') summaryParts.push('★お気に入りのみ');
+    else if (state.level === '3') summaryParts.push('★★★必須のみ');
     else if (state.level !== 'all') summaryParts.push(`★${state.level}`);
 
     activeFilterSummaryEl.textContent = summaryParts.length > 0
       ? `（${summaryParts.join(' / ')}）`
       : '';
 
-    if (filtered.length === 0) {
+    updateBottomSwipeBar();
+
+    if (total === 0) {
+      const isFavEmpty = state.level === 'fav' && state.favorites.size === 0;
       shortcutsContainerEl.innerHTML = `
         <div class="empty-state">
-          <div class="empty-icon">🔍</div>
-          <p class="empty-title">一致するショートカットキーが見つかりませんでした</p>
-          <p class="empty-desc">検索キーワードを変えるか、絞り込み条件をリセットしてお試しください。</p>
-          <button type="button" class="reset-btn" id="resetFiltersBtn">条件をリセット</button>
+          <div class="empty-icon">${isFavEmpty ? '⭐' : '🔍'}</div>
+          <p class="empty-title">${isFavEmpty ? 'まだお気に入りが登録されていません' : '一致するショートカットキーが見つかりませんでした'}</p>
+          <p class="empty-desc">${
+            isFavEmpty
+              ? '各ショートカットカードの「☆ お気に入りに追加」ボタンを押すと、ここにお気に入りだけを集めてスワイプでいつでも見返せます。'
+              : '検索キーワードを変えるか、絞り込み条件をリセットしてお試しください。'
+          }</p>
+          <button type="button" class="reset-btn" id="resetFiltersBtn">${isFavEmpty ? 'すべてのショートカットを見る' : '条件をリセット'}</button>
         </div>
       `;
       const resetBtn = document.getElementById('resetFiltersBtn');
@@ -323,15 +391,169 @@
       return;
     }
 
-    const groups = groupShortcuts(filtered);
-
-    if (state.viewMode === 'table') {
+    if (state.viewMode === 'swipe') {
+      shortcutsContainerEl.innerHTML = renderSingleSwipeView(currentFilteredItems, slideDirection);
+    } else if (state.viewMode === 'table') {
+      const groups = groupShortcuts(currentFilteredItems);
       shortcutsContainerEl.innerHTML = groups.map(group => renderTableGroup(group)).join('');
     } else {
+      const groups = groupShortcuts(currentFilteredItems);
       shortcutsContainerEl.innerHTML = groups.map(group => renderCardGroup(group)).join('');
     }
   }
 
+  // ==========================================
+  // 1. スワイプ表示モード（1つずつ全体表示＋左右スワイプで次のショートカットへ）
+  // ==========================================
+  function renderSingleSwipeView(items, slideDirection) {
+    const total = items.length;
+    const idx = state.currentIndex;
+    const item = items[idx];
+    const prevIdx = (idx - 1 + total) % total;
+    const nextIdx = (idx + 1) % total;
+    const prevItem = items[prevIdx];
+    const nextItem = items[nextIdx];
+
+    const catMeta = CATEGORIES.find(c => c.id === item.category);
+    const cardColor = catMeta ? catMeta.color : '#2563eb';
+    const isFav = state.favorites.has(item.id);
+    const comboText = item.keys.join(' + ');
+    const shortKeyGroup = item.keyGroup ? item.keyGroup.replace(/^[①-⑩]\s*/, '') : '';
+    const animClass = slideDirection === 'next'
+      ? 'swipe-slide-from-right'
+      : slideDirection === 'prev'
+        ? 'swipe-slide-from-left'
+        : '';
+
+    // ジャンル別目次リスト（下部でいつでも別ショートカットへジャンプ可能）
+    const groups = groupShortcuts(items);
+    let globalCounter = 0;
+    const directoryHtml = groups.map(g => {
+      const listHtml = g.items.map(gItem => {
+        const itemIndex = globalCounter++;
+        const isCurrent = itemIndex === idx;
+        const gIsFav = state.favorites.has(gItem.id);
+        return `
+          <button
+            type="button"
+            class="dir-item ${isCurrent ? 'active' : ''}"
+            data-jump-index="${itemIndex}"
+          >
+            <span class="dir-num">${itemIndex + 1}</span>
+            <span class="dir-keys">${escapeHtml(gItem.keys.join(' + '))}</span>
+            <span class="dir-title">${escapeHtml(gItem.title)}</span>
+            ${gIsFav ? '<span class="dir-fav">★</span>' : ''}
+          </button>
+        `;
+      }).join('');
+
+      return `
+        <div class="dir-group" style="--section-color: ${g.color}">
+          <div class="dir-group-header">
+            <span class="section-badge">${escapeHtml(g.categoryIcon)} ${escapeHtml(g.categoryName)}</span>
+            <strong>${escapeHtml(g.subcategory)}</strong>
+            <span class="section-count">${g.items.length}件</span>
+          </div>
+          <div class="dir-group-list">
+            ${listHtml}
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    return `
+      <div class="swipe-single-stage" id="swipeSingleStage">
+        <!-- メイン1枚カード（常に全情報をデフォルト表示） -->
+        <article
+          class="Single-shortcut-card ${animClass}"
+          id="singleShortcutCard"
+          style="--card-accent: ${cardColor}"
+        >
+          <div class="single-card-header">
+            <div class="single-card-badges">
+              ${catMeta ? `<span class="section-badge" style="background:${cardColor}">${escapeHtml(catMeta.icon)} ${escapeHtml(catMeta.name)}</span>` : ''}
+              <span class="single-genre-badge">${escapeHtml(item.subcategory)}</span>
+              ${shortKeyGroup ? `<span class="item-func-tag">${escapeHtml(shortKeyGroup)}</span>` : ''}
+            </div>
+            <div class="single-card-counter">
+              <strong>${idx + 1}</strong> / ${total} 件目
+            </div>
+          </div>
+
+          <div class="single-card-keys-area">
+            <div
+              class="keys-combo single-keys-combo"
+              data-copy="${escapeHtml(comboText)}"
+              title="タップして「${escapeHtml(comboText)}」をコピー"
+            >
+              ${renderKeysHtml(item.keys)}
+            </div>
+            <span class="copy-hint-label">📋 キータップでコピー</span>
+          </div>
+
+          <div class="single-card-title-row">
+            <h2 class="single-card-title">${escapeHtml(item.title)}</h2>
+            ${renderLevelBadge(item.level)}
+          </div>
+
+          <p class="single-card-desc">${escapeHtml(item.desc)}</p>
+
+          ${item.memory ? `
+            <div class="card-memory single-card-memory">
+              <span class="card-memory-label">🧠 覚え方:</span>
+              <span>${escapeHtml(item.memory)}</span>
+            </div>
+          ` : ''}
+
+          ${item.tip ? `
+            <div class="card-tip single-card-tip">
+              <span class="card-tip-icon" aria-hidden="true">💡</span>
+              <span>${escapeHtml(item.tip)}</span>
+            </div>
+          ` : ''}
+
+          <div class="single-card-footer">
+            <button
+              type="button"
+              class="single-fav-btn ${isFav ? 'is-fav' : ''}"
+              data-fav-id="${item.id}"
+            >
+              <span>${isFav ? '★' : '☆'}</span>
+              <span>${isFav ? 'お気に入り登録済み（タップで解除）' : 'お気に入りに追加する'}</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- カード直下の「前のショートカット / 次のショートカット」大型ボタン -->
+        <div class="single-step-controls">
+          <button type="button" class="step-card-btn prev" id="stagePrevBtn">
+            <span class="step-btn-dir">◀ 前のショートカット</span>
+            <span class="step-btn-sub">${escapeHtml(prevItem.keys.join('+'))}：${escapeHtml(prevItem.title)}</span>
+          </button>
+          <button type="button" class="step-card-btn next" id="stageNextBtn">
+            <span class="step-btn-dir">次のショートカット ▶</span>
+            <span class="step-btn-sub">${escapeHtml(nextItem.keys.join('+'))}：${escapeHtml(nextItem.title)}</span>
+          </button>
+        </div>
+
+        <p class="swipe-guide-note">👆 カードを左右にスワイプすると、前後のショートカットへ順番に移動します</p>
+
+        <!-- ジャンル別クイック目次（全体一覧へのジャンプ） -->
+        <div class="swipe-directory-section">
+          <div class="swipe-directory-header">
+            <h3>📂 ジャンル別ショートカット目次（タップでその項目を表示）</h3>
+          </div>
+          <div class="swipe-directory-body">
+            ${directoryHtml}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  // ==========================================
+  // 2. 全件一覧モード（クリック不要で最初から全情報を全体表示）
+  // ==========================================
   function groupShortcuts(items) {
     const map = new Map();
 
@@ -363,29 +585,26 @@
   }
 
   function renderLevelBadge(level) {
-    if (level === 3) return `<span class="level-badge level-3" title="毎日使う最重要ショートカット">必須</span>`;
-    if (level === 2) return `<span class="level-badge level-2" title="作業速度が上がる便利ショートカット">便利</span>`;
-    return `<span class="level-badge level-1" title="知っていると差がつく玄人ワザ">玄人</span>`;
+    if (level === 3) return `<span class="level-badge level-3" title="毎日使う最重要ショートカット">★★★ 必須</span>`;
+    if (level === 2) return `<span class="level-badge level-2" title="作業速度が上がる便利ショートカット">★★ 便利</span>`;
+    return `<span class="level-badge level-1" title="知っていると差がつく玄人ワザ">★ 玄人</span>`;
   }
 
   function renderCardGroup(group) {
-    const isSwipeCarousel = state.viewMode === 'swipe';
-    const isSectionCollapsed = !isSwipeCarousel && state.collapsedSections.has(group.key);
-    const totalInGroup = group.items.length;
-
-    const cardsHtml = group.items.map((item, idx) => {
+    const activeItem = currentFilteredItems[state.currentIndex];
+    const cardsHtml = group.items.map(item => {
       const isFav = state.favorites.has(item.id);
+      const isCurrent = activeItem && activeItem.id === item.id;
       const comboText = item.keys.join(' + ');
       const shortKeyGroup = item.keyGroup ? item.keyGroup.replace(/^[①-⑩]\s*/, '').replace(/（.*?）/g, '') : '';
-      const isExpanded = state.expandAllDetails || isSwipeCarousel;
 
       return `
         <article
-          class="shortcut-card ${isExpanded ? 'is-expanded' : ''}"
+          class="shortcut-card full-visible-card ${isCurrent ? 'active-shortcut-card' : ''}"
           style="--card-accent: ${group.color}"
           data-card-id="${item.id}"
         >
-          <div class="card-main-row">
+          <div class="card-top">
             <div
               class="keys-combo"
               data-copy="${escapeHtml(comboText)}"
@@ -393,19 +612,9 @@
             >
               ${renderKeysHtml(item.keys)}
             </div>
-
-            <div class="card-info-col">
-              <div class="card-title-line">
-                <h3 class="card-title">${escapeHtml(item.title)}</h3>
-                ${renderLevelBadge(item.level)}
-                ${isSwipeCarousel ? `<span class="item-func-tag">${idx + 1}/${totalInGroup}</span>` : ''}
-              </div>
-              ${item.memory ? `
-                <p class="card-memory-inline">🧠 ${escapeHtml(item.memory)}</p>
-              ` : `<p class="card-memory-inline">${escapeHtml(item.desc)}</p>`}
-            </div>
-
-            <div class="card-actions-col">
+            <div class="card-meta-right">
+              ${shortKeyGroup ? `<span class="item-func-tag">${escapeHtml(shortKeyGroup)}</span>` : ''}
+              ${renderLevelBadge(item.level)}
               <button
                 type="button"
                 class="fav-btn ${isFav ? 'is-fav' : ''}"
@@ -413,37 +622,39 @@
                 aria-label="お気に入り登録"
                 title="${isFav ? 'お気に入りから解除' : 'お気に入りに追加'}"
               >${isFav ? '★' : '☆'}</button>
-              ${!isSwipeCarousel ? `<span class="expand-chevron" aria-hidden="true">⌄</span>` : ''}
             </div>
           </div>
 
-          <div class="card-details-drawer">
-            <p class="card-desc">${escapeHtml(item.desc)}</p>
-            ${item.tip ? `
-              <div class="card-tip">
-                <span class="card-tip-icon" aria-hidden="true">💡</span>
-                <span>${escapeHtml(item.tip)}</span>
-              </div>
-            ` : ''}
-            ${shortKeyGroup ? `<div class="card-drawer-meta"><span class="item-func-tag">キー系統: ${escapeHtml(shortKeyGroup)}</span></div>` : ''}
-          </div>
+          <h3 class="card-title">${escapeHtml(item.title)}</h3>
+          <p class="card-desc">${escapeHtml(item.desc)}</p>
+
+          ${item.memory ? `
+            <div class="card-memory">
+              <span class="card-memory-label">🧠 覚え方:</span>
+              <span>${escapeHtml(item.memory)}</span>
+            </div>
+          ` : ''}
+
+          ${item.tip ? `
+            <div class="card-tip">
+              <span class="card-tip-icon" aria-hidden="true">💡</span>
+              <span>${escapeHtml(item.tip)}</span>
+            </div>
+          ` : ''}
         </article>
       `;
     }).join('');
 
     return `
-      <section class="category-section ${isSectionCollapsed ? 'is-collapsed' : ''}" style="--section-color: ${group.color}" data-group-key="${escapeHtml(group.key)}">
-        <div class="section-header" role="button" tabindex="0" aria-expanded="${!isSectionCollapsed}" title="タップしてこのジャンルを開閉">
+      <section class="category-section" style="--section-color: ${group.color}">
+        <div class="section-header">
           <div class="section-title-wrap">
             <span class="section-badge">${escapeHtml(group.categoryIcon)} ${escapeHtml(group.categoryName)}</span>
             <h2 class="section-title">${escapeHtml(group.subcategory)}</h2>
           </div>
-          <div class="section-header-right">
-            <span class="section-count">${isSwipeCarousel ? '👆 左右スワイプ ・ ' : ''}${group.items.length} 件</span>
-            ${!isSwipeCarousel ? `<span class="section-toggle-icon" aria-hidden="true">▼</span>` : ''}
-          </div>
+          <span class="section-count">${group.items.length} 件</span>
         </div>
-        <div class="cards-grid ${isSwipeCarousel ? 'cards-carousel' : ''}">
+        <div class="cards-grid full-cards-grid">
           ${cardsHtml}
         </div>
       </section>
@@ -451,7 +662,6 @@
   }
 
   function renderTableGroup(group) {
-    const isSectionCollapsed = state.collapsedSections.has(group.key);
     const rowsHtml = group.items.map(item => {
       const isFav = state.favorites.has(item.id);
       const comboText = item.keys.join(' + ');
@@ -486,16 +696,13 @@
     }).join('');
 
     return `
-      <section class="category-section ${isSectionCollapsed ? 'is-collapsed' : ''}" style="--section-color: ${group.color}" data-group-key="${escapeHtml(group.key)}">
-        <div class="section-header" role="button" tabindex="0" aria-expanded="${!isSectionCollapsed}">
+      <section class="category-section" style="--section-color: ${group.color}">
+        <div class="section-header">
           <div class="section-title-wrap">
             <span class="section-badge">${escapeHtml(group.categoryIcon)} ${escapeHtml(group.categoryName)}</span>
             <h2 class="section-title">${escapeHtml(group.subcategory)}</h2>
           </div>
-          <div class="section-header-right">
-            <span class="section-count">${group.items.length} 件</span>
-            <span class="section-toggle-icon" aria-hidden="true">▼</span>
-          </div>
+          <span class="section-count">${group.items.length} 件</span>
         </div>
         <div class="shortcuts-table-wrap">
           <table class="shortcuts-table">
@@ -526,15 +733,18 @@
       showToast('お気に入りから解除しました');
     } else {
       state.favorites.add(id);
-      showToast('★ お気に入りに保存しました');
+      showToast('★ お気に入りに追加しました');
     }
     localStorage.setItem(STORAGE_KEY_FAVS, JSON.stringify(Array.from(state.favorites)));
     updateFavBadge();
+    syncFavModeUI();
     renderShortcuts();
   }
 
   function updateFavBadge() {
-    favCountBadgeEl.textContent = state.favorites.size;
+    const count = state.favorites.size;
+    if (favCountBadgeEl) favCountBadgeEl.textContent = count;
+    if (favCountBadgeChipEl) favCountBadgeChipEl.textContent = count;
   }
 
   function copyShortcutText(text) {
@@ -572,13 +782,11 @@
     state.subcategory = 'all';
     state.level = 'all';
     state.searchQuery = '';
+    state.currentIndex = 0;
     searchInputEl.value = '';
     clearSearchBtnEl.classList.add('hidden');
 
-    document.querySelectorAll('.filter-chip').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.level === 'all');
-    });
-
+    syncFavModeUI();
     renderCategoryTabs();
     renderSubcategoryBar();
     renderShortcuts();
@@ -639,12 +847,28 @@
       if (!btn) return;
       state.category = btn.dataset.cat;
       state.subcategory = 'all';
-      state.collapsedSections.clear();
+      if (state.level === 'fav') {
+        state.level = 'all';
+        syncFavModeUI();
+      }
+      state.currentIndex = 0;
       renderCategoryTabs();
       renderSubcategoryBar();
       renderShortcuts();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // ヘッダー「★ お気に入りだけ開く」ボタン
+    if (favOnlyHeaderBtn) {
+      favOnlyHeaderBtn.addEventListener('click', () => {
+        toggleFavOnlyMode();
+      });
+    }
+    if (exitFavModeBtn) {
+      exitFavModeBtn.addEventListener('click', () => {
+        toggleFavOnlyMode(false);
+      });
+    }
 
     // スマホ用 検索パネル開閉トグル
     if (toggleSearchPanelBtn && controlsBarEl) {
@@ -676,32 +900,21 @@
       });
     }
 
-    // 解説一括開閉ボタン
-    if (expandAllDetailsBtn) {
-      expandAllDetailsBtn.addEventListener('click', () => {
-        state.expandAllDetails = !state.expandAllDetails;
-        expandAllDetailsBtn.textContent = state.expandAllDetails
-          ? '📕 解説をすべて閉じる'
-          : '📖 解説をすべて開く';
-        expandAllDetailsBtn.classList.toggle('active', state.expandAllDetails);
-        renderShortcuts();
-      });
-    }
-
-    // スマホ用 前後カテゴリ切替ボタン＆タッチスワイプ
+    // 下部バー 前後ショートカット切替ボタン＆タッチスワイプ
     if (swipePrevBtn) {
-      swipePrevBtn.addEventListener('click', () => switchCategoryByOffset(-1, true));
+      swipePrevBtn.addEventListener('click', () => stepShortcut(-1, true));
     }
     if (swipeNextBtn) {
-      swipeNextBtn.addEventListener('click', () => switchCategoryByOffset(1, true));
+      swipeNextBtn.addEventListener('click', () => stepShortcut(1, true));
     }
     bindTouchSwipe();
 
-    // サブカテゴリ切替
+    // サブカテゴリ（ジャンル）切替
     subcategoryBarEl.addEventListener('click', e => {
       const btn = e.target.closest('.subcat-pill');
       if (!btn) return;
       state.subcategory = btn.dataset.subcat;
+      state.currentIndex = 0;
       renderSubcategoryBar();
       renderShortcuts();
     });
@@ -711,9 +924,10 @@
       const btn = e.target.closest('.filter-chip');
       if (!btn) return;
       state.level = btn.dataset.level;
-      document.querySelectorAll('.filter-chip').forEach(chip => {
-        chip.classList.toggle('active', chip === btn);
-      });
+      state.currentIndex = 0;
+      syncFavModeUI();
+      renderCategoryTabs();
+      renderSubcategoryBar();
       renderShortcuts();
     });
 
@@ -730,23 +944,25 @@
     // 検索入力
     searchInputEl.addEventListener('input', () => {
       state.searchQuery = searchInputEl.value;
+      state.currentIndex = 0;
       clearSearchBtnEl.classList.toggle('hidden', !state.searchQuery);
       renderShortcuts();
     });
 
     clearSearchBtnEl.addEventListener('click', () => {
       state.searchQuery = '';
+      state.currentIndex = 0;
       searchInputEl.value = '';
       clearSearchBtnEl.classList.add('hidden');
       searchInputEl.focus();
       renderShortcuts();
     });
 
-    // カード内のコピー・お気に入り・詳細展開・セクション開閉（イベント委譲）
+    // コンテナ内クリック（お気に入り・コピー・前後移動・目次ジャンプ）
     shortcutsContainerEl.addEventListener('click', e => {
       // 1. お気に入りボタン
-      const favBtn = e.target.closest('.fav-btn');
-      if (favBtn) {
+      const favBtn = e.target.closest('.fav-btn, .single-fav-btn');
+      if (favBtn && favBtn.dataset.favId) {
         e.stopPropagation();
         toggleFavorite(favBtn.dataset.favId);
         return;
@@ -760,27 +976,25 @@
         return;
       }
 
-      // 3. セクション見出しの折りたたみ開閉
-      const sectionHeader = e.target.closest('.section-header');
-      if (sectionHeader) {
-        const sectionEl = sectionHeader.closest('.category-section');
-        if (sectionEl && sectionEl.dataset.groupKey) {
-          const gKey = sectionEl.dataset.groupKey;
-          const isCollapsed = sectionEl.classList.toggle('is-collapsed');
-          sectionHeader.setAttribute('aria-expanded', String(!isCollapsed));
-          if (isCollapsed) {
-            state.collapsedSections.add(gKey);
-          } else {
-            state.collapsedSections.delete(gKey);
-          }
-        }
+      // 3. スワイプステージ内の「前のショートカット / 次のショートカット」ボタン
+      if (e.target.closest('#stagePrevBtn')) {
+        stepShortcut(-1, true);
+        return;
+      }
+      if (e.target.closest('#stageNextBtn')) {
+        stepShortcut(1, true);
         return;
       }
 
-      // 4. カードタップで詳細ドロワーを開閉
-      const cardEl = e.target.closest('.shortcut-card');
-      if (cardEl && state.viewMode === 'card') {
-        cardEl.classList.toggle('is-expanded');
+      // 4. 目次リストからのジャンプ
+      const jumpBtn = e.target.closest('[data-jump-index]');
+      if (jumpBtn) {
+        const targetIdx = Number(jumpBtn.dataset.jumpIndex);
+        if (!Number.isNaN(targetIdx)) {
+          state.currentIndex = targetIdx;
+          renderShortcuts('next');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       }
     });
 
@@ -801,6 +1015,7 @@
     clearKeyTesterBtn.addEventListener('click', () => {
       keyTesterDisplay.innerHTML = `<span class="placeholder">キーを押してください...</span>`;
       state.searchQuery = '';
+      state.currentIndex = 0;
       searchInputEl.value = '';
       clearSearchBtnEl.classList.add('hidden');
       renderShortcuts();
@@ -819,6 +1034,7 @@
           keyTesterDisplay.innerHTML = renderKeysHtml(keys);
           const query = keys.join(' ');
           state.searchQuery = query;
+          state.currentIndex = 0;
           searchInputEl.value = query;
           clearSearchBtnEl.classList.remove('hidden');
           renderShortcuts();
@@ -827,6 +1043,20 @@
       }
 
       const isTyping = ['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName);
+
+      // 左右矢印キーで前後のショートカットへ移動
+      if (!isTyping && !e.ctrlKey && !e.altKey && !e.metaKey) {
+        if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          stepShortcut(1, true);
+          return;
+        }
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          stepShortcut(-1, true);
+          return;
+        }
+      }
 
       if (e.key === '/' && !isTyping && !e.ctrlKey && !e.altKey && !e.metaKey) {
         e.preventDefault();
@@ -839,6 +1069,7 @@
       if (e.key === 'Escape') {
         if (state.searchQuery) {
           state.searchQuery = '';
+          state.currentIndex = 0;
           searchInputEl.value = '';
           clearSearchBtnEl.classList.add('hidden');
           renderShortcuts();
@@ -846,23 +1077,13 @@
         if (isTyping) {
           document.activeElement.blur();
         }
-        return;
-      }
-
-      if (!isTyping && !e.ctrlKey && !e.altKey && !e.metaKey && /^[1-9]$/.test(e.key)) {
-        const idx = Number(e.key) - 1;
-        if (CATEGORIES[idx]) {
-          state.category = CATEGORIES[idx].id;
-          state.subcategory = 'all';
-          state.collapsedSections.clear();
-          renderCategoryTabs();
-          renderSubcategoryBar();
-          renderShortcuts();
-        }
       }
     });
   }
 
+  // ==========================================
+  // タッチ左右スワイプで「次のショートカット / 前のショートカット」へ移動
+  // ==========================================
   function bindTouchSwipe() {
     let startX = 0;
     let startY = 0;
@@ -870,9 +1091,16 @@
     let directionLock = null;
     let isTracking = false;
 
+    const getSwipeTargetEl = () => {
+      return document.getElementById('singleShortcutCard') || shortcutsContainerEl;
+    };
+
     const resetSwipeVisuals = () => {
-      shortcutsContainerEl.style.transform = '';
-      shortcutsContainerEl.style.transition = '';
+      const el = getSwipeTargetEl();
+      if (el) {
+        el.style.transform = '';
+        el.style.transition = '';
+      }
       if (swipePreviewIndicatorEl) {
         swipePreviewIndicatorEl.classList.add('hidden');
         swipePreviewIndicatorEl.classList.remove('left-side', 'right-side', 'ready');
@@ -880,10 +1108,9 @@
     };
 
     document.addEventListener('touchstart', e => {
-      if (e.touches.length !== 1) return;
+      if (e.touches.length !== 1 || currentFilteredItems.length <= 1) return;
       const target = e.target;
       if (
-        target.closest('.cards-carousel') ||
         target.closest('.shortcuts-table-wrap') ||
         target.closest('.category-tabs') ||
         target.closest('.subcategory-bar') ||
@@ -923,24 +1150,28 @@
       }
 
       if (directionLock === 'horizontal') {
-        const dampedX = Math.max(-75, Math.min(75, dx * 0.32));
-        shortcutsContainerEl.style.transition = 'none';
-        shortcutsContainerEl.style.transform = `translateX(${dampedX}px)`;
+        const dampedX = Math.max(-90, Math.min(90, dx * 0.38));
+        const el = getSwipeTargetEl();
+        if (el) {
+          el.style.transition = 'none';
+          el.style.transform = `translateX(${dampedX}px)`;
+        }
 
-        if (swipePreviewIndicatorEl) {
-          const idx = Math.max(0, CATEGORIES.findIndex(c => c.id === state.category));
+        if (swipePreviewIndicatorEl && currentFilteredItems.length > 1) {
+          const total = currentFilteredItems.length;
+          const idx = state.currentIndex;
           const isNext = dx < 0;
           const targetIdx = isNext
-            ? (idx + 1) % CATEGORIES.length
-            : (idx - 1 + CATEGORIES.length) % CATEGORIES.length;
-          const targetCat = CATEGORIES[targetIdx];
-          if (targetCat) {
+            ? (idx + 1) % total
+            : (idx - 1 + total) % total;
+          const targetItem = currentFilteredItems[targetIdx];
+          if (targetItem) {
             swipePreviewIndicatorEl.textContent = isNext
-              ? `${targetCat.icon} ${targetCat.name} ▶`
-              : `◀ ${targetCat.icon} ${targetCat.name}`;
+              ? `次のショートカット: ${targetItem.keys.join('+')}（${targetItem.title}） ▶`
+              : `◀ 前のショートカット: ${targetItem.keys.join('+')}（${targetItem.title}）`;
             swipePreviewIndicatorEl.classList.remove('hidden', 'left-side', 'right-side');
             swipePreviewIndicatorEl.classList.add(isNext ? 'right-side' : 'left-side');
-            swipePreviewIndicatorEl.classList.toggle('ready', absX >= 55);
+            swipePreviewIndicatorEl.classList.toggle('ready', absX >= 50);
           }
         }
       }
@@ -961,11 +1192,12 @@
       resetSwipeVisuals();
 
       const isValidSwipe =
-        (Math.abs(dx) >= 55 && Math.abs(dx) > Math.abs(dy) * 1.3) ||
-        (Math.abs(dx) >= 35 && elapsed < 260 && Math.abs(dx) > Math.abs(dy) * 1.5);
+        (Math.abs(dx) >= 50 && Math.abs(dx) > Math.abs(dy) * 1.25) ||
+        (Math.abs(dx) >= 32 && elapsed < 260 && Math.abs(dx) > Math.abs(dy) * 1.4);
 
       if (isValidSwipe) {
-        switchCategoryByOffset(dx < 0 ? 1 : -1, true);
+        // 左スワイプ(dx < 0)で次のショートカット(+1)、右スワイプ(dx > 0)で前のショートカット(-1)
+        stepShortcut(dx < 0 ? 1 : -1, true);
       }
     }, { passive: true });
 
