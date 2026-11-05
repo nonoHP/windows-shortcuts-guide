@@ -1024,6 +1024,181 @@ kbd {
 }
 
 /* ==========================================
+   左右スワイプ・ナビバー＆カルーセル＆アニメーション
+   ========================================== */
+.mobile-swipe-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 7px 10px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+  user-select: none;
+}
+
+.swipe-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-main);
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  max-width: 34%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.swipe-nav-btn:hover,
+.swipe-nav-btn:active {
+  background-color: var(--accent-primary-soft);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.swipe-target-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.swipe-arrow {
+  font-size: 0.7rem;
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+.swipe-center-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.swipe-hint-text {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.swipe-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.swipe-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background-color: var(--border-strong);
+  transition: all 0.2s ease;
+}
+
+.swipe-dot.active {
+  width: 16px;
+  background-color: var(--dot-color, var(--accent-primary));
+}
+
+/* スワイプ中の画面端プレビューバッジ */
+.swipe-preview-indicator {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 950;
+  background-color: rgba(15, 23, 42, 0.88);
+  color: #ffffff;
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 9px 14px;
+  border-radius: 999px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  transition: transform 0.12s ease, background-color 0.12s ease;
+  white-space: nowrap;
+}
+
+.swipe-preview-indicator.left-side {
+  left: 12px;
+}
+
+.swipe-preview-indicator.right-side {
+  right: 12px;
+}
+
+.swipe-preview-indicator.ready {
+  background-color: var(--accent-primary);
+  transform: translateY(-50%) scale(1.06);
+}
+
+/* スワイプ切替時のスライドアニメーション */
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0.35;
+    transform: translateX(36px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0.35;
+    transform: translateX(-36px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.swipe-slide-from-right {
+  animation: slideInFromRight 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.swipe-slide-from-left {
+  animation: slideInFromLeft 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 横スワイプ（カルーセル）モードのカード並び */
+.cards-grid.cards-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 12px;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+}
+
+.cards-grid.cards-carousel .shortcut-card {
+  flex: 0 0 min(86vw, 350px);
+  max-width: min(86vw, 350px);
+  scroll-snap-align: center;
+}
+
+/* ==========================================
    レスポンシブ対応（スマホ・タブレット最適化）
    ========================================== */
 @media (max-width: 960px) {
@@ -1092,32 +1267,44 @@ kbd {
   }
 
   .category-nav {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
+  /* スマホではカテゴリタブも1行で左右スワイプ可能にして省スペース化 */
   .category-tabs {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    padding: 2px 2px 4px 2px;
+  }
+
+  .category-tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .cat-tab {
-    padding: 6px 4px;
-    font-size: 0.74rem;
-    gap: 3px;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    padding: 6px 10px;
+    font-size: 0.78rem;
+    gap: 4px;
     border-width: 1.5px;
-    border-radius: 8px;
+    border-radius: 999px;
     min-width: 0;
-    overflow: hidden;
   }
 
   .cat-tab .cat-icon {
-    font-size: 0.88rem;
+    font-size: 0.92rem;
     flex-shrink: 0;
   }
 
   .cat-tab .cat-count {
-    font-size: 0.65rem;
-    padding: 0 4px;
+    font-size: 0.68rem;
+    padding: 0 5px;
     flex-shrink: 0;
   }
 
@@ -1183,12 +1370,42 @@ kbd {
   .subcategory-bar {
     margin-top: 8px;
     padding-top: 8px;
-    gap: 4px;
+    gap: 5px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .subcategory-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .subcat-label {
+    flex-shrink: 0;
   }
 
   .subcat-pill {
-    padding: 3px 8px;
+    padding: 3px 9px;
     font-size: 0.73rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .mobile-swipe-bar {
+    padding: 6px 8px;
+    margin-bottom: 10px;
+    gap: 6px;
+  }
+
+  .swipe-nav-btn {
+    padding: 4px 8px;
+    font-size: 0.72rem;
+    max-width: 32%;
+  }
+
+  .swipe-hint-text {
+    font-size: 0.7rem;
   }
 
   .status-bar {
@@ -1275,6 +1492,8 @@ kbd {
   .key-tester-panel,
   .category-nav,
   .controls-bar,
+  .mobile-swipe-bar,
+  .swipe-preview-indicator,
   .status-hint,
   .fav-btn,
   .site-footer,

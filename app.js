@@ -38,6 +38,15 @@
   const clearKeyTesterBtn = document.getElementById('clearKeyTesterBtn');
   const closeKeyTesterBtn = document.getElementById('closeKeyTesterBtn');
 
+  const mobileSwipeBarEl = document.getElementById('mobileSwipeBar');
+  const swipePrevBtn = document.getElementById('swipePrevBtn');
+  const swipeNextBtn = document.getElementById('swipeNextBtn');
+  const swipePrevNameEl = document.getElementById('swipePrevName');
+  const swipeNextNameEl = document.getElementById('swipeNextName');
+  const swipeHintTextEl = document.getElementById('swipeHintText');
+  const swipeDotsEl = document.getElementById('swipeDots');
+  const swipePreviewIndicatorEl = document.getElementById('swipePreviewIndicator');
+
   let toastTimer = null;
 
   // ==========================================
@@ -123,6 +132,68 @@
 
     const currentCat = CATEGORIES.find(c => c.id === state.category);
     categoryDescEl.textContent = currentCat ? currentCat.description : '';
+    updateMobileSwipeBar();
+    scrollActiveCategoryTab();
+  }
+
+  function scrollActiveCategoryTab() {
+    const activeBtn = categoryTabsEl.querySelector('.cat-tab.active');
+    if (!activeBtn) return;
+    const containerWidth = categoryTabsEl.clientWidth;
+    const btnLeft = activeBtn.offsetLeft;
+    const btnWidth = activeBtn.offsetWidth;
+    const targetScroll = Math.max(0, btnLeft - (containerWidth / 2) + (btnWidth / 2));
+    categoryTabsEl.scrollTo({ left: targetScroll, behavior: 'smooth' });
+  }
+
+  function updateMobileSwipeBar() {
+    if (!mobileSwipeBarEl) return;
+    const idx = Math.max(0, CATEGORIES.findIndex(c => c.id === state.category));
+    const prevIdx = (idx - 1 + CATEGORIES.length) % CATEGORIES.length;
+    const nextIdx = (idx + 1) % CATEGORIES.length;
+    const currentCat = CATEGORIES[idx];
+    const prevCat = CATEGORIES[prevIdx];
+    const nextCat = CATEGORIES[nextIdx];
+
+    if (swipePrevNameEl && prevCat) {
+      swipePrevNameEl.textContent = `${prevCat.icon} ${prevCat.name}`;
+    }
+    if (swipeNextNameEl && nextCat) {
+      swipeNextNameEl.textContent = `${nextCat.icon} ${nextCat.name}`;
+    }
+    if (swipeHintTextEl && currentCat) {
+      swipeHintTextEl.textContent = `${currentCat.icon} ${currentCat.name}（左右スワイプで切替）`;
+    }
+    if (swipeDotsEl) {
+      swipeDotsEl.innerHTML = CATEGORIES.map((c, i) => `
+        <span
+          class="swipe-dot ${i === idx ? 'active' : ''}"
+          style="${i === idx ? `--dot-color: ${c.color}` : ''}"
+        ></span>
+      `).join('');
+    }
+  }
+
+  function switchCategoryByOffset(offset, showNotification = false) {
+    const idx = Math.max(0, CATEGORIES.findIndex(c => c.id === state.category));
+    const nextIdx = (idx + offset + CATEGORIES.length) % CATEGORIES.length;
+    const targetCat = CATEGORIES[nextIdx];
+    if (!targetCat) return;
+
+    state.category = targetCat.id;
+    state.subcategory = 'all';
+    renderCategoryTabs();
+    renderSubcategoryBar();
+    renderShortcuts();
+
+    const animClass = offset > 0 ? 'swipe-slide-from-right' : 'swipe-slide-from-left';
+    shortcutsContainerEl.classList.remove('swipe-slide-from-right', 'swipe-slide-from-left');
+    void shortcutsContainerEl.offsetWidth; // reflow
+    shortcutsContainerEl.classList.add(animClass);
+
+    if (showNotification) {
+      showToast(`${targetCat.icon} 「${targetCat.name}」へ切り替えました`);
+    }
   }
 
   function renderSubcategoryBar() {
@@ -280,11 +351,16 @@
   }
 
   function renderCardGroup(group) {
-    const cardsHtml = group.items.map(item => {
+    const isSwipeCarousel = state.viewMode === 'swipe';
+    const totalInGroup = group.items.length;
+
+    const cardsHtml = group.items.map((item, idx) => {
       const isFav = state.favorites.has(item.id);
       const comboText = item.keys.join(' + ');
       const shortKeyGroup = item.keyGroup ? item.keyGroup.replace(/^[①-⑩]\s*/, '').replace(/（.*?）/g, '') : '';
-      const keyTagHtml = shortKeyGroup ? `<span class="item-func-tag">${escapeHtml(shortKeyGroup)}</span>` : '';
+      const keyTagHtml = isSwipeCarousel
+        ? `<span class="item-func-tag">${idx + 1} / ${totalInGroup}</span>`
+        : (shortKeyGroup ? `<span class="item-func-tag">${escapeHtml(shortKeyGroup)}</span>` : '');
       return `
         <article class="shortcut-card" style="--card-accent: ${group.color}">
           <div>
@@ -334,9 +410,9 @@
             <span class="section-badge">${escapeHtml(group.categoryIcon)} ${escapeHtml(group.categoryName)}</span>
             <h2 class="section-title">${escapeHtml(group.subcategory)}</h2>
           </div>
-          <span class="section-count">${group.items.length} 件</span>
+          <span class="section-count">${isSwipeCarousel ? '👆 左右スワイプ ・ ' : ''}${group.items.length} 件</span>
         </div>
-        <div class="cards-grid">
+        <div class="cards-grid ${isSwipeCarousel ? 'cards-carousel' : ''}">
           ${cardsHtml}
         </div>
       </section>
@@ -534,6 +610,15 @@
       renderShortcuts();
     });
 
+    // スマホ用 前後カテゴリ切替ボタン＆タッチスワイプ
+    if (swipePrevBtn) {
+      swipePrevBtn.addEventListener('click', () => switchCategoryByOffset(-1, true));
+    }
+    if (swipeNextBtn) {
+      swipeNextBtn.addEventListener('click', () => switchCategoryByOffset(1, true));
+    }
+    bindTouchSwipe();
+
     // サブカテゴリ切替
     subcategoryBarEl.addEventListener('click', e => {
       const btn = e.target.closest('.subcat-pill');
@@ -672,6 +757,121 @@
         }
       }
     });
+  }
+
+  function bindTouchSwipe() {
+    let startX = 0;
+    let startY = 0;
+    let startTime = 0;
+    let directionLock = null; // null | 'horizontal' | 'vertical'
+    let isTracking = false;
+
+    const resetSwipeVisuals = () => {
+      shortcutsContainerEl.style.transform = '';
+      shortcutsContainerEl.style.transition = '';
+      if (swipePreviewIndicatorEl) {
+        swipePreviewIndicatorEl.classList.add('hidden');
+        swipePreviewIndicatorEl.classList.remove('left-side', 'right-side', 'ready');
+      }
+    };
+
+    document.addEventListener('touchstart', e => {
+      if (e.touches.length !== 1) return;
+      const target = e.target;
+      // 横スクロール要素（カルーセル・早見表・タブバー・入力欄）内のタッチは除外
+      if (
+        target.closest('.cards-carousel') ||
+        target.closest('.shortcuts-table-wrap') ||
+        target.closest('.category-tabs') ||
+        target.closest('.subcategory-bar') ||
+        target.closest('input, textarea, select')
+      ) {
+        isTracking = false;
+        return;
+      }
+      // ショートカット一覧またはスワイプバー上のタッチのみ対象
+      if (!target.closest('#shortcutsContainer') && !target.closest('#mobileSwipeBar')) {
+        isTracking = false;
+        return;
+      }
+
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      startTime = Date.now();
+      directionLock = null;
+      isTracking = true;
+    }, { passive: true });
+
+    document.addEventListener('touchmove', e => {
+      if (!isTracking || e.touches.length !== 1) return;
+      const dx = e.touches[0].clientX - startX;
+      const dy = e.touches[0].clientY - startY;
+      const absX = Math.abs(dx);
+      const absY = Math.abs(dy);
+
+      if (!directionLock) {
+        if (absX < 10 && absY < 10) return;
+        if (absY >= absX * 0.85) {
+          directionLock = 'vertical';
+          isTracking = false;
+          return;
+        }
+        directionLock = 'horizontal';
+      }
+
+      if (directionLock === 'horizontal') {
+        const dampedX = Math.max(-75, Math.min(75, dx * 0.32));
+        shortcutsContainerEl.style.transition = 'none';
+        shortcutsContainerEl.style.transform = `translateX(${dampedX}px)`;
+
+        if (swipePreviewIndicatorEl) {
+          const idx = Math.max(0, CATEGORIES.findIndex(c => c.id === state.category));
+          const isNext = dx < 0;
+          const targetIdx = isNext
+            ? (idx + 1) % CATEGORIES.length
+            : (idx - 1 + CATEGORIES.length) % CATEGORIES.length;
+          const targetCat = CATEGORIES[targetIdx];
+          if (targetCat) {
+            swipePreviewIndicatorEl.textContent = isNext
+              ? `${targetCat.icon} ${targetCat.name} ▶`
+              : `◀ ${targetCat.icon} ${targetCat.name}`;
+            swipePreviewIndicatorEl.classList.remove('hidden', 'left-side', 'right-side');
+            swipePreviewIndicatorEl.classList.add(isNext ? 'right-side' : 'left-side');
+            swipePreviewIndicatorEl.classList.toggle('ready', absX >= 55);
+          }
+        }
+      }
+    }, { passive: true });
+
+    document.addEventListener('touchend', e => {
+      if (!isTracking) return;
+      isTracking = false;
+
+      if (directionLock !== 'horizontal' || !e.changedTouches.length) {
+        resetSwipeVisuals();
+        return;
+      }
+
+      const dx = e.changedTouches[0].clientX - startX;
+      const dy = e.changedTouches[0].clientY - startY;
+      const elapsed = Date.now() - startTime;
+      resetSwipeVisuals();
+
+      const isValidSwipe =
+        (Math.abs(dx) >= 55 && Math.abs(dx) > Math.abs(dy) * 1.3) ||
+        (Math.abs(dx) >= 35 && elapsed < 260 && Math.abs(dx) > Math.abs(dy) * 1.5);
+
+      if (isValidSwipe) {
+        // 左スワイプ(dx < 0)で次のカテゴリ、右スワイプ(dx > 0)で前のカテゴリ
+        switchCategoryByOffset(dx < 0 ? 1 : -1, true);
+      }
+    }, { passive: true });
+
+    document.addEventListener('touchcancel', () => {
+      isTracking = false;
+      directionLock = null;
+      resetSwipeVisuals();
+    }, { passive: true });
   }
 
   function escapeHtml(str) {

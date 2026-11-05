@@ -102,6 +102,9 @@
           <button type="button" class="view-btn active" data-view="card" title="解説付きカード表示">
             <span>🗂️</span> カード
           </button>
+          <button type="button" class="view-btn" data-view="swipe" title="ジャンルごとにカードを横スワイプでめくる表示">
+            <span>👆</span> 横スワイプ
+          </button>
           <button type="button" class="view-btn" data-view="table" title="一覧早見表（コンパクト表示）">
             <span>📋</span> 早見表
           </button>
@@ -113,6 +116,22 @@
         <!-- JSで動的生成 -->
       </div>
     </section>
+
+    <!-- スマホ用 左右スワイプ・カテゴリ切替ナビバー -->
+    <div class="mobile-swipe-bar" id="mobileSwipeBar" aria-label="左右スワイプでカテゴリ切替">
+      <button type="button" class="swipe-nav-btn prev" id="swipePrevBtn" aria-label="前のカテゴリへ">
+        <span class="swipe-arrow">◀</span>
+        <span class="swipe-target-name" id="swipePrevName">前へ</span>
+      </button>
+      <div class="swipe-center-info">
+        <span class="swipe-hint-text" id="swipeHintText">👆 左右スワイプでカテゴリ切替</span>
+        <div class="swipe-dots" id="swipeDots" aria-hidden="true"></div>
+      </div>
+      <button type="button" class="swipe-nav-btn next" id="swipeNextBtn" aria-label="次のカテゴリへ">
+        <span class="swipe-target-name" id="swipeNextName">次へ</span>
+        <span class="swipe-arrow">▶</span>
+      </button>
+    </div>
 
     <!-- ステータスバー -->
     <div class="status-bar">
@@ -146,6 +165,9 @@
       </details>
     </div>
   </footer>
+
+  <!-- スワイプ中プレビューインジケーター -->
+  <div id="swipePreviewIndicator" class="swipe-preview-indicator hidden" aria-hidden="true"></div>
 
   <!-- コピー通知トースト -->
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
