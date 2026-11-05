@@ -1375,18 +1375,62 @@ kbd.keycap-mouse {
 
 .table-keys-cell {
   white-space: nowrap;
-  width: 240px;
+  width: 210px;
 }
 
 .table-title-cell {
   font-weight: 800;
   color: var(--text-main);
-  min-width: 170px;
+  min-width: 155px;
+  width: 16%;
 }
 
 .table-desc-cell {
   color: var(--text-main);
-  font-size: 0.82rem;
+  font-size: 0.81rem;
+  line-height: 1.45;
+  min-width: 195px;
+  width: 22%;
+}
+
+.table-memory-cell {
+  min-width: 185px;
+  width: 21%;
+  vertical-align: middle;
+}
+
+.table-tip-cell {
+  min-width: 190px;
+  width: 22%;
+  vertical-align: middle;
+}
+
+.table-memory-box {
+  padding: 6px 9px;
+  border-radius: 6px;
+  background-color: var(--memory-bg);
+  border: 1px solid var(--memory-border);
+  border-left: 3.5px solid var(--memory-accent);
+  font-size: 0.77rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--memory-text);
+}
+
+.table-tip-box {
+  padding: 6px 9px;
+  border-radius: 6px;
+  background-color: var(--tip-bg);
+  border: 1px solid var(--tip-border);
+  border-left: 3.5px solid var(--tip-accent);
+  font-size: 0.76rem;
+  line-height: 1.4;
+  color: var(--tip-text);
+}
+
+.table-empty-dash {
+  color: var(--text-muted);
+  font-size: 0.8rem;
 }
 
 .table-memory-line {
@@ -1409,12 +1453,13 @@ kbd.keycap-mouse {
 }
 
 .table-level-cell {
-  width: 75px;
+  width: 72px;
+  white-space: nowrap;
   text-align: center;
 }
 
 .table-fav-cell {
-  width: 42px;
+  width: 40px;
   text-align: center;
 }
 

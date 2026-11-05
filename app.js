@@ -175,26 +175,38 @@
   function renderSubcategorySelect() {
     if (!subcatSelectEl || !subcatSelectWrapEl) return;
 
-    if (state.category === 'all' || state.level === 'fav' || state.isRandomMode) {
+    if (state.level === 'fav' || state.isRandomMode) {
       subcatSelectWrapEl.classList.add('hidden');
       return;
     }
 
-    const targetItems = SHORTCUTS_DATA.filter(item => item.category === state.category);
-    const subcats = Array.from(new Set(targetItems.map(item => item.subcategory)));
+    const targetItems = state.category === 'all'
+      ? SHORTCUTS_DATA
+      : SHORTCUTS_DATA.filter(item => item.category === state.category);
 
-    if (subcats.length <= 1) {
+    const keyGroups = Array.from(new Set(targetItems.map(item => item.keyGroup).filter(Boolean)));
+    const subcats = Array.from(new Set(targetItems.map(item => item.subcategory).filter(Boolean)));
+
+    if (keyGroups.length <= 1 && subcats.length <= 1) {
       subcatSelectWrapEl.classList.add('hidden');
       return;
     }
 
     subcatSelectWrapEl.classList.remove('hidden');
+    const keyGroupOptions = keyGroups.map(kg => {
+      const cnt = targetItems.filter(i => i.keyGroup === kg).length;
+      return `<option value="kg:${escapeHtml(kg)}" ${state.subcategory === `kg:${kg}` ? 'selected' : ''}>${escapeHtml(kg)} (${cnt})</option>`;
+    }).join('');
+
+    const subcatOptions = subcats.map(sub => {
+      const cnt = targetItems.filter(i => i.subcategory === sub).length;
+      return `<option value="sub:${escapeHtml(sub)}" ${state.subcategory === `sub:${sub}` ? 'selected' : ''}>${escapeHtml(sub)} (${cnt})</option>`;
+    }).join('');
+
     subcatSelectEl.innerHTML = [
-      `<option value="all" ${state.subcategory === 'all' ? 'selected' : ''}>ジャンル: すべて (${targetItems.length})</option>`,
-      ...subcats.map(sub => {
-        const cnt = targetItems.filter(i => i.subcategory === sub).length;
-        return `<option value="${escapeHtml(sub)}" ${state.subcategory === sub ? 'selected' : ''}>${escapeHtml(sub)} (${cnt})</option>`;
-      })
+      `<option value="all" ${state.subcategory === 'all' ? 'selected' : ''}>グループ: すべて (${targetItems.length})</option>`,
+      `<optgroup label="⌨️ キーグループ別（Ctrl / Win / Alt 等）">${keyGroupOptions}</optgroup>`,
+      state.category !== 'all' ? `<optgroup label="📂 機能ジャンル別">${subcatOptions}</optgroup>` : ''
     ].join('');
   }
 
@@ -321,8 +333,14 @@
           if (state.category !== 'all' && item.category !== state.category) {
             return false;
           }
-          if (state.subcategory !== 'all' && item.subcategory !== state.subcategory) {
-            return false;
+          if (state.subcategory !== 'all') {
+            if (state.subcategory.startsWith('kg:')) {
+              if (item.keyGroup !== state.subcategory.slice(3)) return false;
+            } else if (state.subcategory.startsWith('sub:')) {
+              if (item.subcategory !== state.subcategory.slice(4)) return false;
+            } else if (item.subcategory !== state.subcategory && item.keyGroup !== state.subcategory) {
+              return false;
+            }
           }
         }
         if (state.level !== 'all' && String(item.level) !== state.level) {
@@ -450,7 +468,7 @@
     } else if (state.searchQuery.trim()) {
       summaryParts.push(`検索:「${state.searchQuery.trim()}」`);
     } else if (state.subcategory !== 'all' && state.level !== 'fav') {
-      summaryParts.push(state.subcategory);
+      summaryParts.push(state.subcategory.replace(/^(kg:|sub:)/, ''));
     }
     if (state.level === 'fav') summaryParts.push('★お気に入りのみ');
     else if (state.level === '3') summaryParts.push('★★★必須のみ');
@@ -542,6 +560,7 @@
           <div class="single-card-header">
             <div class="single-card-badges">
               ${catMeta ? `<span class="section-badge" style="background:${cardColor}">${escapeHtml(catMeta.icon)} ${escapeHtml(catMeta.name)}</span>` : ''}
+              <span class="single-genre-badge">${escapeHtml(item.keyGroup || item.subcategory)}</span>
               <span class="single-genre-badge">${escapeHtml(item.subcategory)}</span>
             </div>
             <div class="single-card-right-top">
@@ -790,14 +809,15 @@
   }
 
   // ==========================================
-  // 2. 全件一覧（クリック不要で全情報を常時全体表示）
+  // 2. 全件一覧（キーグループ別＆アルファベット順で常時全体表示）
   // ==========================================
   function groupShortcuts(items) {
     const map = new Map();
 
     items.forEach(item => {
       const catMeta = CATEGORIES.find(c => c.id === item.category);
-      const groupKey = `${item.category}__${item.subcategory}`;
+      const keyGroupLabel = item.keyGroup || item.subcategory;
+      const groupKey = `${item.category}__${keyGroupLabel}`;
 
       if (!map.has(groupKey)) {
         map.set(groupKey, {
@@ -805,7 +825,7 @@
           categoryName: catMeta ? catMeta.name : item.category,
           categoryIcon: catMeta ? catMeta.icon : '⌨️',
           color: catMeta ? catMeta.color : '#2563eb',
-          subcategory: item.subcategory,
+          subcategory: keyGroupLabel,
           items: []
         });
       }
@@ -842,6 +862,7 @@
             <h3 class="card-title">${escapeHtml(item.title)}</h3>
             <div class="card-meta-right">
               ${state.isRandomMode && catMeta ? `<span class="section-badge" style="background:${cardColor}">${escapeHtml(catMeta.icon)} ${escapeHtml(catMeta.name)}</span>` : ''}
+              <span class="single-genre-badge">${escapeHtml(item.subcategory)}</span>
               ${renderLevelBadge(item.level)}
               <button
                 type="button"
@@ -914,10 +935,12 @@
             </div>
           </td>
           <td class="table-title-cell">${escapeHtml(item.title)}</td>
-          <td class="table-desc-cell">
-            ${escapeHtml(item.desc)}
-            ${item.memory ? `<br><span class="table-memory-line">🧠 ${escapeHtml(item.memory)}</span>` : ''}
-            ${item.tip ? `<br><span class="table-tip-line">💡 ${escapeHtml(item.tip)}</span>` : ''}
+          <td class="table-desc-cell">${escapeHtml(item.desc)}</td>
+          <td class="table-memory-cell">
+            ${item.memory ? `<div class="table-memory-box">🧠 ${escapeHtml(item.memory)}</div>` : '<span class="table-empty-dash">—</span>'}
+          </td>
+          <td class="table-tip-cell">
+            ${item.tip ? `<div class="table-tip-box">💡 ${escapeHtml(item.tip)}</div>` : '<span class="table-empty-dash">—</span>'}
           </td>
           <td class="table-level-cell">${renderLevelBadge(item.level)}</td>
           <td class="table-fav-cell">
@@ -947,7 +970,9 @@
               <tr>
                 <th>ショートカットキー</th>
                 <th>機能名</th>
-                <th>説明・ワンポイント</th>
+                <th>説明</th>
+                <th>🧠 覚え方</th>
+                <th>💡 ワンポイント</th>
                 <th>重要度</th>
                 <th>★</th>
               </tr>

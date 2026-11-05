@@ -686,8 +686,12 @@
           <td class="table-desc-cell">
             <strong>👆 ${escapeHtml(item.howTo)}</strong><br>
             ${escapeHtml(item.desc)}
-            ${item.point ? `<br><span class="table-memory-line">🎯 ${escapeHtml(item.point)}</span>` : ''}
-            ${item.tip ? `<br><span class="table-tip-line">💡 ${escapeHtml(item.tip)}</span>` : ''}
+          </td>
+          <td class="table-memory-cell">
+            ${item.point ? `<div class="table-memory-box">🎯 ${escapeHtml(item.point)}</div>` : '<span class="table-empty-dash">—</span>'}
+          </td>
+          <td class="table-tip-cell">
+            ${item.tip ? `<div class="table-tip-box">💡 ${escapeHtml(item.tip)}</div>` : '<span class="table-empty-dash">—</span>'}
           </td>
           <td class="table-level-cell">${renderLevelBadge(item.level)}</td>
           <td class="table-fav-cell">
@@ -716,7 +720,9 @@
             <thead>
               <tr>
                 <th>小技・便利機能タイトル</th>
-                <th>操作方法・詳細解説</th>
+                <th>操作方法・説明</th>
+                <th>🎯 効果・ポイント</th>
+                <th>💡 ワンポイント</th>
                 <th>重要度</th>
                 <th>★</th>
               </tr>

@@ -210,407 +210,6 @@ const RESEARCHED_SOURCES = [
  */
 const SHORTCUTS_DATA = [
   {
-    "id": "w11-11",
-    "category": "win11",
-    "subcategory": "ウィンドウ・画面整理",
-    "keys": [
-      "Alt",
-      "Esc"
-    ],
-    "title": "ウィンドウを開いた順番で直接切り替え",
-    "desc": "サムネイル一覧を出さずに、現在開いているウィンドウを直接次々と切り替えます。",
-    "tip": "画面のアニメーション待ち時間ゼロで切り替えたい玄人に人気です。",
-    "level": 1,
-    "memory": "Alt + Tab のすぐ上にある「Esc」でプレビューなしの直接切り替え",
-    "funcGroup": "ウィンドウ・画面整理",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710400
-  },
-  {
-    "id": "w11-10",
-    "category": "win11",
-    "subcategory": "ウィンドウ・画面整理",
-    "keys": [
-      "Alt",
-      "Tab"
-    ],
-    "title": "アプリの高速切り替え",
-    "desc": "起動中のアプリ一覧を表示し、直前に使っていたウィンドウへ素早く切り替えます。",
-    "tip": "Altを押したままTabを連打すると目的のウィンドウを選べます。Shiftを足すと逆順移動。",
-    "level": 3,
-    "memory": "Alternate（交互に切り替える）の「Alt」＋ Tab（タブ移動）",
-    "funcGroup": "ウィンドウ・画面整理",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710402
-  },
-  {
-    "id": "w11-56",
-    "category": "win11",
-    "subcategory": "ウィンドウ・画面整理",
-    "keys": [
-      "Ctrl",
-      "Alt",
-      "Tab"
-    ],
-    "title": "アプリ切替一覧を画面に固定表示して矢印キーで選ぶ",
-    "desc": "Altキーから指を離してもアプリ切替画面が閉じず、矢印キーやマウスでじっくり選んでEnterで切り替えられます。",
-    "tip": "たくさんのウィンドウを開いていて探すのに時間がかかるときに便利です。",
-    "level": 2,
-    "memory": "Alt + Tab に Ctrl（固定ホールド）をプラス",
-    "funcGroup": "ウィンドウ・画面整理",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 930484
-  },
-  {
-    "id": "w11-8",
-    "category": "win11",
-    "subcategory": "ウィンドウ・画面整理",
-    "keys": [
-      "Win",
-      "D"
-    ],
-    "title": "デスクトップを表示 / 元に戻す",
-    "desc": "開いているすべてのウィンドウを一瞬で最小化し、デスクトップを表示します。",
-    "tip": "もう一度押すと元のウィンドウ配置に戻ります。デスクトップ上のファイルを見る時に最適。",
-    "level": 3,
-    "memory": "Desktop（デスクトップ）の頭文字「D」",
-    "funcGroup": "ウィンドウ・画面整理",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020268
-  },
-  {
-    "id": "w11-9",
-    "category": "win11",
-    "subcategory": "ウィンドウ・画面整理",
-    "keys": [
-      "Win",
-      "M"
-    ],
-    "title": "すべてのウィンドウを最小化（Win+Shift+Mで復元）",
-    "desc": "開いている全ウィンドウを最小化します。Win + Shift + M で元のサイズに復元します。",
-    "tip": "ダイアログが開いていない限り Win + D の方がトグル動作するため便利です。",
-    "level": 1,
-    "memory": "Minimize（最小化する）の頭文字「M」（Shiftを足すと逆＝元に戻す）",
-    "funcGroup": "ウィンドウ・画面整理",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020277
-  },
-  {
-    "id": "w11-15",
-    "category": "win11",
-    "subcategory": "ウィンドウ・画面整理",
-    "keys": [
-      "Win",
-      "Z"
-    ],
-    "title": "スナップレイアウト（Windows 11専用）を開く",
-    "desc": "画面右上に2分割・3分割・4分割の整列レイアウト選択ポップアップを表示します。",
-    "tip": "矢印キーまたは数字キー（1〜6）で配置先をそのまま指定できます。",
-    "level": 3,
-    "memory": "アルファベット最後の「Z」＝究極（Zenith）の整列「スナップレイアウト」",
-    "funcGroup": "ウィンドウ・画面整理",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020290
-  },
-  {
-    "id": "w11-12",
-    "category": "win11",
-    "subcategory": "ウィンドウ・画面整理",
-    "keys": [
-      "Win",
-      "Tab"
-    ],
-    "title": "タスクビュー（全ウィンドウ＆仮想デスクトップ一覧）",
-    "desc": "現在開いている全ウィンドウの俯瞰と、仮想デスクトップの追加・切り替えを行います。",
-    "tip": "キーから指を離しても一覧が閉じないため、マウスでも選びやすいのが特徴です。",
-    "level": 3,
-    "memory": "Alt + Tab（アプリ切替）のWindows全体俯瞰版だから「Win + Tab」",
-    "funcGroup": "ウィンドウ・画面整理",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020402
-  },
-  {
-    "id": "w11-18",
-    "category": "win11",
-    "subcategory": "ウィンドウ・画面整理",
-    "keys": [
-      "Win",
-      "Home"
-    ],
-    "title": "作業中以外の背景ウィンドウをすべて最小化",
-    "desc": "現在アクティブなウィンドウ1つだけを残し、後ろにある他のウィンドウを一括で最小化します。",
-    "tip": "もう一度 Win + Home を押すと背景のウィンドウが元の位置に復帰します。",
-    "level": 2,
-    "memory": "Home（自分の家＝今作業中のウィンドウ1つ）だけを残して他を片付ける",
-    "funcGroup": "ウィンドウ・画面整理",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020414
-  },
-  {
-    "id": "w11-14",
-    "category": "win11",
-    "subcategory": "ウィンドウ・画面整理",
-    "keys": [
-      "Win",
-      "↑ / ↓"
-    ],
-    "title": "ウィンドウの最大化（↑）/ 元のサイズ・最小化（↓）",
-    "desc": "Win + ↑ でウィンドウを最大化し、Win + ↓ でサイズ復元または最小化します。",
-    "tip": "Win + ←/→ のあとに ↑/↓ を押すと画面の4分割（四隅への配置）も自在にできます。",
-    "level": 3,
-    "memory": "Win（画面）＋ 上矢印（↑で大きく最大化）/ 下矢印（↓で小さく縮める）",
-    "funcGroup": "ウィンドウ・画面整理",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020422
-  },
-  {
-    "id": "w11-13",
-    "category": "win11",
-    "subcategory": "ウィンドウ・画面整理",
-    "keys": [
-      "Win",
-      "← / →"
-    ],
-    "title": "ウィンドウを画面の左右半分にスナップ配置",
-    "desc": "現在のウィンドウを画面の左半分または右半分にピタッと50%整列させます。",
-    "tip": "左右に資料と作業画面を並べて見比べるときに必須のショートカットです。",
-    "level": 3,
-    "memory": "Win（画面）＋ 矢印の方向（左/右）へウィンドウをぶつけてピタッと寄せるイメージ",
-    "funcGroup": "ウィンドウ・画面整理",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020426
-  },
-  {
-    "id": "w11-54",
-    "category": "win11",
-    "subcategory": "ウィンドウ・画面整理",
-    "keys": [
-      "Win",
-      "Shift",
-      "1〜9"
-    ],
-    "title": "タスクバーのアプリを「別ウィンドウで新規起動」",
-    "desc": "すでに開いているタスクバーの1〜9番目のアプリ（エクスプローラーやブラウザなど）を、新しい別ウィンドウで追加起動します。",
-    "tip": "Win + 数字 だと既存ウィンドウへの切替になりますが、Shift を足すと新規ウィンドウが開きます。",
-    "level": 2,
-    "memory": "Win + 数字（起動）＋ Shift（別ウィンドウで追加）",
-    "funcGroup": "ウィンドウ・画面整理",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1030101
-  },
-  {
-    "id": "w11-55",
-    "category": "win11",
-    "subcategory": "ウィンドウ・画面整理",
-    "keys": [
-      "Win",
-      "Alt",
-      "1〜9"
-    ],
-    "title": "タスクバーのアプリのジャンプリスト（最近使った履歴）を開く",
-    "desc": "タスクバー1〜9番目のアイコンを右クリックしたときに出る「最近使ったファイル・ピン留め一覧」を開きます。",
-    "tip": "よく使うExcelファイルやフォルダをタスクバーから最速で開けます。",
-    "level": 1,
-    "memory": "Win + 数字 ＋ Alt（サブメニュー・履歴を開く）",
-    "funcGroup": "ウィンドウ・画面整理",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1030101
-  },
-  {
-    "id": "w11-17",
-    "category": "win11",
-    "subcategory": "ウィンドウ・画面整理",
-    "keys": [
-      "Win",
-      "Shift",
-      "↑"
-    ],
-    "title": "横幅はそのままにウィンドウを「縦方向だけ最大化」",
-    "desc": "現在の横幅を維持したまま、画面の上端から下端まで縦いっぱいに広げます。",
-    "tip": "縦に長いコードやWebページ、PDFを読むときに非常に重宝します。",
-    "level": 1,
-    "memory": "Win + ↑（全体最大化）に「Shift（縦方向だけに限定）」をプラス",
-    "funcGroup": "ウィンドウ・画面整理",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1030422
-  },
-  {
-    "id": "w11-16",
-    "category": "win11",
-    "subcategory": "ウィンドウ・画面整理",
-    "keys": [
-      "Win",
-      "Shift",
-      "← / →"
-    ],
-    "title": "ウィンドウを別のモニター（ディスプレイ）へ移動",
-    "desc": "マルチモニター環境で、アクティブなウィンドウを隣のディスプレイへ瞬時に移動します。",
-    "tip": "マウスで画面端まで長距離ドラッグする手間がなくなります。",
-    "level": 3,
-    "memory": "Win + 矢印（画面端寄せ）に「Shift（モニターの枠を超える）」を足して別画面へワープ！",
-    "funcGroup": "ウィンドウ・画面整理",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1030426
-  },
-  {
-    "id": "w11-5",
-    "category": "win11",
-    "subcategory": "クリップボード・スクショ・録画",
-    "keys": [
-      "Alt",
-      "PrintScreen"
-    ],
-    "title": "現在アクティブなウィンドウだけをスクショ（コピー）",
-    "desc": "全画面ではなく、今最前面で操作しているウィンドウ1つだけを綺麗に切り取ってコピーします。",
-    "tip": "背景のデスクトップや他のアプリを写り込ませたくない時に重宝します。",
-    "level": 3,
-    "memory": "Alt（今のウィンドウだけに限定）＋ PrintScreen（画面撮影）",
-    "funcGroup": "クリップボード・スクショ・録画",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710430
-  },
-  {
-    "id": "w11-6",
-    "category": "win11",
-    "subcategory": "クリップボード・スクショ・録画",
-    "keys": [
-      "Win",
-      "G"
-    ],
-    "title": "Xbox Game Bar（ゲームバー・画面録画）を開く",
-    "desc": "アプリの画面録画やオーディオ出力切り替え、パフォーマンス監視パネルを呼び出します。",
-    "tip": "Win + Alt + R を押せば、パネルを開かずに即座に画面録画を開始/停止できます。",
-    "level": 2,
-    "memory": "Game Bar（ゲームバー）の頭文字「G」",
-    "funcGroup": "クリップボード・スクショ・録画",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020271
-  },
-  {
-    "id": "w11-1",
-    "category": "win11",
-    "subcategory": "クリップボード・スクショ・録画",
-    "keys": [
-      "Win",
-      "V"
-    ],
-    "title": "クリップボード履歴を開く",
-    "desc": "過去にコピーしたテキストや画像の履歴一覧を表示し、選んで貼り付けられます。",
-    "tip": "初回のみ「有効にする」をクリックすれば、よく使う定型文のピン留めも使える最強機能です。",
-    "level": 3,
-    "memory": "通常の貼り付け（Ctrl+V）のOS進化版だから「Win + V」",
-    "funcGroup": "クリップボード・スクショ・録画",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020286
-  },
-  {
-    "id": "w11-4",
-    "category": "win11",
-    "subcategory": "クリップボード・スクショ・録画",
-    "keys": [
-      "Win",
-      "PrintScreen"
-    ],
-    "title": "全画面スクショを即座に画像ファイルとして保存",
-    "desc": "画面全体のスクリーンショットを撮影し、「ピクチャ > スクリーンショット」フォルダに自動保存します。",
-    "tip": "画面が一瞬暗くなれば保存完了の合図です。貼り付け作業なしで連写保存できます。",
-    "level": 3,
-    "memory": "Win（OS機能で自動保存）＋ PrintScreen（画面撮影）",
-    "funcGroup": "クリップボード・スクショ・録画",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020430
-  },
-  {
-    "id": "w11-57",
-    "category": "win11",
-    "subcategory": "クリップボード・スクショ・録画",
-    "keys": [
-      "Win",
-      "Alt",
-      "B"
-    ],
-    "title": "HDR（ハイダイナミックレンジ）表示のオン/オフ切替",
-    "desc": "対応モニター接続時に、HDR表示と通常（SDR）表示をショートカット一発で切り替えます。",
-    "tip": "画面キャプチャ時にHDRで白飛びしてしまう場合、このキーですぐ通常表示に戻せます。",
-    "level": 1,
-    "memory": "Win + Alt + Brightness（輝度・HDR）の「B」",
-    "funcGroup": "クリップボード・スクショ・録画",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1030266
-  },
-  {
-    "id": "w11-3",
-    "category": "win11",
-    "subcategory": "クリップボード・スクショ・録画",
-    "keys": [
-      "Win",
-      "Shift",
-      "R"
-    ],
-    "title": "画面範囲を指定して動画キャプチャ（画面録画）",
-    "desc": "Windows 11のSnipping Toolの録画モードを直接起動し、指定領域の操作手順をMP4録画します。",
-    "tip": "操作マニュアル作成やバグ報告の動画撮影が標準機能だけで完結します。",
-    "level": 2,
-    "memory": "Record（録画する）の頭文字「R」（スクショの Win+Shift+S のすぐ左上！）",
-    "funcGroup": "クリップボード・スクショ・録画",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1030282
-  },
-  {
-    "id": "w11-2",
-    "category": "win11",
-    "subcategory": "クリップボード・スクショ・録画",
-    "keys": [
-      "Win",
-      "Shift",
-      "S"
-    ],
-    "title": "範囲を指定してスクリーンショット（Snipping Tool）",
-    "desc": "画面の好きな範囲をドラッグして切り取りスクショを撮影します。",
-    "tip": "撮影した画像は自動でクリップボードに入り、そのままチャットや資料に Ctrl + V で貼り付け可能です。",
-    "level": 3,
-    "memory": "Screen（画面）を Snip（切り取る）の「S」に Win + Shift",
-    "funcGroup": "クリップボード・スクショ・録画",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1030283
-  },
-  {
-    "id": "w11-48",
-    "category": "win11",
-    "subcategory": "クリップボード・スクショ・録画",
-    "keys": [
-      "Win",
-      "Alt",
-      "G"
-    ],
-    "title": "直前の画面操作を遡って動画保存（バックグラウンド録画）",
-    "desc": "Xbox Game Barでバックグラウンド録画がONの時、「今の操作もう一回見たい！」と思った瞬間に直前30秒等を動画保存します。",
-    "tip": "再現しにくいエラー画面が出た直後に押すと、発生の瞬間を動画証拠として残せます。",
-    "memory": "Game clip（ゲームクリップ・直前録画）の「G」に Win + Alt",
-    "level": 1,
-    "funcGroup": "クリップボード・スクショ・録画",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1050271
-  },
-  {
-    "id": "w11-7",
-    "category": "win11",
-    "subcategory": "クリップボード・スクショ・録画",
-    "keys": [
-      "Win",
-      "Alt",
-      "R"
-    ],
-    "title": "アクティブウィンドウの画面録画を即座に開始 / 停止",
-    "desc": "今開いているアプリの画面録画をワンタッチで開始・終了します（ビデオ > キャプチャに保存）。",
-    "tip": "オンライン会議やブラウザ動作の記録に便利です。",
-    "level": 2,
-    "memory": "Record（録画）の「R」に Win + Alt",
-    "funcGroup": "クリップボード・スクショ・録画",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1050282
-  },
-  {
     "id": "w11-53",
     "category": "win11",
     "subcategory": "システム・設定・セキュリティ",
@@ -625,7 +224,7 @@ const SHORTCUTS_DATA = [
     "memory": "Shift（強化版）＋ F10（右クリックメニュー表示）",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 620310
+    "sortRank": 6130102
   },
   {
     "id": "w11-25",
@@ -642,7 +241,58 @@ const SHORTCUTS_DATA = [
     "memory": "F4（Finish / 4＝終わり）に Alt を合わせてアプリ終了",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710304
+    "sortRank": 7130042
+  },
+  {
+    "id": "w11-11",
+    "category": "win11",
+    "subcategory": "ウィンドウ・画面整理",
+    "keys": [
+      "Alt",
+      "Esc"
+    ],
+    "title": "ウィンドウを開いた順番で直接切り替え",
+    "desc": "サムネイル一覧を出さずに、現在開いているウィンドウを直接次々と切り替えます。",
+    "tip": "画面のアニメーション待ち時間ゼロで切り替えたい玄人に人気です。",
+    "level": 1,
+    "memory": "Alt + Tab のすぐ上にある「Esc」でプレビューなしの直接切り替え",
+    "funcGroup": "ウィンドウ・画面整理",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7140012
+  },
+  {
+    "id": "w11-10",
+    "category": "win11",
+    "subcategory": "ウィンドウ・画面整理",
+    "keys": [
+      "Alt",
+      "Tab"
+    ],
+    "title": "アプリの高速切り替え",
+    "desc": "起動中のアプリ一覧を表示し、直前に使っていたウィンドウへ素早く切り替えます。",
+    "tip": "Altを押したままTabを連打すると目的のウィンドウを選べます。Shiftを足すと逆順移動。",
+    "level": 3,
+    "memory": "Alternate（交互に切り替える）の「Alt」＋ Tab（タブ移動）",
+    "funcGroup": "ウィンドウ・画面整理",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7140022
+  },
+  {
+    "id": "w11-5",
+    "category": "win11",
+    "subcategory": "クリップボード・スクショ・録画",
+    "keys": [
+      "Alt",
+      "PrintScreen"
+    ],
+    "title": "現在アクティブなウィンドウだけをスクショ（コピー）",
+    "desc": "全画面ではなく、今最前面で操作しているウィンドウ1つだけを綺麗に切り取ってコピーします。",
+    "tip": "背景のデスクトップや他のアプリを写り込ませたくない時に重宝します。",
+    "level": 3,
+    "memory": "Alt（今のウィンドウだけに限定）＋ PrintScreen（画面撮影）",
+    "funcGroup": "クリップボード・スクショ・録画",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7140122
   },
   {
     "id": "w11-24",
@@ -660,7 +310,25 @@ const SHORTCUTS_DATA = [
     "memory": "Escape（フリーズから緊急脱出する）の「Esc」に左手端の Ctrl + Shift を同時押し！",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810400
+    "sortRank": 8140013
+  },
+  {
+    "id": "w11-56",
+    "category": "win11",
+    "subcategory": "ウィンドウ・画面整理",
+    "keys": [
+      "Ctrl",
+      "Alt",
+      "Tab"
+    ],
+    "title": "アプリ切替一覧を画面に固定表示して矢印キーで選ぶ",
+    "desc": "Altキーから指を離してもアプリ切替画面が閉じず、矢印キーやマウスでじっくり選んでEnterで切り替えられます。",
+    "tip": "たくさんのウィンドウを開いていて探すのに時間がかかるときに便利です。",
+    "level": 2,
+    "memory": "Alt + Tab に Ctrl（固定ホールド）をプラス",
+    "funcGroup": "ウィンドウ・画面整理",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9140023
   },
   {
     "id": "w11-41",
@@ -676,7 +344,7 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1010000
+    "sortRank": 10100001
   },
   {
     "id": "w11-21",
@@ -693,7 +361,7 @@ const SHORTCUTS_DATA = [
     "memory": "Action Center（旧アクションセンター＝クイック設定）の頭文字「A」",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020265
+    "sortRank": 10220012
   },
   {
     "id": "w11-42",
@@ -710,7 +378,7 @@ const SHORTCUTS_DATA = [
     "level": 1,
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020266
+    "sortRank": 10220022
   },
   {
     "id": "w11-43",
@@ -727,7 +395,58 @@ const SHORTCUTS_DATA = [
     "level": 2,
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020267
+    "sortRank": 10220032
+  },
+  {
+    "id": "w11-8",
+    "category": "win11",
+    "subcategory": "ウィンドウ・画面整理",
+    "keys": [
+      "Win",
+      "D"
+    ],
+    "title": "デスクトップを表示 / 元に戻す",
+    "desc": "開いているすべてのウィンドウを一瞬で最小化し、デスクトップを表示します。",
+    "tip": "もう一度押すと元のウィンドウ配置に戻ります。デスクトップ上のファイルを見る時に最適。",
+    "level": 3,
+    "memory": "Desktop（デスクトップ）の頭文字「D」",
+    "funcGroup": "ウィンドウ・画面整理",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10220042
+  },
+  {
+    "id": "w11-6",
+    "category": "win11",
+    "subcategory": "クリップボード・スクショ・録画",
+    "keys": [
+      "Win",
+      "G"
+    ],
+    "title": "Xbox Game Bar（ゲームバー・画面録画）を開く",
+    "desc": "アプリの画面録画やオーディオ出力切り替え、パフォーマンス監視パネルを呼び出します。",
+    "tip": "Win + Alt + R を押せば、パネルを開かずに即座に画面録画を開始/停止できます。",
+    "level": 2,
+    "memory": "Game Bar（ゲームバー）の頭文字「G」",
+    "funcGroup": "クリップボード・スクショ・録画",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10220072
+  },
+  {
+    "id": "w11-36",
+    "category": "win11",
+    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keys": [
+      "Win",
+      "H"
+    ],
+    "title": "音声入力（AIディクテーション）を起動",
+    "desc": "マイクに向かって話すだけで高精度にテキスト文字起こし・自動句読点入力を行います。",
+    "tip": "長文メールの下書きや議事録メモでタイピング疲れを軽減できます。",
+    "level": 2,
+    "memory": "Hear（聞き取る・音声入力）の頭文字「H」",
+    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10220082
   },
   {
     "id": "w11-20",
@@ -744,7 +463,7 @@ const SHORTCUTS_DATA = [
     "memory": "Information（システム情報・設定）の頭文字「I」",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020273
+    "sortRank": 10220092
   },
   {
     "id": "w11-29",
@@ -761,7 +480,7 @@ const SHORTCUTS_DATA = [
     "memory": "Konnekt（Connect＝ワイヤレス接続・キャスト）の「K」",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020275
+    "sortRank": 10220112
   },
   {
     "id": "w11-19",
@@ -778,7 +497,24 @@ const SHORTCUTS_DATA = [
     "memory": "Lock（ロックする）の頭文字「L」",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020276
+    "sortRank": 10220122
+  },
+  {
+    "id": "w11-9",
+    "category": "win11",
+    "subcategory": "ウィンドウ・画面整理",
+    "keys": [
+      "Win",
+      "M"
+    ],
+    "title": "すべてのウィンドウを最小化（Win+Shift+Mで復元）",
+    "desc": "開いている全ウィンドウを最小化します。Win + Shift + M で元のサイズに復元します。",
+    "tip": "ダイアログが開いていない限り Win + D の方がトグル動作するため便利です。",
+    "level": 1,
+    "memory": "Minimize（最小化する）の頭文字「M」（Shiftを足すと逆＝元に戻す）",
+    "funcGroup": "ウィンドウ・画面整理",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10220132
   },
   {
     "id": "w11-22",
@@ -795,7 +531,7 @@ const SHORTCUTS_DATA = [
     "memory": "Notification（通知）の頭文字「N」",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020278
+    "sortRank": 10220142
   },
   {
     "id": "w11-28",
@@ -812,7 +548,7 @@ const SHORTCUTS_DATA = [
     "memory": "Projector（プロジェクター・画面投影）の頭文字「P」",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020280
+    "sortRank": 10220162
   },
   {
     "id": "w11-27",
@@ -829,7 +565,7 @@ const SHORTCUTS_DATA = [
     "memory": "Run（プログラムを走らせる・実行する）の頭文字「R」",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020282
+    "sortRank": 10220182
   },
   {
     "id": "w11-26",
@@ -846,7 +582,58 @@ const SHORTCUTS_DATA = [
     "memory": "Search（サーチ・検索）の頭文字「S」（または Query の Q）",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020283
+    "sortRank": 10220192
+  },
+  {
+    "id": "w11-38",
+    "category": "win11",
+    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keys": [
+      "Win",
+      "T"
+    ],
+    "title": "タスクバー上のアプリアイコンにフォーカスして選択",
+    "desc": "タスクバーのアプリアイコンを矢印キーで順番に選び、Enterで開くことができます。",
+    "tip": "Win + B なら画面右下のシステムトレイ（隠れているインジケーター）にフォーカスします。",
+    "level": 1,
+    "memory": "Taskbar（タスクバー）の頭文字「T」",
+    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10220202
+  },
+  {
+    "id": "w11-40",
+    "category": "win11",
+    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keys": [
+      "Win",
+      "U"
+    ],
+    "title": "アクセシビリティ設定を開く（Win+Ctrl+Oで画面キーボード）",
+    "desc": "テキストサイズの拡大、コントラスト、ナレーターなどのアクセシビリティ設定画面を開きます。",
+    "tip": "Win + Ctrl + L で音声のリアルタイム字幕（ライブキャプション）も呼び出せます。",
+    "level": 1,
+    "memory": "Utility（ユーティリティ・アクセシビリティ補助機能）の頭文字「U」",
+    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10220212
+  },
+  {
+    "id": "w11-1",
+    "category": "win11",
+    "subcategory": "クリップボード・スクショ・録画",
+    "keys": [
+      "Win",
+      "V"
+    ],
+    "title": "クリップボード履歴を開く",
+    "desc": "過去にコピーしたテキストや画像の履歴一覧を表示し、選んで貼り付けられます。",
+    "tip": "初回のみ「有効にする」をクリックすれば、よく使う定型文のピン留めも使える最強機能です。",
+    "level": 3,
+    "memory": "通常の貼り付け（Ctrl+V）のOS進化版だから「Win + V」",
+    "funcGroup": "クリップボード・スクショ・録画",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10220222
   },
   {
     "id": "w11-44",
@@ -863,7 +650,7 @@ const SHORTCUTS_DATA = [
     "level": 2,
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020287
+    "sortRank": 10220232
   },
   {
     "id": "w11-23",
@@ -880,7 +667,75 @@ const SHORTCUTS_DATA = [
     "memory": "eXpert（エキスパート・管理者用）裏メニューの「X」",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020288
+    "sortRank": 10220242
+  },
+  {
+    "id": "w11-15",
+    "category": "win11",
+    "subcategory": "ウィンドウ・画面整理",
+    "keys": [
+      "Win",
+      "Z"
+    ],
+    "title": "スナップレイアウト（Windows 11専用）を開く",
+    "desc": "画面右上に2分割・3分割・4分割の整列レイアウト選択ポップアップを表示します。",
+    "tip": "矢印キーまたは数字キー（1〜6）で配置先をそのまま指定できます。",
+    "level": 3,
+    "memory": "アルファベット最後の「Z」＝究極（Zenith）の整列「スナップレイアウト」",
+    "funcGroup": "ウィンドウ・画面整理",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10220262
+  },
+  {
+    "id": "w11-12",
+    "category": "win11",
+    "subcategory": "ウィンドウ・画面整理",
+    "keys": [
+      "Win",
+      "Tab"
+    ],
+    "title": "タスクビュー（全ウィンドウ＆仮想デスクトップ一覧）",
+    "desc": "現在開いている全ウィンドウの俯瞰と、仮想デスクトップの追加・切り替えを行います。",
+    "tip": "キーから指を離しても一覧が閉じないため、マウスでも選びやすいのが特徴です。",
+    "level": 3,
+    "memory": "Alt + Tab（アプリ切替）のWindows全体俯瞰版だから「Win + Tab」",
+    "funcGroup": "ウィンドウ・画面整理",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10240022
+  },
+  {
+    "id": "w11-18",
+    "category": "win11",
+    "subcategory": "ウィンドウ・画面整理",
+    "keys": [
+      "Win",
+      "Home"
+    ],
+    "title": "作業中以外の背景ウィンドウをすべて最小化",
+    "desc": "現在アクティブなウィンドウ1つだけを残し、後ろにある他のウィンドウを一括で最小化します。",
+    "tip": "もう一度 Win + Home を押すと背景のウィンドウが元の位置に復帰します。",
+    "level": 2,
+    "memory": "Home（自分の家＝今作業中のウィンドウ1つ）だけを残して他を片付ける",
+    "funcGroup": "ウィンドウ・画面整理",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10240082
+  },
+  {
+    "id": "w11-4",
+    "category": "win11",
+    "subcategory": "クリップボード・スクショ・録画",
+    "keys": [
+      "Win",
+      "PrintScreen"
+    ],
+    "title": "全画面スクショを即座に画像ファイルとして保存",
+    "desc": "画面全体のスクリーンショットを撮影し、「ピクチャ > スクリーンショット」フォルダに自動保存します。",
+    "tip": "画面が一瞬暗くなれば保存完了の合図です。貼り付け作業なしで連写保存できます。",
+    "level": 3,
+    "memory": "Win（OS機能で自動保存）＋ PrintScreen（画面撮影）",
+    "funcGroup": "クリップボード・スクショ・録画",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10240122
   },
   {
     "id": "w11-30",
@@ -897,7 +752,7 @@ const SHORTCUTS_DATA = [
     "memory": "Pause（立ち止まってPCのスペックを確認する）キー",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020432
+    "sortRank": 10240132
   },
   {
     "id": "w11-52",
@@ -914,25 +769,201 @@ const SHORTCUTS_DATA = [
     "memory": "Win + Pause（一時停止してPCの正体を確認）",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020480
+    "sortRank": 10240132
   },
   {
-    "id": "w11-61",
+    "id": "w11-14",
     "category": "win11",
-    "subcategory": "システム・設定・セキュリティ",
+    "subcategory": "ウィンドウ・画面整理",
     "keys": [
       "Win",
-      "Alt",
-      "K"
+      "↑ / ↓"
     ],
-    "title": "通話アプリのマイクをシステム全体でミュート切替",
-    "desc": "Teamsなどの対応通話アプリで、別のウィンドウで作業中でもマイクのミュート/解除を即座に切り替えます。",
-    "tip": "会議画面を探してクリックしなくても、手元で瞬時にミュートできます。",
-    "level": 2,
-    "memory": "Win + Alt + Keep quiet（マイク消音）の「K」",
-    "funcGroup": "システム・設定・セキュリティ",
+    "title": "ウィンドウの最大化（↑）/ 元のサイズ・最小化（↓）",
+    "desc": "Win + ↑ でウィンドウを最大化し、Win + ↓ でサイズ復元または最小化します。",
+    "tip": "Win + ←/→ のあとに ↑/↓ を押すと画面の4分割（四隅への配置）も自在にできます。",
+    "level": 3,
+    "memory": "Win（画面）＋ 上矢印（↑で大きく最大化）/ 下矢印（↓で小さく縮める）",
+    "funcGroup": "ウィンドウ・画面整理",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1030275
+    "sortRank": 10240202
+  },
+  {
+    "id": "w11-13",
+    "category": "win11",
+    "subcategory": "ウィンドウ・画面整理",
+    "keys": [
+      "Win",
+      "← / →"
+    ],
+    "title": "ウィンドウを画面の左右半分にスナップ配置",
+    "desc": "現在のウィンドウを画面の左半分または右半分にピタッと50%整列させます。",
+    "tip": "左右に資料と作業画面を並べて見比べるときに必須のショートカットです。",
+    "level": 3,
+    "memory": "Win（画面）＋ 矢印の方向（左/右）へウィンドウをぶつけてピタッと寄せるイメージ",
+    "funcGroup": "ウィンドウ・画面整理",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10240222
+  },
+  {
+    "id": "w11-39",
+    "category": "win11",
+    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keys": [
+      "Win",
+      "+ (プラス)"
+    ],
+    "title": "拡大鏡（画面ズーム）を起動（Win+Escで終了）",
+    "desc": "画面全体をズームインして大きく表示します。Win + - で縮小、Win + Esc で拡大鏡を閉じます。",
+    "tip": "プレゼンや画面共有中に、細かい文字や図の一部を聴衆に拡大して見せたい時に絶大な効果があります！",
+    "level": 2,
+    "memory": "「＋（プラス）」で画面を拡大ズーム、「Esc」で拡大鏡から脱出",
+    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10250432
+  },
+  {
+    "id": "w11-35",
+    "category": "win11",
+    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keys": [
+      "Win",
+      ". (ピリオド)"
+    ],
+    "title": "絵文字・顔文字・記号パネルを開く",
+    "desc": "カーソル位置に絵文字（😊👍🎉）や顔文字、特殊記号（㎡、※、①、℃など）を入力するパネルを出します。",
+    "tip": "Win + ;（セミコロン）でも同じパネルが開きます。記号タブはビジネス文書でも重宝します。",
+    "level": 3,
+    "memory": "文末に付ける「.（ピリオド）」や「;（顔文字の目）」で絵文字・顔文字パネル！",
+    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10250462
+  },
+  {
+    "id": "w11-45",
+    "category": "win11",
+    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keys": [
+      "Win",
+      "Ctrl",
+      "C"
+    ],
+    "title": "カラーフィルター（グレースケール・色覚サポート）のON / OFF",
+    "desc": "画面全体を白黒（グレースケール）にしたり、色覚特性に合わせた配色フィルターを適用します（事前設定時）。",
+    "tip": "資料が白黒コピーされた時にどう見えるかを画面上で一瞬でテスト確認するのにも使えます！",
+    "memory": "Color filter（カラーフィルター）の頭文字「C」に Win + Ctrl",
+    "level": 1,
+    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10320033
+  },
+  {
+    "id": "w11-59",
+    "category": "win11",
+    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keys": [
+      "Win",
+      "Ctrl",
+      "C"
+    ],
+    "title": "カラーフィルター（グレースケール等）のオン/オフ切替",
+    "desc": "あらかじめ設定したカラーフィルター（モノクロ表示や色覚サポート）を即座にオン/オフします。",
+    "tip": "画面を白黒にして目の疲れを抑えたり集中力を高めたいときにも使われます。",
+    "level": 1,
+    "memory": "Win + Ctrl + Color filter の「C」",
+    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10320033
+  },
+  {
+    "id": "w11-32",
+    "category": "win11",
+    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keys": [
+      "Win",
+      "Ctrl",
+      "D"
+    ],
+    "title": "新しい仮想デスクトップを作成",
+    "desc": "作業スペース（仮想デスクトップ）を新しく追加して切り替えます。",
+    "tip": "「仕事用」「調べ物用」「会議用」など画面を分けてスッキリ作業できます。",
+    "level": 2,
+    "memory": "Desktop（デスクトップ）の「D」に Win + Ctrl で仮想デスクトップ新規作成",
+    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10320043
+  },
+  {
+    "id": "w11-46",
+    "category": "win11",
+    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keys": [
+      "Win",
+      "Ctrl",
+      "L"
+    ],
+    "title": "ライブキャプション（PC内の音声をリアルタイムAI字幕表示）を起動",
+    "desc": "Web会議や動画など、PCから流れるあらゆる音声をリアルタイムで画面上部にテキスト字幕として起こします。",
+    "tip": "イヤホンがない環境で動画の内容を確認したい時や、英語会議のリスニング補助に絶大な威力を発揮します！",
+    "memory": "Live captions（ライブキャプション・字幕）の頭文字「L」に Win + Ctrl",
+    "level": 2,
+    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10320123
+  },
+  {
+    "id": "w11-47",
+    "category": "win11",
+    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keys": [
+      "Win",
+      "Ctrl",
+      "O"
+    ],
+    "title": "スクリーンキーボード（画面上のソフトウェアキーボード）を表示",
+    "desc": "モニター上にマウスクリックで打てる仮想キーボードを表示します。",
+    "tip": "物理キーボードの一部のキーが故障して押せなくなった時の緊急入力手段として覚えておくと命拾いします！",
+    "memory": "On-screen keyboard（オンスクリーンキーボード）の頭文字「O」に Win + Ctrl",
+    "level": 2,
+    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10320153
+  },
+  {
+    "id": "w11-58",
+    "category": "win11",
+    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keys": [
+      "Win",
+      "Ctrl",
+      "O"
+    ],
+    "title": "スクリーンキーボードを画面に表示",
+    "desc": "画面上にマウスクリックで入力できる仮想キーボード（On-Screen Keyboard）を表示します。",
+    "tip": "物理キーボードの一部のキーが効かない緊急時にも役立ちます。",
+    "level": 2,
+    "memory": "Win + Ctrl + On-screen Keyboard の「O」",
+    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10320153
+  },
+  {
+    "id": "w11-60",
+    "category": "win11",
+    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keys": [
+      "Win",
+      "Ctrl",
+      "Q"
+    ],
+    "title": "クイックアシスト（リモートサポート）を起動",
+    "desc": "離れた相手のPC画面を共有・遠隔操作してサポートできる標準アプリ「クイックアシスト」を起動します。",
+    "tip": "社内ヘルプデスクや家族のPCトラブル解決に標準搭載で使える便利機能です。",
+    "level": 2,
+    "memory": "Win + Ctrl + Quick Assist の「Q」",
+    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10320173
   },
   {
     "id": "w11-50",
@@ -950,26 +981,168 @@ const SHORTCUTS_DATA = [
     "memory": "Win + Ctrl + Volume（音量・出力先）の「V」",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1030286
+    "sortRank": 10320223
   },
   {
-    "id": "w11-51",
+    "id": "w11-34",
     "category": "win11",
-    "subcategory": "システム・設定・セキュリティ",
+    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
     "keys": [
       "Win",
       "Ctrl",
-      "Shift",
-      "B"
+      "F4"
     ],
-    "title": "グラフィックドライバーを再起動（画面フリーズ復旧）",
-    "desc": "作業中のアプリを閉じずに映像ドライバーだけをリセットし、画面が真っ暗・固まった状態から復旧させます。",
-    "tip": "「ピッ」と音が鳴り画面が一瞬暗転して復帰します。PC強制終了前の切り札として必須です。",
-    "level": 3,
-    "memory": "Black screen（画面暗転）/ Buffer をリセットする「B」",
-    "funcGroup": "システム・設定・セキュリティ",
+    "title": "現在の仮想デスクトップを閉じる",
+    "desc": "今開いている仮想デスクトップを削除します（開いていたアプリは隣のデスクトップへ自動移動します）。",
+    "tip": "アプリ自体は強制終了されないので安心して閉じられます。",
+    "level": 2,
+    "memory": "アプリ終了（Alt+F4）・タブ閉じ（Ctrl+F4）の仮想デスクトップ版だから「Win + Ctrl + F4」",
+    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1040266
+    "sortRank": 10330043
+  },
+  {
+    "id": "w11-33",
+    "category": "win11",
+    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keys": [
+      "Win",
+      "Ctrl",
+      "← / →"
+    ],
+    "title": "仮想デスクトップを左右に切り替え",
+    "desc": "作成済みの複数の仮想デスクトップ間を瞬時にスライド移動します。",
+    "tip": "作業中のウィンドウが開きすぎて散らかった時に一瞬で別画面へ移れます。",
+    "level": 2,
+    "memory": "仮想デスクトップ作成（Win+Ctrl+D）と同じ「Win + Ctrl」を押しながら左右矢印でスライド移動",
+    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10340223
+  },
+  {
+    "id": "w11-54",
+    "category": "win11",
+    "subcategory": "ウィンドウ・画面整理",
+    "keys": [
+      "Win",
+      "Shift",
+      "1〜9"
+    ],
+    "title": "タスクバーのアプリを「別ウィンドウで新規起動」",
+    "desc": "すでに開いているタスクバーの1〜9番目のアプリ（エクスプローラーやブラウザなど）を、新しい別ウィンドウで追加起動します。",
+    "tip": "Win + 数字 だと既存ウィンドウへの切替になりますが、Shift を足すと新規ウィンドウが開きます。",
+    "level": 2,
+    "memory": "Win + 数字（起動）＋ Shift（別ウィンドウで追加）",
+    "funcGroup": "ウィンドウ・画面整理",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10410013
+  },
+  {
+    "id": "w11-3",
+    "category": "win11",
+    "subcategory": "クリップボード・スクショ・録画",
+    "keys": [
+      "Win",
+      "Shift",
+      "R"
+    ],
+    "title": "画面範囲を指定して動画キャプチャ（画面録画）",
+    "desc": "Windows 11のSnipping Toolの録画モードを直接起動し、指定領域の操作手順をMP4録画します。",
+    "tip": "操作マニュアル作成やバグ報告の動画撮影が標準機能だけで完結します。",
+    "level": 2,
+    "memory": "Record（録画する）の頭文字「R」（スクショの Win+Shift+S のすぐ左上！）",
+    "funcGroup": "クリップボード・スクショ・録画",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10420183
+  },
+  {
+    "id": "w11-2",
+    "category": "win11",
+    "subcategory": "クリップボード・スクショ・録画",
+    "keys": [
+      "Win",
+      "Shift",
+      "S"
+    ],
+    "title": "範囲を指定してスクリーンショット（Snipping Tool）",
+    "desc": "画面の好きな範囲をドラッグして切り取りスクショを撮影します。",
+    "tip": "撮影した画像は自動でクリップボードに入り、そのままチャットや資料に Ctrl + V で貼り付け可能です。",
+    "level": 3,
+    "memory": "Screen（画面）を Snip（切り取る）の「S」に Win + Shift",
+    "funcGroup": "クリップボード・スクショ・録画",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10420193
+  },
+  {
+    "id": "w11-17",
+    "category": "win11",
+    "subcategory": "ウィンドウ・画面整理",
+    "keys": [
+      "Win",
+      "Shift",
+      "↑"
+    ],
+    "title": "横幅はそのままにウィンドウを「縦方向だけ最大化」",
+    "desc": "現在の横幅を維持したまま、画面の上端から下端まで縦いっぱいに広げます。",
+    "tip": "縦に長いコードやWebページ、PDFを読むときに非常に重宝します。",
+    "level": 1,
+    "memory": "Win + ↑（全体最大化）に「Shift（縦方向だけに限定）」をプラス",
+    "funcGroup": "ウィンドウ・画面整理",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10440203
+  },
+  {
+    "id": "w11-16",
+    "category": "win11",
+    "subcategory": "ウィンドウ・画面整理",
+    "keys": [
+      "Win",
+      "Shift",
+      "← / →"
+    ],
+    "title": "ウィンドウを別のモニター（ディスプレイ）へ移動",
+    "desc": "マルチモニター環境で、アクティブなウィンドウを隣のディスプレイへ瞬時に移動します。",
+    "tip": "マウスで画面端まで長距離ドラッグする手間がなくなります。",
+    "level": 3,
+    "memory": "Win + 矢印（画面端寄せ）に「Shift（モニターの枠を超える）」を足して別画面へワープ！",
+    "funcGroup": "ウィンドウ・画面整理",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10440223
+  },
+  {
+    "id": "w11-37",
+    "category": "win11",
+    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keys": [
+      "Win",
+      "数字 (1〜9)"
+    ],
+    "title": "タスクバーのピン留めアプリを起動・切り替え",
+    "desc": "タスクバーの左から数えて1〜9番目にピン留めされているアプリを起動・アクティブ化します。",
+    "tip": "Win + Shift + 数字 を押すと、すでに開いているアプリの「新しい別ウィンドウ」を起動できます。",
+    "level": 2,
+    "memory": "タスクバーの左から「1番目、2番目、3番目…」の並び順の数字そのまま！",
+    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10509682
+  },
+  {
+    "id": "w11-55",
+    "category": "win11",
+    "subcategory": "ウィンドウ・画面整理",
+    "keys": [
+      "Win",
+      "Alt",
+      "1〜9"
+    ],
+    "title": "タスクバーのアプリのジャンプリスト（最近使った履歴）を開く",
+    "desc": "タスクバー1〜9番目のアイコンを右クリックしたときに出る「最近使ったファイル・ピン留め一覧」を開きます。",
+    "tip": "よく使うExcelファイルやフォルダをタスクバーから最速で開けます。",
+    "level": 1,
+    "memory": "Win + 数字 ＋ Alt（サブメニュー・履歴を開く）",
+    "funcGroup": "ウィンドウ・画面整理",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10510013
   },
   {
     "id": "w11-49",
@@ -987,7 +1160,79 @@ const SHORTCUTS_DATA = [
     "level": 1,
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1050266
+    "sortRank": 10520023
+  },
+  {
+    "id": "w11-57",
+    "category": "win11",
+    "subcategory": "クリップボード・スクショ・録画",
+    "keys": [
+      "Win",
+      "Alt",
+      "B"
+    ],
+    "title": "HDR（ハイダイナミックレンジ）表示のオン/オフ切替",
+    "desc": "対応モニター接続時に、HDR表示と通常（SDR）表示をショートカット一発で切り替えます。",
+    "tip": "画面キャプチャ時にHDRで白飛びしてしまう場合、このキーですぐ通常表示に戻せます。",
+    "level": 1,
+    "memory": "Win + Alt + Brightness（輝度・HDR）の「B」",
+    "funcGroup": "クリップボード・スクショ・録画",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10520023
+  },
+  {
+    "id": "w11-48",
+    "category": "win11",
+    "subcategory": "クリップボード・スクショ・録画",
+    "keys": [
+      "Win",
+      "Alt",
+      "G"
+    ],
+    "title": "直前の画面操作を遡って動画保存（バックグラウンド録画）",
+    "desc": "Xbox Game Barでバックグラウンド録画がONの時、「今の操作もう一回見たい！」と思った瞬間に直前30秒等を動画保存します。",
+    "tip": "再現しにくいエラー画面が出た直後に押すと、発生の瞬間を動画証拠として残せます。",
+    "memory": "Game clip（ゲームクリップ・直前録画）の「G」に Win + Alt",
+    "level": 1,
+    "funcGroup": "クリップボード・スクショ・録画",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10520073
+  },
+  {
+    "id": "w11-61",
+    "category": "win11",
+    "subcategory": "システム・設定・セキュリティ",
+    "keys": [
+      "Win",
+      "Alt",
+      "K"
+    ],
+    "title": "通話アプリのマイクをシステム全体でミュート切替",
+    "desc": "Teamsなどの対応通話アプリで、別のウィンドウで作業中でもマイクのミュート/解除を即座に切り替えます。",
+    "tip": "会議画面を探してクリックしなくても、手元で瞬時にミュートできます。",
+    "level": 2,
+    "memory": "Win + Alt + Keep quiet（マイク消音）の「K」",
+    "funcGroup": "システム・設定・セキュリティ",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10520113
+  },
+  {
+    "id": "w11-7",
+    "category": "win11",
+    "subcategory": "クリップボード・スクショ・録画",
+    "keys": [
+      "Win",
+      "Alt",
+      "R"
+    ],
+    "title": "アクティブウィンドウの画面録画を即座に開始 / 停止",
+    "desc": "今開いているアプリの画面録画をワンタッチで開始・終了します（ビデオ > キャプチャに保存）。",
+    "tip": "オンライン会議やブラウザ動作の記録に便利です。",
+    "level": 2,
+    "memory": "Record（録画）の「R」に Win + Alt",
+    "funcGroup": "クリップボード・スクショ・録画",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10520183
   },
   {
     "id": "w11-31",
@@ -1006,271 +1251,74 @@ const SHORTCUTS_DATA = [
     "memory": "Blank screen（真っ暗な画面）または Beep（ピッと鳴ってGPUリセット）の「B」に全部盛り（Win+Ctrl+Shift）",
     "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1060266
+    "sortRank": 10620024
   },
   {
-    "id": "w11-37",
+    "id": "w11-51",
     "category": "win11",
-    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "subcategory": "システム・設定・セキュリティ",
     "keys": [
       "Win",
-      "数字 (1〜9)"
+      "Ctrl",
+      "Shift",
+      "B"
     ],
-    "title": "タスクバーのピン留めアプリを起動・切り替え",
-    "desc": "タスクバーの左から数えて1〜9番目にピン留めされているアプリを起動・アクティブ化します。",
-    "tip": "Win + Shift + 数字 を押すと、すでに開いているアプリの「新しい別ウィンドウ」を起動できます。",
-    "level": 2,
-    "memory": "タスクバーの左から「1番目、2番目、3番目…」の並び順の数字そのまま！",
-    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020115
-  },
-  {
-    "id": "w11-36",
-    "category": "win11",
-    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keys": [
-      "Win",
-      "H"
-    ],
-    "title": "音声入力（AIディクテーション）を起動",
-    "desc": "マイクに向かって話すだけで高精度にテキスト文字起こし・自動句読点入力を行います。",
-    "tip": "長文メールの下書きや議事録メモでタイピング疲れを軽減できます。",
-    "level": 2,
-    "memory": "Hear（聞き取る・音声入力）の頭文字「H」",
-    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020272
-  },
-  {
-    "id": "w11-38",
-    "category": "win11",
-    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keys": [
-      "Win",
-      "T"
-    ],
-    "title": "タスクバー上のアプリアイコンにフォーカスして選択",
-    "desc": "タスクバーのアプリアイコンを矢印キーで順番に選び、Enterで開くことができます。",
-    "tip": "Win + B なら画面右下のシステムトレイ（隠れているインジケーター）にフォーカスします。",
-    "level": 1,
-    "memory": "Taskbar（タスクバー）の頭文字「T」",
-    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020284
-  },
-  {
-    "id": "w11-40",
-    "category": "win11",
-    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keys": [
-      "Win",
-      "U"
-    ],
-    "title": "アクセシビリティ設定を開く（Win+Ctrl+Oで画面キーボード）",
-    "desc": "テキストサイズの拡大、コントラスト、ナレーターなどのアクセシビリティ設定画面を開きます。",
-    "tip": "Win + Ctrl + L で音声のリアルタイム字幕（ライブキャプション）も呼び出せます。",
-    "level": 1,
-    "memory": "Utility（ユーティリティ・アクセシビリティ補助機能）の頭文字「U」",
-    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020285
-  },
-  {
-    "id": "w11-39",
-    "category": "win11",
-    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keys": [
-      "Win",
-      "+ (プラス)"
-    ],
-    "title": "拡大鏡（画面ズーム）を起動（Win+Escで終了）",
-    "desc": "画面全体をズームインして大きく表示します。Win + - で縮小、Win + Esc で拡大鏡を閉じます。",
-    "tip": "プレゼンや画面共有中に、細かい文字や図の一部を聴衆に拡大して見せたい時に絶大な効果があります！",
-    "level": 2,
-    "memory": "「＋（プラス）」で画面を拡大ズーム、「Esc」で拡大鏡から脱出",
-    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020543
-  },
-  {
-    "id": "w11-35",
-    "category": "win11",
-    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keys": [
-      "Win",
-      ". (ピリオド)"
-    ],
-    "title": "絵文字・顔文字・記号パネルを開く",
-    "desc": "カーソル位置に絵文字（😊👍🎉）や顔文字、特殊記号（㎡、※、①、℃など）を入力するパネルを出します。",
-    "tip": "Win + ;（セミコロン）でも同じパネルが開きます。記号タブはビジネス文書でも重宝します。",
+    "title": "グラフィックドライバーを再起動（画面フリーズ復旧）",
+    "desc": "作業中のアプリを閉じずに映像ドライバーだけをリセットし、画面が真っ暗・固まった状態から復旧させます。",
+    "tip": "「ピッ」と音が鳴り画面が一瞬暗転して復帰します。PC強制終了前の切り札として必須です。",
     "level": 3,
-    "memory": "文末に付ける「.（ピリオド）」や「;（顔文字の目）」で絵文字・顔文字パネル！",
-    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "memory": "Black screen（画面暗転）/ Buffer をリセットする「B」",
+    "funcGroup": "システム・設定・セキュリティ",
     "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020546
+    "sortRank": 10620024
   },
   {
-    "id": "w11-59",
-    "category": "win11",
-    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "id": "exp-34",
+    "category": "explorer",
+    "subcategory": "階層移動・アドレスバー・検索",
     "keys": [
-      "Win",
-      "Ctrl",
-      "C"
+      "Space"
     ],
-    "title": "カラーフィルター（グレースケール等）のオン/オフ切替",
-    "desc": "あらかじめ設定したカラーフィルター（モノクロ表示や色覚サポート）を即座にオン/オフします。",
-    "tip": "画面を白黒にして目の疲れを抑えたり集中力を高めたいときにも使われます。",
-    "level": 1,
-    "memory": "Win + Ctrl + Color filter の「C」",
-    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1030267
-  },
-  {
-    "id": "w11-58",
-    "category": "win11",
-    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keys": [
-      "Win",
-      "Ctrl",
-      "O"
-    ],
-    "title": "スクリーンキーボードを画面に表示",
-    "desc": "画面上にマウスクリックで入力できる仮想キーボード（On-Screen Keyboard）を表示します。",
-    "tip": "物理キーボードの一部のキーが効かない緊急時にも役立ちます。",
+    "title": "先頭文字入力と組み合わせて目的のファイルを選択",
+    "desc": "フォルダ内でファイルを選択中や、英数字キーで頭文字ジャンプした直後にファイルを選択状態にします。",
+    "tip": "Ctrlを押しながら矢印キーで移動し、Spaceを押すと離れた複数ファイルをキーボードだけで飛び石選択できます！",
     "level": 2,
-    "memory": "Win + Ctrl + On-screen Keyboard の「O」",
-    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1030279
+    "memory": "Ctrl + 矢印で移動して Space（スポット選択）",
+    "funcGroup": "階層移動・アドレスバー・検索",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1140031
   },
   {
-    "id": "w11-60",
-    "category": "win11",
-    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "id": "exp-21",
+    "category": "explorer",
+    "subcategory": "階層移動・アドレスバー・検索",
     "keys": [
-      "Win",
-      "Ctrl",
-      "Q"
+      "Enter"
     ],
-    "title": "クイックアシスト（リモートサポート）を起動",
-    "desc": "離れた相手のPC画面を共有・遠隔操作してサポートできる標準アプリ「クイックアシスト」を起動します。",
-    "tip": "社内ヘルプデスクや家族のPCトラブル解決に標準搭載で使える便利機能です。",
-    "level": 2,
-    "memory": "Win + Ctrl + Quick Assist の「Q」",
-    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1030281
+    "title": "選択したフォルダに入る / ファイルを開く",
+    "desc": "ダブルクリックの代わりに、選択中のフォルダを開いたりファイルを実行したりします。",
+    "tip": "矢印キーで選んで Enter（開く）、Backspace（戻る）、F2（名前変更）を使えばマウスいらずです。",
+    "memory": "Enter（中へ入る・実行する）の意味そのまま！",
+    "level": 3,
+    "funcGroup": "階層移動・アドレスバー・検索",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1140041
   },
   {
-    "id": "w11-45",
-    "category": "win11",
-    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
+    "id": "exp-22",
+    "category": "explorer",
+    "subcategory": "階層移動・アドレスバー・検索",
     "keys": [
-      "Win",
-      "Ctrl",
-      "C"
+      "Backspace"
     ],
-    "title": "カラーフィルター（グレースケール・色覚サポート）のON / OFF",
-    "desc": "画面全体を白黒（グレースケール）にしたり、色覚特性に合わせた配色フィルターを適用します（事前設定時）。",
-    "tip": "資料が白黒コピーされた時にどう見えるかを画面上で一瞬でテスト確認するのにも使えます！",
-    "memory": "Color filter（カラーフィルター）の頭文字「C」に Win + Ctrl",
-    "level": 1,
-    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1040267
-  },
-  {
-    "id": "w11-32",
-    "category": "win11",
-    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keys": [
-      "Win",
-      "Ctrl",
-      "D"
-    ],
-    "title": "新しい仮想デスクトップを作成",
-    "desc": "作業スペース（仮想デスクトップ）を新しく追加して切り替えます。",
-    "tip": "「仕事用」「調べ物用」「会議用」など画面を分けてスッキリ作業できます。",
-    "level": 2,
-    "memory": "Desktop（デスクトップ）の「D」に Win + Ctrl で仮想デスクトップ新規作成",
-    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1040268
-  },
-  {
-    "id": "w11-46",
-    "category": "win11",
-    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keys": [
-      "Win",
-      "Ctrl",
-      "L"
-    ],
-    "title": "ライブキャプション（PC内の音声をリアルタイムAI字幕表示）を起動",
-    "desc": "Web会議や動画など、PCから流れるあらゆる音声をリアルタイムで画面上部にテキスト字幕として起こします。",
-    "tip": "イヤホンがない環境で動画の内容を確認したい時や、英語会議のリスニング補助に絶大な威力を発揮します！",
-    "memory": "Live captions（ライブキャプション・字幕）の頭文字「L」に Win + Ctrl",
-    "level": 2,
-    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1040276
-  },
-  {
-    "id": "w11-47",
-    "category": "win11",
-    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keys": [
-      "Win",
-      "Ctrl",
-      "O"
-    ],
-    "title": "スクリーンキーボード（画面上のソフトウェアキーボード）を表示",
-    "desc": "モニター上にマウスクリックで打てる仮想キーボードを表示します。",
-    "tip": "物理キーボードの一部のキーが故障して押せなくなった時の緊急入力手段として覚えておくと命拾いします！",
-    "memory": "On-screen keyboard（オンスクリーンキーボード）の頭文字「O」に Win + Ctrl",
-    "level": 2,
-    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1040279
-  },
-  {
-    "id": "w11-34",
-    "category": "win11",
-    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keys": [
-      "Win",
-      "Ctrl",
-      "F4"
-    ],
-    "title": "現在の仮想デスクトップを閉じる",
-    "desc": "今開いている仮想デスクトップを削除します（開いていたアプリは隣のデスクトップへ自動移動します）。",
-    "tip": "アプリ自体は強制終了されないので安心して閉じられます。",
-    "level": 2,
-    "memory": "アプリ終了（Alt+F4）・タブ閉じ（Ctrl+F4）の仮想デスクトップ版だから「Win + Ctrl + F4」",
-    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1040304
-  },
-  {
-    "id": "w11-33",
-    "category": "win11",
-    "subcategory": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keys": [
-      "Win",
-      "Ctrl",
-      "← / →"
-    ],
-    "title": "仮想デスクトップを左右に切り替え",
-    "desc": "作成済みの複数の仮想デスクトップ間を瞬時にスライド移動します。",
-    "tip": "作業中のウィンドウが開きすぎて散らかった時に一瞬で別画面へ移れます。",
-    "level": 2,
-    "memory": "仮想デスクトップ作成（Win+Ctrl+D）と同じ「Win + Ctrl」を押しながら左右矢印でスライド移動",
-    "funcGroup": "仮想デスクトップ・便利機能・アクセシビリティ",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1040426
+    "title": "直前に開いていたフォルダへ「戻る」（Alt + ← と同じ）",
+    "desc": "1つ前に表示していたフォルダ画面へ片手ワンタッチで戻ります。",
+    "tip": "Enter（進む）のすぐ上にある Backspace（戻る）でフォルダ階層を高速に行き来できます。",
+    "memory": "Back（後ろ・前の画面へ戻る）の「Backspace」キー単体押し！",
+    "level": 3,
+    "funcGroup": "階層移動・アドレスバー・検索",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1140051
   },
   {
     "id": "exp-10",
@@ -1286,7 +1334,23 @@ const SHORTCUTS_DATA = [
     "memory": "Delete（削除）キー、または Delete の頭文字「Ctrl + D」",
     "funcGroup": "フォルダ・ファイル作成＆操作",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110410
+    "sortRank": 1140061
+  },
+  {
+    "id": "exp-23",
+    "category": "explorer",
+    "subcategory": "階層移動・アドレスバー・検索",
+    "keys": [
+      "Home / End"
+    ],
+    "title": "フォルダ内の「先頭ファイル（Home）」/「末尾ファイル（End）」へ一瞬で移動",
+    "desc": "ファイルが何百個あるフォルダでも、一番上のフォルダや一番下のファイルへ瞬時に移動します。",
+    "tip": "スクロールバーをマウスで引っ張る手間がなくなります。",
+    "memory": "Home（一番上のスタート地点）、End（一番下のゴール地点）",
+    "level": 2,
+    "funcGroup": "階層移動・アドレスバー・検索",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1140081
   },
   {
     "id": "exp-7",
@@ -1302,7 +1366,156 @@ const SHORTCUTS_DATA = [
     "memory": "ファイル名変更は Excel のセル編集と同じ「F2（Editの2番目）」！",
     "funcGroup": "フォルダ・ファイル作成＆操作",
     "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210002
+    "sortRank": 2130021
+  },
+  {
+    "id": "exp-24",
+    "category": "explorer",
+    "subcategory": "階層移動・アドレスバー・検索",
+    "keys": [
+      "F4"
+    ],
+    "title": "アドレスバーを選択して過去のフォルダ履歴一覧を展開",
+    "desc": "エクスプローラー上部のアドレスバーにフォーカスし、最近開いたパス履歴のプルダウンを開きます。",
+    "tip": "Alt + D や Ctrl + L と同じくアドレスバー操作に使えます。",
+    "memory": "F4でアドレスバーのプルダウンリスト（4＝フォルダー履歴）を展開",
+    "level": 2,
+    "funcGroup": "階層移動・アドレスバー・検索",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130041
+  },
+  {
+    "id": "exp-25",
+    "category": "explorer",
+    "subcategory": "表示レイアウト切替・プレビュー",
+    "keys": [
+      "F5"
+    ],
+    "title": "フォルダ内の表示を最新の情報に更新（リロード）",
+    "desc": "別アプリで保存したファイルが見えない時や並び順を再反映したい時に、フォルダ表示を最新化します。",
+    "tip": "ブラウザの再読み込み（F5）と全く同じ役割です。",
+    "memory": "ブラウザと完全共通！「F5」＝画面をリフレッシュ（更新）",
+    "level": 3,
+    "funcGroup": "表示レイアウト切替・プレビュー",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130051
+  },
+  {
+    "id": "exp-26",
+    "category": "explorer",
+    "subcategory": "起動・タブ・ウィンドウ管理",
+    "keys": [
+      "F11"
+    ],
+    "title": "エクスプローラーを全画面（フルスクリーン）表示に切り替え",
+    "desc": "タイトルバーやタスクバーを隠し、画面いっぱいにファイル一覧を表示します（もう一度F11で解除）。",
+    "tip": "大量の写真サムネイルやファイル一覧を広い画面で整理したい時に便利です。",
+    "memory": "ブラウザやOneNoteと完全共通！「F11」＝フルスクリーン",
+    "level": 1,
+    "funcGroup": "起動・タブ・ウィンドウ管理",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130111
+  },
+  {
+    "id": "exp-33",
+    "category": "explorer",
+    "subcategory": "表示レイアウト切替・プレビュー",
+    "keys": [
+      "F11"
+    ],
+    "title": "エクスプローラーを全画面（フルスクリーン）表示に切替",
+    "desc": "タイトルバーやタスクバーを隠して、フォルダ内のファイル一覧を画面いっぱいに広げます。もう一度押すと戻ります。",
+    "tip": "大量の写真やファイル名を一覧で見比べたいときに快適です。",
+    "level": 2,
+    "memory": "ブラウザと同じく F11＝Full screen（全画面）",
+    "funcGroup": "表示レイアウト切替・プレビュー",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130111
+  },
+  {
+    "id": "exp-16",
+    "category": "explorer",
+    "subcategory": "階層移動・アドレスバー・検索",
+    "keys": [
+      "Ctrl",
+      "F"
+    ],
+    "title": "フォルダ内のファイル検索ボックスへ移動（F3 / Ctrl+Eでも同じ）",
+    "desc": "エクスプローラー右上の検索窓にカーソルを移動し、現在のフォルダ配下のファイルを絞り込み検索します。",
+    "tip": "`*.pdf` や `*.xlsx` のように拡張子で絞り込むのにも便利です。",
+    "level": 3,
+    "memory": "Find（探す）の「Ctrl + F」（または Find の F3 / Explorer検索の Ctrl+E）",
+    "funcGroup": "階層移動・アドレスバー・検索",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120062
+  },
+  {
+    "id": "exp-5",
+    "category": "explorer",
+    "subcategory": "起動・タブ・ウィンドウ管理",
+    "keys": [
+      "Ctrl",
+      "N"
+    ],
+    "title": "現在と同じフォルダを「別ウィンドウ」でもう1つ開く",
+    "desc": "今開いているフォルダと全く同じ場所を表示した新しいエクスプローラーウィンドウを複製起動します。",
+    "tip": "Win + ← / → で左右に並べてフォルダ間でファイルをドラッグ移動したい時に超便利です！",
+    "level": 3,
+    "memory": "New window（新しい別ウィンドウ）の頭文字「N」",
+    "funcGroup": "起動・タブ・ウィンドウ管理",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120142
+  },
+  {
+    "id": "exp-2",
+    "category": "explorer",
+    "subcategory": "起動・タブ・ウィンドウ管理",
+    "keys": [
+      "Ctrl",
+      "T"
+    ],
+    "title": "新しいフォルダー「タブ」を開く（Win11）",
+    "desc": "Windows 11のエクスプローラー内で、ブラウザと同じように新しいタブを追加します。",
+    "tip": "複数フォルダを見比べたりコピペする時、ウィンドウを増やさず1つの画面内でスッキリ作業できます！",
+    "level": 3,
+    "memory": "Tab（タブ）の頭文字「T」（Webブラウザの新しいタブと完全共通！）",
+    "funcGroup": "起動・タブ・ウィンドウ管理",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120202
+  },
+  {
+    "id": "exp-3",
+    "category": "explorer",
+    "subcategory": "起動・タブ・ウィンドウ管理",
+    "keys": [
+      "Ctrl",
+      "W"
+    ],
+    "title": "現在のタブ（またはウィンドウ）を閉じる",
+    "desc": "今開いているエクスプローラーのタブを閉じます（最後の1タブの場合はウィンドウを閉じます）。",
+    "tip": "ブラウザのタブ閉じ（Ctrl+W）と全く同じ感覚で使えます。",
+    "level": 3,
+    "memory": "Window / Tab を閉じるの「W」（ブラウザと完全共通！）",
+    "funcGroup": "起動・タブ・ウィンドウ管理",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120232
+  },
+  {
+    "id": "exp-4",
+    "category": "explorer",
+    "subcategory": "起動・タブ・ウィンドウ管理",
+    "keys": [
+      "Ctrl",
+      "Tab"
+    ],
+    "title": "右隣のタブへ切り替え（Ctrl+Shift+Tabで左隣へ）",
+    "desc": "エクスプローラー内で開いている複数のフォルダタブを順番に切り替えます。",
+    "tip": "Ctrl + 数字（1〜8）で指定番号のタブへ直接ジャンプすることも可能です。",
+    "level": 3,
+    "memory": "Tabキーで次のタブへ移動（Shiftを足すと逆向きの左隣タブへ）",
+    "funcGroup": "起動・タブ・ウィンドウ管理",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140022
   },
   {
     "id": "exp-12",
@@ -1319,7 +1532,7 @@ const SHORTCUTS_DATA = [
     "memory": "Copyの「Ctrl」を押しながらドラッグで複製、Alternateの「Alt」で分身（ショートカット）作成",
     "funcGroup": "フォルダ・ファイル作成＆操作",
     "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 522989
+    "sortRank": 5274892
   },
   {
     "id": "exp-31",
@@ -1336,143 +1549,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl（CopyのC）を押しながらドラッグで複製",
     "funcGroup": "フォルダ・ファイル作成＆操作",
     "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 532889
-  },
-  {
-    "id": "exp-11",
-    "category": "explorer",
-    "subcategory": "フォルダ・ファイル作成＆操作",
-    "keys": [
-      "Shift",
-      "Delete"
-    ],
-    "title": "ごみ箱に入れずに「完全削除」する",
-    "desc": "ごみ箱を経由せず、ストレージから直接ファイルを完全消去します。",
-    "tip": "復元できないため注意が必要ですが、大容量の不要ファイルを即座に空にしたい時に便利です。",
-    "level": 2,
-    "memory": "Delete（削除）に「Shift（段階を飛ばして強化）」を足して、ごみ箱を飛ばし完全削除！",
-    "funcGroup": "フォルダ・ファイル作成＆操作",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 610410
-  },
-  {
-    "id": "exp-32",
-    "category": "explorer",
-    "subcategory": "フォルダ・ファイル作成＆操作",
-    "keys": [
-      "Shift",
-      "ドラッグ"
-    ],
-    "title": "別ドライブ間でも強制的に「移動（切り取り）」する",
-    "desc": "通常は「コピー」になるUSBメモリや別ドライブへのドラッグでも、Shiftを押しながらだと「移動」になります。",
-    "tip": "元フォルダにファイルを残さず別ドライブへ移したいときに便利です。",
-    "level": 2,
-    "memory": "Shift（場所をシフト＝移動）＋ドラッグ",
-    "funcGroup": "フォルダ・ファイル作成＆操作",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 632889
-  },
-  {
-    "id": "exp-9",
-    "category": "explorer",
-    "subcategory": "フォルダ・ファイル作成＆操作",
-    "keys": [
-      "Alt",
-      "Enter"
-    ],
-    "title": "選択したファイル・フォルダの「プロパティ」を開く",
-    "desc": "ファイルサイズや作成日時、フォルダ内の総容量・ファイル数を確認するプロパティ画面を表示します。",
-    "tip": "Altキーを押しながらファイルをダブルクリックしても同じようにプロパティが開きます！",
-    "level": 3,
-    "memory": "Enter（ファイルを開く）の代わりに「Alt + Enter」で「開かずに中身情報（プロパティ）を見る」",
-    "funcGroup": "フォルダ・ファイル作成＆操作",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710406
-  },
-  {
-    "id": "exp-30",
-    "category": "explorer",
-    "subcategory": "フォルダ・ファイル作成＆操作",
-    "keys": [
-      "Alt",
-      "ドラッグ"
-    ],
-    "title": "ドラッグ先に「ショートカット（リンク）」を作成",
-    "desc": "ファイルやフォルダを複製するのではなく、元ファイルへのショートカットアイコンを瞬時に作成します。",
-    "tip": "デスクトップによく使う深層フォルダのショートカットを置きたいときに最速です。",
-    "level": 3,
-    "memory": "Alt（別動作＝実体ではなくショートカット作成）＋ドラッグ",
-    "funcGroup": "フォルダ・ファイル作成＆操作",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 732889
-  },
-  {
-    "id": "exp-8",
-    "category": "explorer",
-    "subcategory": "フォルダ・ファイル作成＆操作",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "C"
-    ],
-    "title": "選択したファイル・フォルダの「フルパス」をコピー",
-    "desc": "選択している項目の場所（例: `\"C:\\Users\\...\\資料.xlsx\"`）をテキストとしてコピーします。",
-    "tip": "メールやチャットで共有サーバーの格納場所を伝える時や、ファイル選択画面で一発指定する時に大活躍します！",
-    "level": 3,
-    "memory": "Ctrl+C（通常のコピー）に「Shift」を足して「ファイルのパス文字列をコピー」！",
-    "funcGroup": "フォルダ・ファイル作成＆操作",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810267
-  },
-  {
-    "id": "exp-6",
-    "category": "explorer",
-    "subcategory": "フォルダ・ファイル作成＆操作",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "N"
-    ],
-    "title": "新しいフォルダーを作成する",
-    "desc": "現在開いている場所（またはデスクトップ上）に新規フォルダを一瞬で作成します。",
-    "tip": "右クリック → 新規作成 → フォルダー の3ステップが1秒になります。",
-    "level": 3,
-    "memory": "Ctrl+N（新規ウィンドウ）に「Shift」を足して「New Folder（新しいフォルダ）」を作成！",
-    "funcGroup": "フォルダ・ファイル作成＆操作",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810278
-  },
-  {
-    "id": "exp-25",
-    "category": "explorer",
-    "subcategory": "表示レイアウト切替・プレビュー",
-    "keys": [
-      "F5"
-    ],
-    "title": "フォルダ内の表示を最新の情報に更新（リロード）",
-    "desc": "別アプリで保存したファイルが見えない時や並び順を再反映したい時に、フォルダ表示を最新化します。",
-    "tip": "ブラウザの再読み込み（F5）と全く同じ役割です。",
-    "memory": "ブラウザと完全共通！「F5」＝画面をリフレッシュ（更新）",
-    "level": 3,
-    "funcGroup": "表示レイアウト切替・プレビュー",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210005
-  },
-  {
-    "id": "exp-33",
-    "category": "explorer",
-    "subcategory": "表示レイアウト切替・プレビュー",
-    "keys": [
-      "F11"
-    ],
-    "title": "エクスプローラーを全画面（フルスクリーン）表示に切替",
-    "desc": "タイトルバーやタスクバーを隠して、フォルダ内のファイル一覧を画面いっぱいに広げます。もう一度押すと戻ります。",
-    "tip": "大量の写真やファイル名を一覧で見比べたいときに快適です。",
-    "level": 2,
-    "memory": "ブラウザと同じく F11＝Full screen（全画面）",
-    "funcGroup": "表示レイアウト切替・プレビュー",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210311
+    "sortRank": 5274892
   },
   {
     "id": "exp-20",
@@ -1489,7 +1566,58 @@ const SHORTCUTS_DATA = [
     "memory": "ブラウザやExcelのズームと共通！「Ctrl ＋ ホイール回転」でアイコンを拡大・縮小",
     "funcGroup": "表示レイアウト切替・プレビュー",
     "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 523010
+    "sortRank": 5275102
+  },
+  {
+    "id": "exp-11",
+    "category": "explorer",
+    "subcategory": "フォルダ・ファイル作成＆操作",
+    "keys": [
+      "Shift",
+      "Delete"
+    ],
+    "title": "ごみ箱に入れずに「完全削除」する",
+    "desc": "ごみ箱を経由せず、ストレージから直接ファイルを完全消去します。",
+    "tip": "復元できないため注意が必要ですが、大容量の不要ファイルを即座に空にしたい時に便利です。",
+    "level": 2,
+    "memory": "Delete（削除）に「Shift（段階を飛ばして強化）」を足して、ごみ箱を飛ばし完全削除！",
+    "funcGroup": "フォルダ・ファイル作成＆操作",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6140062
+  },
+  {
+    "id": "exp-32",
+    "category": "explorer",
+    "subcategory": "フォルダ・ファイル作成＆操作",
+    "keys": [
+      "Shift",
+      "ドラッグ"
+    ],
+    "title": "別ドライブ間でも強制的に「移動（切り取り）」する",
+    "desc": "通常は「コピー」になるUSBメモリや別ドライブへのドラッグでも、Shiftを押しながらだと「移動」になります。",
+    "tip": "元フォルダにファイルを残さず別ドライブへ移したいときに便利です。",
+    "level": 2,
+    "memory": "Shift（場所をシフト＝移動）＋ドラッグ",
+    "funcGroup": "フォルダ・ファイル作成＆操作",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6274892
+  },
+  {
+    "id": "exp-15",
+    "category": "explorer",
+    "subcategory": "階層移動・アドレスバー・検索",
+    "keys": [
+      "Alt",
+      "D"
+    ],
+    "title": "アドレスバー（パス入力欄）を選択（Ctrl+L / F4でも同じ）",
+    "desc": "上部のフォルダパス欄を全選択状態にします。そのまま Ctrl+C で現在のフォルダパスをコピーできます。",
+    "tip": "アドレスバーに `cmd` や `powershell` と打ってEnterを押せば、そのフォルダでターミナルが即起動します！",
+    "level": 3,
+    "memory": "aDdress bar（アドレスバー）の「D」、または Location（場所）の「Ctrl + L」",
+    "funcGroup": "階層移動・アドレスバー・検索",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7120042
   },
   {
     "id": "exp-17",
@@ -1506,7 +1634,75 @@ const SHORTCUTS_DATA = [
     "memory": "Preview（プレビュー）の頭文字「P」に Alt",
     "funcGroup": "表示レイアウト切替・プレビュー",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710280
+    "sortRank": 7120162
+  },
+  {
+    "id": "exp-9",
+    "category": "explorer",
+    "subcategory": "フォルダ・ファイル作成＆操作",
+    "keys": [
+      "Alt",
+      "Enter"
+    ],
+    "title": "選択したファイル・フォルダの「プロパティ」を開く",
+    "desc": "ファイルサイズや作成日時、フォルダ内の総容量・ファイル数を確認するプロパティ画面を表示します。",
+    "tip": "Altキーを押しながらファイルをダブルクリックしても同じようにプロパティが開きます！",
+    "level": 3,
+    "memory": "Enter（ファイルを開く）の代わりに「Alt + Enter」で「開かずに中身情報（プロパティ）を見る」",
+    "funcGroup": "フォルダ・ファイル作成＆操作",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7140042
+  },
+  {
+    "id": "exp-13",
+    "category": "explorer",
+    "subcategory": "階層移動・アドレスバー・検索",
+    "keys": [
+      "Alt",
+      "↑"
+    ],
+    "title": "1つ上の階層（親フォルダ）へ移動",
+    "desc": "現在開いているフォルダの1つ上の親フォルダへ瞬時に上がります。",
+    "tip": "深いフォルダ階層から上のフォルダへ戻る時の基本ショートカットです。",
+    "level": 3,
+    "memory": "「↑（上矢印）」の見た目通り、1つ上の親フォルダ階層へ上がる",
+    "funcGroup": "階層移動・アドレスバー・検索",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7140202
+  },
+  {
+    "id": "exp-14",
+    "category": "explorer",
+    "subcategory": "階層移動・アドレスバー・検索",
+    "keys": [
+      "Alt",
+      "← / →"
+    ],
+    "title": "直前に開いていたフォルダへ「戻る（←）」/「進む（→）」",
+    "desc": "ブラウザの戻る・進むと同じように、フォルダの移動履歴を前後に行き来します（Backspaceでも戻る）。",
+    "tip": "マウスの戻るボタンがない環境でも高速にフォルダ間を往復できます。",
+    "level": 3,
+    "memory": "ブラウザの戻る/進むと完全共通！「←（過去に戻る）」「→（先に進む）」",
+    "funcGroup": "階層移動・アドレスバー・検索",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7240222
+  },
+  {
+    "id": "exp-30",
+    "category": "explorer",
+    "subcategory": "フォルダ・ファイル作成＆操作",
+    "keys": [
+      "Alt",
+      "ドラッグ"
+    ],
+    "title": "ドラッグ先に「ショートカット（リンク）」を作成",
+    "desc": "ファイルやフォルダを複製するのではなく、元ファイルへのショートカットアイコンを瞬時に作成します。",
+    "tip": "デスクトップによく使う深層フォルダのショートカットを置きたいときに最速です。",
+    "level": 3,
+    "memory": "Alt（別動作＝実体ではなくショートカット作成）＋ドラッグ",
+    "funcGroup": "フォルダ・ファイル作成＆操作",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7274892
   },
   {
     "id": "exp-27",
@@ -1524,7 +1720,7 @@ const SHORTCUTS_DATA = [
     "level": 2,
     "funcGroup": "表示レイアウト切替・プレビュー",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810101
+    "sortRank": 8110013
   },
   {
     "id": "exp-19",
@@ -1542,274 +1738,25 @@ const SHORTCUTS_DATA = [
     "memory": "表示切替（Ctrl+Shift+1〜8）のうち、2番目に大きい「2＝大アイコン」、6番目が「6＝詳細リスト」",
     "funcGroup": "表示レイアウト切替・プレビュー",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810102
+    "sortRank": 8110023
   },
   {
-    "id": "exp-18",
+    "id": "exp-8",
     "category": "explorer",
-    "subcategory": "表示レイアウト切替・プレビュー",
+    "subcategory": "フォルダ・ファイル作成＆操作",
     "keys": [
-      "Alt",
+      "Ctrl",
       "Shift",
-      "P"
+      "C"
     ],
-    "title": "詳細ウィンドウ（メタデータ・容量・更新日時パネル）の表示切替",
-    "desc": "画面右側にファイルの解像度、撮影日、作成者、ファイルサイズなどの詳細情報パネルを表示します。",
-    "tip": "写真のサイズやドキュメントの最終保存者を確認するときに便利です。",
-    "level": 1,
-    "memory": "Preview（Alt+P）に「Shift」を足して、もうひとつのパネル「詳細ウィンドウ」を表示",
-    "funcGroup": "表示レイアウト切替・プレビュー",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 920280
-  },
-  {
-    "id": "exp-26",
-    "category": "explorer",
-    "subcategory": "起動・タブ・ウィンドウ管理",
-    "keys": [
-      "F11"
-    ],
-    "title": "エクスプローラーを全画面（フルスクリーン）表示に切り替え",
-    "desc": "タイトルバーやタスクバーを隠し、画面いっぱいにファイル一覧を表示します（もう一度F11で解除）。",
-    "tip": "大量の写真サムネイルやファイル一覧を広い画面で整理したい時に便利です。",
-    "memory": "ブラウザやOneNoteと完全共通！「F11」＝フルスクリーン",
-    "level": 1,
-    "funcGroup": "起動・タブ・ウィンドウ管理",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210011
-  },
-  {
-    "id": "exp-5",
-    "category": "explorer",
-    "subcategory": "起動・タブ・ウィンドウ管理",
-    "keys": [
-      "Ctrl",
-      "N"
-    ],
-    "title": "現在と同じフォルダを「別ウィンドウ」でもう1つ開く",
-    "desc": "今開いているフォルダと全く同じ場所を表示した新しいエクスプローラーウィンドウを複製起動します。",
-    "tip": "Win + ← / → で左右に並べてフォルダ間でファイルをドラッグ移動したい時に超便利です！",
+    "title": "選択したファイル・フォルダの「フルパス」をコピー",
+    "desc": "選択している項目の場所（例: `\"C:\\Users\\...\\資料.xlsx\"`）をテキストとしてコピーします。",
+    "tip": "メールやチャットで共有サーバーの格納場所を伝える時や、ファイル選択画面で一発指定する時に大活躍します！",
     "level": 3,
-    "memory": "New window（新しい別ウィンドウ）の頭文字「N」",
-    "funcGroup": "起動・タブ・ウィンドウ管理",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410278
-  },
-  {
-    "id": "exp-2",
-    "category": "explorer",
-    "subcategory": "起動・タブ・ウィンドウ管理",
-    "keys": [
-      "Ctrl",
-      "T"
-    ],
-    "title": "新しいフォルダー「タブ」を開く（Win11）",
-    "desc": "Windows 11のエクスプローラー内で、ブラウザと同じように新しいタブを追加します。",
-    "tip": "複数フォルダを見比べたりコピペする時、ウィンドウを増やさず1つの画面内でスッキリ作業できます！",
-    "level": 3,
-    "memory": "Tab（タブ）の頭文字「T」（Webブラウザの新しいタブと完全共通！）",
-    "funcGroup": "起動・タブ・ウィンドウ管理",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410284
-  },
-  {
-    "id": "exp-3",
-    "category": "explorer",
-    "subcategory": "起動・タブ・ウィンドウ管理",
-    "keys": [
-      "Ctrl",
-      "W"
-    ],
-    "title": "現在のタブ（またはウィンドウ）を閉じる",
-    "desc": "今開いているエクスプローラーのタブを閉じます（最後の1タブの場合はウィンドウを閉じます）。",
-    "tip": "ブラウザのタブ閉じ（Ctrl+W）と全く同じ感覚で使えます。",
-    "level": 3,
-    "memory": "Window / Tab を閉じるの「W」（ブラウザと完全共通！）",
-    "funcGroup": "起動・タブ・ウィンドウ管理",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410287
-  },
-  {
-    "id": "exp-4",
-    "category": "explorer",
-    "subcategory": "起動・タブ・ウィンドウ管理",
-    "keys": [
-      "Ctrl",
-      "Tab"
-    ],
-    "title": "右隣のタブへ切り替え（Ctrl+Shift+Tabで左隣へ）",
-    "desc": "エクスプローラー内で開いている複数のフォルダタブを順番に切り替えます。",
-    "tip": "Ctrl + 数字（1〜8）で指定番号のタブへ直接ジャンプすることも可能です。",
-    "level": 3,
-    "memory": "Tabキーで次のタブへ移動（Shiftを足すと逆向きの左隣タブへ）",
-    "funcGroup": "起動・タブ・ウィンドウ管理",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510402
-  },
-  {
-    "id": "exp-1",
-    "category": "explorer",
-    "subcategory": "起動・タブ・ウィンドウ管理",
-    "keys": [
-      "Win",
-      "E"
-    ],
-    "title": "エクスプローラーを起動する",
-    "desc": "どの画面からでもファイル・フォルダ管理画面（エクスプローラー）を新しく開きます。",
-    "tip": "PC作業で最も頻繁に使うショートカットのひとつです。",
-    "level": 3,
-    "memory": "Explorer（エクスプローラー）の頭文字「E」",
-    "funcGroup": "起動・タブ・ウィンドウ管理",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020269
-  },
-  {
-    "id": "exp-21",
-    "category": "explorer",
-    "subcategory": "階層移動・アドレスバー・検索",
-    "keys": [
-      "Enter"
-    ],
-    "title": "選択したフォルダに入る / ファイルを開く",
-    "desc": "ダブルクリックの代わりに、選択中のフォルダを開いたりファイルを実行したりします。",
-    "tip": "矢印キーで選んで Enter（開く）、Backspace（戻る）、F2（名前変更）を使えばマウスいらずです。",
-    "memory": "Enter（中へ入る・実行する）の意味そのまま！",
-    "level": 3,
-    "funcGroup": "階層移動・アドレスバー・検索",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110406
-  },
-  {
-    "id": "exp-22",
-    "category": "explorer",
-    "subcategory": "階層移動・アドレスバー・検索",
-    "keys": [
-      "Backspace"
-    ],
-    "title": "直前に開いていたフォルダへ「戻る」（Alt + ← と同じ）",
-    "desc": "1つ前に表示していたフォルダ画面へ片手ワンタッチで戻ります。",
-    "tip": "Enter（進む）のすぐ上にある Backspace（戻る）でフォルダ階層を高速に行き来できます。",
-    "memory": "Back（後ろ・前の画面へ戻る）の「Backspace」キー単体押し！",
-    "level": 3,
-    "funcGroup": "階層移動・アドレスバー・検索",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110408
-  },
-  {
-    "id": "exp-23",
-    "category": "explorer",
-    "subcategory": "階層移動・アドレスバー・検索",
-    "keys": [
-      "Home / End"
-    ],
-    "title": "フォルダ内の「先頭ファイル（Home）」/「末尾ファイル（End）」へ一瞬で移動",
-    "desc": "ファイルが何百個あるフォルダでも、一番上のフォルダや一番下のファイルへ瞬時に移動します。",
-    "tip": "スクロールバーをマウスで引っ張る手間がなくなります。",
-    "memory": "Home（一番上のスタート地点）、End（一番下のゴール地点）",
-    "level": 2,
-    "funcGroup": "階層移動・アドレスバー・検索",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110414
-  },
-  {
-    "id": "exp-34",
-    "category": "explorer",
-    "subcategory": "階層移動・アドレスバー・検索",
-    "keys": [
-      "Space"
-    ],
-    "title": "先頭文字入力と組み合わせて目的のファイルを選択",
-    "desc": "フォルダ内でファイルを選択中や、英数字キーで頭文字ジャンプした直後にファイルを選択状態にします。",
-    "tip": "Ctrlを押しながら矢印キーで移動し、Spaceを押すと離れた複数ファイルをキーボードだけで飛び石選択できます！",
-    "level": 2,
-    "memory": "Ctrl + 矢印で移動して Space（スポット選択）",
-    "funcGroup": "階層移動・アドレスバー・検索",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110483
-  },
-  {
-    "id": "exp-24",
-    "category": "explorer",
-    "subcategory": "階層移動・アドレスバー・検索",
-    "keys": [
-      "F4"
-    ],
-    "title": "アドレスバーを選択して過去のフォルダ履歴一覧を展開",
-    "desc": "エクスプローラー上部のアドレスバーにフォーカスし、最近開いたパス履歴のプルダウンを開きます。",
-    "tip": "Alt + D や Ctrl + L と同じくアドレスバー操作に使えます。",
-    "memory": "F4でアドレスバーのプルダウンリスト（4＝フォルダー履歴）を展開",
-    "level": 2,
-    "funcGroup": "階層移動・アドレスバー・検索",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210004
-  },
-  {
-    "id": "exp-16",
-    "category": "explorer",
-    "subcategory": "階層移動・アドレスバー・検索",
-    "keys": [
-      "Ctrl",
-      "F"
-    ],
-    "title": "フォルダ内のファイル検索ボックスへ移動（F3 / Ctrl+Eでも同じ）",
-    "desc": "エクスプローラー右上の検索窓にカーソルを移動し、現在のフォルダ配下のファイルを絞り込み検索します。",
-    "tip": "`*.pdf` や `*.xlsx` のように拡張子で絞り込むのにも便利です。",
-    "level": 3,
-    "memory": "Find（探す）の「Ctrl + F」（または Find の F3 / Explorer検索の Ctrl+E）",
-    "funcGroup": "階層移動・アドレスバー・検索",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410270
-  },
-  {
-    "id": "exp-15",
-    "category": "explorer",
-    "subcategory": "階層移動・アドレスバー・検索",
-    "keys": [
-      "Alt",
-      "D"
-    ],
-    "title": "アドレスバー（パス入力欄）を選択（Ctrl+L / F4でも同じ）",
-    "desc": "上部のフォルダパス欄を全選択状態にします。そのまま Ctrl+C で現在のフォルダパスをコピーできます。",
-    "tip": "アドレスバーに `cmd` や `powershell` と打ってEnterを押せば、そのフォルダでターミナルが即起動します！",
-    "level": 3,
-    "memory": "aDdress bar（アドレスバー）の「D」、または Location（場所）の「Ctrl + L」",
-    "funcGroup": "階層移動・アドレスバー・検索",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710268
-  },
-  {
-    "id": "exp-13",
-    "category": "explorer",
-    "subcategory": "階層移動・アドレスバー・検索",
-    "keys": [
-      "Alt",
-      "↑"
-    ],
-    "title": "1つ上の階層（親フォルダ）へ移動",
-    "desc": "現在開いているフォルダの1つ上の親フォルダへ瞬時に上がります。",
-    "tip": "深いフォルダ階層から上のフォルダへ戻る時の基本ショートカットです。",
-    "level": 3,
-    "memory": "「↑（上矢印）」の見た目通り、1つ上の親フォルダ階層へ上がる",
-    "funcGroup": "階層移動・アドレスバー・検索",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710422
-  },
-  {
-    "id": "exp-14",
-    "category": "explorer",
-    "subcategory": "階層移動・アドレスバー・検索",
-    "keys": [
-      "Alt",
-      "← / →"
-    ],
-    "title": "直前に開いていたフォルダへ「戻る（←）」/「進む（→）」",
-    "desc": "ブラウザの戻る・進むと同じように、フォルダの移動履歴を前後に行き来します（Backspaceでも戻る）。",
-    "tip": "マウスの戻るボタンがない環境でも高速にフォルダ間を往復できます。",
-    "level": 3,
-    "memory": "ブラウザの戻る/進むと完全共通！「←（過去に戻る）」「→（先に進む）」",
-    "funcGroup": "階層移動・アドレスバー・検索",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720426
+    "memory": "Ctrl+C（通常のコピー）に「Shift」を足して「ファイルのパス文字列をコピー」！",
+    "funcGroup": "フォルダ・ファイル作成＆操作",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120033
   },
   {
     "id": "exp-28",
@@ -1827,7 +1774,7 @@ const SHORTCUTS_DATA = [
     "level": 2,
     "funcGroup": "階層移動・アドレスバー・検索",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810269
+    "sortRank": 8120053
   },
   {
     "id": "exp-29",
@@ -1845,7 +1792,76 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + Expand（ツリー展開）の「E」",
     "funcGroup": "階層移動・アドレスバー・検索",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830269
+    "sortRank": 8120053
+  },
+  {
+    "id": "exp-6",
+    "category": "explorer",
+    "subcategory": "フォルダ・ファイル作成＆操作",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "N"
+    ],
+    "title": "新しいフォルダーを作成する",
+    "desc": "現在開いている場所（またはデスクトップ上）に新規フォルダを一瞬で作成します。",
+    "tip": "右クリック → 新規作成 → フォルダー の3ステップが1秒になります。",
+    "level": 3,
+    "memory": "Ctrl+N（新規ウィンドウ）に「Shift」を足して「New Folder（新しいフォルダ）」を作成！",
+    "funcGroup": "フォルダ・ファイル作成＆操作",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120143
+  },
+  {
+    "id": "exp-18",
+    "category": "explorer",
+    "subcategory": "表示レイアウト切替・プレビュー",
+    "keys": [
+      "Alt",
+      "Shift",
+      "P"
+    ],
+    "title": "詳細ウィンドウ（メタデータ・容量・更新日時パネル）の表示切替",
+    "desc": "画面右側にファイルの解像度、撮影日、作成者、ファイルサイズなどの詳細情報パネルを表示します。",
+    "tip": "写真のサイズやドキュメントの最終保存者を確認するときに便利です。",
+    "level": 1,
+    "memory": "Preview（Alt+P）に「Shift」を足して、もうひとつのパネル「詳細ウィンドウ」を表示",
+    "funcGroup": "表示レイアウト切替・プレビュー",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9220163
+  },
+  {
+    "id": "exp-1",
+    "category": "explorer",
+    "subcategory": "起動・タブ・ウィンドウ管理",
+    "keys": [
+      "Win",
+      "E"
+    ],
+    "title": "エクスプローラーを起動する",
+    "desc": "どの画面からでもファイル・フォルダ管理画面（エクスプローラー）を新しく開きます。",
+    "tip": "PC作業で最も頻繁に使うショートカットのひとつです。",
+    "level": 3,
+    "memory": "Explorer（エクスプローラー）の頭文字「E」",
+    "funcGroup": "起動・タブ・ウィンドウ管理",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10220052
+  },
+  {
+    "id": "ex-52",
+    "category": "excel",
+    "subcategory": "データ入力・編集",
+    "keys": [
+      "Esc"
+    ],
+    "title": "入力・編集中の内容をキャンセルして元のセル値に戻す",
+    "desc": "セルに文字や数式を打ち間違えた時、Enterを押す前なら Esc で入力前の状態に完全リセットします。",
+    "tip": "また、コピー中（点線枠が回っている状態）の解除も Esc キー1発です。",
+    "memory": "Escape（今の入力作業から脱出して元に戻す）の「Esc」",
+    "level": 3,
+    "funcGroup": "データ入力・編集",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1140011
   },
   {
     "id": "ex-53",
@@ -1861,7 +1877,7 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "funcGroup": "セル移動・範囲選択",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110402
+    "sortRank": 1140021
   },
   {
     "id": "ex-54",
@@ -1877,7 +1893,55 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "funcGroup": "セル移動・範囲選択",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110406
+    "sortRank": 1140041
+  },
+  {
+    "id": "ex-13",
+    "category": "excel",
+    "subcategory": "データ入力・編集",
+    "keys": [
+      "F2"
+    ],
+    "title": "セル内の編集モードに入る",
+    "desc": "選択中のセルの末尾にカーソルを表示し、中身を直接編集できるようにします。",
+    "tip": "ダブルクリック不要で文字の追記や参照先セルの色分け確認ができます。",
+    "level": 3,
+    "memory": "Function 2 ＝「2度押し（ダブルクリック）の代わり」にセル内を編集モードにする！",
+    "funcGroup": "データ入力・編集",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130021
+  },
+  {
+    "id": "ex-55",
+    "category": "excel",
+    "subcategory": "数式・関数・名前定義",
+    "keys": [
+      "F3"
+    ],
+    "title": "定義した「名前」の一覧を呼び出して数式に貼り付け",
+    "desc": "あらかじめ名前定義したセル範囲の一覧ポップアップを表示し、数式内に挿入します。",
+    "tip": "Ctrl + F3（名前の管理）で登録した名前を F3 単体で呼び出す関係です。",
+    "memory": "F3単体＝「名前を呼び出す」、Ctrl+F3＝「名前を管理する」、Shift+F3＝「関数(fx)を挿入する」のF3三兄弟！",
+    "level": 1,
+    "funcGroup": "数式・関数・名前定義",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130031
+  },
+  {
+    "id": "ex-23",
+    "category": "excel",
+    "subcategory": "数式・関数・名前定義",
+    "keys": [
+      "F4"
+    ],
+    "title": "絶対参照（$A$1）の切り替え / 直前の操作の繰り返し",
+    "desc": "数式編集中は「$A$1 → A$1 → $A1 → A1」を切り替え、通常時は直前の操作（色塗りや行挿入等）を繰り返します。",
+    "tip": "1つの機能で2役こなす、Excelユーザー全員が毎日使う神キーです。",
+    "level": 3,
+    "memory": "4キーの表に「$」が印字されている通り、数式中は「F4」で「$（絶対参照）」を付与！",
+    "funcGroup": "数式・関数・名前定義",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130041
   },
   {
     "id": "ex-56",
@@ -1893,7 +1957,157 @@ const SHORTCUTS_DATA = [
     "level": 1,
     "funcGroup": "セル移動・範囲選択",
     "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210008
+    "sortRank": 2130081
+  },
+  {
+    "id": "ex-57",
+    "category": "excel",
+    "subcategory": "数式・関数・名前定義",
+    "keys": [
+      "F9"
+    ],
+    "title": "ブック全体の数式を今すぐ再計算 / 数式の一部を計算結果に変換",
+    "desc": "手動計算モード時の再計算を行います。また数式編集中に式の一部を選択して F9 を押すと、その部分の計算結果が即座に分かります！",
+    "tip": "複雑なネスト関数のデバッグで「このVLOOKUP部分だけ今どんな値になってる？」をその場で確認できる裏ワザです（確認後はEscで戻す）。",
+    "memory": "F9（9＝計算の「く」・九九の「9」！）で数式を計算実行",
+    "level": 2,
+    "funcGroup": "数式・関数・名前定義",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130091
+  },
+  {
+    "id": "ex-76",
+    "category": "excel",
+    "subcategory": "数式・関数・名前定義",
+    "keys": [
+      "F9"
+    ],
+    "title": "すべてのシートの数式を再計算 / 数式バー内で部分計算",
+    "desc": "手動計算モード時の再計算を行います。また数式入力中に一部を選択してF9を押すと、その部分の計算結果だけを確認できます。",
+    "tip": "数式バーで部分確認したあとは、Enterではなく Esc を押すと元の数式のまま戻せます。",
+    "level": 2,
+    "memory": "F9＝計算（Calculate）の実行キー",
+    "funcGroup": "数式・関数・名前定義",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130091
+  },
+  {
+    "id": "ex-58",
+    "category": "excel",
+    "subcategory": "テーブル・フィルタ・ピボット・シート",
+    "keys": [
+      "F11"
+    ],
+    "title": "選択データから別シートに「全画面グラフシート」を一発作成",
+    "desc": "表を選択して F11 を押すだけで、グラフ専用の新しいシートを追加してグラフを生成します。",
+    "tip": "現在のシート内に小さく埋め込みたい時は Alt + F1、独立シートにしたい時は F11 と使い分けます。",
+    "memory": "「11」の縦棒2本が「棒グラフ（📊）」の形に見えるから F11 ＝グラフ作成！",
+    "level": 2,
+    "funcGroup": "テーブル・フィルタ・ピボット・シート",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130111
+  },
+  {
+    "id": "ex-42",
+    "category": "excel",
+    "subcategory": "行列操作・非表示・グループ化",
+    "keys": [
+      "Ctrl",
+      "0 (ゼロ)"
+    ],
+    "title": "選択した「列」を非表示にする",
+    "desc": "選択している縦の列を一時的に非表示にします（再表示は Alt → H → O → U → L）。",
+    "tip": "印刷時に見せたくない計算用の作業列をサッと隠すときに便利です。",
+    "level": 2,
+    "memory": "0（ゼロ＝幅をゼロにして隠す）で列を非表示に！",
+    "funcGroup": "行列操作・非表示・グループ化",
+    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
+    "sortRank": 3110002
+  },
+  {
+    "id": "ex-31",
+    "category": "excel",
+    "subcategory": "貼り付け・書式・表示形式",
+    "keys": [
+      "Ctrl",
+      "1 (テンキー以外)"
+    ],
+    "title": "「セルの書式設定」ダイアログを開く",
+    "desc": "表示形式、配置、フォント、罫線、塗りつぶしを詳細設定する画面を一発で開きます。",
+    "tip": "リボンメニューから探すより圧倒的に速く、あらゆる書式設定の起点になります。",
+    "level": 3,
+    "memory": "書式設定の「1番目（ナンバーワン基本機能）」だから「Ctrl + 1」！",
+    "funcGroup": "貼り付け・書式・表示形式",
+    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
+    "sortRank": 3110012
+  },
+  {
+    "id": "ex-59",
+    "category": "excel",
+    "subcategory": "貼り付け・書式・表示形式",
+    "keys": [
+      "Ctrl",
+      "2 / 3 / 4"
+    ],
+    "title": "太字（Ctrl+2）・斜体（Ctrl+3）・下線（Ctrl+4）の数字ショートカット",
+    "desc": "Ctrl+1（書式設定）とCtrl+5（取り消し線）の間にある数字で、2＝太字(B)、3＝斜体(I)、4＝下線(U)を切り替えます。",
+    "tip": "Ctrl+1〜5 を左手だけで連続操作するときに知っていると便利です。",
+    "memory": "1(書式) → 2(太字) → 3(斜体) → 4(下線) → 5(取消線) と上段数字キー左から順番に並んでいる！",
+    "level": 1,
+    "funcGroup": "貼り付け・書式・表示形式",
+    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
+    "sortRank": 3110022
+  },
+  {
+    "id": "ex-32",
+    "category": "excel",
+    "subcategory": "貼り付け・書式・表示形式",
+    "keys": [
+      "Ctrl",
+      "5 (テンキー以外)"
+    ],
+    "title": "取り消し線のON / OFF切り替え",
+    "desc": "選択したセルまたは文字に中央の取り消し線（見え消し線）を引きます。",
+    "tip": "ToDoリストや課題管理表で完了した項目を消すときに毎日使えます！",
+    "level": 3,
+    "memory": "5（ご）＝「誤字を取り消し線で消す」の「Ctrl + 5」",
+    "funcGroup": "貼り付け・書式・表示形式",
+    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
+    "sortRank": 3110052
+  },
+  {
+    "id": "ex-60",
+    "category": "excel",
+    "subcategory": "行列操作・非表示・グループ化",
+    "keys": [
+      "Ctrl",
+      "8"
+    ],
+    "title": "グループ化のアウトライン記号（＋/－ボタン）の表示 / 非表示切替",
+    "desc": "Alt+Shift+→ で作成した行・列グループの折りたたみ枠（左端や上端の＋/－バー）を表示・非表示にします。",
+    "tip": "Ctrl+8（アウトライン記号）→ Ctrl+9（行非表示）→ Ctrl+0（列非表示）と右端の数字3つがすべて表示制御になっています！",
+    "memory": "8・9・0 の右端数字トリオ（8＝アウトライン枠、9＝行隠し、0＝列隠し）",
+    "level": 1,
+    "funcGroup": "行列操作・非表示・グループ化",
+    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
+    "sortRank": 3110082
+  },
+  {
+    "id": "ex-41",
+    "category": "excel",
+    "subcategory": "行列操作・非表示・グループ化",
+    "keys": [
+      "Ctrl",
+      "9 / Shift+9"
+    ],
+    "title": "選択した「行」を非表示にする（Ctrl+9）/ 再表示（Ctrl+Shift+9）",
+    "desc": "不要な行を一時的に隠します。上下の行をまたいで選択し Ctrl + Shift + 9 で再表示します。",
+    "tip": "テンキーではなくキーボード上部の数字「9」を使います。",
+    "level": 2,
+    "memory": "丸괄弧「( 」が印字された「9」で、行を挟んで隠す（Shift追加で括弧を開いて再表示）",
+    "funcGroup": "行列操作・非表示・グループ化",
+    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
+    "sortRank": 3110092
   },
   {
     "id": "ex-7",
@@ -1910,438 +2124,24 @@ const SHORTCUTS_DATA = [
     "memory": "All（表のすべて）の頭文字「A」",
     "funcGroup": "セル移動・範囲選択",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410265
+    "sortRank": 4120012
   },
   {
-    "id": "ex-9",
+    "id": "ex-61",
     "category": "excel",
-    "subcategory": "セル移動・範囲選択",
+    "subcategory": "貼り付け・書式・表示形式",
     "keys": [
       "Ctrl",
-      "G"
+      "B / I / U"
     ],
-    "title": "「ジャンプ」ダイアログを開く（F5でも同じ）",
-    "desc": "指定セルへの移動や、「セル選択(S)」から空白セル・数式セル・可視セルだけを一括選択します。",
-    "tip": "Ctrl + G → Alt + S → K → Enter で「表の中の空白セルだけを一括選択」する実務テクニックは超有名です！",
-    "level": 2,
-    "memory": "Go to（指定した場所へ行く・ジャンプ）の頭文字「G」",
-    "funcGroup": "セル移動・範囲選択",
+    "title": "太字（Ctrl+B）・斜体（Ctrl+I）・下線（Ctrl+U）",
+    "desc": "選択したセルや文字を太字（Bold）、斜体（Italic）、下線付き（Underline）にします。",
+    "tip": "WordやPowerPointと完全共通の基本装飾キーです。",
+    "memory": "Bold（太字）の B、Italic（斜体）の I、Underline（下線）の U",
+    "level": 3,
+    "funcGroup": "貼り付け・書式・表示形式",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410271
-  },
-  {
-    "id": "ex-6",
-    "category": "excel",
-    "subcategory": "セル移動・範囲選択",
-    "keys": [
-      "Ctrl",
-      "Space"
-    ],
-    "title": "現在の「列」を丸ごと選択",
-    "desc": "選択中のセルが含まれる縦1列すべてを選択します。",
-    "tip": "日本語入力がONだと半角スペース入力になる場合があるため、半角英数モードで使いましょう。",
-    "level": 3,
-    "memory": "Column（列）の頭文字「Ctrl」＋ Space で「縦1列」を選択！",
-    "funcGroup": "セル移動・範囲選択",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510404
-  },
-  {
-    "id": "ex-62",
-    "category": "excel",
-    "subcategory": "セル移動・範囲選択",
-    "keys": [
-      "Ctrl",
-      "Backspace"
-    ],
-    "title": "スクロールして遠くへ行った画面を「現在の選択セル位置」へ一瞬で戻す",
-    "desc": "マウスホイールで別箇所を見に行って元の選択セルを見失った時、選択を解除せずに元のセルが映る位置へ画面を引き戻します！",
-    "tip": "数式入力中や広い範囲を選択中に、現在地へ画面を戻したい時の超便利テクニックです。",
-    "memory": "Backspace（元の場所へバックする）に Ctrl を添えて「アクティブセルへ視点を引き戻す」",
-    "level": 2,
-    "funcGroup": "セル移動・範囲選択",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510408
-  },
-  {
-    "id": "ex-3",
-    "category": "excel",
-    "subcategory": "セル移動・範囲選択",
-    "keys": [
-      "Ctrl",
-      "Home"
-    ],
-    "title": "先頭セル（A1）へ一気に戻る",
-    "desc": "シートのどこにいても、一番左上のA1セル（ウィンドウ枠固定時は左上端）へ戻ります。",
-    "tip": "ファイルを保存して閉じる前に全シートで Ctrl + Home を押すのは実務の鉄則マナーです！",
-    "level": 3,
-    "memory": "Home（ホームベース＝A1セル）へ Ctrl で一気に帰還する",
-    "funcGroup": "セル移動・範囲選択",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510414
-  },
-  {
-    "id": "ex-4",
-    "category": "excel",
-    "subcategory": "セル移動・範囲選択",
-    "keys": [
-      "Ctrl",
-      "End"
-    ],
-    "title": "データが存在する最終セル（右下端）へ移動",
-    "desc": "シート内でデータや書式が使われている一番右下の最終セルへジャンプします。",
-    "tip": "Ctrl + Shift + End なら現在のセルから表の右下端までを一括選択できます。",
-    "level": 3,
-    "memory": "End（データの終点＝右下端の最終セル）へ Ctrl で一気に飛ぶ",
-    "funcGroup": "セル移動・範囲選択",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510416
-  },
-  {
-    "id": "ex-8",
-    "category": "excel",
-    "subcategory": "セル移動・範囲選択",
-    "keys": [
-      "Ctrl",
-      "PageUp / PageDown"
-    ],
-    "title": "左右のワークシートへ切り替え",
-    "desc": "Ctrl + PageDown で右隣のシートへ、Ctrl + PageUp で左隣のシートへ瞬時に移動します。",
-    "tip": "Ctrl + Shift + PageDown / PageUp なら複数シートをまとめてグループ選択できます。",
-    "level": 3,
-    "memory": "PageUp（前のページ＝左のシート）/ PageDown（次のページ＝右のシート）",
-    "funcGroup": "セル移動・範囲選択",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510418
-  },
-  {
-    "id": "ex-1",
-    "category": "excel",
-    "subcategory": "セル移動・範囲選択",
-    "keys": [
-      "Ctrl",
-      "↑ / ↓ / ← / →"
-    ],
-    "title": "データの端まで一気にジャンプ移動",
-    "desc": "データが入力されている連続範囲の端（先頭・末尾）のセルまで一瞬で移動します。",
-    "tip": "何千行ある表でも一瞬で一番下まで到達できる、Excel最重要の移動ワザです。",
-    "level": 3,
-    "memory": "Ctrl（ワープ加速キー）＋ 矢印で、データの端まで一気に飛ぶイメージ",
-    "funcGroup": "セル移動・範囲選択",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510422
-  },
-  {
-    "id": "ex-11",
-    "category": "excel",
-    "subcategory": "セル移動・範囲選択",
-    "keys": [
-      "Ctrl",
-      ". (ピリオド)"
-    ],
-    "title": "選択範囲の四隅（アクティブセル）を時計回りに移動",
-    "desc": "広い範囲を選択している時、選択範囲の左上→右上→右下→左下へと視点をジャンプします。",
-    "tip": "下まで範囲選択しすぎた時に、選択開始側ではなく選択終了側を微調整したい時に必須です。",
-    "level": 1,
-    "memory": "ピリオド「.」＝選択範囲の四隅の「点（角）」を順番に回る！",
-    "funcGroup": "セル移動・範囲選択",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510546
-  },
-  {
-    "id": "ex-5",
-    "category": "excel",
-    "subcategory": "セル移動・範囲選択",
-    "keys": [
-      "Shift",
-      "Space"
-    ],
-    "title": "現在の「行」を丸ごと選択",
-    "desc": "選択中のセルが含まれる横1行すべてを選択します。",
-    "tip": "そのまま Ctrl + 「+」で行挿入、Ctrl + 「-」で行削除に繋げるとマウスいらず！",
-    "level": 3,
-    "memory": "横長のキー「Shift」＋ Space で「横1行」を選択！（S＝Side/横 と覚えてもOK）",
-    "funcGroup": "セル移動・範囲選択",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 610404
-  },
-  {
-    "id": "ex-12",
-    "category": "excel",
-    "subcategory": "セル移動・範囲選択",
-    "keys": [
-      "Alt",
-      "PageDown / PageUp"
-    ],
-    "title": "画面を1画面分「右（PageDown）/ 左（PageUp）」へ横スクロール",
-    "desc": "通常のPageDown/Upは上下スクロールですが、Altを足すと横長シートを左右に1画面ずつ移動します。",
-    "tip": "列数が多いスケジュール表や管理表を見る時に便利です。",
-    "level": 1,
-    "memory": "PageUp/Down（上下画面移動）に「Alt（別方向へ切り替え）」を足して左右へ画面移動",
-    "funcGroup": "セル移動・範囲選択",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710418
-  },
-  {
-    "id": "ex-10",
-    "category": "excel",
-    "subcategory": "セル移動・範囲選択",
-    "keys": [
-      "Alt",
-      "; (セミコロン)"
-    ],
-    "title": "見えているセル（可視セル）だけを選択",
-    "desc": "非表示にした行・列や折りたたんだグループを除外し、画面に表示されているセルだけを選択対象にします。",
-    "tip": "集計行だけをコピーしたいのに隠れている行まで一緒にコピーされてしまう問題を一発解決します！",
-    "level": 2,
-    "memory": "セミコロン「;」の点が上下に分かれている見た目から「隠れた行を飛ばして見えているセルだけ選択」",
-    "funcGroup": "セル移動・範囲選択",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710559
-  },
-  {
-    "id": "ex-2",
-    "category": "excel",
-    "subcategory": "セル移動・範囲選択",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "↑ / ↓ / ← / →"
-    ],
-    "title": "データの端まで一気に範囲選択",
-    "desc": "現在のセルからデータが途切れる端のセルまでを一括で範囲選択します。",
-    "tip": "表のデータ列を丸ごとコピーしたり関数範囲に指定する時に必須です。",
-    "level": 3,
-    "memory": "Ctrl+矢印（端までワープ）＋ Shift（通った軌跡をすべて範囲選択）の最強コンボ！",
-    "funcGroup": "セル移動・範囲選択",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810422
-  },
-  {
-    "id": "ex-58",
-    "category": "excel",
-    "subcategory": "テーブル・フィルタ・ピボット・シート",
-    "keys": [
-      "F11"
-    ],
-    "title": "選択データから別シートに「全画面グラフシート」を一発作成",
-    "desc": "表を選択して F11 を押すだけで、グラフ専用の新しいシートを追加してグラフを生成します。",
-    "tip": "現在のシート内に小さく埋め込みたい時は Alt + F1、独立シートにしたい時は F11 と使い分けます。",
-    "memory": "「11」の縦棒2本が「棒グラフ（📊）」の形に見えるから F11 ＝グラフ作成！",
-    "level": 2,
-    "funcGroup": "テーブル・フィルタ・ピボット・シート",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210011
-  },
-  {
-    "id": "ex-47",
-    "category": "excel",
-    "subcategory": "テーブル・フィルタ・ピボット・シート",
-    "keys": [
-      "Ctrl",
-      "T"
-    ],
-    "title": "データ範囲を「テーブル」に変換",
-    "desc": "表を構造化参照・自動縞模様・フィルタ付きのExcelテーブルに変換します（Ctrl + L でも同じ）。",
-    "tip": "末尾に行を追加しても数式や書式が自動拡張されるため、データベース管理の基本テクニックです。",
-    "level": 3,
-    "memory": "Table（テーブル）の頭文字「T」",
-    "funcGroup": "テーブル・フィルタ・ピボット・シート",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410284
-  },
-  {
-    "id": "ex-51",
-    "category": "excel",
-    "subcategory": "テーブル・フィルタ・ピボット・シート",
-    "keys": [
-      "Shift",
-      "F2"
-    ],
-    "title": "セルに「メモ（旧コメント）」を挿入・編集",
-    "desc": "セルの右上に赤い三角マークが付く従来の「メモ」を挿入・編集します（モダンコメントは Ctrl + Alt + M）。",
-    "tip": "補足説明や注意事項をセルに書き残したい時にすぐ呼び出せます。",
-    "level": 2,
-    "memory": "F2（セル編集）に「Shift」を足して、セル本体ではなく「外側のメモ（コメント）を編集」！",
-    "funcGroup": "テーブル・フィルタ・ピボット・シート",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 610302
-  },
-  {
-    "id": "ex-50",
-    "category": "excel",
-    "subcategory": "テーブル・フィルタ・ピボット・シート",
-    "keys": [
-      "Shift",
-      "F11"
-    ],
-    "title": "新しいワークシートを挿入（Alt→H→O→Rでシート名変更）",
-    "desc": "現在のシートの左隣に新規ワークシートを1枚追加します。",
-    "tip": "追加したあと Alt → H → O → R と押せば、マウスを使わずにそのままシート名を変更できます！",
-    "level": 2,
-    "memory": "F11（グラフシート挿入）に Shift を足して「普通のワークシートを挿入」",
-    "funcGroup": "テーブル・フィルタ・ピボット・シート",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 610311
-  },
-  {
-    "id": "ex-49",
-    "category": "excel",
-    "subcategory": "テーブル・フィルタ・ピボット・シート",
-    "keys": [
-      "Alt",
-      "F1"
-    ],
-    "title": "選択データから即座にグラフを作成（F11で別シート作成）",
-    "desc": "表を選択して押すだけで、現在のシート上に標準の棒グラフ等を1秒で自動生成します。",
-    "tip": "F11 単独押しなら、グラフ専用の新しいシートを追加して全画面グラフを作成します。",
-    "level": 2,
-    "memory": "一番最初のファンクションキー「F1」に Alt を合わせて「1秒でグラフ作成」！",
-    "funcGroup": "テーブル・フィルタ・ピボット・シート",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710301
-  },
-  {
-    "id": "ex-48",
-    "category": "excel",
-    "subcategory": "テーブル・フィルタ・ピボット・シート",
-    "keys": [
-      "Alt",
-      "N → V → T"
-    ],
-    "title": "ピボットテーブルを挿入",
-    "desc": "現在の表データからクロス集計を行うピボットテーブル作成画面を一発で呼び出します。",
-    "tip": "旧来のショートカット Alt → D → P でもピボットテーブルウィザードを起動できます。",
-    "level": 2,
-    "memory": "Alt → Insert(N：挿入) → PivotTable(V) → Table(T) のアクセスキー順",
-    "funcGroup": "テーブル・フィルタ・ピボット・シート",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720278
-  },
-  {
-    "id": "ex-83",
-    "category": "excel",
-    "subcategory": "テーブル・フィルタ・ピボット・シート",
-    "keys": [
-      "Alt",
-      "W",
-      "N"
-    ],
-    "title": "同じExcelブックを「もう1つの別ウィンドウ」で開く",
-    "desc": "1つのExcelファイルの「シートA」と「シートB」を左右2つのウィンドウに並べて同時に見比べ・コピペできます！",
-    "tip": "別ウィンドウと言っても中身は同じファイルなので、片方で編集するとリアルタイムにもう片方へ反映されます。",
-    "level": 3,
-    "memory": "Alt → View(W・表示) → New window(N・新しいウィンドウ)",
-    "funcGroup": "テーブル・フィルタ・ピボット・シート",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 730287
-  },
-  {
-    "id": "ex-82",
-    "category": "excel",
-    "subcategory": "テーブル・フィルタ・ピボット・シート",
-    "keys": [
-      "Alt",
-      "H",
-      "O",
-      "R"
-    ],
-    "title": "現在のシート名を変更する（Rename Sheet）",
-    "desc": "画面下のシート見出しをダブルクリックすることなく、キーボードだけで現在のシート名を書き換えられます。",
-    "tip": "Ctrl + PageUp / PageDown でシートを移動し、Alt → H → O → R で名前変更すると爆速です。",
-    "level": 2,
-    "memory": "Alt → Home(H) → fOrmat(O) → Rename sheet(R)",
-    "funcGroup": "テーブル・フィルタ・ピボット・シート",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 740272
-  },
-  {
-    "id": "ex-70",
-    "category": "excel",
-    "subcategory": "テーブル・フィルタ・ピボット・シート",
-    "keys": [
-      "Alt",
-      "W",
-      "F",
-      "F"
-    ],
-    "title": "ウィンドウ枠の固定 / 固定解除を一発切替",
-    "desc": "選択しているセルの「上」と「左」を見出しとして固定し、スクロールしても見出しが消えないようにします。",
-    "tip": "すでに固定されているシートで押すと、即座に固定解除になります。",
-    "level": 3,
-    "memory": "Alt → View(W) → Freeze panes(F) → Freeze(F)",
-    "funcGroup": "テーブル・フィルタ・ピボット・シート",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 740287
-  },
-  {
-    "id": "ex-71",
-    "category": "excel",
-    "subcategory": "テーブル・フィルタ・ピボット・シート",
-    "keys": [
-      "Alt",
-      "W",
-      "V",
-      "G"
-    ],
-    "title": "シートの「目盛線（グリッド線）」の表示/非表示を切替",
-    "desc": "背景の薄いグレーの枠線（目盛線）を消して、提出用の美しい白いシートに仕上げます。",
-    "tip": "資料提出前の仕上げとして実務で最も使われるコマンドの1つです。",
-    "level": 3,
-    "memory": "Alt → View(W) → View(V) → Gridlines(G・目盛線)",
-    "funcGroup": "テーブル・フィルタ・ピボット・シート",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 740287
-  },
-  {
-    "id": "ex-46",
-    "category": "excel",
-    "subcategory": "テーブル・フィルタ・ピボット・シート",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "L"
-    ],
-    "title": "フィルター（オートフィルタ）のON / OFF切り替え",
-    "desc": "表の見出し行に絞り込み・並び替え用のドロップダウン矢印（▼）を設置・解除します。",
-    "tip": "見出しセル上で Alt + ↓ を押すと、マウスを使わずにフィルターメニューを開いて絞り込みできます！",
-    "level": 3,
-    "memory": "fiLter（フィルター）または List（リスト）の「L」に Ctrl + Shift",
-    "funcGroup": "テーブル・フィルタ・ピボット・シート",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810276
-  },
-  {
-    "id": "ex-52",
-    "category": "excel",
-    "subcategory": "データ入力・編集",
-    "keys": [
-      "Esc"
-    ],
-    "title": "入力・編集中の内容をキャンセルして元のセル値に戻す",
-    "desc": "セルに文字や数式を打ち間違えた時、Enterを押す前なら Esc で入力前の状態に完全リセットします。",
-    "tip": "また、コピー中（点線枠が回っている状態）の解除も Esc キー1発です。",
-    "memory": "Escape（今の入力作業から脱出して元に戻す）の「Esc」",
-    "level": 3,
-    "funcGroup": "データ入力・編集",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110400
-  },
-  {
-    "id": "ex-13",
-    "category": "excel",
-    "subcategory": "データ入力・編集",
-    "keys": [
-      "F2"
-    ],
-    "title": "セル内の編集モードに入る",
-    "desc": "選択中のセルの末尾にカーソルを表示し、中身を直接編集できるようにします。",
-    "tip": "ダブルクリック不要で文字の追記や参照先セルの色分け確認ができます。",
-    "level": 3,
-    "memory": "Function 2 ＝「2度押し（ダブルクリック）の代わり」にセル内を編集モードにする！",
-    "funcGroup": "データ入力・編集",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210002
+    "sortRank": 4120022
   },
   {
     "id": "ex-15",
@@ -2358,7 +2158,7 @@ const SHORTCUTS_DATA = [
     "memory": "Down（下方向へコピー）の頭文字「D」",
     "funcGroup": "データ入力・編集",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410268
+    "sortRank": 4120042
   },
   {
     "id": "ex-20",
@@ -2375,7 +2175,24 @@ const SHORTCUTS_DATA = [
     "memory": "Easy fill（簡単自動入力）または Extract（抽出）の「E」でフラッシュフィル！",
     "funcGroup": "データ入力・編集",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410269
+    "sortRank": 4120052
+  },
+  {
+    "id": "ex-9",
+    "category": "excel",
+    "subcategory": "セル移動・範囲選択",
+    "keys": [
+      "Ctrl",
+      "G"
+    ],
+    "title": "「ジャンプ」ダイアログを開く（F5でも同じ）",
+    "desc": "指定セルへの移動や、「セル選択(S)」から空白セル・数式セル・可視セルだけを一括選択します。",
+    "tip": "Ctrl + G → Alt + S → K → Enter で「表の中の空白セルだけを一括選択」する実務テクニックは超有名です！",
+    "level": 2,
+    "memory": "Go to（指定した場所へ行く・ジャンプ）の頭文字「G」",
+    "funcGroup": "セル移動・範囲選択",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120072
   },
   {
     "id": "ex-16",
@@ -2392,7 +2209,58 @@ const SHORTCUTS_DATA = [
     "memory": "Right（右方向へコピー）の頭文字「R」",
     "funcGroup": "データ入力・編集",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410282
+    "sortRank": 4120182
+  },
+  {
+    "id": "ex-47",
+    "category": "excel",
+    "subcategory": "テーブル・フィルタ・ピボット・シート",
+    "keys": [
+      "Ctrl",
+      "T"
+    ],
+    "title": "データ範囲を「テーブル」に変換",
+    "desc": "表を構造化参照・自動縞模様・フィルタ付きのExcelテーブルに変換します（Ctrl + L でも同じ）。",
+    "tip": "末尾に行を追加しても数式や書式が自動拡張されるため、データベース管理の基本テクニックです。",
+    "level": 3,
+    "memory": "Table（テーブル）の頭文字「T」",
+    "funcGroup": "テーブル・フィルタ・ピボット・シート",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120202
+  },
+  {
+    "id": "ex-27",
+    "category": "excel",
+    "subcategory": "数式・関数・名前定義",
+    "keys": [
+      "Ctrl",
+      "F3"
+    ],
+    "title": "「名前の管理」を開く（Ctrl+Shift+F3で一括定義）",
+    "desc": "セル範囲に付けた名前定義の一覧・編集画面を開きます。数式内では F3 で名前を呼び出せます。",
+    "tip": "表全体を選んで Ctrl + Shift + F3 を押せば、見出し行の名前で一括して名前定義を作れます。",
+    "level": 1,
+    "memory": "F3（名前呼び出し）に Ctrl を足して「名前の管理台帳」を開く",
+    "funcGroup": "数式・関数・名前定義",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5130032
+  },
+  {
+    "id": "ex-6",
+    "category": "excel",
+    "subcategory": "セル移動・範囲選択",
+    "keys": [
+      "Ctrl",
+      "Space"
+    ],
+    "title": "現在の「列」を丸ごと選択",
+    "desc": "選択中のセルが含まれる縦1列すべてを選択します。",
+    "tip": "日本語入力がONだと半角スペース入力になる場合があるため、半角英数モードで使いましょう。",
+    "level": 3,
+    "memory": "Column（列）の頭文字「Ctrl」＋ Space で「縦1列」を選択！",
+    "funcGroup": "セル移動・範囲選択",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140032
   },
   {
     "id": "ex-19",
@@ -2409,7 +2277,143 @@ const SHORTCUTS_DATA = [
     "memory": "Enter（確定して次へ移動）に「Ctrl（その場に留める・全選択セルに一斉確定）」をプラス",
     "funcGroup": "データ入力・編集",
     "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510406
+    "sortRank": 5140042
+  },
+  {
+    "id": "ex-62",
+    "category": "excel",
+    "subcategory": "セル移動・範囲選択",
+    "keys": [
+      "Ctrl",
+      "Backspace"
+    ],
+    "title": "スクロールして遠くへ行った画面を「現在の選択セル位置」へ一瞬で戻す",
+    "desc": "マウスホイールで別箇所を見に行って元の選択セルを見失った時、選択を解除せずに元のセルが映る位置へ画面を引き戻します！",
+    "tip": "数式入力中や広い範囲を選択中に、現在地へ画面を戻したい時の超便利テクニックです。",
+    "memory": "Backspace（元の場所へバックする）に Ctrl を添えて「アクティブセルへ視点を引き戻す」",
+    "level": 2,
+    "funcGroup": "セル移動・範囲選択",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140052
+  },
+  {
+    "id": "ex-3",
+    "category": "excel",
+    "subcategory": "セル移動・範囲選択",
+    "keys": [
+      "Ctrl",
+      "Home"
+    ],
+    "title": "先頭セル（A1）へ一気に戻る",
+    "desc": "シートのどこにいても、一番左上のA1セル（ウィンドウ枠固定時は左上端）へ戻ります。",
+    "tip": "ファイルを保存して閉じる前に全シートで Ctrl + Home を押すのは実務の鉄則マナーです！",
+    "level": 3,
+    "memory": "Home（ホームベース＝A1セル）へ Ctrl で一気に帰還する",
+    "funcGroup": "セル移動・範囲選択",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140082
+  },
+  {
+    "id": "ex-4",
+    "category": "excel",
+    "subcategory": "セル移動・範囲選択",
+    "keys": [
+      "Ctrl",
+      "End"
+    ],
+    "title": "データが存在する最終セル（右下端）へ移動",
+    "desc": "シート内でデータや書式が使われている一番右下の最終セルへジャンプします。",
+    "tip": "Ctrl + Shift + End なら現在のセルから表の右下端までを一括選択できます。",
+    "level": 3,
+    "memory": "End（データの終点＝右下端の最終セル）へ Ctrl で一気に飛ぶ",
+    "funcGroup": "セル移動・範囲選択",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140092
+  },
+  {
+    "id": "ex-8",
+    "category": "excel",
+    "subcategory": "セル移動・範囲選択",
+    "keys": [
+      "Ctrl",
+      "PageUp / PageDown"
+    ],
+    "title": "左右のワークシートへ切り替え",
+    "desc": "Ctrl + PageDown で右隣のシートへ、Ctrl + PageUp で左隣のシートへ瞬時に移動します。",
+    "tip": "Ctrl + Shift + PageDown / PageUp なら複数シートをまとめてグループ選択できます。",
+    "level": 3,
+    "memory": "PageUp（前のページ＝左のシート）/ PageDown（次のページ＝右のシート）",
+    "funcGroup": "セル移動・範囲選択",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140102
+  },
+  {
+    "id": "ex-1",
+    "category": "excel",
+    "subcategory": "セル移動・範囲選択",
+    "keys": [
+      "Ctrl",
+      "↑ / ↓ / ← / →"
+    ],
+    "title": "データの端まで一気にジャンプ移動",
+    "desc": "データが入力されている連続範囲の端（先頭・末尾）のセルまで一瞬で移動します。",
+    "tip": "何千行ある表でも一瞬で一番下まで到達できる、Excel最重要の移動ワザです。",
+    "level": 3,
+    "memory": "Ctrl（ワープ加速キー）＋ 矢印で、データの端まで一気に飛ぶイメージ",
+    "funcGroup": "セル移動・範囲選択",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140202
+  },
+  {
+    "id": "ex-39",
+    "category": "excel",
+    "subcategory": "行列操作・非表示・グループ化",
+    "keys": [
+      "Ctrl",
+      "+ (プラス)"
+    ],
+    "title": "セル・行・列の挿入",
+    "desc": "選択中のセル・行・列の手前（上または左）に新しい空白を挿入します。",
+    "tip": "メインキーボードの場合は Ctrl + Shift + ; (セミコロン) で「+」を入力します。",
+    "level": 3,
+    "memory": "「＋（プラス＝増やす）」の記号そのままに行・列を挿入！",
+    "funcGroup": "行列操作・非表示・グループ化",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5150432
+  },
+  {
+    "id": "ex-40",
+    "category": "excel",
+    "subcategory": "行列操作・非表示・グループ化",
+    "keys": [
+      "Ctrl",
+      "- (マイナス)"
+    ],
+    "title": "セル・行・列の削除",
+    "desc": "選択中のセル・行・列を詰めて削除します。",
+    "tip": "Shift + Space（行選択）→ Ctrl + -（行削除）のコンボは超高速です。",
+    "level": 3,
+    "memory": "「－（マイナス＝減らす）」の記号そのままに行・列を削除！",
+    "funcGroup": "行列操作・非表示・グループ化",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5150452
+  },
+  {
+    "id": "ex-11",
+    "category": "excel",
+    "subcategory": "セル移動・範囲選択",
+    "keys": [
+      "Ctrl",
+      ". (ピリオド)"
+    ],
+    "title": "選択範囲の四隅（アクティブセル）を時計回りに移動",
+    "desc": "広い範囲を選択している時、選択範囲の左上→右上→右下→左下へと視点をジャンプします。",
+    "tip": "下まで範囲選択しすぎた時に、選択開始側ではなく選択終了側を微調整したい時に必須です。",
+    "level": 1,
+    "memory": "ピリオド「.」＝選択範囲の四隅の「点（角）」を順番に回る！",
+    "funcGroup": "セル移動・範囲選択",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5150462
   },
   {
     "id": "ex-18",
@@ -2426,7 +2430,7 @@ const SHORTCUTS_DATA = [
     "memory": "デジタル時計のコロン「:（14:30）」の記号そのものだから「Ctrl + :」で現在時刻！",
     "funcGroup": "データ入力・編集",
     "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510558
+    "sortRank": 5150582
   },
   {
     "id": "ex-17",
@@ -2443,7 +2447,143 @@ const SHORTCUTS_DATA = [
     "memory": "日付（Ctrl + ;）と時刻（Ctrl + :）はキーボード右側の隣同士！左側の「;」が日付",
     "funcGroup": "データ入力・編集",
     "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510559
+    "sortRank": 5150592
+  },
+  {
+    "id": "ex-74",
+    "category": "excel",
+    "subcategory": "数式・関数・名前定義",
+    "keys": [
+      "Ctrl",
+      "["
+    ],
+    "title": "数式が参照している「元のセル（参照元）」へ直接ジャンプ",
+    "desc": "数式が入っているセルで押すと、その数式が計算に使っている参照元セルへ一瞬で移動・選択します。",
+    "tip": "ジャンプした後に F5 → Enter を押すと、元の数式セルにすぐ戻れます！",
+    "level": 3,
+    "memory": "Ctrl + [（開きカッコ＝計算のスタート地点・参照元へ戻る）",
+    "funcGroup": "数式・関数・名前定義",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5150912
+  },
+  {
+    "id": "ex-75",
+    "category": "excel",
+    "subcategory": "数式・関数・名前定義",
+    "keys": [
+      "Ctrl",
+      "]"
+    ],
+    "title": "このセルを使っている「数式セル（参照先）」へジャンプ",
+    "desc": "このセルの値を参照して計算している数式セルを探し出して選択します。",
+    "tip": "「このセルを消したらどこに影響が出るか？」を事前に調べるのに最適です。",
+    "level": 2,
+    "memory": "Ctrl + ]（閉じカッコ＝計算の行き先・参照先へ進む）",
+    "funcGroup": "数式・関数・名前定義",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5150932
+  },
+  {
+    "id": "ex-51",
+    "category": "excel",
+    "subcategory": "テーブル・フィルタ・ピボット・シート",
+    "keys": [
+      "Shift",
+      "F2"
+    ],
+    "title": "セルに「メモ（旧コメント）」を挿入・編集",
+    "desc": "セルの右上に赤い三角マークが付く従来の「メモ」を挿入・編集します（モダンコメントは Ctrl + Alt + M）。",
+    "tip": "補足説明や注意事項をセルに書き残したい時にすぐ呼び出せます。",
+    "level": 2,
+    "memory": "F2（セル編集）に「Shift」を足して、セル本体ではなく「外側のメモ（コメント）を編集」！",
+    "funcGroup": "テーブル・フィルタ・ピボット・シート",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6130022
+  },
+  {
+    "id": "ex-25",
+    "category": "excel",
+    "subcategory": "数式・関数・名前定義",
+    "keys": [
+      "Shift",
+      "F3"
+    ],
+    "title": "「関数の挿入」ダイアログを開く",
+    "desc": "数式バー左の「fx」ボタンを押した時と同じ、関数検索・引数ガイド画面を開きます。",
+    "tip": "引数の順番がうろ覚えな関数（VLOOKUPやXLOOKUPなど）を入力する時に安心です。",
+    "level": 2,
+    "memory": "Function（関数）の「F3」に Shift を合わせて「fx（関数の挿入）」を起動",
+    "funcGroup": "数式・関数・名前定義",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6130032
+  },
+  {
+    "id": "ex-50",
+    "category": "excel",
+    "subcategory": "テーブル・フィルタ・ピボット・シート",
+    "keys": [
+      "Shift",
+      "F11"
+    ],
+    "title": "新しいワークシートを挿入（Alt→H→O→Rでシート名変更）",
+    "desc": "現在のシートの左隣に新規ワークシートを1枚追加します。",
+    "tip": "追加したあと Alt → H → O → R と押せば、マウスを使わずにそのままシート名を変更できます！",
+    "level": 2,
+    "memory": "F11（グラフシート挿入）に Shift を足して「普通のワークシートを挿入」",
+    "funcGroup": "テーブル・フィルタ・ピボット・シート",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6130112
+  },
+  {
+    "id": "ex-5",
+    "category": "excel",
+    "subcategory": "セル移動・範囲選択",
+    "keys": [
+      "Shift",
+      "Space"
+    ],
+    "title": "現在の「行」を丸ごと選択",
+    "desc": "選択中のセルが含まれる横1行すべてを選択します。",
+    "tip": "そのまま Ctrl + 「+」で行挿入、Ctrl + 「-」で行削除に繋げるとマウスいらず！",
+    "level": 3,
+    "memory": "横長のキー「Shift」＋ Space で「横1行」を選択！（S＝Side/横 と覚えてもOK）",
+    "funcGroup": "セル移動・範囲選択",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6140032
+  },
+  {
+    "id": "ex-49",
+    "category": "excel",
+    "subcategory": "テーブル・フィルタ・ピボット・シート",
+    "keys": [
+      "Alt",
+      "F1"
+    ],
+    "title": "選択データから即座にグラフを作成（F11で別シート作成）",
+    "desc": "表を選択して押すだけで、現在のシート上に標準の棒グラフ等を1秒で自動生成します。",
+    "tip": "F11 単独押しなら、グラフ専用の新しいシートを追加して全画面グラフを作成します。",
+    "level": 2,
+    "memory": "一番最初のファンクションキー「F1」に Alt を合わせて「1秒でグラフ作成」！",
+    "funcGroup": "テーブル・フィルタ・ピボット・シート",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7130012
+  },
+  {
+    "id": "ex-65",
+    "category": "excel",
+    "subcategory": "数式・関数・名前定義",
+    "keys": [
+      "Alt",
+      "F11"
+    ],
+    "title": "VBAエディター（Visual Basic Editor）を起動（Alt+F8でマクロ実行）",
+    "desc": "Excelマクロ（VBA）のコード記述・編集画面を一発で開きます。登録済みマクロの実行一覧は Alt + F8 です。",
+    "tip": "開発タブを表示していなくても、Alt + F11 だけでいつでもVBA画面を開けます。",
+    "memory": "F11（プロ機能）に Alt（裏画面へ切り替え）で VBA エディター起動！",
+    "level": 2,
+    "funcGroup": "数式・関数・名前定義",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7130112
   },
   {
     "id": "ex-14",
@@ -2460,7 +2600,24 @@ const SHORTCUTS_DATA = [
     "memory": "Enter（次のセルへ移動）に「Alt（別動作）」を足して「セルから出ずに中で改行」",
     "funcGroup": "データ入力・編集",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710406
+    "sortRank": 7140042
+  },
+  {
+    "id": "ex-12",
+    "category": "excel",
+    "subcategory": "セル移動・範囲選択",
+    "keys": [
+      "Alt",
+      "PageDown / PageUp"
+    ],
+    "title": "画面を1画面分「右（PageDown）/ 左（PageUp）」へ横スクロール",
+    "desc": "通常のPageDown/Upは上下スクロールですが、Altを足すと横長シートを左右に1画面ずつ移動します。",
+    "tip": "列数が多いスケジュール表や管理表を見る時に便利です。",
+    "level": 1,
+    "memory": "PageUp/Down（上下画面移動）に「Alt（別方向へ切り替え）」を足して左右へ画面移動",
+    "funcGroup": "セル移動・範囲選択",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7140112
   },
   {
     "id": "ex-21",
@@ -2477,7 +2634,24 @@ const SHORTCUTS_DATA = [
     "memory": "プルダウンの「▼（下向き矢印）」の見た目通り「Alt + ↓」でリストを開く",
     "funcGroup": "データ入力・編集",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710424
+    "sortRank": 7140212
+  },
+  {
+    "id": "ex-10",
+    "category": "excel",
+    "subcategory": "セル移動・範囲選択",
+    "keys": [
+      "Alt",
+      "; (セミコロン)"
+    ],
+    "title": "見えているセル（可視セル）だけを選択",
+    "desc": "非表示にした行・列や折りたたんだグループを除外し、画面に表示されているセルだけを選択対象にします。",
+    "tip": "集計行だけをコピーしたいのに隠れている行まで一緒にコピーされてしまう問題を一発解決します！",
+    "level": 2,
+    "memory": "セミコロン「;」の点が上下に分かれている見た目から「隠れた行を飛ばして見えているセルだけ選択」",
+    "funcGroup": "セル移動・範囲選択",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7150592
   },
   {
     "id": "ex-72",
@@ -2495,7 +2669,7 @@ const SHORTCUTS_DATA = [
     "memory": "Alt → dAta(A) → reMove duplicates(M)",
     "funcGroup": "データ入力・編集",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 730265
+    "sortRank": 7220013
   },
   {
     "id": "ex-73",
@@ -2513,7 +2687,7 @@ const SHORTCUTS_DATA = [
     "memory": "Alt → dAta(A) → text to columns(E)",
     "funcGroup": "データ入力・編集",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 730265
+    "sortRank": 7220013
   },
   {
     "id": "ex-80",
@@ -2532,366 +2706,7 @@ const SHORTCUTS_DATA = [
     "memory": "Alt → dAta(A) → data Validation(V) → Validation(V)",
     "funcGroup": "データ入力・編集",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 740265
-  },
-  {
-    "id": "ex-22",
-    "category": "excel",
-    "subcategory": "データ入力・編集",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "2 (\")"
-    ],
-    "title": "上のセルの「値（計算結果）」だけをコピーして編集状態にする",
-    "desc": "上のセルに数式や罫線が入っていても、書式や数式はコピーせず「表示されている値」だけを転写します。",
-    "tip": "Ctrl + D と違い、罫線が崩れず編集モードのまま追記できる隠れた名機能です。",
-    "level": 1,
-    "memory": "上のセルの値に「\"（チョンチョン＝同じ・同上マーク）」を付けるイメージで値を転写！",
-    "funcGroup": "データ入力・編集",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810102
-  },
-  {
-    "id": "ex-77",
-    "category": "excel",
-    "subcategory": "データ入力・編集",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "\""
-    ],
-    "title": "1つ上のセルの「値（計算結果）」をそのままコピー",
-    "desc": "上のセルに数式が入っていても、数式ではなく「表示されている値」だけを今のセルに複写します。",
-    "tip": "Ctrl + D だと数式ごとコピーされますが、値だけ引き継ぎたいときに便利です。",
-    "level": 2,
-    "memory": "「\"」（チョンチョン＝同上マーク）で上の値をそのまま書く",
-    "funcGroup": "データ入力・編集",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830434
-  },
-  {
-    "id": "ex-55",
-    "category": "excel",
-    "subcategory": "数式・関数・名前定義",
-    "keys": [
-      "F3"
-    ],
-    "title": "定義した「名前」の一覧を呼び出して数式に貼り付け",
-    "desc": "あらかじめ名前定義したセル範囲の一覧ポップアップを表示し、数式内に挿入します。",
-    "tip": "Ctrl + F3（名前の管理）で登録した名前を F3 単体で呼び出す関係です。",
-    "memory": "F3単体＝「名前を呼び出す」、Ctrl+F3＝「名前を管理する」、Shift+F3＝「関数(fx)を挿入する」のF3三兄弟！",
-    "level": 1,
-    "funcGroup": "数式・関数・名前定義",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210003
-  },
-  {
-    "id": "ex-23",
-    "category": "excel",
-    "subcategory": "数式・関数・名前定義",
-    "keys": [
-      "F4"
-    ],
-    "title": "絶対参照（$A$1）の切り替え / 直前の操作の繰り返し",
-    "desc": "数式編集中は「$A$1 → A$1 → $A1 → A1」を切り替え、通常時は直前の操作（色塗りや行挿入等）を繰り返します。",
-    "tip": "1つの機能で2役こなす、Excelユーザー全員が毎日使う神キーです。",
-    "level": 3,
-    "memory": "4キーの表に「$」が印字されている通り、数式中は「F4」で「$（絶対参照）」を付与！",
-    "funcGroup": "数式・関数・名前定義",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210004
-  },
-  {
-    "id": "ex-57",
-    "category": "excel",
-    "subcategory": "数式・関数・名前定義",
-    "keys": [
-      "F9"
-    ],
-    "title": "ブック全体の数式を今すぐ再計算 / 数式の一部を計算結果に変換",
-    "desc": "手動計算モード時の再計算を行います。また数式編集中に式の一部を選択して F9 を押すと、その部分の計算結果が即座に分かります！",
-    "tip": "複雑なネスト関数のデバッグで「このVLOOKUP部分だけ今どんな値になってる？」をその場で確認できる裏ワザです（確認後はEscで戻す）。",
-    "memory": "F9（9＝計算の「く」・九九の「9」！）で数式を計算実行",
-    "level": 2,
-    "funcGroup": "数式・関数・名前定義",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210009
-  },
-  {
-    "id": "ex-76",
-    "category": "excel",
-    "subcategory": "数式・関数・名前定義",
-    "keys": [
-      "F9"
-    ],
-    "title": "すべてのシートの数式を再計算 / 数式バー内で部分計算",
-    "desc": "手動計算モード時の再計算を行います。また数式入力中に一部を選択してF9を押すと、その部分の計算結果だけを確認できます。",
-    "tip": "数式バーで部分確認したあとは、Enterではなく Esc を押すと元の数式のまま戻せます。",
-    "level": 2,
-    "memory": "F9＝計算（Calculate）の実行キー",
-    "funcGroup": "数式・関数・名前定義",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210309
-  },
-  {
-    "id": "ex-27",
-    "category": "excel",
-    "subcategory": "数式・関数・名前定義",
-    "keys": [
-      "Ctrl",
-      "F3"
-    ],
-    "title": "「名前の管理」を開く（Ctrl+Shift+F3で一括定義）",
-    "desc": "セル範囲に付けた名前定義の一覧・編集画面を開きます。数式内では F3 で名前を呼び出せます。",
-    "tip": "表全体を選んで Ctrl + Shift + F3 を押せば、見出し行の名前で一括して名前定義を作れます。",
-    "level": 1,
-    "memory": "F3（名前呼び出し）に Ctrl を足して「名前の管理台帳」を開く",
-    "funcGroup": "数式・関数・名前定義",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510303
-  },
-  {
-    "id": "ex-74",
-    "category": "excel",
-    "subcategory": "数式・関数・名前定義",
-    "keys": [
-      "Ctrl",
-      "["
-    ],
-    "title": "数式が参照している「元のセル（参照元）」へ直接ジャンプ",
-    "desc": "数式が入っているセルで押すと、その数式が計算に使っている参照元セルへ一瞬で移動・選択します。",
-    "tip": "ジャンプした後に F5 → Enter を押すと、元の数式セルにすぐ戻れます！",
-    "level": 3,
-    "memory": "Ctrl + [（開きカッコ＝計算のスタート地点・参照元へ戻る）",
-    "funcGroup": "数式・関数・名前定義",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 520491
-  },
-  {
-    "id": "ex-75",
-    "category": "excel",
-    "subcategory": "数式・関数・名前定義",
-    "keys": [
-      "Ctrl",
-      "]"
-    ],
-    "title": "このセルを使っている「数式セル（参照先）」へジャンプ",
-    "desc": "このセルの値を参照して計算している数式セルを探し出して選択します。",
-    "tip": "「このセルを消したらどこに影響が出るか？」を事前に調べるのに最適です。",
-    "level": 2,
-    "memory": "Ctrl + ]（閉じカッコ＝計算の行き先・参照先へ進む）",
-    "funcGroup": "数式・関数・名前定義",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 520493
-  },
-  {
-    "id": "ex-25",
-    "category": "excel",
-    "subcategory": "数式・関数・名前定義",
-    "keys": [
-      "Shift",
-      "F3"
-    ],
-    "title": "「関数の挿入」ダイアログを開く",
-    "desc": "数式バー左の「fx」ボタンを押した時と同じ、関数検索・引数ガイド画面を開きます。",
-    "tip": "引数の順番がうろ覚えな関数（VLOOKUPやXLOOKUPなど）を入力する時に安心です。",
-    "level": 2,
-    "memory": "Function（関数）の「F3」に Shift を合わせて「fx（関数の挿入）」を起動",
-    "funcGroup": "数式・関数・名前定義",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 610303
-  },
-  {
-    "id": "ex-65",
-    "category": "excel",
-    "subcategory": "数式・関数・名前定義",
-    "keys": [
-      "Alt",
-      "F11"
-    ],
-    "title": "VBAエディター（Visual Basic Editor）を起動（Alt+F8でマクロ実行）",
-    "desc": "Excelマクロ（VBA）のコード記述・編集画面を一発で開きます。登録済みマクロの実行一覧は Alt + F8 です。",
-    "tip": "開発タブを表示していなくても、Alt + F11 だけでいつでもVBA画面を開けます。",
-    "memory": "F11（プロ機能）に Alt（裏画面へ切り替え）で VBA エディター起動！",
-    "level": 2,
-    "funcGroup": "数式・関数・名前定義",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710311
-  },
-  {
-    "id": "ex-28",
-    "category": "excel",
-    "subcategory": "数式・関数・名前定義",
-    "keys": [
-      "Alt",
-      "M → P / A"
-    ],
-    "title": "数式の参照元を矢印でトレース表示（M→P）/ 矢印消去（M→A）",
-    "desc": "選択中の数式がどのセルを参照して計算しているかを青い矢印で可視化します。",
-    "tip": "他人が作った複雑なExcelシートの計算ロジックを解読する時の必須コマンドです。",
-    "level": 2,
-    "memory": "Alt → Formula（M：数式タブ）→ Precedents（P：参照元）/ Remove Arrows（A：矢印消去）",
-    "funcGroup": "数式・関数・名前定義",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720277
-  },
-  {
-    "id": "ex-79",
-    "category": "excel",
-    "subcategory": "数式・関数・名前定義",
-    "keys": [
-      "Alt",
-      "M",
-      "V"
-    ],
-    "title": "「数式の検証」を開き、複雑な数式を1ステップずつ計算確認",
-    "desc": "ネストしたIF関数やXLOOKUPがなぜエラー（#N/A等）になるのか、計算の途中経過を1段階ずつコマ送り検証できます。",
-    "tip": "他人が作った長大な数式を読み解くときの最強デバッグ機能です。",
-    "level": 2,
-    "memory": "Alt → forMulas(M・数式) → eValuate formula(V・検証)",
-    "funcGroup": "数式・関数・名前定義",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 730277
-  },
-  {
-    "id": "ex-64",
-    "category": "excel",
-    "subcategory": "数式・関数・名前定義",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "U"
-    ],
-    "title": "数式バーの表示領域を「広く展開 / 1行に折りたたみ」切り替え",
-    "desc": "長いIF関数やAlt+Enterで改行した数式が見切れてしまう時、上部の数式バーを複数行にガバッと広げます。",
-    "tip": "マウスで数式バーの下端をドラッグして広げる手間がゼロになります！",
-    "memory": "Unfold（数式バーを広げて展開する）の頭文字「U」に Ctrl + Shift",
-    "level": 2,
-    "funcGroup": "数式・関数・名前定義",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810285
-  },
-  {
-    "id": "ex-26",
-    "category": "excel",
-    "subcategory": "数式・関数・名前定義",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "@ (`)"
-    ],
-    "title": "シート内のすべての「数式そのもの」を一覧表示",
-    "desc": "計算結果の値ではなく、セルに入力されている数式文字列（`=SUM(...)`等）をシート全体で表示切り替えします。",
-    "tip": "どこに数式が入っていてどこが手入力ベタ打ち数値なのかを一目で監査できます。もう一度押すと戻ります。",
-    "level": 2,
-    "memory": "アクサンシルコンフレックス/バッククォート（`）で裏側にある「数式の中身」を暴く",
-    "funcGroup": "数式・関数・名前定義",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810564
-  },
-  {
-    "id": "ex-24",
-    "category": "excel",
-    "subcategory": "数式・関数・名前定義",
-    "keys": [
-      "Alt",
-      "Shift",
-      "= (イコール)"
-    ],
-    "title": "オートSUM（SUM関数を自動挿入）",
-    "desc": "隣接する数値範囲を自動判定して `=SUM(...)` を一瞬で入力します。",
-    "tip": "合計を出したいデータ範囲＋空白の合計行・列をまとめて選択して押すと、縦計・横計をすべて1秒で同時計算できます！",
-    "level": 3,
-    "memory": "計算式の「=（イコール）」キーに Alt + Shift を合わせて合計（=SUM）を一発召喚！",
-    "funcGroup": "数式・関数・名前定義",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 920561
-  },
-  {
-    "id": "ex-42",
-    "category": "excel",
-    "subcategory": "行列操作・非表示・グループ化",
-    "keys": [
-      "Ctrl",
-      "0 (ゼロ)"
-    ],
-    "title": "選択した「列」を非表示にする",
-    "desc": "選択している縦の列を一時的に非表示にします（再表示は Alt → H → O → U → L）。",
-    "tip": "印刷時に見せたくない計算用の作業列をサッと隠すときに便利です。",
-    "level": 2,
-    "memory": "0（ゼロ＝幅をゼロにして隠す）で列を非表示に！",
-    "funcGroup": "行列操作・非表示・グループ化",
-    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310100
-  },
-  {
-    "id": "ex-60",
-    "category": "excel",
-    "subcategory": "行列操作・非表示・グループ化",
-    "keys": [
-      "Ctrl",
-      "8"
-    ],
-    "title": "グループ化のアウトライン記号（＋/－ボタン）の表示 / 非表示切替",
-    "desc": "Alt+Shift+→ で作成した行・列グループの折りたたみ枠（左端や上端の＋/－バー）を表示・非表示にします。",
-    "tip": "Ctrl+8（アウトライン記号）→ Ctrl+9（行非表示）→ Ctrl+0（列非表示）と右端の数字3つがすべて表示制御になっています！",
-    "memory": "8・9・0 の右端数字トリオ（8＝アウトライン枠、9＝行隠し、0＝列隠し）",
-    "level": 1,
-    "funcGroup": "行列操作・非表示・グループ化",
-    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310108
-  },
-  {
-    "id": "ex-41",
-    "category": "excel",
-    "subcategory": "行列操作・非表示・グループ化",
-    "keys": [
-      "Ctrl",
-      "9 / Shift+9"
-    ],
-    "title": "選択した「行」を非表示にする（Ctrl+9）/ 再表示（Ctrl+Shift+9）",
-    "desc": "不要な行を一時的に隠します。上下の行をまたいで選択し Ctrl + Shift + 9 で再表示します。",
-    "tip": "テンキーではなくキーボード上部の数字「9」を使います。",
-    "level": 2,
-    "memory": "丸괄弧「( 」が印字された「9」で、行を挟んで隠す（Shift追加で括弧を開いて再表示）",
-    "funcGroup": "行列操作・非表示・グループ化",
-    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310109
-  },
-  {
-    "id": "ex-39",
-    "category": "excel",
-    "subcategory": "行列操作・非表示・グループ化",
-    "keys": [
-      "Ctrl",
-      "+ (プラス)"
-    ],
-    "title": "セル・行・列の挿入",
-    "desc": "選択中のセル・行・列の手前（上または左）に新しい空白を挿入します。",
-    "tip": "メインキーボードの場合は Ctrl + Shift + ; (セミコロン) で「+」を入力します。",
-    "level": 3,
-    "memory": "「＋（プラス＝増やす）」の記号そのままに行・列を挿入！",
-    "funcGroup": "行列操作・非表示・グループ化",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510543
-  },
-  {
-    "id": "ex-40",
-    "category": "excel",
-    "subcategory": "行列操作・非表示・グループ化",
-    "keys": [
-      "Ctrl",
-      "- (マイナス)"
-    ],
-    "title": "セル・行・列の削除",
-    "desc": "選択中のセル・行・列を詰めて削除します。",
-    "tip": "Shift + Space（行選択）→ Ctrl + -（行削除）のコンボは超高速です。",
-    "level": 3,
-    "memory": "「－（マイナス＝減らす）」の記号そのままに行・列を削除！",
-    "funcGroup": "行列操作・非表示・グループ化",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510545
+    "sortRank": 7220014
   },
   {
     "id": "ex-44",
@@ -2908,24 +2723,7 @@ const SHORTCUTS_DATA = [
     "memory": "Alt → Home(H) → Format(O) → AutoFit Column Width(I)：「ホイ（H・O・I）っと列幅調整！」と覚えるのが定番！",
     "funcGroup": "行列操作・非表示・グループ化",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720272
-  },
-  {
-    "id": "ex-45",
-    "category": "excel",
-    "subcategory": "行列操作・非表示・グループ化",
-    "keys": [
-      "Alt",
-      "W → F → F"
-    ],
-    "title": "ウィンドウ枠の固定 / 解除",
-    "desc": "現在のセルの上側と左側を見出しとして固定し、スクロールしても常に見えるようにします。",
-    "tip": "すでに固定されている状態で押すと固定解除になります。Alt → W → F → F のリズムで覚えましょう！",
-    "level": 3,
-    "memory": "Alt → View(W：表示) → Freeze Panes(F：枠固定) → Freeze(F)：「ワッフフ（W・F・F）で枠固定！」",
-    "funcGroup": "行列操作・非表示・グループ化",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720287
+    "sortRank": 7220082
   },
   {
     "id": "ex-66",
@@ -2944,7 +2742,7 @@ const SHORTCUTS_DATA = [
     "memory": "Alt → Home(H) → fOrmat(O) → autofIt column(I)（「ほーい」と覚える！）",
     "funcGroup": "行列操作・非表示・グループ化",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 740272
+    "sortRank": 7220084
   },
   {
     "id": "ex-67",
@@ -2963,93 +2761,7 @@ const SHORTCUTS_DATA = [
     "memory": "Alt → Home(H) → fOrmat(O) → Autofit row(A)",
     "funcGroup": "行列操作・非表示・グループ化",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 740272
-  },
-  {
-    "id": "ex-43",
-    "category": "excel",
-    "subcategory": "行列操作・非表示・グループ化",
-    "keys": [
-      "Alt",
-      "Shift",
-      "→ / ←"
-    ],
-    "title": "行・列を「グループ化」する（→）/ グループ化解除（←）",
-    "desc": "選択した行や列に「＋ / －」の折りたたみボタン（アウトライン）を設置します。",
-    "tip": "単なる非表示（Ctrl+9/0）だと他の人が気づきにくいため、実務ではグループ化（Alt+Shift+→）の方が圧倒的に好まれます！",
-    "level": 3,
-    "memory": "Alt + Shift + 「→（階層を右へ深くしてグループ化）」「←（左へ戻してグループ解除）」",
-    "funcGroup": "行列操作・非表示・グループ化",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 920426
-  },
-  {
-    "id": "ex-31",
-    "category": "excel",
-    "subcategory": "貼り付け・書式・表示形式",
-    "keys": [
-      "Ctrl",
-      "1 (テンキー以外)"
-    ],
-    "title": "「セルの書式設定」ダイアログを開く",
-    "desc": "表示形式、配置、フォント、罫線、塗りつぶしを詳細設定する画面を一発で開きます。",
-    "tip": "リボンメニューから探すより圧倒的に速く、あらゆる書式設定の起点になります。",
-    "level": 3,
-    "memory": "書式設定の「1番目（ナンバーワン基本機能）」だから「Ctrl + 1」！",
-    "funcGroup": "貼り付け・書式・表示形式",
-    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310101
-  },
-  {
-    "id": "ex-59",
-    "category": "excel",
-    "subcategory": "貼り付け・書式・表示形式",
-    "keys": [
-      "Ctrl",
-      "2 / 3 / 4"
-    ],
-    "title": "太字（Ctrl+2）・斜体（Ctrl+3）・下線（Ctrl+4）の数字ショートカット",
-    "desc": "Ctrl+1（書式設定）とCtrl+5（取り消し線）の間にある数字で、2＝太字(B)、3＝斜体(I)、4＝下線(U)を切り替えます。",
-    "tip": "Ctrl+1〜5 を左手だけで連続操作するときに知っていると便利です。",
-    "memory": "1(書式) → 2(太字) → 3(斜体) → 4(下線) → 5(取消線) と上段数字キー左から順番に並んでいる！",
-    "level": 1,
-    "funcGroup": "貼り付け・書式・表示形式",
-    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310102
-  },
-  {
-    "id": "ex-32",
-    "category": "excel",
-    "subcategory": "貼り付け・書式・表示形式",
-    "keys": [
-      "Ctrl",
-      "5 (テンキー以外)"
-    ],
-    "title": "取り消し線のON / OFF切り替え",
-    "desc": "選択したセルまたは文字に中央の取り消し線（見え消し線）を引きます。",
-    "tip": "ToDoリストや課題管理表で完了した項目を消すときに毎日使えます！",
-    "level": 3,
-    "memory": "5（ご）＝「誤字を取り消し線で消す」の「Ctrl + 5」",
-    "funcGroup": "貼り付け・書式・表示形式",
-    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310105
-  },
-  {
-    "id": "ex-61",
-    "category": "excel",
-    "subcategory": "貼り付け・書式・表示形式",
-    "keys": [
-      "Ctrl",
-      "B / I / U"
-    ],
-    "title": "太字（Ctrl+B）・斜体（Ctrl+I）・下線（Ctrl+U）",
-    "desc": "選択したセルや文字を太字（Bold）、斜体（Italic）、下線付き（Underline）にします。",
-    "tip": "WordやPowerPointと完全共通の基本装飾キーです。",
-    "memory": "Bold（太字）の B、Italic（斜体）の I、Underline（下線）の U",
-    "level": 3,
-    "funcGroup": "貼り付け・書式・表示形式",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410266
+    "sortRank": 7220084
   },
   {
     "id": "ex-68",
@@ -3068,7 +2780,7 @@ const SHORTCUTS_DATA = [
     "memory": "Alt → Home(H) → Border(B・罫線) → All(A・すべて格子)",
     "funcGroup": "貼り付け・書式・表示形式",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 740272
+    "sortRank": 7220084
   },
   {
     "id": "ex-69",
@@ -3087,7 +2799,7 @@ const SHORTCUTS_DATA = [
     "memory": "Alt → Home(H) → Merge(M・結合) → Center(C・中央)",
     "funcGroup": "貼り付け・書式・表示形式",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 740272
+    "sortRank": 7220084
   },
   {
     "id": "ex-81",
@@ -3106,7 +2818,26 @@ const SHORTCUTS_DATA = [
     "memory": "Alt → Home(H) → conditional formatting(L) → New rule(N)",
     "funcGroup": "貼り付け・書式・表示形式",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 740272
+    "sortRank": 7220084
+  },
+  {
+    "id": "ex-82",
+    "category": "excel",
+    "subcategory": "テーブル・フィルタ・ピボット・シート",
+    "keys": [
+      "Alt",
+      "H",
+      "O",
+      "R"
+    ],
+    "title": "現在のシート名を変更する（Rename Sheet）",
+    "desc": "画面下のシート見出しをダブルクリックすることなく、キーボードだけで現在のシート名を書き換えられます。",
+    "tip": "Ctrl + PageUp / PageDown でシートを移動し、Alt → H → O → R で名前変更すると爆速です。",
+    "level": 2,
+    "memory": "Alt → Home(H) → fOrmat(O) → Rename sheet(R)",
+    "funcGroup": "テーブル・フィルタ・ピボット・シート",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7220084
   },
   {
     "id": "ex-78",
@@ -3126,7 +2857,132 @@ const SHORTCUTS_DATA = [
     "memory": "図形選択中に Alt → 描画ツール(JD) → 配置(A)",
     "funcGroup": "貼り付け・書式・表示形式",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 750274
+    "sortRank": 7220105
+  },
+  {
+    "id": "ex-28",
+    "category": "excel",
+    "subcategory": "数式・関数・名前定義",
+    "keys": [
+      "Alt",
+      "M → P / A"
+    ],
+    "title": "数式の参照元を矢印でトレース表示（M→P）/ 矢印消去（M→A）",
+    "desc": "選択中の数式がどのセルを参照して計算しているかを青い矢印で可視化します。",
+    "tip": "他人が作った複雑なExcelシートの計算ロジックを解読する時の必須コマンドです。",
+    "level": 2,
+    "memory": "Alt → Formula（M：数式タブ）→ Precedents（P：参照元）/ Remove Arrows（A：矢印消去）",
+    "funcGroup": "数式・関数・名前定義",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7220132
+  },
+  {
+    "id": "ex-79",
+    "category": "excel",
+    "subcategory": "数式・関数・名前定義",
+    "keys": [
+      "Alt",
+      "M",
+      "V"
+    ],
+    "title": "「数式の検証」を開き、複雑な数式を1ステップずつ計算確認",
+    "desc": "ネストしたIF関数やXLOOKUPがなぜエラー（#N/A等）になるのか、計算の途中経過を1段階ずつコマ送り検証できます。",
+    "tip": "他人が作った長大な数式を読み解くときの最強デバッグ機能です。",
+    "level": 2,
+    "memory": "Alt → forMulas(M・数式) → eValuate formula(V・検証)",
+    "funcGroup": "数式・関数・名前定義",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7220133
+  },
+  {
+    "id": "ex-48",
+    "category": "excel",
+    "subcategory": "テーブル・フィルタ・ピボット・シート",
+    "keys": [
+      "Alt",
+      "N → V → T"
+    ],
+    "title": "ピボットテーブルを挿入",
+    "desc": "現在の表データからクロス集計を行うピボットテーブル作成画面を一発で呼び出します。",
+    "tip": "旧来のショートカット Alt → D → P でもピボットテーブルウィザードを起動できます。",
+    "level": 2,
+    "memory": "Alt → Insert(N：挿入) → PivotTable(V) → Table(T) のアクセスキー順",
+    "funcGroup": "テーブル・フィルタ・ピボット・シート",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7220142
+  },
+  {
+    "id": "ex-45",
+    "category": "excel",
+    "subcategory": "行列操作・非表示・グループ化",
+    "keys": [
+      "Alt",
+      "W → F → F"
+    ],
+    "title": "ウィンドウ枠の固定 / 解除",
+    "desc": "現在のセルの上側と左側を見出しとして固定し、スクロールしても常に見えるようにします。",
+    "tip": "すでに固定されている状態で押すと固定解除になります。Alt → W → F → F のリズムで覚えましょう！",
+    "level": 3,
+    "memory": "Alt → View(W：表示) → Freeze Panes(F：枠固定) → Freeze(F)：「ワッフフ（W・F・F）で枠固定！」",
+    "funcGroup": "行列操作・非表示・グループ化",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7220232
+  },
+  {
+    "id": "ex-83",
+    "category": "excel",
+    "subcategory": "テーブル・フィルタ・ピボット・シート",
+    "keys": [
+      "Alt",
+      "W",
+      "N"
+    ],
+    "title": "同じExcelブックを「もう1つの別ウィンドウ」で開く",
+    "desc": "1つのExcelファイルの「シートA」と「シートB」を左右2つのウィンドウに並べて同時に見比べ・コピペできます！",
+    "tip": "別ウィンドウと言っても中身は同じファイルなので、片方で編集するとリアルタイムにもう片方へ反映されます。",
+    "level": 3,
+    "memory": "Alt → View(W・表示) → New window(N・新しいウィンドウ)",
+    "funcGroup": "テーブル・フィルタ・ピボット・シート",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7220233
+  },
+  {
+    "id": "ex-70",
+    "category": "excel",
+    "subcategory": "テーブル・フィルタ・ピボット・シート",
+    "keys": [
+      "Alt",
+      "W",
+      "F",
+      "F"
+    ],
+    "title": "ウィンドウ枠の固定 / 固定解除を一発切替",
+    "desc": "選択しているセルの「上」と「左」を見出しとして固定し、スクロールしても見出しが消えないようにします。",
+    "tip": "すでに固定されているシートで押すと、即座に固定解除になります。",
+    "level": 3,
+    "memory": "Alt → View(W) → Freeze panes(F) → Freeze(F)",
+    "funcGroup": "テーブル・フィルタ・ピボット・シート",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7220234
+  },
+  {
+    "id": "ex-71",
+    "category": "excel",
+    "subcategory": "テーブル・フィルタ・ピボット・シート",
+    "keys": [
+      "Alt",
+      "W",
+      "V",
+      "G"
+    ],
+    "title": "シートの「目盛線（グリッド線）」の表示/非表示を切替",
+    "desc": "背景の薄いグレーの枠線（目盛線）を消して、提出用の美しい白いシートに仕上げます。",
+    "tip": "資料提出前の仕上げとして実務で最も使われるコマンドの1つです。",
+    "level": 3,
+    "memory": "Alt → View(W) → View(V) → Gridlines(G・目盛線)",
+    "funcGroup": "テーブル・フィルタ・ピボット・シート",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7220234
   },
   {
     "id": "ex-33",
@@ -3144,7 +3000,25 @@ const SHORTCUTS_DATA = [
     "memory": "1キーの上にある「!（感嘆符）」を千単位の区切り棒「,」に見立てて「Ctrl + Shift + 1」",
     "funcGroup": "貼り付け・書式・表示形式",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810101
+    "sortRank": 8110013
+  },
+  {
+    "id": "ex-22",
+    "category": "excel",
+    "subcategory": "データ入力・編集",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "2 (\")"
+    ],
+    "title": "上のセルの「値（計算結果）」だけをコピーして編集状態にする",
+    "desc": "上のセルに数式や罫線が入っていても、書式や数式はコピーせず「表示されている値」だけを転写します。",
+    "tip": "Ctrl + D と違い、罫線が崩れず編集モードのまま追記できる隠れた名機能です。",
+    "level": 1,
+    "memory": "上のセルの値に「\"（チョンチョン＝同じ・同上マーク）」を付けるイメージで値を転写！",
+    "funcGroup": "データ入力・編集",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8110023
   },
   {
     "id": "ex-63",
@@ -3162,7 +3036,7 @@ const SHORTCUTS_DATA = [
     "level": 1,
     "funcGroup": "貼り付け・書式・表示形式",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810102
+    "sortRank": 8110023
   },
   {
     "id": "ex-34",
@@ -3180,7 +3054,7 @@ const SHORTCUTS_DATA = [
     "memory": "3キーの上にある「#」はカレンダーのマス目の形だから「Ctrl + Shift + 3」で日付表示！",
     "funcGroup": "貼り付け・書式・表示形式",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810103
+    "sortRank": 8110033
   },
   {
     "id": "ex-35",
@@ -3198,7 +3072,7 @@ const SHORTCUTS_DATA = [
     "memory": "4キーの上にある「$（ドルマーク）」の印字そのまま！「Ctrl + Shift + 4」で通貨表示",
     "funcGroup": "貼り付け・書式・表示形式",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810104
+    "sortRank": 8110043
   },
   {
     "id": "ex-36",
@@ -3216,7 +3090,7 @@ const SHORTCUTS_DATA = [
     "memory": "5キーの上にある「%（パーセント）」の印字そのまま！「Ctrl + Shift + 5」で％表示",
     "funcGroup": "貼り付け・書式・表示形式",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810105
+    "sortRank": 8110053
   },
   {
     "id": "ex-38",
@@ -3234,7 +3108,43 @@ const SHORTCUTS_DATA = [
     "memory": "6の上の「&（アンド＝囲んで結ぶ）」で外枠罫線、アンダースコア「_（消しゴム）」で罫線消去",
     "funcGroup": "貼り付け・書式・表示形式",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810106
+    "sortRank": 8110063
+  },
+  {
+    "id": "ex-46",
+    "category": "excel",
+    "subcategory": "テーブル・フィルタ・ピボット・シート",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "L"
+    ],
+    "title": "フィルター（オートフィルタ）のON / OFF切り替え",
+    "desc": "表の見出し行に絞り込み・並び替え用のドロップダウン矢印（▼）を設置・解除します。",
+    "tip": "見出しセル上で Alt + ↓ を押すと、マウスを使わずにフィルターメニューを開いて絞り込みできます！",
+    "level": 3,
+    "memory": "fiLter（フィルター）または List（リスト）の「L」に Ctrl + Shift",
+    "funcGroup": "テーブル・フィルタ・ピボット・シート",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120123
+  },
+  {
+    "id": "ex-64",
+    "category": "excel",
+    "subcategory": "数式・関数・名前定義",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "U"
+    ],
+    "title": "数式バーの表示領域を「広く展開 / 1行に折りたたみ」切り替え",
+    "desc": "長いIF関数やAlt+Enterで改行した数式が見切れてしまう時、上部の数式バーを複数行にガバッと広げます。",
+    "tip": "マウスで数式バーの下端をドラッグして広げる手間がゼロになります！",
+    "memory": "Unfold（数式バーを広げて展開する）の頭文字「U」に Ctrl + Shift",
+    "level": 2,
+    "funcGroup": "数式・関数・名前定義",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120213
   },
   {
     "id": "ex-30",
@@ -3252,7 +3162,61 @@ const SHORTCUTS_DATA = [
     "memory": "共通の「書式なし貼り付け（Ctrl+Shift+V）」と同じく、Excelでも「値だけ貼り付け」！",
     "funcGroup": "貼り付け・書式・表示形式",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810286
+    "sortRank": 8120223
+  },
+  {
+    "id": "ex-2",
+    "category": "excel",
+    "subcategory": "セル移動・範囲選択",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "↑ / ↓ / ← / →"
+    ],
+    "title": "データの端まで一気に範囲選択",
+    "desc": "現在のセルからデータが途切れる端のセルまでを一括で範囲選択します。",
+    "tip": "表のデータ列を丸ごとコピーしたり関数範囲に指定する時に必須です。",
+    "level": 3,
+    "memory": "Ctrl+矢印（端までワープ）＋ Shift（通った軌跡をすべて範囲選択）の最強コンボ！",
+    "funcGroup": "セル移動・範囲選択",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8140203
+  },
+  {
+    "id": "ex-77",
+    "category": "excel",
+    "subcategory": "データ入力・編集",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "\""
+    ],
+    "title": "1つ上のセルの「値（計算結果）」をそのままコピー",
+    "desc": "上のセルに数式が入っていても、数式ではなく「表示されている値」だけを今のセルに複写します。",
+    "tip": "Ctrl + D だと数式ごとコピーされますが、値だけ引き継ぎたいときに便利です。",
+    "level": 2,
+    "memory": "「\"」（チョンチョン＝同上マーク）で上の値をそのまま書く",
+    "funcGroup": "データ入力・編集",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8150343
+  },
+  {
+    "id": "ex-26",
+    "category": "excel",
+    "subcategory": "数式・関数・名前定義",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "@ (`)"
+    ],
+    "title": "シート内のすべての「数式そのもの」を一覧表示",
+    "desc": "計算結果の値ではなく、セルに入力されている数式文字列（`=SUM(...)`等）をシート全体で表示切り替えします。",
+    "tip": "どこに数式が入っていてどこが手入力ベタ打ち数値なのかを一目で監査できます。もう一度押すと戻ります。",
+    "level": 2,
+    "memory": "アクサンシルコンフレックス/バッククォート（`）で裏側にある「数式の中身」を暴く",
+    "funcGroup": "数式・関数・名前定義",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8150643
   },
   {
     "id": "ex-37",
@@ -3270,7 +3234,7 @@ const SHORTCUTS_DATA = [
     "memory": "波線「~（チルダ）」で装飾を洗い流して「標準表示」にフラットリセット",
     "funcGroup": "貼り付け・書式・表示形式",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810594
+    "sortRank": 8150943
   },
   {
     "id": "ex-29",
@@ -3288,252 +3252,123 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + V（貼り付け）に「Alt（別の貼り付け方を選ぶ）」を挟んで「形式を選択して貼り付け」",
     "funcGroup": "貼り付け・書式・表示形式",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 910286
+    "sortRank": 9120223
   },
   {
-    "id": "wd-1",
-    "category": "word",
-    "subcategory": "文字装飾・フォント",
+    "id": "ex-43",
+    "category": "excel",
+    "subcategory": "行列操作・非表示・グループ化",
     "keys": [
-      "Ctrl",
-      "B"
+      "Alt",
+      "Shift",
+      "→ / ←"
     ],
-    "title": "太字（ボールド）のON / OFF",
-    "desc": "選択したテキストを太字にするか、太字を解除します。",
-    "tip": "Bold の B。ExcelやPowerPoint、Webエディタでも共通です。",
+    "title": "行・列を「グループ化」する（→）/ グループ化解除（←）",
+    "desc": "選択した行や列に「＋ / －」の折りたたみボタン（アウトライン）を設置します。",
+    "tip": "単なる非表示（Ctrl+9/0）だと他の人が気づきにくいため、実務ではグループ化（Alt+Shift+→）の方が圧倒的に好まれます！",
     "level": 3,
-    "memory": "Bold（ボールド・太字）の頭文字「B」",
-    "funcGroup": "文字装飾・フォント",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410266
+    "memory": "Alt + Shift + 「→（階層を右へ深くしてグループ化）」「←（左へ戻してグループ解除）」",
+    "funcGroup": "行列操作・非表示・グループ化",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9240233
   },
   {
-    "id": "wd-5",
-    "category": "word",
-    "subcategory": "文字装飾・フォント",
+    "id": "ex-24",
+    "category": "excel",
+    "subcategory": "数式・関数・名前定義",
     "keys": [
-      "Ctrl",
-      "D"
+      "Alt",
+      "Shift",
+      "= (イコール)"
     ],
-    "title": "「フォント」詳細設定ダイアログを開く（Ctrl+Shift+Fでも可）",
-    "desc": "フォント種類、サイズ、文字色、取り消し線、文字間隔、網掛けなどを設定する画面を開きます。",
-    "tip": "Excelでは上のセルコピーですが、Wordではフォント画面が開きます。",
-    "level": 2,
-    "memory": "Design / Dialog（フォント設定ダイアログ）の「D」、または Font の「Ctrl+Shift+F」",
-    "funcGroup": "文字装飾・フォント",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410268
-  },
-  {
-    "id": "wd-4",
-    "category": "word",
-    "subcategory": "文字装飾・フォント",
-    "keys": [
-      "Ctrl",
-      "I"
-    ],
-    "title": "斜体（イタリック）のON / OFF",
-    "desc": "選択したテキストを斜め（イタリック体）にします。",
-    "tip": "Italic の I。欧文の引用や変数表記に使われます。",
-    "level": 2,
-    "memory": "Italic（イタリック・斜体）の頭文字「I」",
-    "funcGroup": "文字装飾・フォント",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410273
-  },
-  {
-    "id": "wd-2",
-    "category": "word",
-    "subcategory": "文字装飾・フォント",
-    "keys": [
-      "Ctrl",
-      "U"
-    ],
-    "title": "下線（アンダーライン）のON / OFF",
-    "desc": "選択したテキストに下線を引くか、下線を解除します。",
-    "tip": "Underline の U。空白を除いて単語だけに下線を引きたい時は Ctrl + Shift + W です。",
+    "title": "オートSUM（SUM関数を自動挿入）",
+    "desc": "隣接する数値範囲を自動判定して `=SUM(...)` を一瞬で入力します。",
+    "tip": "合計を出したいデータ範囲＋空白の合計行・列をまとめて選択して押すと、縦計・横計をすべて1秒で同時計算できます！",
     "level": 3,
-    "memory": "Underline（アンダーライン・下線）の頭文字「U」",
-    "funcGroup": "文字装飾・フォント",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410285
+    "memory": "計算式の「=（イコール）」キーに Alt + Shift を合わせて合計（=SUM）を一発召喚！",
+    "funcGroup": "数式・関数・名前定義",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9250613
   },
   {
-    "id": "wd-6",
+    "id": "wd-36",
     "category": "word",
-    "subcategory": "文字装飾・フォント",
+    "subcategory": "選択・移動・校閲・フィールド",
     "keys": [
-      "Ctrl",
-      "Space"
+      "F4"
     ],
-    "title": "文字の書式（装飾）をすべてクリアして初期状態に戻す",
-    "desc": "選択した文字についたフォントサイズ、色、太字、蛍光ペンなどの直接装飾を一発でリセットします。",
-    "tip": "コピペで混ざってしまった変なフォントや文字サイズを瞬時に標準へ戻せる神ショートカットです。",
+    "title": "直前の操作（文字装飾・ペースト・表の行挿入など）を繰り返す",
+    "desc": "直前に行ったフォント変更や蛍光ペン、段落設定などを別箇所にもワンタッチで繰り返し適用します。",
+    "tip": "複数箇所に同じ見出し装飾や色塗りをしたい時に大活躍します。",
+    "memory": "Office共通の「F4」＝直前のアクションをもう一度リピート！",
     "level": 3,
-    "memory": "Space（まっさらな空白・透明）に戻すイメージで「Ctrl + Space」＝文字装飾リセット！",
-    "funcGroup": "文字装飾・フォント",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510404
+    "funcGroup": "選択・移動・校閲・フィールド",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130041
   },
   {
-    "id": "wd-40",
+    "id": "wd-37",
     "category": "word",
-    "subcategory": "文字装飾・フォント",
+    "subcategory": "選択・移動・校閲・フィールド",
     "keys": [
-      "Ctrl",
-      "] / ["
+      "F5"
     ],
-    "title": "フォントサイズを「1ポイント（1pt）単位」で拡大（]）/ 縮小（[）",
-    "desc": "Ctrl+Shift+>/< だと12pt→14ptのように飛びますが、Ctrl + ] / [ なら 12pt→13pt のように1pt刻みで微調整できます！",
-    "tip": "「あとほんの少しだけ文字を小さくして1ページに収めたい！」という時に最高の威力を発揮します。",
-    "memory": "右の閉じ括弧「]」でサイズUP、左の開き括弧「[」でサイズDOWN",
-    "level": 3,
-    "funcGroup": "文字装飾・フォント",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510593
-  },
-  {
-    "id": "wd-9",
-    "category": "word",
-    "subcategory": "文字装飾・フォント",
-    "keys": [
-      "Shift",
-      "F3"
-    ],
-    "title": "英字の大文字・小文字を切り替え",
-    "desc": "選択した英単語を「すべて大文字 → すべて小文字 → 先頭だけ大文字」の順に切り替えます。",
-    "tip": "CapsLockを間違えて打ってしまった英文も打ち直す必要がありません。",
+    "title": "「ジャンプ」ダイアログを開く（指定ページ番号へ直行 / Ctrl+Gと同じ）",
+    "desc": "ページ番号やセクション、見出し、脚注番号を指定して一瞬で移動します。",
+    "tip": "「50ページ目を開いて」と言われたら F5 → 50 → Enter で1秒で到達できます！",
+    "memory": "Excelと共通！F5（Go＝5）で指定ページへジャンプ（Shift+F5なら直前の編集位置へ戻る）",
     "level": 2,
-    "memory": "F3キーに「Shift（大文字/小文字のシフトキー）」を組み合わせて英字ケースを変換！",
-    "funcGroup": "文字装飾・フォント",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 610303
+    "funcGroup": "選択・移動・校閲・フィールド",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130051
   },
   {
-    "id": "wd-10",
+    "id": "wd-29",
     "category": "word",
-    "subcategory": "文字装飾・フォント",
+    "subcategory": "選択・移動・校閲・フィールド",
     "keys": [
-      "Ctrl",
-      "Shift",
-      "C / V"
+      "F7"
     ],
-    "title": "書式のコピー（Ctrl+Shift+C）と貼り付け（Ctrl+Shift+V）",
-    "desc": "ハケのアイコン（書式のコピー/貼り付け）と同じく、文字デザインだけを別箇所にコピー＆適用します。",
-    "tip": "一度 Ctrl+Shift+C すれば、何度でも別箇所に Ctrl+Shift+V で同じデザインを連続適用できます。",
-    "level": 3,
-    "memory": "Ctrl+C/V（文字のコピペ）に「Shift」を足して「文字ではなく書式デザインだけをコピペ」！",
-    "funcGroup": "文字装飾・フォント",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810267
-  },
-  {
-    "id": "wd-3",
-    "category": "word",
-    "subcategory": "文字装飾・フォント",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "D"
-    ],
-    "title": "二重下線を引く",
-    "desc": "選択したテキストに二重下線を引きます。",
-    "tip": "契約書や見積書の合計金額欄、重要箇所の強調によく使われます。",
+    "title": "スペルチェックと文章校正（エディター）を実行",
+    "desc": "誤字脱字、表記ゆれ、文法ミスをチェックするエディターペインを開きます（Shift + F7 で類義語辞典）。",
+    "tip": "提出・印刷前の最終チェックとして必ず一度押しておきたいキーです。",
     "level": 2,
-    "memory": "Double underline（二重下線）の頭文字「D」に Ctrl + Shift",
-    "funcGroup": "文字装飾・フォント",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810268
+    "memory": "Office共通の辞書・校正キーは「F7」（7＝直（ナオ）す、と覚える）",
+    "funcGroup": "選択・移動・校閲・フィールド",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130071
   },
   {
-    "id": "wd-43",
+    "id": "wd-25",
     "category": "word",
-    "subcategory": "文字装飾・フォント",
+    "subcategory": "選択・移動・校閲・フィールド",
     "keys": [
-      "Ctrl",
-      "Shift",
-      "W"
+      "F8"
     ],
-    "title": "空白スペースを除き「単語（文字がある部分）だけ」に下線を引く",
-    "desc": "英文やスペース区切りの文字列で、単語と単語の間の空白には下線を引かず文字部分だけに下線を引きます。",
-    "tip": "通常の Ctrl + U（全体下線）・Ctrl + Shift + D（二重下線）と並ぶ下線3兄弟です。",
-    "memory": "Word only underline（単語だけに下線）の頭文字「W」に Ctrl + Shift",
-    "level": 1,
-    "funcGroup": "文字装飾・フォント",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810287
-  },
-  {
-    "id": "wd-8",
-    "category": "word",
-    "subcategory": "文字装飾・フォント",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "+ / Ctrl + ="
-    ],
-    "title": "上付き文字（Ctrl+Shift++）/ 下付き文字（Ctrl+=）",
-    "desc": "注釈番号（¹ ²）や平方メートル（m²）の上付き文字、化学式（H₂O）の下付き文字に切り替えます。",
-    "tip": "もう一度押すと通常の文字サイズに戻ります。",
-    "level": 1,
-    "memory": "「＋（上へ持ち上げる＝上付き）」、「＝（下のラインに揃える＝下付き）」",
-    "funcGroup": "文字装飾・フォント",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810543
-  },
-  {
-    "id": "wd-7",
-    "category": "word",
-    "subcategory": "文字装飾・フォント",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "> / <"
-    ],
-    "title": "フォントサイズを段階的に拡大（>）/ 縮小（<）",
-    "desc": "選択したテキストの文字サイズを規定の段階（10.5→11→12→14...）で大きくまたは小さくします。",
-    "tip": "Ctrl + ] / [ を使うと、より細かく「1ポイント（1pt）単位」で拡大・縮小できます！",
-    "level": 3,
-    "memory": "不等号の記号「>（大なり＝大きく）」「<（小なり＝小さく）」の見た目そのまま！",
-    "funcGroup": "文字装飾・フォント",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810562
-  },
-  {
-    "id": "wd-46",
-    "category": "word",
-    "subcategory": "文字装飾・フォント",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "F"
-    ],
-    "title": "フォント（書体）選択ボックスへ直接フォーカス",
-    "desc": "リボンのフォント名欄をアクティブにし、矢印キーや文字入力ですぐにフォントを変更できます。",
-    "tip": "マウスをリボンまで動かさずに游明朝・メイリオなどを切り替えられます。",
+    "title": "拡張選択モード（押すたびに 単語 → 文 → 段落 → 全文 を選択）",
+    "desc": "F8を2回押すと単語、3回で1文（句点まで）、4回で1段落を選択します（Shift+F8で縮小、Escで解除）。",
+    "tip": "マウスドラッグで行き過ぎたり足りなかったりするストレスなく、正確に1文・1段落を選択できます！",
     "level": 2,
-    "memory": "Ctrl + Shift + Font（フォント名）の「F」",
-    "funcGroup": "文字装飾・フォント",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830270
+    "memory": "F8＝「末広がり（八）」で、押すたびに選択範囲が「単語→文→段落→全文」と広がっていく！",
+    "funcGroup": "選択・移動・校閲・フィールド",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130081
   },
   {
-    "id": "wd-47",
+    "id": "wd-35",
     "category": "word",
-    "subcategory": "文字装飾・フォント",
+    "subcategory": "選択・移動・校閲・フィールド",
     "keys": [
-      "Ctrl",
-      "Shift",
-      "P"
+      "F9"
     ],
-    "title": "フォントサイズ（文字の大きさ）入力欄へフォーカス",
-    "desc": "リボンの文字サイズ欄を選択状態にし、数字を入力してEnterで即座にポイント数を変更できます。",
-    "tip": "10.5ptや12ptなど正確な数値指定をキーボードだけで完結できます。",
+    "title": "フィールド（目次・相互参照・図表番号）を最新状態に更新",
+    "desc": "選択した自動目次やページ番号参照などのフィールド情報を再計算して最新化します。",
+    "tip": "Ctrl + A（全選択）→ F9 を押せば、文書内のすべての目次・相互参照を一括で最新に更新できます！",
     "level": 2,
-    "memory": "Ctrl + Shift + Point size（ポイント数）の「P」",
-    "funcGroup": "文字装飾・フォント",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830280
+    "memory": "Excelの再計算と同じく、Wordでも「F9」はフィールド（目次やページ番号）の最新再計算！",
+    "funcGroup": "選択・移動・校閲・フィールド",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130091
   },
   {
     "id": "wd-38",
@@ -3550,7 +3385,7 @@ const SHORTCUTS_DATA = [
     "level": 1,
     "funcGroup": "段落・配置・インデント・改ページ",
     "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310100
+    "sortRank": 3110002
   },
   {
     "id": "wd-19",
@@ -3567,7 +3402,41 @@ const SHORTCUTS_DATA = [
     "memory": "「1＝1行間隔」「2＝2行間隔」、そして「5＝1.5行間隔（1.5の末尾の5）」！",
     "funcGroup": "段落・配置・インデント・改ページ",
     "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310101
+    "sortRank": 3110012
+  },
+  {
+    "id": "wd-1",
+    "category": "word",
+    "subcategory": "文字装飾・フォント",
+    "keys": [
+      "Ctrl",
+      "B"
+    ],
+    "title": "太字（ボールド）のON / OFF",
+    "desc": "選択したテキストを太字にするか、太字を解除します。",
+    "tip": "Bold の B。ExcelやPowerPoint、Webエディタでも共通です。",
+    "level": 3,
+    "memory": "Bold（ボールド・太字）の頭文字「B」",
+    "funcGroup": "文字装飾・フォント",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120022
+  },
+  {
+    "id": "wd-5",
+    "category": "word",
+    "subcategory": "文字装飾・フォント",
+    "keys": [
+      "Ctrl",
+      "D"
+    ],
+    "title": "「フォント」詳細設定ダイアログを開く（Ctrl+Shift+Fでも可）",
+    "desc": "フォント種類、サイズ、文字色、取り消し線、文字間隔、網掛けなどを設定する画面を開きます。",
+    "tip": "Excelでは上のセルコピーですが、Wordではフォント画面が開きます。",
+    "level": 2,
+    "memory": "Design / Dialog（フォント設定ダイアログ）の「D」、または Font の「Ctrl+Shift+F」",
+    "funcGroup": "文字装飾・フォント",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120042
   },
   {
     "id": "wd-11",
@@ -3584,7 +3453,24 @@ const SHORTCUTS_DATA = [
     "memory": "Center（中央）のCはコピーで使用済みのため、2文字目の「cEnter」の「E」！",
     "funcGroup": "段落・配置・インデント・改ページ",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410269
+    "sortRank": 4120052
+  },
+  {
+    "id": "wd-4",
+    "category": "word",
+    "subcategory": "文字装飾・フォント",
+    "keys": [
+      "Ctrl",
+      "I"
+    ],
+    "title": "斜体（イタリック）のON / OFF",
+    "desc": "選択したテキストを斜め（イタリック体）にします。",
+    "tip": "Italic の I。欧文の引用や変数表記に使われます。",
+    "level": 2,
+    "memory": "Italic（イタリック・斜体）の頭文字「I」",
+    "funcGroup": "文字装飾・フォント",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120092
   },
   {
     "id": "wd-14",
@@ -3601,386 +3487,7 @@ const SHORTCUTS_DATA = [
     "memory": "Justify（両端をピシッと揃える）の頭文字「J」",
     "funcGroup": "段落・配置・インデント・改ページ",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410274
-  },
-  {
-    "id": "wd-13",
-    "category": "word",
-    "subcategory": "段落・配置・インデント・改ページ",
-    "keys": [
-      "Ctrl",
-      "L"
-    ],
-    "title": "段落を「左揃え」にする",
-    "desc": "中央揃えや右揃えにした段落を、通常の左揃えに戻します。",
-    "tip": "Left（左）の L、Right（右）の R、Center（中央）は C がコピーなので E と覚えましょう。",
-    "level": 3,
-    "memory": "Left（左揃え）の頭文字「L」",
-    "funcGroup": "段落・配置・インデント・改ページ",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410276
-  },
-  {
-    "id": "wd-18",
-    "category": "word",
-    "subcategory": "段落・配置・インデント・改ページ",
-    "keys": [
-      "Ctrl",
-      "M / Shift+M"
-    ],
-    "title": "段落のインデントを増やす（Ctrl+M）/ 減らす（Ctrl+Shift+M）",
-    "desc": "段落全体の左端を1字分ずつ右へ字下げ（インデント）したり、元に戻したりします。",
-    "tip": "2行目以降だけを字下げする「ぶら下げインデント」は Ctrl + T（解除は Ctrl + Shift + T）です！",
-    "level": 2,
-    "memory": "Margin（マージン・余白インデント）の頭文字「M」（Shiftを足すと逆方向へ戻す）",
-    "funcGroup": "段落・配置・インデント・改ページ",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410277
-  },
-  {
-    "id": "wd-15",
-    "category": "word",
-    "subcategory": "段落・配置・インデント・改ページ",
-    "keys": [
-      "Ctrl",
-      "Q"
-    ],
-    "title": "段落書式（インデント・配置・行間）をすべてクリア",
-    "desc": "Ctrl + Space が「文字の装飾」を消すのに対し、Ctrl + Q は「段落の配置やインデント設定」を初期状態に戻します。",
-    "tip": "インデントや箇条書きがグチャグチャになって直せない時は Ctrl + Q で一発解決します！",
-    "level": 2,
-    "memory": "Quit formatting（段落設定をやめる）の「Q」（文字リセットのCtrl+Spaceと対になる段落リセット）",
-    "funcGroup": "段落・配置・インデント・改ページ",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410281
-  },
-  {
-    "id": "wd-12",
-    "category": "word",
-    "subcategory": "段落・配置・インデント・改ページ",
-    "keys": [
-      "Ctrl",
-      "R"
-    ],
-    "title": "段落を「右揃え」にする",
-    "desc": "カーソルがある段落を右端に揃えて配置します。",
-    "tip": "ビジネス文書の日付や作成者名・結語（以上、敬具など）を右寄せする時に必須です！",
-    "level": 3,
-    "memory": "Right（右揃え）の頭文字「R」",
-    "funcGroup": "段落・配置・インデント・改ページ",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410282
-  },
-  {
-    "id": "wd-39",
-    "category": "word",
-    "subcategory": "段落・配置・インデント・改ページ",
-    "keys": [
-      "Ctrl",
-      "T"
-    ],
-    "title": "ぶら下げインデント（2行目以降だけを右へ字下げ）を設定",
-    "desc": "1行目の先頭（「※」や「注1：」など）だけを残し、2行目以降の文章を綺麗に揃えて字下げします（解除は Ctrl + Shift + T）。",
-    "tip": "スペースキーで2行目の頭を揃えようとしてズレる悩みを一発で解決するプロのワザです！",
-    "memory": "アルファベットの「T」の形（1行目の屋根が出ていて2行目以降の柱が引っ込んでいる形）そのまま！",
-    "level": 2,
-    "funcGroup": "段落・配置・インデント・改ページ",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410284
-  },
-  {
-    "id": "wd-16",
-    "category": "word",
-    "subcategory": "段落・配置・インデント・改ページ",
-    "keys": [
-      "Ctrl",
-      "Enter"
-    ],
-    "title": "改ページを挿入",
-    "desc": "現在のカーソル位置でページを区切り、次のページの先頭へ移動します。",
-    "tip": "Enterキーを連打して次のページへ送ると後からズレる原因になるため、必ず Ctrl+Enter を使いましょう！",
-    "level": 3,
-    "memory": "Enter（改行）を「Ctrl」で強化して、行ではなく「ページそのものを改める（改ページ）」！",
-    "funcGroup": "段落・配置・インデント・改ページ",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510406
-  },
-  {
-    "id": "wd-17",
-    "category": "word",
-    "subcategory": "段落・配置・インデント・改ページ",
-    "keys": [
-      "Shift",
-      "Enter"
-    ],
-    "title": "段落を変えずに改行（行区切り）",
-    "desc": "新しい段落を作らず、同じ段落・同じ箇条書きの中で次の行へ折り返します。",
-    "tip": "番号付きリスト（1. 2. 3.）の途中で番号を増やさずに2行目を書きたい時に超便利です。",
-    "level": 3,
-    "memory": "Enter（段落改行）を「Shift」で控えめにして、「同じ段落のまま見た目だけ次の行へ折り返す」",
-    "funcGroup": "段落・配置・インデント・改ページ",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 610406
-  },
-  {
-    "id": "wd-21",
-    "category": "word",
-    "subcategory": "見出し・スタイル・脚注・表操作",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "L"
-    ],
-    "title": "箇条書き（・）を開始",
-    "desc": "現在の段落を中黒（・）付きの箇条書きリストに変換します。",
-    "tip": "Tabキーで階層を下げ、Shift + Tab で階層を上げられます。",
-    "level": 2,
-    "memory": "List（箇条書きリスト）の頭文字「L」に Ctrl + Shift",
-    "funcGroup": "見出し・スタイル・脚注・表操作",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810276
-  },
-  {
-    "id": "wd-42",
-    "category": "word",
-    "subcategory": "見出し・スタイル・脚注・表操作",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "N"
-    ],
-    "title": "選択行のスタイルを「標準（本文）」に戻す",
-    "desc": "見出しスタイルや箇条書きになった段落を、通常の「標準」本文スタイルに一発で戻します。",
-    "tip": "Ctrl + Alt + 1〜3（見出し適用）とセットで覚えると文書構造の切り替えが自由自在になります。",
-    "memory": "Normal style（ノーマル・標準スタイル）の頭文字「N」に Ctrl + Shift",
-    "level": 2,
-    "funcGroup": "見出し・スタイル・脚注・表操作",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810278
-  },
-  {
-    "id": "wd-23",
-    "category": "word",
-    "subcategory": "見出し・スタイル・脚注・表操作",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "Enter"
-    ],
-    "title": "表を上下に分割する / 段組み区切りを挿入",
-    "desc": "Wordの表（テーブル）の中で押すと、現在の行の上で表を2つにパカッと分割します。",
-    "tip": "大きな表を2つに切り分けたい時、コピペ不要で1秒で分割できる裏ワザです。",
-    "level": 2,
-    "memory": "Ctrl+Enter（改ページ）にさらに「Shift」を足して「表（テーブル）を上下にパカッと割る」！",
-    "funcGroup": "見出し・スタイル・脚注・表操作",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810406
-  },
-  {
-    "id": "wd-55",
-    "category": "word",
-    "subcategory": "見出し・スタイル・脚注・表操作",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "S"
-    ],
-    "title": "「スタイルの適用」ミニウィンドウを表示",
-    "desc": "見出しや引用、表スタイルなどを名前で素早く検索・適用・変更できる小窓を開きます。",
-    "tip": "長文マニュアルの体裁を統一するときに必須のショートカットです。",
-    "level": 2,
-    "memory": "Ctrl + Shift + Style（スタイル）の「S」",
-    "funcGroup": "見出し・スタイル・脚注・表操作",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830283
-  },
-  {
-    "id": "wd-20",
-    "category": "word",
-    "subcategory": "見出し・スタイル・脚注・表操作",
-    "keys": [
-      "Ctrl",
-      "Alt",
-      "1 / 2 / 3"
-    ],
-    "title": "見出し1 / 見出し2 / 見出し3 スタイルを適用",
-    "desc": "現在の行にWord標準の「見出し1〜3」スタイルを一発で設定します（本文に戻す時は Ctrl + Shift + N）。",
-    "tip": "見出しスタイルを使うと、左側のナビゲーション目次や自動目次生成がそのまま使えて一石三鳥です。",
-    "level": 3,
-    "memory": "見出しレベルの数字「1・2・3」に Ctrl + Alt を合わせるだけ！",
-    "funcGroup": "見出し・スタイル・脚注・表操作",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 910101
-  },
-  {
-    "id": "wd-24",
-    "category": "word",
-    "subcategory": "見出し・スタイル・脚注・表操作",
-    "keys": [
-      "Ctrl",
-      "Alt",
-      "F / D"
-    ],
-    "title": "脚注を挿入（Ctrl+Alt+F）/ 文末脚注を挿入（Ctrl+Alt+D）",
-    "desc": "ページ下部に注釈を入れる「脚注」や、文書末尾にまとめる「文末脚注」を自動採番で挿入します。",
-    "tip": "論文・レポート・調査報告書の執筆時にリボンを探す手間がなくなります。",
-    "level": 1,
-    "memory": "Footnote（脚注）の「F」、EnDnote（文末脚注）の「D」に Ctrl + Alt",
-    "funcGroup": "見出し・スタイル・脚注・表操作",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 910270
-  },
-  {
-    "id": "wd-22",
-    "category": "word",
-    "subcategory": "見出し・スタイル・脚注・表操作",
-    "keys": [
-      "Alt",
-      "Shift",
-      "↑ / ↓"
-    ],
-    "title": "段落（または表の行）を上下に入れ替え移動",
-    "desc": "カーソルがある段落や箇条書き、表の行を切り取り＆貼り付けなしでそのまま上下へスライド移動します。",
-    "tip": "見出し行で実行すると配下の本文ごと移動でき、Wordの表の中で実行すると行の順番を綺麗に入れ替えられます！",
-    "level": 3,
-    "memory": "Alt + Shift を押しながら「↑ / ↓」で段落や行を物理的にグイッと上下へ持ち上げて入れ替える！",
-    "funcGroup": "見出し・スタイル・脚注・表操作",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 920422
-  },
-  {
-    "id": "wd-44",
-    "category": "word",
-    "subcategory": "見出し・スタイル・脚注・表操作",
-    "keys": [
-      "Alt",
-      "Shift",
-      "← / →"
-    ],
-    "title": "見出しレベルや箇条書きの階層を1段階上げる（←）/ 下げる（→）",
-    "desc": "見出し2を見出し1に昇格（←）させたり、見出し1を見出し2に降格（→）させたりします。",
-    "tip": "Alt + Shift + ↑/↓（上下の順番入れ替え）と組み合わせると、アウトライン構成を十字キーだけで自在に操れます！",
-    "memory": "Alt + Shift + 矢印の「左右（←で親階層へ昇格 / →で子階層へ降格）」",
-    "level": 2,
-    "funcGroup": "見出し・スタイル・脚注・表操作",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 920426
-  },
-  {
-    "id": "wd-51",
-    "category": "word",
-    "subcategory": "見出し・スタイル・脚注・表操作",
-    "keys": [
-      "Ctrl",
-      "Alt",
-      "O"
-    ],
-    "title": "「アウトライン表示」モードに切り替える",
-    "desc": "長文ドキュメントの見出し構造（レベル1〜9）を整理・入れ替えしやすいアウトライン画面に切り替えます。",
-    "tip": "元の印刷レイアウトに戻るには Ctrl + Alt + P を押します。",
-    "level": 2,
-    "memory": "Ctrl + Alt + Outline（アウトライン）の「O」",
-    "funcGroup": "見出し・スタイル・脚注・表操作",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 930279
-  },
-  {
-    "id": "wd-52",
-    "category": "word",
-    "subcategory": "見出し・スタイル・脚注・表操作",
-    "keys": [
-      "Ctrl",
-      "Alt",
-      "P"
-    ],
-    "title": "「印刷レイアウト表示（標準画面）」に戻す",
-    "desc": "アウトライン表示や下書き表示から、実際の用紙イメージ通りの印刷レイアウト表示に戻します。",
-    "tip": "表示モードが変わって戻せなくなったときの救世主キーです。",
-    "level": 2,
-    "memory": "Ctrl + Alt + Print layout（印刷レイアウト）の「P」",
-    "funcGroup": "見出し・スタイル・脚注・表操作",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 930280
-  },
-  {
-    "id": "wd-36",
-    "category": "word",
-    "subcategory": "選択・移動・校閲・フィールド",
-    "keys": [
-      "F4"
-    ],
-    "title": "直前の操作（文字装飾・ペースト・表の行挿入など）を繰り返す",
-    "desc": "直前に行ったフォント変更や蛍光ペン、段落設定などを別箇所にもワンタッチで繰り返し適用します。",
-    "tip": "複数箇所に同じ見出し装飾や色塗りをしたい時に大活躍します。",
-    "memory": "Office共通の「F4」＝直前のアクションをもう一度リピート！",
-    "level": 3,
-    "funcGroup": "選択・移動・校閲・フィールド",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210004
-  },
-  {
-    "id": "wd-37",
-    "category": "word",
-    "subcategory": "選択・移動・校閲・フィールド",
-    "keys": [
-      "F5"
-    ],
-    "title": "「ジャンプ」ダイアログを開く（指定ページ番号へ直行 / Ctrl+Gと同じ）",
-    "desc": "ページ番号やセクション、見出し、脚注番号を指定して一瞬で移動します。",
-    "tip": "「50ページ目を開いて」と言われたら F5 → 50 → Enter で1秒で到達できます！",
-    "memory": "Excelと共通！F5（Go＝5）で指定ページへジャンプ（Shift+F5なら直前の編集位置へ戻る）",
-    "level": 2,
-    "funcGroup": "選択・移動・校閲・フィールド",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210005
-  },
-  {
-    "id": "wd-29",
-    "category": "word",
-    "subcategory": "選択・移動・校閲・フィールド",
-    "keys": [
-      "F7"
-    ],
-    "title": "スペルチェックと文章校正（エディター）を実行",
-    "desc": "誤字脱字、表記ゆれ、文法ミスをチェックするエディターペインを開きます（Shift + F7 で類義語辞典）。",
-    "tip": "提出・印刷前の最終チェックとして必ず一度押しておきたいキーです。",
-    "level": 2,
-    "memory": "Office共通の辞書・校正キーは「F7」（7＝直（ナオ）す、と覚える）",
-    "funcGroup": "選択・移動・校閲・フィールド",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210007
-  },
-  {
-    "id": "wd-25",
-    "category": "word",
-    "subcategory": "選択・移動・校閲・フィールド",
-    "keys": [
-      "F8"
-    ],
-    "title": "拡張選択モード（押すたびに 単語 → 文 → 段落 → 全文 を選択）",
-    "desc": "F8を2回押すと単語、3回で1文（句点まで）、4回で1段落を選択します（Shift+F8で縮小、Escで解除）。",
-    "tip": "マウスドラッグで行き過ぎたり足りなかったりするストレスなく、正確に1文・1段落を選択できます！",
-    "level": 2,
-    "memory": "F8＝「末広がり（八）」で、押すたびに選択範囲が「単語→文→段落→全文」と広がっていく！",
-    "funcGroup": "選択・移動・校閲・フィールド",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210008
-  },
-  {
-    "id": "wd-35",
-    "category": "word",
-    "subcategory": "選択・移動・校閲・フィールド",
-    "keys": [
-      "F9"
-    ],
-    "title": "フィールド（目次・相互参照・図表番号）を最新状態に更新",
-    "desc": "選択した自動目次やページ番号参照などのフィールド情報を再計算して最新化します。",
-    "tip": "Ctrl + A（全選択）→ F9 を押せば、文書内のすべての目次・相互参照を一括で最新に更新できます！",
-    "level": 2,
-    "memory": "Excelの再計算と同じく、Wordでも「F9」はフィールド（目次やページ番号）の最新再計算！",
-    "funcGroup": "選択・移動・校閲・フィールド",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210009
+    "sortRank": 4120102
   },
   {
     "id": "wd-28",
@@ -3997,7 +3504,143 @@ const SHORTCUTS_DATA = [
     "memory": "hyperlinK（リンク）の末尾文字「K」（Lが左揃えで使われているためK！）",
     "funcGroup": "選択・移動・校閲・フィールド",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410275
+    "sortRank": 4120112
+  },
+  {
+    "id": "wd-13",
+    "category": "word",
+    "subcategory": "段落・配置・インデント・改ページ",
+    "keys": [
+      "Ctrl",
+      "L"
+    ],
+    "title": "段落を「左揃え」にする",
+    "desc": "中央揃えや右揃えにした段落を、通常の左揃えに戻します。",
+    "tip": "Left（左）の L、Right（右）の R、Center（中央）は C がコピーなので E と覚えましょう。",
+    "level": 3,
+    "memory": "Left（左揃え）の頭文字「L」",
+    "funcGroup": "段落・配置・インデント・改ページ",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120122
+  },
+  {
+    "id": "wd-18",
+    "category": "word",
+    "subcategory": "段落・配置・インデント・改ページ",
+    "keys": [
+      "Ctrl",
+      "M / Shift+M"
+    ],
+    "title": "段落のインデントを増やす（Ctrl+M）/ 減らす（Ctrl+Shift+M）",
+    "desc": "段落全体の左端を1字分ずつ右へ字下げ（インデント）したり、元に戻したりします。",
+    "tip": "2行目以降だけを字下げする「ぶら下げインデント」は Ctrl + T（解除は Ctrl + Shift + T）です！",
+    "level": 2,
+    "memory": "Margin（マージン・余白インデント）の頭文字「M」（Shiftを足すと逆方向へ戻す）",
+    "funcGroup": "段落・配置・インデント・改ページ",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120132
+  },
+  {
+    "id": "wd-15",
+    "category": "word",
+    "subcategory": "段落・配置・インデント・改ページ",
+    "keys": [
+      "Ctrl",
+      "Q"
+    ],
+    "title": "段落書式（インデント・配置・行間）をすべてクリア",
+    "desc": "Ctrl + Space が「文字の装飾」を消すのに対し、Ctrl + Q は「段落の配置やインデント設定」を初期状態に戻します。",
+    "tip": "インデントや箇条書きがグチャグチャになって直せない時は Ctrl + Q で一発解決します！",
+    "level": 2,
+    "memory": "Quit formatting（段落設定をやめる）の「Q」（文字リセットのCtrl+Spaceと対になる段落リセット）",
+    "funcGroup": "段落・配置・インデント・改ページ",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120172
+  },
+  {
+    "id": "wd-12",
+    "category": "word",
+    "subcategory": "段落・配置・インデント・改ページ",
+    "keys": [
+      "Ctrl",
+      "R"
+    ],
+    "title": "段落を「右揃え」にする",
+    "desc": "カーソルがある段落を右端に揃えて配置します。",
+    "tip": "ビジネス文書の日付や作成者名・結語（以上、敬具など）を右寄せする時に必須です！",
+    "level": 3,
+    "memory": "Right（右揃え）の頭文字「R」",
+    "funcGroup": "段落・配置・インデント・改ページ",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120182
+  },
+  {
+    "id": "wd-39",
+    "category": "word",
+    "subcategory": "段落・配置・インデント・改ページ",
+    "keys": [
+      "Ctrl",
+      "T"
+    ],
+    "title": "ぶら下げインデント（2行目以降だけを右へ字下げ）を設定",
+    "desc": "1行目の先頭（「※」や「注1：」など）だけを残し、2行目以降の文章を綺麗に揃えて字下げします（解除は Ctrl + Shift + T）。",
+    "tip": "スペースキーで2行目の頭を揃えようとしてズレる悩みを一発で解決するプロのワザです！",
+    "memory": "アルファベットの「T」の形（1行目の屋根が出ていて2行目以降の柱が引っ込んでいる形）そのまま！",
+    "level": 2,
+    "funcGroup": "段落・配置・インデント・改ページ",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120202
+  },
+  {
+    "id": "wd-2",
+    "category": "word",
+    "subcategory": "文字装飾・フォント",
+    "keys": [
+      "Ctrl",
+      "U"
+    ],
+    "title": "下線（アンダーライン）のON / OFF",
+    "desc": "選択したテキストに下線を引くか、下線を解除します。",
+    "tip": "Underline の U。空白を除いて単語だけに下線を引きたい時は Ctrl + Shift + W です。",
+    "level": 3,
+    "memory": "Underline（アンダーライン・下線）の頭文字「U」",
+    "funcGroup": "文字装飾・フォント",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120212
+  },
+  {
+    "id": "wd-6",
+    "category": "word",
+    "subcategory": "文字装飾・フォント",
+    "keys": [
+      "Ctrl",
+      "Space"
+    ],
+    "title": "文字の書式（装飾）をすべてクリアして初期状態に戻す",
+    "desc": "選択した文字についたフォントサイズ、色、太字、蛍光ペンなどの直接装飾を一発でリセットします。",
+    "tip": "コピペで混ざってしまった変なフォントや文字サイズを瞬時に標準へ戻せる神ショートカットです。",
+    "level": 3,
+    "memory": "Space（まっさらな空白・透明）に戻すイメージで「Ctrl + Space」＝文字装飾リセット！",
+    "funcGroup": "文字装飾・フォント",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140032
+  },
+  {
+    "id": "wd-16",
+    "category": "word",
+    "subcategory": "段落・配置・インデント・改ページ",
+    "keys": [
+      "Ctrl",
+      "Enter"
+    ],
+    "title": "改ページを挿入",
+    "desc": "現在のカーソル位置でページを区切り、次のページの先頭へ移動します。",
+    "tip": "Enterキーを連打して次のページへ送ると後からズレる原因になるため、必ず Ctrl+Enter を使いましょう！",
+    "level": 3,
+    "memory": "Enter（改行）を「Ctrl」で強化して、行ではなく「ページそのものを改める（改ページ）」！",
+    "funcGroup": "段落・配置・インデント・改ページ",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140042
   },
   {
     "id": "wd-41",
@@ -4014,7 +3657,41 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "funcGroup": "選択・移動・校閲・フィールド",
     "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510422
+    "sortRank": 5140202
+  },
+  {
+    "id": "wd-40",
+    "category": "word",
+    "subcategory": "文字装飾・フォント",
+    "keys": [
+      "Ctrl",
+      "] / ["
+    ],
+    "title": "フォントサイズを「1ポイント（1pt）単位」で拡大（]）/ 縮小（[）",
+    "desc": "Ctrl+Shift+>/< だと12pt→14ptのように飛びますが、Ctrl + ] / [ なら 12pt→13pt のように1pt刻みで微調整できます！",
+    "tip": "「あとほんの少しだけ文字を小さくして1ページに収めたい！」という時に最高の威力を発揮します。",
+    "memory": "右の閉じ括弧「]」でサイズUP、左の開き括弧「[」でサイズDOWN",
+    "level": 3,
+    "funcGroup": "文字装飾・フォント",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5150932
+  },
+  {
+    "id": "wd-9",
+    "category": "word",
+    "subcategory": "文字装飾・フォント",
+    "keys": [
+      "Shift",
+      "F3"
+    ],
+    "title": "英字の大文字・小文字を切り替え",
+    "desc": "選択した英単語を「すべて大文字 → すべて小文字 → 先頭だけ大文字」の順に切り替えます。",
+    "tip": "CapsLockを間違えて打ってしまった英文も打ち直す必要がありません。",
+    "level": 2,
+    "memory": "F3キーに「Shift（大文字/小文字のシフトキー）」を組み合わせて英字ケースを変換！",
+    "funcGroup": "文字装飾・フォント",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6130032
   },
   {
     "id": "wd-27",
@@ -4031,7 +3708,24 @@ const SHORTCUTS_DATA = [
     "memory": "F5（ジャンプ機能）に「Shift（過去へ逆戻り）」を足して、さっき編集していた場所へタイムスリップ！",
     "funcGroup": "選択・移動・校閲・フィールド",
     "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 610305
+    "sortRank": 6130052
+  },
+  {
+    "id": "wd-17",
+    "category": "word",
+    "subcategory": "段落・配置・インデント・改ページ",
+    "keys": [
+      "Shift",
+      "Enter"
+    ],
+    "title": "段落を変えずに改行（行区切り）",
+    "desc": "新しい段落を作らず、同じ段落・同じ箇条書きの中で次の行へ折り返します。",
+    "tip": "番号付きリスト（1. 2. 3.）の途中で番号を増やさずに2行目を書きたい時に超便利です。",
+    "level": 3,
+    "memory": "Enter（段落改行）を「Shift」で控えめにして、「同じ段落のまま見た目だけ次の行へ折り返す」",
+    "funcGroup": "段落・配置・インデント・改ページ",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6140042
   },
   {
     "id": "wd-33",
@@ -4049,7 +3743,43 @@ const SHORTCUTS_DATA = [
     "memory": "8キーの上にある「*（アスタリスク＝星印・編集記号マーク）」を表示させるから「Ctrl+Shift+8」！",
     "funcGroup": "選択・移動・校閲・フィールド",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810108
+    "sortRank": 8110083
+  },
+  {
+    "id": "wd-10",
+    "category": "word",
+    "subcategory": "文字装飾・フォント",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "C / V"
+    ],
+    "title": "書式のコピー（Ctrl+Shift+C）と貼り付け（Ctrl+Shift+V）",
+    "desc": "ハケのアイコン（書式のコピー/貼り付け）と同じく、文字デザインだけを別箇所にコピー＆適用します。",
+    "tip": "一度 Ctrl+Shift+C すれば、何度でも別箇所に Ctrl+Shift+V で同じデザインを連続適用できます。",
+    "level": 3,
+    "memory": "Ctrl+C/V（文字のコピペ）に「Shift」を足して「文字ではなく書式デザインだけをコピペ」！",
+    "funcGroup": "文字装飾・フォント",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120033
+  },
+  {
+    "id": "wd-3",
+    "category": "word",
+    "subcategory": "文字装飾・フォント",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "D"
+    ],
+    "title": "二重下線を引く",
+    "desc": "選択したテキストに二重下線を引きます。",
+    "tip": "契約書や見積書の合計金額欄、重要箇所の強調によく使われます。",
+    "level": 2,
+    "memory": "Double underline（二重下線）の頭文字「D」に Ctrl + Shift",
+    "funcGroup": "文字装飾・フォント",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120043
   },
   {
     "id": "wd-31",
@@ -4067,7 +3797,25 @@ const SHORTCUTS_DATA = [
     "memory": "Edit tracking（編集履歴の記録）の頭文字「E」に Ctrl + Shift",
     "funcGroup": "選択・移動・校閲・フィールド",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810269
+    "sortRank": 8120053
+  },
+  {
+    "id": "wd-46",
+    "category": "word",
+    "subcategory": "文字装飾・フォント",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "F"
+    ],
+    "title": "フォント（書体）選択ボックスへ直接フォーカス",
+    "desc": "リボンのフォント名欄をアクティブにし、矢印キーや文字入力ですぐにフォントを変更できます。",
+    "tip": "マウスをリボンまで動かさずに游明朝・メイリオなどを切り替えられます。",
+    "level": 2,
+    "memory": "Ctrl + Shift + Font（フォント名）の「F」",
+    "funcGroup": "文字装飾・フォント",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120063
   },
   {
     "id": "wd-30",
@@ -4085,25 +3833,7 @@ const SHORTCUTS_DATA = [
     "memory": "文字数カウントの画面へ Go（または字数＝G）の「Ctrl + Shift + G」",
     "funcGroup": "選択・移動・校閲・フィールド",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810271
-  },
-  {
-    "id": "wd-26",
-    "category": "word",
-    "subcategory": "選択・移動・校閲・フィールド",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "F8"
-    ],
-    "title": "矩形選択（縦方向のブロック選択）モードを開始",
-    "desc": "行をまたいで縦1列（四角形ブロック状）に文字を選択します（Altを押しながらマウスドラッグでも可能）。",
-    "tip": "各行の先頭についた不要な記号やスペースだけを縦にまとめて削除したい時に大活躍します。",
-    "level": 1,
-    "memory": "末広がりの選択「F8」に Ctrl + Shift を足して「四角い箱（矩形）選択モード」に！",
-    "funcGroup": "選択・移動・校閲・フィールド",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810308
+    "sortRank": 8120073
   },
   {
     "id": "wd-48",
@@ -4121,7 +3851,205 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + G（文字数カウント Gauge / Goal の G）",
     "funcGroup": "選択・移動・校閲・フィールド",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830271
+    "sortRank": 8120073
+  },
+  {
+    "id": "wd-21",
+    "category": "word",
+    "subcategory": "見出し・スタイル・脚注・表操作",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "L"
+    ],
+    "title": "箇条書き（・）を開始",
+    "desc": "現在の段落を中黒（・）付きの箇条書きリストに変換します。",
+    "tip": "Tabキーで階層を下げ、Shift + Tab で階層を上げられます。",
+    "level": 2,
+    "memory": "List（箇条書きリスト）の頭文字「L」に Ctrl + Shift",
+    "funcGroup": "見出し・スタイル・脚注・表操作",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120123
+  },
+  {
+    "id": "wd-42",
+    "category": "word",
+    "subcategory": "見出し・スタイル・脚注・表操作",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "N"
+    ],
+    "title": "選択行のスタイルを「標準（本文）」に戻す",
+    "desc": "見出しスタイルや箇条書きになった段落を、通常の「標準」本文スタイルに一発で戻します。",
+    "tip": "Ctrl + Alt + 1〜3（見出し適用）とセットで覚えると文書構造の切り替えが自由自在になります。",
+    "memory": "Normal style（ノーマル・標準スタイル）の頭文字「N」に Ctrl + Shift",
+    "level": 2,
+    "funcGroup": "見出し・スタイル・脚注・表操作",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120143
+  },
+  {
+    "id": "wd-47",
+    "category": "word",
+    "subcategory": "文字装飾・フォント",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "P"
+    ],
+    "title": "フォントサイズ（文字の大きさ）入力欄へフォーカス",
+    "desc": "リボンの文字サイズ欄を選択状態にし、数字を入力してEnterで即座にポイント数を変更できます。",
+    "tip": "10.5ptや12ptなど正確な数値指定をキーボードだけで完結できます。",
+    "level": 2,
+    "memory": "Ctrl + Shift + Point size（ポイント数）の「P」",
+    "funcGroup": "文字装飾・フォント",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120163
+  },
+  {
+    "id": "wd-55",
+    "category": "word",
+    "subcategory": "見出し・スタイル・脚注・表操作",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "S"
+    ],
+    "title": "「スタイルの適用」ミニウィンドウを表示",
+    "desc": "見出しや引用、表スタイルなどを名前で素早く検索・適用・変更できる小窓を開きます。",
+    "tip": "長文マニュアルの体裁を統一するときに必須のショートカットです。",
+    "level": 2,
+    "memory": "Ctrl + Shift + Style（スタイル）の「S」",
+    "funcGroup": "見出し・スタイル・脚注・表操作",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120193
+  },
+  {
+    "id": "wd-43",
+    "category": "word",
+    "subcategory": "文字装飾・フォント",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "W"
+    ],
+    "title": "空白スペースを除き「単語（文字がある部分）だけ」に下線を引く",
+    "desc": "英文やスペース区切りの文字列で、単語と単語の間の空白には下線を引かず文字部分だけに下線を引きます。",
+    "tip": "通常の Ctrl + U（全体下線）・Ctrl + Shift + D（二重下線）と並ぶ下線3兄弟です。",
+    "memory": "Word only underline（単語だけに下線）の頭文字「W」に Ctrl + Shift",
+    "level": 1,
+    "funcGroup": "文字装飾・フォント",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120233
+  },
+  {
+    "id": "wd-26",
+    "category": "word",
+    "subcategory": "選択・移動・校閲・フィールド",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "F8"
+    ],
+    "title": "矩形選択（縦方向のブロック選択）モードを開始",
+    "desc": "行をまたいで縦1列（四角形ブロック状）に文字を選択します（Altを押しながらマウスドラッグでも可能）。",
+    "tip": "各行の先頭についた不要な記号やスペースだけを縦にまとめて削除したい時に大活躍します。",
+    "level": 1,
+    "memory": "末広がりの選択「F8」に Ctrl + Shift を足して「四角い箱（矩形）選択モード」に！",
+    "funcGroup": "選択・移動・校閲・フィールド",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8130083
+  },
+  {
+    "id": "wd-23",
+    "category": "word",
+    "subcategory": "見出し・スタイル・脚注・表操作",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "Enter"
+    ],
+    "title": "表を上下に分割する / 段組み区切りを挿入",
+    "desc": "Wordの表（テーブル）の中で押すと、現在の行の上で表を2つにパカッと分割します。",
+    "tip": "大きな表を2つに切り分けたい時、コピペ不要で1秒で分割できる裏ワザです。",
+    "level": 2,
+    "memory": "Ctrl+Enter（改ページ）にさらに「Shift」を足して「表（テーブル）を上下にパカッと割る」！",
+    "funcGroup": "見出し・スタイル・脚注・表操作",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8140043
+  },
+  {
+    "id": "wd-8",
+    "category": "word",
+    "subcategory": "文字装飾・フォント",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "+ / Ctrl + ="
+    ],
+    "title": "上付き文字（Ctrl+Shift++）/ 下付き文字（Ctrl+=）",
+    "desc": "注釈番号（¹ ²）や平方メートル（m²）の上付き文字、化学式（H₂O）の下付き文字に切り替えます。",
+    "tip": "もう一度押すと通常の文字サイズに戻ります。",
+    "level": 1,
+    "memory": "「＋（上へ持ち上げる＝上付き）」、「＝（下のラインに揃える＝下付き）」",
+    "funcGroup": "文字装飾・フォント",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8150433
+  },
+  {
+    "id": "wd-7",
+    "category": "word",
+    "subcategory": "文字装飾・フォント",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "> / <"
+    ],
+    "title": "フォントサイズを段階的に拡大（>）/ 縮小（<）",
+    "desc": "選択したテキストの文字サイズを規定の段階（10.5→11→12→14...）で大きくまたは小さくします。",
+    "tip": "Ctrl + ] / [ を使うと、より細かく「1ポイント（1pt）単位」で拡大・縮小できます！",
+    "level": 3,
+    "memory": "不等号の記号「>（大なり＝大きく）」「<（小なり＝小さく）」の見た目そのまま！",
+    "funcGroup": "文字装飾・フォント",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8150623
+  },
+  {
+    "id": "wd-20",
+    "category": "word",
+    "subcategory": "見出し・スタイル・脚注・表操作",
+    "keys": [
+      "Ctrl",
+      "Alt",
+      "1 / 2 / 3"
+    ],
+    "title": "見出し1 / 見出し2 / 見出し3 スタイルを適用",
+    "desc": "現在の行にWord標準の「見出し1〜3」スタイルを一発で設定します（本文に戻す時は Ctrl + Shift + N）。",
+    "tip": "見出しスタイルを使うと、左側のナビゲーション目次や自動目次生成がそのまま使えて一石三鳥です。",
+    "level": 3,
+    "memory": "見出しレベルの数字「1・2・3」に Ctrl + Alt を合わせるだけ！",
+    "funcGroup": "見出し・スタイル・脚注・表操作",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9110013
+  },
+  {
+    "id": "wd-24",
+    "category": "word",
+    "subcategory": "見出し・スタイル・脚注・表操作",
+    "keys": [
+      "Ctrl",
+      "Alt",
+      "F / D"
+    ],
+    "title": "脚注を挿入（Ctrl+Alt+F）/ 文末脚注を挿入（Ctrl+Alt+D）",
+    "desc": "ページ下部に注釈を入れる「脚注」や、文書末尾にまとめる「文末脚注」を自動採番で挿入します。",
+    "tip": "論文・レポート・調査報告書の執筆時にリボンを探す手間がなくなります。",
+    "level": 1,
+    "memory": "Footnote（脚注）の「F」、EnDnote（文末脚注）の「D」に Ctrl + Alt",
+    "funcGroup": "見出し・スタイル・脚注・表操作",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9120063
   },
   {
     "id": "wd-32",
@@ -4139,61 +4067,7 @@ const SHORTCUTS_DATA = [
     "memory": "coMment（コメント・メモ）の「M」に Ctrl + Alt",
     "funcGroup": "選択・移動・校閲・フィールド",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 910277
-  },
-  {
-    "id": "wd-34",
-    "category": "word",
-    "subcategory": "選択・移動・校閲・フィールド",
-    "keys": [
-      "Ctrl",
-      "Alt",
-      "S"
-    ],
-    "title": "ドキュメント画面を上下2つに分割 / 分割解除",
-    "desc": "同じWord文書の離れたページ（例: 1ページ目の目次と20ページ目の本文）を上下に並べて同時表示します。",
-    "tip": "長い文書の前後の整合性を見比べながら執筆するときに非常に便利です。",
-    "level": 2,
-    "memory": "Split（画面を上下に分割する）の頭文字「S」に Ctrl + Alt",
-    "funcGroup": "選択・移動・校閲・フィールド",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 910283
-  },
-  {
-    "id": "wd-45",
-    "category": "word",
-    "subcategory": "選択・移動・校閲・フィールド",
-    "keys": [
-      "Alt",
-      "Shift",
-      "D / T"
-    ],
-    "title": "今日の日付を挿入（Alt+Shift+D）/ 現在時刻を挿入（Alt+Shift+T）",
-    "desc": "文書内に本日の日付（Date）や現在時刻（Time）を一発で挿入します（OneNoteと完全共通！）。",
-    "tip": "議事録やビジネスレターの作成日を入れるときにカレンダーを見る必要がありません。",
-    "memory": "Date（日付）の「D」、Time（時刻）の「T」に Alt + Shift（OneNoteと完全共通！）",
-    "level": 2,
-    "funcGroup": "選択・移動・校閲・フィールド",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 920268
-  },
-  {
-    "id": "wd-49",
-    "category": "word",
-    "subcategory": "選択・移動・校閲・フィールド",
-    "keys": [
-      "Alt",
-      "Shift",
-      "D"
-    ],
-    "title": "今日の日付フィールドを自動挿入",
-    "desc": "本日の日付をフィールドとしてカーソル位置に挿入します。",
-    "tip": "ビジネス文書や議事録のヘッダー作成が一瞬で終わります。",
-    "level": 2,
-    "memory": "Alt + Shift + Date（日付）の「D」",
-    "funcGroup": "選択・移動・校閲・フィールド",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 930268
+    "sortRank": 9120133
   },
   {
     "id": "wd-54",
@@ -4211,7 +4085,61 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Alt + coMment / Memo の「M」",
     "funcGroup": "選択・移動・校閲・フィールド",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 930277
+    "sortRank": 9120133
+  },
+  {
+    "id": "wd-51",
+    "category": "word",
+    "subcategory": "見出し・スタイル・脚注・表操作",
+    "keys": [
+      "Ctrl",
+      "Alt",
+      "O"
+    ],
+    "title": "「アウトライン表示」モードに切り替える",
+    "desc": "長文ドキュメントの見出し構造（レベル1〜9）を整理・入れ替えしやすいアウトライン画面に切り替えます。",
+    "tip": "元の印刷レイアウトに戻るには Ctrl + Alt + P を押します。",
+    "level": 2,
+    "memory": "Ctrl + Alt + Outline（アウトライン）の「O」",
+    "funcGroup": "見出し・スタイル・脚注・表操作",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9120153
+  },
+  {
+    "id": "wd-52",
+    "category": "word",
+    "subcategory": "見出し・スタイル・脚注・表操作",
+    "keys": [
+      "Ctrl",
+      "Alt",
+      "P"
+    ],
+    "title": "「印刷レイアウト表示（標準画面）」に戻す",
+    "desc": "アウトライン表示や下書き表示から、実際の用紙イメージ通りの印刷レイアウト表示に戻します。",
+    "tip": "表示モードが変わって戻せなくなったときの救世主キーです。",
+    "level": 2,
+    "memory": "Ctrl + Alt + Print layout（印刷レイアウト）の「P」",
+    "funcGroup": "見出し・スタイル・脚注・表操作",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9120163
+  },
+  {
+    "id": "wd-34",
+    "category": "word",
+    "subcategory": "選択・移動・校閲・フィールド",
+    "keys": [
+      "Ctrl",
+      "Alt",
+      "S"
+    ],
+    "title": "ドキュメント画面を上下2つに分割 / 分割解除",
+    "desc": "同じWord文書の離れたページ（例: 1ページ目の目次と20ページ目の本文）を上下に並べて同時表示します。",
+    "tip": "長い文書の前後の整合性を見比べながら執筆するときに非常に便利です。",
+    "level": 2,
+    "memory": "Split（画面を上下に分割する）の頭文字「S」に Ctrl + Alt",
+    "funcGroup": "選択・移動・校閲・フィールド",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9120193
   },
   {
     "id": "wd-53",
@@ -4229,7 +4157,43 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Alt + Split（画面分割）の「S」",
     "funcGroup": "選択・移動・校閲・フィールド",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 930283
+    "sortRank": 9120193
+  },
+  {
+    "id": "wd-45",
+    "category": "word",
+    "subcategory": "選択・移動・校閲・フィールド",
+    "keys": [
+      "Alt",
+      "Shift",
+      "D / T"
+    ],
+    "title": "今日の日付を挿入（Alt+Shift+D）/ 現在時刻を挿入（Alt+Shift+T）",
+    "desc": "文書内に本日の日付（Date）や現在時刻（Time）を一発で挿入します（OneNoteと完全共通！）。",
+    "tip": "議事録やビジネスレターの作成日を入れるときにカレンダーを見る必要がありません。",
+    "memory": "Date（日付）の「D」、Time（時刻）の「T」に Alt + Shift（OneNoteと完全共通！）",
+    "level": 2,
+    "funcGroup": "選択・移動・校閲・フィールド",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9220043
+  },
+  {
+    "id": "wd-49",
+    "category": "word",
+    "subcategory": "選択・移動・校閲・フィールド",
+    "keys": [
+      "Alt",
+      "Shift",
+      "D"
+    ],
+    "title": "今日の日付フィールドを自動挿入",
+    "desc": "本日の日付をフィールドとしてカーソル位置に挿入します。",
+    "tip": "ビジネス文書や議事録のヘッダー作成が一瞬で終わります。",
+    "level": 2,
+    "memory": "Alt + Shift + Date（日付）の「D」",
+    "funcGroup": "選択・移動・校閲・フィールド",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9220043
   },
   {
     "id": "wd-50",
@@ -4247,7 +4211,43 @@ const SHORTCUTS_DATA = [
     "memory": "Alt + Shift + Time（時刻）の「T」",
     "funcGroup": "選択・移動・校閲・フィールド",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 930284
+    "sortRank": 9220203
+  },
+  {
+    "id": "wd-22",
+    "category": "word",
+    "subcategory": "見出し・スタイル・脚注・表操作",
+    "keys": [
+      "Alt",
+      "Shift",
+      "↑ / ↓"
+    ],
+    "title": "段落（または表の行）を上下に入れ替え移動",
+    "desc": "カーソルがある段落や箇条書き、表の行を切り取り＆貼り付けなしでそのまま上下へスライド移動します。",
+    "tip": "見出し行で実行すると配下の本文ごと移動でき、Wordの表の中で実行すると行の順番を綺麗に入れ替えられます！",
+    "level": 3,
+    "memory": "Alt + Shift を押しながら「↑ / ↓」で段落や行を物理的にグイッと上下へ持ち上げて入れ替える！",
+    "funcGroup": "見出し・スタイル・脚注・表操作",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9240203
+  },
+  {
+    "id": "wd-44",
+    "category": "word",
+    "subcategory": "見出し・スタイル・脚注・表操作",
+    "keys": [
+      "Alt",
+      "Shift",
+      "← / →"
+    ],
+    "title": "見出しレベルや箇条書きの階層を1段階上げる（←）/ 下げる（→）",
+    "desc": "見出し2を見出し1に昇格（←）させたり、見出し1を見出し2に降格（→）させたりします。",
+    "tip": "Alt + Shift + ↑/↓（上下の順番入れ替え）と組み合わせると、アウトライン構成を十字キーだけで自在に操れます！",
+    "memory": "Alt + Shift + 矢印の「左右（←で親階層へ昇格 / →で子階層へ降格）」",
+    "level": 2,
+    "funcGroup": "見出し・スタイル・脚注・表操作",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9240223
   },
   {
     "id": "pp-15",
@@ -4263,7 +4263,23 @@ const SHORTCUTS_DATA = [
     "memory": "Black（黒画面）の頭文字「B」、White（白画面）の頭文字「W」！",
     "funcGroup": "スライドショー・発表者ツール",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110266
+    "sortRank": 1120021
+  },
+  {
+    "id": "pp-17",
+    "category": "powerpoint",
+    "subcategory": "図形操作・グループ化・整列",
+    "keys": [
+      "Esc"
+    ],
+    "title": "図形内の文字編集から「図形枠全体の選択」へ戻る / スライドショー終了",
+    "desc": "テキストボックス内で文字を打っている最中に Esc を押すと、枠全体を選択した状態に切り替わります。",
+    "tip": "文字を打った直後に「Esc → Ctrl+Shift+>（文字拡大）」や「Esc → 矢印キー（図形移動）」へ繋げるのがプロの技です！",
+    "memory": "Escape（文字入力状態から1段階外側の「枠」へ抜ける）の「Esc」（F2でも切替可）",
+    "level": 3,
+    "funcGroup": "図形操作・グループ化・整列",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1140011
   },
   {
     "id": "pp-14",
@@ -4280,7 +4296,7 @@ const SHORTCUTS_DATA = [
     "memory": "テレビのリモコンと同じ！「ページ番号の数字 ＋ Enter」でそのスライドへ直行",
     "funcGroup": "スライドショー・発表者ツール",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 122973
+    "sortRank": 1274732
   },
   {
     "id": "ppt-30",
@@ -4297,213 +4313,7 @@ const SHORTCUTS_DATA = [
     "memory": "ページ番号 ＋ Enter でダイレクト移動",
     "funcGroup": "スライドショー・発表者ツール",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 146368
-  },
-  {
-    "id": "pp-11",
-    "category": "powerpoint",
-    "subcategory": "スライドショー・発表者ツール",
-    "keys": [
-      "F5"
-    ],
-    "title": "最初のスライドからスライドショーを開始",
-    "desc": "1枚目の表紙スライドから全画面プレゼンテーションを開始します（終了は Esc）。",
-    "tip": "本番のプレゼン開始時に使います。",
-    "level": 3,
-    "memory": "プレゼン開始の号砲は真ん中の「F5」（Go＝5 と覚える）！",
-    "funcGroup": "スライドショー・発表者ツール",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210005
-  },
-  {
-    "id": "pp-16",
-    "category": "powerpoint",
-    "subcategory": "スライドショー・発表者ツール",
-    "keys": [
-      "Ctrl",
-      "L / P / E"
-    ],
-    "title": "発表中にレーザーポインター（Ctrl+L）・ペン（Ctrl+P）に切り替え",
-    "desc": "スライドショー中のマウスカーソルを赤いレーザーポインター（Ctrl+L）や書き込みペン（Ctrl+P）に変えます。",
-    "tip": "ペンで書き込んだ線をすべて消すには E（Eraser）、通常の矢印に戻すには Ctrl + A を押します。",
-    "level": 2,
-    "memory": "Laser pointer（レーザー）の「L」、Pen（ペン）の「P」、Eraser（消しゴム）の「E」、Arrow（矢印）の「A」！",
-    "funcGroup": "スライドショー・発表者ツール",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410276
-  },
-  {
-    "id": "ppt-29",
-    "category": "powerpoint",
-    "subcategory": "スライドショー・発表者ツール",
-    "keys": [
-      "Ctrl",
-      "H"
-    ],
-    "title": "スライドショー中にマウスカーソルを即座に隠す",
-    "desc": "プレゼン画面上に残って邪魔になっているマウスポインターを即座に非表示にします。",
-    "tip": "再度ポインターやペンから通常の矢印に戻すときは Ctrl + A（Arrow）を押します。",
-    "level": 2,
-    "memory": "Ctrl + Hide（ポインターを隠す）の「H」",
-    "funcGroup": "スライドショー・発表者ツール",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 420272
-  },
-  {
-    "id": "pp-12",
-    "category": "powerpoint",
-    "subcategory": "スライドショー・発表者ツール",
-    "keys": [
-      "Shift",
-      "F5"
-    ],
-    "title": "現在開いているスライドからスライドショーを開始",
-    "desc": "1枚目に戻らず、今編集している途中のページから即座にスライドショー表示します。",
-    "tip": "アニメーションの確認や、途中のページから発表を再開したい時に必須です！",
-    "level": 3,
-    "memory": "F5（最初から開始）に「Shift」を足して「今見ているこのページからスライドショー開始」！",
-    "funcGroup": "スライドショー・発表者ツール",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 610305
-  },
-  {
-    "id": "pp-13",
-    "category": "powerpoint",
-    "subcategory": "スライドショー・発表者ツール",
-    "keys": [
-      "Alt",
-      "F5"
-    ],
-    "title": "外部モニターがなくても「発表者ツール」画面を起動",
-    "desc": "プロジェクターに繋いでいなくても、手元でノートやタイマーが見える「発表者ツール」画面をテスト起動します。",
-    "tip": "本番前のリハーサルや時間配分の練習に最適です。",
-    "level": 2,
-    "memory": "F5（スライドショー）に「Alt（もうひとつの画面＝発表者ツール）」をプラス！",
-    "funcGroup": "スライドショー・発表者ツール",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710305
-  },
-  {
-    "id": "pp-2",
-    "category": "powerpoint",
-    "subcategory": "スライド管理・複製・作成",
-    "keys": [
-      "Ctrl",
-      "D"
-    ],
-    "title": "図形・テキストボックス・スライドをその場に「複製」",
-    "desc": "コピー（Ctrl+C）と貼り付け（Ctrl+V）を1回で同時に行い、選択中の図形やスライドを複製します。",
-    "tip": "複製した図形を適切な間隔に動かしてから再び Ctrl + D を連打すると、等間隔で図形を綺麗に量産できます！",
-    "level": 3,
-    "memory": "Duplicate（複製する）の頭文字「D」",
-    "funcGroup": "スライド管理・複製・作成",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410268
-  },
-  {
-    "id": "pp-1",
-    "category": "powerpoint",
-    "subcategory": "スライド管理・複製・作成",
-    "keys": [
-      "Ctrl",
-      "M"
-    ],
-    "title": "新しいスライドを追加する",
-    "desc": "現在選択しているスライドの直後に、新しいスライドを1枚挿入します。",
-    "tip": "Ctrl + N は「新しいプレゼンテーションファイル作成」なので、スライド追加は Ctrl + M と覚えましょう！",
-    "level": 3,
-    "memory": "Make slide（スライドを作る）または More slide（もう1枚追加）の「M」！（Nは新規ファイル）",
-    "funcGroup": "スライド管理・複製・作成",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410277
-  },
-  {
-    "id": "ppt-32",
-    "category": "powerpoint",
-    "subcategory": "スライド管理・複製・作成",
-    "keys": [
-      "Alt",
-      "W",
-      "I"
-    ],
-    "title": "「スライド一覧表示」に切り替え、全体構成を俯瞰・並び替え",
-    "desc": "全スライドをサムネイル一覧で大きく並べ、全体の流れの確認やドラッグでの順番入れ替えを行えます。",
-    "tip": "通常の編集画面に戻るには Alt → W → L（標準表示）を押します。",
-    "level": 2,
-    "memory": "Alt → View(W・表示) → slide sorter(I・一覧)",
-    "funcGroup": "スライド管理・複製・作成",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 730287
-  },
-  {
-    "id": "pp-3",
-    "category": "powerpoint",
-    "subcategory": "スライド管理・複製・作成",
-    "keys": [
-      "Alt",
-      "Shift",
-      "↑ / ↓"
-    ],
-    "title": "箇条書きの行（または左欄のスライド順序）を上下に入れ替え",
-    "desc": "テキストボックス内の箇条書き項目や、スライド一覧の順番をドラッグなしで上下に移動します。",
-    "tip": "Wordと共通の操作感でアウトラインの構成を素早く入れ替えられます。",
-    "level": 2,
-    "memory": "Word・OneNoteと完全共通！「Alt + Shift + ↑/↓」で行やスライドの順番を上下に入れ替え",
-    "funcGroup": "スライド管理・複製・作成",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 920422
-  },
-  {
-    "id": "ppt-28",
-    "category": "powerpoint",
-    "subcategory": "スライド管理・複製・作成",
-    "keys": [
-      "Alt",
-      "Shift",
-      "← / →"
-    ],
-    "title": "箇条書きの階層（インデントレベル）を上げる / 下げる",
-    "desc": "テキストボックス内の箇条書きの階層を1段深く（→）したり、1段浅く（←）したりします。",
-    "tip": "行頭なら Tab / Shift+Tab でも可能ですが、文の途中にカーソルがあっても効くのが強みです。",
-    "level": 2,
-    "memory": "Alt + Shift + 左右矢印で「階層レベルを左右にスライド」",
-    "funcGroup": "スライド管理・複製・作成",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 938992
-  },
-  {
-    "id": "ppt-27",
-    "category": "powerpoint",
-    "subcategory": "スライド管理・複製・作成",
-    "keys": [
-      "Alt",
-      "Shift",
-      "↑ / ↓"
-    ],
-    "title": "箇条書きの行（または選択スライド）を上下に入れ替え",
-    "desc": "コピペを使わずに、現在カーソルがある箇条書きの項目を上の行・下の行とそのまま順番入れ替えします。",
-    "tip": "WordやOneNoteでもまったく同じキーで段落の順番を入れ替えられます！",
-    "level": 3,
-    "memory": "Alt + Shift + 矢印で「段落ごと上下に持ち上げる」",
-    "funcGroup": "スライド管理・複製・作成",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 938993
-  },
-  {
-    "id": "pp-17",
-    "category": "powerpoint",
-    "subcategory": "図形操作・グループ化・整列",
-    "keys": [
-      "Esc"
-    ],
-    "title": "図形内の文字編集から「図形枠全体の選択」へ戻る / スライドショー終了",
-    "desc": "テキストボックス内で文字を打っている最中に Esc を押すと、枠全体を選択した状態に切り替わります。",
-    "tip": "文字を打った直後に「Esc → Ctrl+Shift+>（文字拡大）」や「Esc → 矢印キー（図形移動）」へ繋げるのがプロの技です！",
-    "memory": "Escape（文字入力状態から1段階外側の「枠」へ抜ける）の「Esc」（F2でも切替可）",
-    "level": 3,
-    "funcGroup": "図形操作・グループ化・整列",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110400
+    "sortRank": 1409682
   },
   {
     "id": "pp-10",
@@ -4519,7 +4329,7 @@ const SHORTCUTS_DATA = [
     "memory": "Excel（セル編集）・エクスプローラー（名前編集）と同じく、パワポでも「F2」で図形内の文字編集！",
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210002
+    "sortRank": 2130021
   },
   {
     "id": "pp-18",
@@ -4535,7 +4345,23 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210004
+    "sortRank": 2130041
+  },
+  {
+    "id": "pp-11",
+    "category": "powerpoint",
+    "subcategory": "スライドショー・発表者ツール",
+    "keys": [
+      "F5"
+    ],
+    "title": "最初のスライドからスライドショーを開始",
+    "desc": "1枚目の表紙スライドから全画面プレゼンテーションを開始します（終了は Esc）。",
+    "tip": "本番のプレゼン開始時に使います。",
+    "level": 3,
+    "memory": "プレゼン開始の号砲は真ん中の「F5」（Go＝5 と覚える）！",
+    "funcGroup": "スライドショー・発表者ツール",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130051
   },
   {
     "id": "pp-19",
@@ -4552,7 +4378,24 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410266
+    "sortRank": 4120022
+  },
+  {
+    "id": "pp-2",
+    "category": "powerpoint",
+    "subcategory": "スライド管理・複製・作成",
+    "keys": [
+      "Ctrl",
+      "D"
+    ],
+    "title": "図形・テキストボックス・スライドをその場に「複製」",
+    "desc": "コピー（Ctrl+C）と貼り付け（Ctrl+V）を1回で同時に行い、選択中の図形やスライドを複製します。",
+    "tip": "複製した図形を適切な間隔に動かしてから再び Ctrl + D を連打すると、等間隔で図形を綺麗に量産できます！",
+    "level": 3,
+    "memory": "Duplicate（複製する）の頭文字「D」",
+    "funcGroup": "スライド管理・複製・作成",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120042
   },
   {
     "id": "pp-20",
@@ -4569,7 +4412,7 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410269
+    "sortRank": 4120052
   },
   {
     "id": "pp-4",
@@ -4586,7 +4429,58 @@ const SHORTCUTS_DATA = [
     "memory": "Group（グループ化する）の頭文字「G」",
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410271
+    "sortRank": 4120072
+  },
+  {
+    "id": "ppt-29",
+    "category": "powerpoint",
+    "subcategory": "スライドショー・発表者ツール",
+    "keys": [
+      "Ctrl",
+      "H"
+    ],
+    "title": "スライドショー中にマウスカーソルを即座に隠す",
+    "desc": "プレゼン画面上に残って邪魔になっているマウスポインターを即座に非表示にします。",
+    "tip": "再度ポインターやペンから通常の矢印に戻すときは Ctrl + A（Arrow）を押します。",
+    "level": 2,
+    "memory": "Ctrl + Hide（ポインターを隠す）の「H」",
+    "funcGroup": "スライドショー・発表者ツール",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120082
+  },
+  {
+    "id": "pp-16",
+    "category": "powerpoint",
+    "subcategory": "スライドショー・発表者ツール",
+    "keys": [
+      "Ctrl",
+      "L / P / E"
+    ],
+    "title": "発表中にレーザーポインター（Ctrl+L）・ペン（Ctrl+P）に切り替え",
+    "desc": "スライドショー中のマウスカーソルを赤いレーザーポインター（Ctrl+L）や書き込みペン（Ctrl+P）に変えます。",
+    "tip": "ペンで書き込んだ線をすべて消すには E（Eraser）、通常の矢印に戻すには Ctrl + A を押します。",
+    "level": 2,
+    "memory": "Laser pointer（レーザー）の「L」、Pen（ペン）の「P」、Eraser（消しゴム）の「E」、Arrow（矢印）の「A」！",
+    "funcGroup": "スライドショー・発表者ツール",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120122
+  },
+  {
+    "id": "pp-1",
+    "category": "powerpoint",
+    "subcategory": "スライド管理・複製・作成",
+    "keys": [
+      "Ctrl",
+      "M"
+    ],
+    "title": "新しいスライドを追加する",
+    "desc": "現在選択しているスライドの直後に、新しいスライドを1枚挿入します。",
+    "tip": "Ctrl + N は「新しいプレゼンテーションファイル作成」なので、スライド追加は Ctrl + M と覚えましょう！",
+    "level": 3,
+    "memory": "Make slide（スライドを作る）または More slide（もう1枚追加）の「M」！（Nは新規ファイル）",
+    "funcGroup": "スライド管理・複製・作成",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120132
   },
   {
     "id": "pp-21",
@@ -4603,7 +4497,24 @@ const SHORTCUTS_DATA = [
     "level": 2,
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510593
+    "sortRank": 5150932
+  },
+  {
+    "id": "pp-12",
+    "category": "powerpoint",
+    "subcategory": "スライドショー・発表者ツール",
+    "keys": [
+      "Shift",
+      "F5"
+    ],
+    "title": "現在開いているスライドからスライドショーを開始",
+    "desc": "1枚目に戻らず、今編集している途中のページから即座にスライドショー表示します。",
+    "tip": "アニメーションの確認や、途中のページから発表を再開したい時に必須です！",
+    "level": 3,
+    "memory": "F5（最初から開始）に「Shift」を足して「今見ているこのページからスライドショー開始」！",
+    "funcGroup": "スライドショー・発表者ツール",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6130052
   },
   {
     "id": "pp-22",
@@ -4620,7 +4531,7 @@ const SHORTCUTS_DATA = [
     "level": 2,
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 610309
+    "sortRank": 6130092
   },
   {
     "id": "pp-23",
@@ -4637,7 +4548,24 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 622989
+    "sortRank": 6274892
+  },
+  {
+    "id": "pp-13",
+    "category": "powerpoint",
+    "subcategory": "スライドショー・発表者ツール",
+    "keys": [
+      "Alt",
+      "F5"
+    ],
+    "title": "外部モニターがなくても「発表者ツール」画面を起動",
+    "desc": "プロジェクターに繋いでいなくても、手元でノートやタイマーが見える「発表者ツール」画面をテスト起動します。",
+    "tip": "本番前のリハーサルや時間配分の練習に最適です。",
+    "level": 2,
+    "memory": "F5（スライドショー）に「Alt（もうひとつの画面＝発表者ツール）」をプラス！",
+    "funcGroup": "スライドショー・発表者ツール",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7130052
   },
   {
     "id": "pp-9",
@@ -4654,25 +4582,7 @@ const SHORTCUTS_DATA = [
     "memory": "Alt → Home(H) → Arrange(G：配置) → Align(A：整列) のリボン順",
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720272
-  },
-  {
-    "id": "ppt-31",
-    "category": "powerpoint",
-    "subcategory": "図形操作・グループ化・整列",
-    "keys": [
-      "Alt",
-      "N",
-      "X"
-    ],
-    "title": "横書きテキストボックスを即座に挿入モードにする",
-    "desc": "リボンの「挿入＞テキストボックス」を探さずに、そのままスライド上をドラッグして文字枠を作れます。",
-    "tip": "スライド作成中に最も回数を使う挿入操作をキーボード化できます。",
-    "level": 3,
-    "memory": "Alt → iNsert(N・挿入) → teXt box(X・テキスト)",
-    "funcGroup": "図形操作・グループ化・整列",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 730278
+    "sortRank": 7220082
   },
   {
     "id": "ppt-26",
@@ -4691,7 +4601,43 @@ const SHORTCUTS_DATA = [
     "memory": "Alt → Home(H) → Arrange(G) → Align(A・整列)",
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 740272
+    "sortRank": 7220084
+  },
+  {
+    "id": "ppt-31",
+    "category": "powerpoint",
+    "subcategory": "図形操作・グループ化・整列",
+    "keys": [
+      "Alt",
+      "N",
+      "X"
+    ],
+    "title": "横書きテキストボックスを即座に挿入モードにする",
+    "desc": "リボンの「挿入＞テキストボックス」を探さずに、そのままスライド上をドラッグして文字枠を作れます。",
+    "tip": "スライド作成中に最も回数を使う挿入操作をキーボード化できます。",
+    "level": 3,
+    "memory": "Alt → iNsert(N・挿入) → teXt box(X・テキスト)",
+    "funcGroup": "図形操作・グループ化・整列",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7220143
+  },
+  {
+    "id": "ppt-32",
+    "category": "powerpoint",
+    "subcategory": "スライド管理・複製・作成",
+    "keys": [
+      "Alt",
+      "W",
+      "I"
+    ],
+    "title": "「スライド一覧表示」に切り替え、全体構成を俯瞰・並び替え",
+    "desc": "全スライドをサムネイル一覧で大きく並べ、全体の流れの確認やドラッグでの順番入れ替えを行えます。",
+    "tip": "通常の編集画面に戻るには Alt → W → L（標準表示）を押します。",
+    "level": 2,
+    "memory": "Alt → View(W・表示) → slide sorter(I・一覧)",
+    "funcGroup": "スライド管理・複製・作成",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7220233
   },
   {
     "id": "pp-7",
@@ -4709,7 +4655,7 @@ const SHORTCUTS_DATA = [
     "memory": "Wordと完全共通！Ctrl+C/V に「Shift」を足して「図形の色・枠線・フォント書式だけをコピペ」",
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810267
+    "sortRank": 8120033
   },
   {
     "id": "pp-5",
@@ -4727,7 +4673,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl+G（グループ化）に「Shift（逆動作）」を足してグループ化解除！",
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810271
+    "sortRank": 8120073
   },
   {
     "id": "pp-24",
@@ -4745,7 +4691,7 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810562
+    "sortRank": 8150623
   },
   {
     "id": "pp-8",
@@ -4763,7 +4709,7 @@ const SHORTCUTS_DATA = [
     "memory": "閉じ括弧「]（右＝前へ出す）」と開き括弧「[（左＝奥へ引っ込める）」に Shift で最前面・最背面！",
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810593
+    "sortRank": 8150933
   },
   {
     "id": "pp-6",
@@ -4781,7 +4727,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl（コピー）＋ Shift（真っすぐレール固定）＋ ドラッグの黄金コンビ！",
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 822989
+    "sortRank": 8274893
   },
   {
     "id": "ppt-25",
@@ -4799,180 +4745,61 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl（コピー）＋ Shift（まっすぐ固定）＋ ドラッグ",
     "funcGroup": "図形操作・グループ化・整列",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 842889
+    "sortRank": 8274893
   },
   {
-    "id": "ol-7",
-    "category": "outlook",
-    "subcategory": "メール作成・返信・送受信",
+    "id": "pp-3",
+    "category": "powerpoint",
+    "subcategory": "スライド管理・複製・作成",
     "keys": [
-      "F9"
-    ],
-    "title": "すべてのフォルダの「送受信」を今すぐ実行（Ctrl+Mでも同じ）",
-    "desc": "サーバーに新着メールが届いていないか即座に手動チェック＆送受信を行います。",
-    "tip": "相手から「今メール送りました」と言われた時にすぐ受信確認できます。",
-    "level": 2,
-    "memory": "更新・再計算の「F9」でメールサーバーと今すぐ送受信！",
-    "funcGroup": "メール作成・返信・送受信",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210009
-  },
-  {
-    "id": "ol-5",
-    "category": "outlook",
-    "subcategory": "メール作成・返信・送受信",
-    "keys": [
-      "Ctrl",
-      "F"
-    ],
-    "title": "メールを「転送」する",
-    "desc": "選択中のメールを別の人へ転送する作成画面を開きます（添付ファイルもそのまま引き継がれます）。",
-    "tip": "Forward（転送）の F。Outlookで文字検索したい時は F4 または Ctrl + E を使います。",
-    "level": 3,
-    "memory": "Forward（前へ転送する）の頭文字「F」",
-    "funcGroup": "メール作成・返信・送受信",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410270
-  },
-  {
-    "id": "ol-8",
-    "category": "outlook",
-    "subcategory": "メール作成・返信・送受信",
-    "keys": [
-      "Ctrl",
-      "K"
-    ],
-    "title": "宛先（To/CC）の名前チェック補完 / 本文中のリンク挿入",
-    "desc": "宛先欄に苗字やアドレスの一部を打って Ctrl + K を押すと、アドレス帳から正式な連絡先に一発変換します。",
-    "tip": "本文編集中に押した場合は、選択文字へのハイパーリンク挿入として動作します。",
-    "level": 2,
-    "memory": "checK names（宛先名のチェック補完）＆ linK（リンク）の「K」",
-    "funcGroup": "メール作成・返信・送受信",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410275
-  },
-  {
-    "id": "ol-23",
-    "category": "outlook",
-    "subcategory": "メール作成・返信・送受信",
-    "keys": [
-      "Ctrl",
-      "N"
-    ],
-    "title": "現在の画面に応じた新規作成（メール画面なら新規メール / 予定表なら新規予定）",
-    "desc": "メール表示中は新しいメール、予定表表示中は新しい予定、連絡先表示中は新しい連絡先を作成します。",
-    "tip": "どの画面にいても強制的にメールを作りたい時は Ctrl + Shift + M を使います。",
-    "memory": "New（新しく作る）の頭文字「N」",
-    "level": 3,
-    "funcGroup": "メール作成・返信・送受信",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410278
-  },
-  {
-    "id": "ol-3",
-    "category": "outlook",
-    "subcategory": "メール作成・返信・送受信",
-    "keys": [
-      "Ctrl",
-      "R"
-    ],
-    "title": "差出人に「返信」する",
-    "desc": "選択中のメールの送信者（1人）に対して返信メールを作成します。",
-    "tip": "Reply の R。全員に返信したい場合は Shift を足して Ctrl + Shift + R を使いましょう！",
-    "level": 3,
-    "memory": "Reply（返信する）の頭文字「R」",
-    "funcGroup": "メール作成・返信・送受信",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410282
-  },
-  {
-    "id": "ol-2",
-    "category": "outlook",
-    "subcategory": "メール作成・返信・送受信",
-    "keys": [
-      "Ctrl",
-      "Enter"
-    ],
-    "title": "作成中のメールを送信する（Alt + S でも同じ）",
-    "desc": "書き終わったメールを即座に送信します。",
-    "tip": "うっかり誤送信を防ぐため、初回確認ダイアログで「送信する」を選べば次回から爆速送信できます。",
-    "level": 3,
-    "memory": "確定の「Enter」に Ctrl を添えて「ヨシ、送信！」（または Send の Alt + S）",
-    "funcGroup": "メール作成・返信・送受信",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510406
-  },
-  {
-    "id": "ol-1",
-    "category": "outlook",
-    "subcategory": "メール作成・返信・送受信",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "M"
-    ],
-    "title": "どの画面からでも「新しいメール」を作成（メール画面ではCtrl+N）",
-    "desc": "予定表や連絡先を開いている時でも、一発で新規メール作成ウィンドウを立ち上げます。",
-    "tip": "Message の M。メール画面を表示中ならシンプルな Ctrl + N でも新規メールが作れます。",
-    "level": 3,
-    "memory": "Mail / Message（メールメッセージ）の「M」に Ctrl + Shift（メール画面なら New の Ctrl+N でもOK）",
-    "funcGroup": "メール作成・返信・送受信",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810277
-  },
-  {
-    "id": "ol-4",
-    "category": "outlook",
-    "subcategory": "メール作成・返信・送受信",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "R"
-    ],
-    "title": "「全員に返信」する（To・CCの全員へ返信）",
-    "desc": "差出人だけでなく、宛先（To）やCCに入っているメンバー全員に返信メールを作成します。",
-    "tip": "ビジネスメールで最頻出のショートカットです。単なる Ctrl+R（個別に返信）との使い分けが重要です。",
-    "level": 3,
-    "memory": "Ctrl+R（返信）に「Shift（対象を全員に広げる）」を足して「全員に返信」！",
-    "funcGroup": "メール作成・返信・送受信",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810282
-  },
-  {
-    "id": "ol-35",
-    "category": "outlook",
-    "subcategory": "メール作成・返信・送受信",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "K"
-    ],
-    "title": "どの画面からでも新しい「タスク（ToDo）」を作成",
-    "desc": "メールを読みながら思いついたやるべき仕事を、即座にタスクとして登録します。",
-    "tip": "tasK の末尾「K」はOutlookのタスク系ショートカット共通のキーです。",
-    "level": 2,
-    "memory": "Ctrl + Shift + tasK（タスク作成）の「K」",
-    "funcGroup": "メール作成・返信・送受信",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830275
-  },
-  {
-    "id": "ol-6",
-    "category": "outlook",
-    "subcategory": "メール作成・返信・送受信",
-    "keys": [
-      "Ctrl",
       "Alt",
-      "R"
+      "Shift",
+      "↑ / ↓"
     ],
-    "title": "受信メールに対して「会議出席依頼」で全員に返信する",
-    "desc": "メールの件名・本文・宛先メンバーをすべて引き継いだ状態で、そのまま日程調整の会議招待を作成します。",
-    "tip": "「この件、一度打ち合わせしましょう」となった時に宛先を入れ直す手間がゼロになる神ワザです！",
+    "title": "箇条書きの行（または左欄のスライド順序）を上下に入れ替え",
+    "desc": "テキストボックス内の箇条書き項目や、スライド一覧の順番をドラッグなしで上下に移動します。",
+    "tip": "Wordと共通の操作感でアウトラインの構成を素早く入れ替えられます。",
     "level": 2,
-    "memory": "Reply（R）に Ctrl + Alt を合わせて「メールではなく会議招待で全員に返信」！",
-    "funcGroup": "メール作成・返信・送受信",
+    "memory": "Word・OneNoteと完全共通！「Alt + Shift + ↑/↓」で行やスライドの順番を上下に入れ替え",
+    "funcGroup": "スライド管理・複製・作成",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 910282
+    "sortRank": 9240203
+  },
+  {
+    "id": "ppt-27",
+    "category": "powerpoint",
+    "subcategory": "スライド管理・複製・作成",
+    "keys": [
+      "Alt",
+      "Shift",
+      "↑ / ↓"
+    ],
+    "title": "箇条書きの行（または選択スライド）を上下に入れ替え",
+    "desc": "コピペを使わずに、現在カーソルがある箇条書きの項目を上の行・下の行とそのまま順番入れ替えします。",
+    "tip": "WordやOneNoteでもまったく同じキーで段落の順番を入れ替えられます！",
+    "level": 3,
+    "memory": "Alt + Shift + 矢印で「段落ごと上下に持ち上げる」",
+    "funcGroup": "スライド管理・複製・作成",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9240203
+  },
+  {
+    "id": "ppt-28",
+    "category": "powerpoint",
+    "subcategory": "スライド管理・複製・作成",
+    "keys": [
+      "Alt",
+      "Shift",
+      "← / →"
+    ],
+    "title": "箇条書きの階層（インデントレベル）を上げる / 下げる",
+    "desc": "テキストボックス内の箇条書きの階層を1段深く（→）したり、1段浅く（←）したりします。",
+    "tip": "行頭なら Tab / Shift+Tab でも可能ですが、文の途中にカーソルがあっても効くのが強みです。",
+    "level": 2,
+    "memory": "Alt + Shift + 左右矢印で「階層レベルを左右にスライド」",
+    "funcGroup": "スライド管理・複製・作成",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9240223
   },
   {
     "id": "ol-13",
@@ -4988,7 +4815,7 @@ const SHORTCUTS_DATA = [
     "memory": "Delete（ゴミ箱へ削除）の手前にある「Backspace」で、消さずに「アーカイブ倉庫へ後退させる」！",
     "funcGroup": "メール整理・既読/未読・フラグ",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110408
+    "sortRank": 1140051
   },
   {
     "id": "ol-21",
@@ -5004,7 +4831,7 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "funcGroup": "メール整理・既読/未読・フラグ",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110410
+    "sortRank": 1140061
   },
   {
     "id": "ol-11",
@@ -5020,7 +4847,7 @@ const SHORTCUTS_DATA = [
     "memory": "Insert（フラグを差し込む）キーで赤い旗マークをON/OFF",
     "funcGroup": "メール整理・既読/未読・フラグ",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110412
+    "sortRank": 1140071
   },
   {
     "id": "ol-34",
@@ -5036,147 +4863,7 @@ const SHORTCUTS_DATA = [
     "memory": "Insert キー1つでタスク旗を差し込む",
     "funcGroup": "メール整理・既読/未読・フラグ",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110473
-  },
-  {
-    "id": "ol-9",
-    "category": "outlook",
-    "subcategory": "メール整理・既読/未読・フラグ",
-    "keys": [
-      "Ctrl",
-      "Q"
-    ],
-    "title": "選択したメールを「開封済み（既読）」にする",
-    "desc": "未読のメールをワンタッチで既読状態にします（複数選択して一括既読も可能）。",
-    "tip": "メルマガや通知メールを確認してどんどん既読処理する時に圧倒的に速いです！",
-    "level": 3,
-    "memory": "Quick read（クイック既読処理）の「Q」（未読のUと合わせて「Qで既読、Uで未読」とセット暗記）",
-    "funcGroup": "メール整理・既読/未読・フラグ",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410281
-  },
-  {
-    "id": "ol-10",
-    "category": "outlook",
-    "subcategory": "メール整理・既読/未読・フラグ",
-    "keys": [
-      "Ctrl",
-      "U"
-    ],
-    "title": "選択したメールを「未開封（未読）」に戻す",
-    "desc": "一度開いたメールを、あとで対応するために再び未読（太字）状態に戻します。",
-    "tip": "Unread（未読）の U。Ctrl + Q（既読）とセットで覚えると受信トレイ整理が劇的に速くなります。",
-    "level": 3,
-    "memory": "Unread（未読にする）の頭文字「U」",
-    "funcGroup": "メール整理・既読/未読・フラグ",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410285
-  },
-  {
-    "id": "ol-24",
-    "category": "outlook",
-    "subcategory": "メール整理・既読/未読・フラグ",
-    "keys": [
-      "Ctrl",
-      "Y"
-    ],
-    "title": "「フォルダーへ移動（表示切り替え）」ダイアログを開く",
-    "desc": "作成済みのメールフォルダ一覧ポップアップを開き、見たいフォルダへキーボードだけでジャンプします。",
-    "tip": "メール自体を別フォルダへ移すのは Ctrl+Shift+V、自分が別フォルダを見に行くのは Ctrl+Y です。",
-    "memory": "フォルダツリー（枝分かれした木＝「Y」の形）を選んで見に行く「Ctrl + Y」",
-    "level": 2,
-    "funcGroup": "メール整理・既読/未読・フラグ",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410289
-  },
-  {
-    "id": "ol-31",
-    "category": "outlook",
-    "subcategory": "メール整理・既読/未読・フラグ",
-    "keys": [
-      "Ctrl",
-      "Y"
-    ],
-    "title": "別のフォルダへ表示をジャンプする（「フォルダへ移動」一覧）",
-    "desc": "フォルダ一覧ポップアップを開き、矢印キーや頭文字で別フォルダの中身をすぐに表示します。",
-    "tip": "Ctrl+Shift+V は「メールを移す」、Ctrl+Y は「自分がそのフォルダを見に行く」と使い分けます。",
-    "level": 2,
-    "memory": "Ctrl + Y（フォルダツリーの枝分かれ「Y」へジャンプ）",
-    "funcGroup": "メール整理・既読/未読・フラグ",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 420289
-  },
-  {
-    "id": "ol-27",
-    "category": "outlook",
-    "subcategory": "メール整理・既読/未読・フラグ",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "G"
-    ],
-    "title": "メールに期限日時・アラーム通知付きの「フラグ」を詳細設定",
-    "desc": "単なる旗マーク（Insert）だけでなく、「明日の10時にポップアップ通知する」といったリマインダーを設定します。",
-    "tip": "絶対に忘れられない重要メールにアラームを仕掛けておくのに最適です。",
-    "memory": "flaG（フラグ）の末尾文字「G」に Ctrl + Shift",
-    "level": 2,
-    "funcGroup": "メール整理・既読/未読・フラグ",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810271
-  },
-  {
-    "id": "ol-14",
-    "category": "outlook",
-    "subcategory": "メール整理・既読/未読・フラグ",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "I"
-    ],
-    "title": "どのフォルダにいても一瞬で「受信トレイ（Inbox）」へ戻る",
-    "desc": "別フォルダや検索結果を見たあと、メインの受信トレイへ一発でジャンプします（Ctrl+Shift+Oで送信トレイ）。",
-    "tip": "Inbox の I と覚えると忘れません。",
-    "level": 2,
-    "memory": "Inbox（受信トレイ）の頭文字「I」に Ctrl + Shift（Outbox＝送信トレイは O）",
-    "funcGroup": "メール整理・既読/未読・フラグ",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810273
-  },
-  {
-    "id": "ol-12",
-    "category": "outlook",
-    "subcategory": "メール整理・既読/未読・フラグ",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "V"
-    ],
-    "title": "選択したメールを指定フォルダーへ移動する",
-    "desc": "フォルダー選択ダイアログを開き、矢印キーやフォルダ名頭文字で振り分け先を選んでメールを移動します。",
-    "tip": "マウスで左側の狭いフォルダツリーへドラッグして誤爆するストレスがなくなります！",
-    "level": 2,
-    "memory": "Ctrl+V（貼り付け＝移動先へ置く）に Shift を足して「指定フォルダへメールを移動」",
-    "funcGroup": "メール整理・既読/未読・フラグ",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810286
-  },
-  {
-    "id": "ol-30",
-    "category": "outlook",
-    "subcategory": "メール整理・既読/未読・フラグ",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "V"
-    ],
-    "title": "選択したメールを指定フォルダへ移動するダイアログを開く",
-    "desc": "マウスでドラッグ＆ドロップせずに、フォルダ名の一部をタイプしてEnterでメールを振り分け移動できます。",
-    "tip": "受信トレイを空にする「Inbox Zero」運用で最速の振り分けワザです。",
-    "level": 3,
-    "memory": "Ctrl + Shift + moVe（フォルダへ移動）の「V」",
-    "funcGroup": "メール整理・既読/未読・フラグ",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830286
+    "sortRank": 1140071
   },
   {
     "id": "ol-22",
@@ -5192,7 +4879,23 @@ const SHORTCUTS_DATA = [
     "level": 2,
     "funcGroup": "画面切替・予定表・検索",
     "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210004
+    "sortRank": 2130041
+  },
+  {
+    "id": "ol-7",
+    "category": "outlook",
+    "subcategory": "メール作成・返信・送受信",
+    "keys": [
+      "F9"
+    ],
+    "title": "すべてのフォルダの「送受信」を今すぐ実行（Ctrl+Mでも同じ）",
+    "desc": "サーバーに新着メールが届いていないか即座に手動チェック＆送受信を行います。",
+    "tip": "相手から「今メール送りました」と言われた時にすぐ受信確認できます。",
+    "level": 2,
+    "memory": "更新・再計算の「F9」でメールサーバーと今すぐ送受信！",
+    "funcGroup": "メール作成・返信・送受信",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130091
   },
   {
     "id": "ol-15",
@@ -5209,7 +4912,7 @@ const SHORTCUTS_DATA = [
     "memory": "左下のナビゲーションアイコンの並び順そのまま！「1＝メール、2＝予定表、3＝連絡先、4＝タスク」",
     "funcGroup": "画面切替・予定表・検索",
     "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310101
+    "sortRank": 3110012
   },
   {
     "id": "ol-16",
@@ -5226,7 +4929,24 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl+F が転送（Forward）で使われているため、Explore（探す）の「Ctrl + E」で検索窓へ！",
     "funcGroup": "画面切替・予定表・検索",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410269
+    "sortRank": 4120052
+  },
+  {
+    "id": "ol-5",
+    "category": "outlook",
+    "subcategory": "メール作成・返信・送受信",
+    "keys": [
+      "Ctrl",
+      "F"
+    ],
+    "title": "メールを「転送」する",
+    "desc": "選択中のメールを別の人へ転送する作成画面を開きます（添付ファイルもそのまま引き継がれます）。",
+    "tip": "Forward（転送）の F。Outlookで文字検索したい時は F4 または Ctrl + E を使います。",
+    "level": 3,
+    "memory": "Forward（前へ転送する）の頭文字「F」",
+    "funcGroup": "メール作成・返信・送受信",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120062
   },
   {
     "id": "ol-19",
@@ -5243,7 +4963,7 @@ const SHORTCUTS_DATA = [
     "memory": "Go to date（指定した日付へ行く）の頭文字「G」",
     "funcGroup": "画面切替・予定表・検索",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410271
+    "sortRank": 4120072
   },
   {
     "id": "ol-32",
@@ -5260,7 +4980,143 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Go to date（日付へ移動）の「G」",
     "funcGroup": "画面切替・予定表・検索",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 420271
+    "sortRank": 4120072
+  },
+  {
+    "id": "ol-8",
+    "category": "outlook",
+    "subcategory": "メール作成・返信・送受信",
+    "keys": [
+      "Ctrl",
+      "K"
+    ],
+    "title": "宛先（To/CC）の名前チェック補完 / 本文中のリンク挿入",
+    "desc": "宛先欄に苗字やアドレスの一部を打って Ctrl + K を押すと、アドレス帳から正式な連絡先に一発変換します。",
+    "tip": "本文編集中に押した場合は、選択文字へのハイパーリンク挿入として動作します。",
+    "level": 2,
+    "memory": "checK names（宛先名のチェック補完）＆ linK（リンク）の「K」",
+    "funcGroup": "メール作成・返信・送受信",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120112
+  },
+  {
+    "id": "ol-23",
+    "category": "outlook",
+    "subcategory": "メール作成・返信・送受信",
+    "keys": [
+      "Ctrl",
+      "N"
+    ],
+    "title": "現在の画面に応じた新規作成（メール画面なら新規メール / 予定表なら新規予定）",
+    "desc": "メール表示中は新しいメール、予定表表示中は新しい予定、連絡先表示中は新しい連絡先を作成します。",
+    "tip": "どの画面にいても強制的にメールを作りたい時は Ctrl + Shift + M を使います。",
+    "memory": "New（新しく作る）の頭文字「N」",
+    "level": 3,
+    "funcGroup": "メール作成・返信・送受信",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120142
+  },
+  {
+    "id": "ol-9",
+    "category": "outlook",
+    "subcategory": "メール整理・既読/未読・フラグ",
+    "keys": [
+      "Ctrl",
+      "Q"
+    ],
+    "title": "選択したメールを「開封済み（既読）」にする",
+    "desc": "未読のメールをワンタッチで既読状態にします（複数選択して一括既読も可能）。",
+    "tip": "メルマガや通知メールを確認してどんどん既読処理する時に圧倒的に速いです！",
+    "level": 3,
+    "memory": "Quick read（クイック既読処理）の「Q」（未読のUと合わせて「Qで既読、Uで未読」とセット暗記）",
+    "funcGroup": "メール整理・既読/未読・フラグ",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120172
+  },
+  {
+    "id": "ol-3",
+    "category": "outlook",
+    "subcategory": "メール作成・返信・送受信",
+    "keys": [
+      "Ctrl",
+      "R"
+    ],
+    "title": "差出人に「返信」する",
+    "desc": "選択中のメールの送信者（1人）に対して返信メールを作成します。",
+    "tip": "Reply の R。全員に返信したい場合は Shift を足して Ctrl + Shift + R を使いましょう！",
+    "level": 3,
+    "memory": "Reply（返信する）の頭文字「R」",
+    "funcGroup": "メール作成・返信・送受信",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120182
+  },
+  {
+    "id": "ol-10",
+    "category": "outlook",
+    "subcategory": "メール整理・既読/未読・フラグ",
+    "keys": [
+      "Ctrl",
+      "U"
+    ],
+    "title": "選択したメールを「未開封（未読）」に戻す",
+    "desc": "一度開いたメールを、あとで対応するために再び未読（太字）状態に戻します。",
+    "tip": "Unread（未読）の U。Ctrl + Q（既読）とセットで覚えると受信トレイ整理が劇的に速くなります。",
+    "level": 3,
+    "memory": "Unread（未読にする）の頭文字「U」",
+    "funcGroup": "メール整理・既読/未読・フラグ",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120212
+  },
+  {
+    "id": "ol-24",
+    "category": "outlook",
+    "subcategory": "メール整理・既読/未読・フラグ",
+    "keys": [
+      "Ctrl",
+      "Y"
+    ],
+    "title": "「フォルダーへ移動（表示切り替え）」ダイアログを開く",
+    "desc": "作成済みのメールフォルダ一覧ポップアップを開き、見たいフォルダへキーボードだけでジャンプします。",
+    "tip": "メール自体を別フォルダへ移すのは Ctrl+Shift+V、自分が別フォルダを見に行くのは Ctrl+Y です。",
+    "memory": "フォルダツリー（枝分かれした木＝「Y」の形）を選んで見に行く「Ctrl + Y」",
+    "level": 2,
+    "funcGroup": "メール整理・既読/未読・フラグ",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120252
+  },
+  {
+    "id": "ol-31",
+    "category": "outlook",
+    "subcategory": "メール整理・既読/未読・フラグ",
+    "keys": [
+      "Ctrl",
+      "Y"
+    ],
+    "title": "別のフォルダへ表示をジャンプする（「フォルダへ移動」一覧）",
+    "desc": "フォルダ一覧ポップアップを開き、矢印キーや頭文字で別フォルダの中身をすぐに表示します。",
+    "tip": "Ctrl+Shift+V は「メールを移す」、Ctrl+Y は「自分がそのフォルダを見に行く」と使い分けます。",
+    "level": 2,
+    "memory": "Ctrl + Y（フォルダツリーの枝分かれ「Y」へジャンプ）",
+    "funcGroup": "メール整理・既読/未読・フラグ",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120252
+  },
+  {
+    "id": "ol-2",
+    "category": "outlook",
+    "subcategory": "メール作成・返信・送受信",
+    "keys": [
+      "Ctrl",
+      "Enter"
+    ],
+    "title": "作成中のメールを送信する（Alt + S でも同じ）",
+    "desc": "書き終わったメールを即座に送信します。",
+    "tip": "うっかり誤送信を防ぐため、初回確認ダイアログで「送信する」を選べば次回から爆速送信できます。",
+    "level": 3,
+    "memory": "確定の「Enter」に Ctrl を添えて「ヨシ、送信！」（または Send の Alt + S）",
+    "funcGroup": "メール作成・返信・送受信",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140042
   },
   {
     "id": "ol-33",
@@ -5277,7 +5133,7 @@ const SHORTCUTS_DATA = [
     "memory": "Alt ＋ 表示したい日数（0＝10文字の Month 月表示）",
     "funcGroup": "画面切替・予定表・検索",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720101
+    "sortRank": 7110012
   },
   {
     "id": "ol-17",
@@ -5295,7 +5151,7 @@ const SHORTCUTS_DATA = [
     "memory": "Appointment（アポ・予定）の頭文字「A」に Ctrl + Shift",
     "funcGroup": "画面切替・予定表・検索",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810265
+    "sortRank": 8120013
   },
   {
     "id": "ol-25",
@@ -5313,7 +5169,7 @@ const SHORTCUTS_DATA = [
     "level": 2,
     "funcGroup": "画面切替・予定表・検索",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810266
+    "sortRank": 8120023
   },
   {
     "id": "ol-26",
@@ -5331,43 +5187,43 @@ const SHORTCUTS_DATA = [
     "level": 2,
     "funcGroup": "画面切替・予定表・検索",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810270
+    "sortRank": 8120063
   },
   {
-    "id": "ol-28",
+    "id": "ol-27",
     "category": "outlook",
-    "subcategory": "画面切替・予定表・検索",
+    "subcategory": "メール整理・既読/未読・フラグ",
     "keys": [
       "Ctrl",
       "Shift",
-      "K"
+      "G"
     ],
-    "title": "どの画面からでも新しい「タスク（ToDo）」を作成する",
-    "desc": "メールを読みながら思いついた作業タスクを、その場でToDoリストに追加登録します。",
-    "tip": "tasK（タスク）の末尾文字 K と覚えましょう。",
-    "memory": "tasK（タスク）の末尾文字「K」に Ctrl + Shift",
-    "level": 1,
-    "funcGroup": "画面切替・予定表・検索",
+    "title": "メールに期限日時・アラーム通知付きの「フラグ」を詳細設定",
+    "desc": "単なる旗マーク（Insert）だけでなく、「明日の10時にポップアップ通知する」といったリマインダーを設定します。",
+    "tip": "絶対に忘れられない重要メールにアラームを仕掛けておくのに最適です。",
+    "memory": "flaG（フラグ）の末尾文字「G」に Ctrl + Shift",
+    "level": 2,
+    "funcGroup": "メール整理・既読/未読・フラグ",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810275
+    "sortRank": 8120073
   },
   {
-    "id": "ol-18",
+    "id": "ol-14",
     "category": "outlook",
-    "subcategory": "画面切替・予定表・検索",
+    "subcategory": "メール整理・既読/未読・フラグ",
     "keys": [
       "Ctrl",
       "Shift",
-      "Q"
+      "I"
     ],
-    "title": "新しい「会議出席依頼」を作成",
-    "desc": "参加メンバーを招待してTeams会議や会議室を予約する「会議出席依頼」作成画面をどこからでも開きます。",
-    "tip": "スケジュール調整の起点になる重要ショートカットです。",
-    "level": 3,
-    "memory": "会議リクエスト（reQuest）の「Q」に Ctrl + Shift（予定表のCtrl+Shift+Aのすぐ左上！）",
-    "funcGroup": "画面切替・予定表・検索",
+    "title": "どのフォルダにいても一瞬で「受信トレイ（Inbox）」へ戻る",
+    "desc": "別フォルダや検索結果を見たあと、メインの受信トレイへ一発でジャンプします（Ctrl+Shift+Oで送信トレイ）。",
+    "tip": "Inbox の I と覚えると忘れません。",
+    "level": 2,
+    "memory": "Inbox（受信トレイ）の頭文字「I」に Ctrl + Shift（Outbox＝送信トレイは O）",
+    "funcGroup": "メール整理・既読/未読・フラグ",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810281
+    "sortRank": 8120093
   },
   {
     "id": "ol-29",
@@ -5385,7 +5241,133 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + Inbox（受信トレイ）の「I」",
     "funcGroup": "画面切替・予定表・検索",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830273
+    "sortRank": 8120093
+  },
+  {
+    "id": "ol-28",
+    "category": "outlook",
+    "subcategory": "画面切替・予定表・検索",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "K"
+    ],
+    "title": "どの画面からでも新しい「タスク（ToDo）」を作成する",
+    "desc": "メールを読みながら思いついた作業タスクを、その場でToDoリストに追加登録します。",
+    "tip": "tasK（タスク）の末尾文字 K と覚えましょう。",
+    "memory": "tasK（タスク）の末尾文字「K」に Ctrl + Shift",
+    "level": 1,
+    "funcGroup": "画面切替・予定表・検索",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120113
+  },
+  {
+    "id": "ol-35",
+    "category": "outlook",
+    "subcategory": "メール作成・返信・送受信",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "K"
+    ],
+    "title": "どの画面からでも新しい「タスク（ToDo）」を作成",
+    "desc": "メールを読みながら思いついたやるべき仕事を、即座にタスクとして登録します。",
+    "tip": "tasK の末尾「K」はOutlookのタスク系ショートカット共通のキーです。",
+    "level": 2,
+    "memory": "Ctrl + Shift + tasK（タスク作成）の「K」",
+    "funcGroup": "メール作成・返信・送受信",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120113
+  },
+  {
+    "id": "ol-1",
+    "category": "outlook",
+    "subcategory": "メール作成・返信・送受信",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "M"
+    ],
+    "title": "どの画面からでも「新しいメール」を作成（メール画面ではCtrl+N）",
+    "desc": "予定表や連絡先を開いている時でも、一発で新規メール作成ウィンドウを立ち上げます。",
+    "tip": "Message の M。メール画面を表示中ならシンプルな Ctrl + N でも新規メールが作れます。",
+    "level": 3,
+    "memory": "Mail / Message（メールメッセージ）の「M」に Ctrl + Shift（メール画面なら New の Ctrl+N でもOK）",
+    "funcGroup": "メール作成・返信・送受信",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120133
+  },
+  {
+    "id": "ol-18",
+    "category": "outlook",
+    "subcategory": "画面切替・予定表・検索",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "Q"
+    ],
+    "title": "新しい「会議出席依頼」を作成",
+    "desc": "参加メンバーを招待してTeams会議や会議室を予約する「会議出席依頼」作成画面をどこからでも開きます。",
+    "tip": "スケジュール調整の起点になる重要ショートカットです。",
+    "level": 3,
+    "memory": "会議リクエスト（reQuest）の「Q」に Ctrl + Shift（予定表のCtrl+Shift+Aのすぐ左上！）",
+    "funcGroup": "画面切替・予定表・検索",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120173
+  },
+  {
+    "id": "ol-4",
+    "category": "outlook",
+    "subcategory": "メール作成・返信・送受信",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "R"
+    ],
+    "title": "「全員に返信」する（To・CCの全員へ返信）",
+    "desc": "差出人だけでなく、宛先（To）やCCに入っているメンバー全員に返信メールを作成します。",
+    "tip": "ビジネスメールで最頻出のショートカットです。単なる Ctrl+R（個別に返信）との使い分けが重要です。",
+    "level": 3,
+    "memory": "Ctrl+R（返信）に「Shift（対象を全員に広げる）」を足して「全員に返信」！",
+    "funcGroup": "メール作成・返信・送受信",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120183
+  },
+  {
+    "id": "ol-12",
+    "category": "outlook",
+    "subcategory": "メール整理・既読/未読・フラグ",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "V"
+    ],
+    "title": "選択したメールを指定フォルダーへ移動する",
+    "desc": "フォルダー選択ダイアログを開き、矢印キーやフォルダ名頭文字で振り分け先を選んでメールを移動します。",
+    "tip": "マウスで左側の狭いフォルダツリーへドラッグして誤爆するストレスがなくなります！",
+    "level": 2,
+    "memory": "Ctrl+V（貼り付け＝移動先へ置く）に Shift を足して「指定フォルダへメールを移動」",
+    "funcGroup": "メール整理・既読/未読・フラグ",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120223
+  },
+  {
+    "id": "ol-30",
+    "category": "outlook",
+    "subcategory": "メール整理・既読/未読・フラグ",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "V"
+    ],
+    "title": "選択したメールを指定フォルダへ移動するダイアログを開く",
+    "desc": "マウスでドラッグ＆ドロップせずに、フォルダ名の一部をタイプしてEnterでメールを振り分け移動できます。",
+    "tip": "受信トレイを空にする「Inbox Zero」運用で最速の振り分けワザです。",
+    "level": 3,
+    "memory": "Ctrl + Shift + moVe（フォルダへ移動）の「V」",
+    "funcGroup": "メール整理・既読/未読・フラグ",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120223
   },
   {
     "id": "ol-20",
@@ -5403,7 +5385,58 @@ const SHORTCUTS_DATA = [
     "memory": "1＝1日、2＝稼働日、3＝週、4＝月 と期間が順番に広がる「Ctrl + Alt + 1〜4」",
     "funcGroup": "画面切替・予定表・検索",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 910101
+    "sortRank": 9110013
+  },
+  {
+    "id": "ol-6",
+    "category": "outlook",
+    "subcategory": "メール作成・返信・送受信",
+    "keys": [
+      "Ctrl",
+      "Alt",
+      "R"
+    ],
+    "title": "受信メールに対して「会議出席依頼」で全員に返信する",
+    "desc": "メールの件名・本文・宛先メンバーをすべて引き継いだ状態で、そのまま日程調整の会議招待を作成します。",
+    "tip": "「この件、一度打ち合わせしましょう」となった時に宛先を入れ直す手間がゼロになる神ワザです！",
+    "level": 2,
+    "memory": "Reply（R）に Ctrl + Alt を合わせて「メールではなく会議招待で全員に返信」！",
+    "funcGroup": "メール作成・返信・送受信",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9120183
+  },
+  {
+    "id": "on-10",
+    "category": "onenote",
+    "subcategory": "表作成・アウトライン・構造整理",
+    "keys": [
+      "文字入力",
+      "Tab"
+    ],
+    "title": "文字を打ってTabキーを押すだけでその場に「表（テーブル）」を作成",
+    "desc": "ノート上で文字を入力した直後に Tab キーを押すと、自動的に枠線付きの2列の表に変換されます！",
+    "tip": "さらに Tab を押せば3列、4列と増え、右端のセルで Enter を押せば新しい行が下に追加されます。",
+    "level": 3,
+    "memory": "Table（表）の「Tab」キー！文字を打ってTabを押すだけで即座に表になる直感操作",
+    "funcGroup": "表作成・アウトライン・構造整理",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1409912
+  },
+  {
+    "id": "on-5",
+    "category": "onenote",
+    "subcategory": "ページ・セクション・検索",
+    "keys": [
+      "F11"
+    ],
+    "title": "ページを全画面表示（ノートブック枠を隠して広く使う）",
+    "desc": "左側のノートブック一覧や上部のリボンを隠し、キャンバス全面をノート記述領域にします。",
+    "tip": "会議の議事録を集中して取る時や、ペンタブレットで手書きする時に最適です（もう一度F11で復帰）。",
+    "level": 2,
+    "memory": "ブラウザの全画面表示と完全共通の「F11」でノート領域を最大化！",
+    "funcGroup": "ページ・セクション・検索",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130111
   },
   {
     "id": "on-15",
@@ -5420,7 +5453,7 @@ const SHORTCUTS_DATA = [
     "level": 2,
     "funcGroup": "チェックボックス・タグ・日時挿入",
     "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310100
+    "sortRank": 3110002
   },
   {
     "id": "on-6",
@@ -5437,7 +5470,7 @@ const SHORTCUTS_DATA = [
     "memory": "OneNoteで「1番」使う最重要タグだから「Ctrl + 1」＝ToDoチェックボックス！",
     "funcGroup": "チェックボックス・タグ・日時挿入",
     "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310101
+    "sortRank": 3110012
   },
   {
     "id": "on-7",
@@ -5454,112 +5487,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl+1（ToDo）の続きの数字！「2＝★重要、3＝？質問、4＝蛍光マーカー、5＝定義」",
     "funcGroup": "チェックボックス・タグ・日時挿入",
     "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310102
-  },
-  {
-    "id": "on-25",
-    "category": "onenote",
-    "subcategory": "チェックボックス・タグ・日時挿入",
-    "keys": [
-      "Alt",
-      "="
-    ],
-    "title": "数式エディタを起動して綺麗な数式・分数・記号を入力",
-    "desc": "WordやOneNote上で、分数・ルート・ギリシャ文字などの美しい数式ブロックを挿入します。",
-    "tip": "技術メモや統計・財務の計算式をノートに残すときに便利です。",
-    "level": 1,
-    "memory": "Alt + =（イコール＝数式の象徴）",
-    "funcGroup": "チェックボックス・タグ・日時挿入",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720461
-  },
-  {
-    "id": "on-9",
-    "category": "onenote",
-    "subcategory": "チェックボックス・タグ・日時挿入",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "H"
-    ],
-    "title": "選択したテキストに蛍光ペン（ハイライト）を引く",
-    "desc": "直前に使った蛍光ペンの色で、選択した文字にマーカーを引きます。",
-    "tip": "重要箇所の色塗りがマウスなしでサクサク進みます。",
-    "level": 2,
-    "memory": "Highlight（ハイライト・蛍光ペン）の頭文字「H」に Ctrl + Shift",
-    "funcGroup": "チェックボックス・タグ・日時挿入",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810272
-  },
-  {
-    "id": "on-18",
-    "category": "onenote",
-    "subcategory": "チェックボックス・タグ・日時挿入",
-    "keys": [
-      "Alt",
-      "Shift",
-      "D / T"
-    ],
-    "title": "今日の日付のみを挿入（Alt+Shift+D）/ 現在時刻のみを挿入（Alt+Shift+T）",
-    "desc": "Alt+Shift+D で日付（例: 2026/11/05）、Alt+Shift+T で時刻（例: 14:30）を個別にスタンプ挿入します。",
-    "tip": "会議中に「14:35 〇〇さん発言」のように時刻スタンプ（Alt+Shift+T）を打ちながら議事録を取ると超便利です！",
-    "memory": "Date（日付）の「D」、Time（時刻）の「T」（両方同時は Full の Alt+Shift+F）",
-    "level": 3,
-    "funcGroup": "チェックボックス・タグ・日時挿入",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 920268
-  },
-  {
-    "id": "on-8",
-    "category": "onenote",
-    "subcategory": "チェックボックス・タグ・日時挿入",
-    "keys": [
-      "Alt",
-      "Shift",
-      "F"
-    ],
-    "title": "現在の日付と時刻（タイムスタンプ）を同時挿入",
-    "desc": "カーソル位置に「2026/11/05 14:30」のように現在の日時を一発で挿入します。",
-    "tip": "日付だけなら Alt + Shift + D（Date）、時刻だけなら Alt + Shift + T（Time）で個別に入力できます！",
-    "level": 3,
-    "memory": "Date（日付＝D）＋ Time（時刻＝T）＝ Full timestamp（日時両方＝F）に Alt + Shift！",
-    "funcGroup": "チェックボックス・タグ・日時挿入",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 920270
-  },
-  {
-    "id": "on-23",
-    "category": "onenote",
-    "subcategory": "チェックボックス・タグ・日時挿入",
-    "keys": [
-      "Ctrl",
-      "Alt",
-      "H"
-    ],
-    "title": "選択した文字に蛍光ペン（ハイライト）を引く",
-    "desc": "ノート内の重要箇所に黄色の蛍光ペンマーカーを即座に引きます。",
-    "tip": "もう一度同じ箇所で押すと蛍光ペンを解除できます。",
-    "level": 2,
-    "memory": "Ctrl + Alt + Highlight（蛍光ペン）の「H」",
-    "funcGroup": "チェックボックス・タグ・日時挿入",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 930272
-  },
-  {
-    "id": "on-5",
-    "category": "onenote",
-    "subcategory": "ページ・セクション・検索",
-    "keys": [
-      "F11"
-    ],
-    "title": "ページを全画面表示（ノートブック枠を隠して広く使う）",
-    "desc": "左側のノートブック一覧や上部のリボンを隠し、キャンバス全面をノート記述領域にします。",
-    "tip": "会議の議事録を集中して取る時や、ペンタブレットで手書きする時に最適です（もう一度F11で復帰）。",
-    "level": 2,
-    "memory": "ブラウザの全画面表示と完全共通の「F11」でノート領域を最大化！",
-    "funcGroup": "ページ・セクション・検索",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210011
+    "sortRank": 3110022
   },
   {
     "id": "on-3",
@@ -5576,7 +5504,7 @@ const SHORTCUTS_DATA = [
     "memory": "Explore（全ノートブックを探検・横断検索）の「Ctrl + E」（ページ内検索は Find の Ctrl+F）",
     "funcGroup": "ページ・セクション・検索",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410269
+    "sortRank": 4120052
   },
   {
     "id": "on-16",
@@ -5593,7 +5521,7 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "funcGroup": "ページ・セクション・検索",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410270
+    "sortRank": 4120062
   },
   {
     "id": "on-17",
@@ -5610,7 +5538,7 @@ const SHORTCUTS_DATA = [
     "level": 2,
     "funcGroup": "ページ・セクション・検索",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410277
+    "sortRank": 4120132
   },
   {
     "id": "on-1",
@@ -5627,7 +5555,7 @@ const SHORTCUTS_DATA = [
     "memory": "New page（新しいページ）の頭文字「N」",
     "funcGroup": "ページ・セクション・検索",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410278
+    "sortRank": 4120142
   },
   {
     "id": "on-2",
@@ -5644,7 +5572,24 @@ const SHORTCUTS_DATA = [
     "memory": "ブラウザのタブと同じく、新しいセクションタブ追加は Tab の「Ctrl + T」！",
     "funcGroup": "ページ・セクション・検索",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410284
+    "sortRank": 4120202
+  },
+  {
+    "id": "on-11",
+    "category": "onenote",
+    "subcategory": "表作成・アウトライン・構造整理",
+    "keys": [
+      "Ctrl",
+      "Enter"
+    ],
+    "title": "表（テーブル）の現在の行の「すぐ下」に新しい行を挿入",
+    "desc": "OneNoteの表の中で、途中の行でも一発で下に新しい空白行を追加します（表内のセル内改行は Shift + Enter）。",
+    "tip": "Wordの表と異なり、OneNoteの表では Enter だけでセル内改行、Ctrl + Enter で行追加になります。",
+    "level": 2,
+    "memory": "表の中で「Ctrl + Enter」を押すと、現在の行のすぐ下に新しい行を追加！",
+    "funcGroup": "表作成・アウトライン・構造整理",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140042
   },
   {
     "id": "on-4",
@@ -5661,7 +5606,41 @@ const SHORTCUTS_DATA = [
     "memory": "Excelのシート切替と全く同じ！「Ctrl + PageDown / PageUp」で上下のページへ移動",
     "funcGroup": "ページ・セクション・検索",
     "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510418
+    "sortRank": 5140112
+  },
+  {
+    "id": "on-14",
+    "category": "onenote",
+    "subcategory": "表作成・アウトライン・構造整理",
+    "keys": [
+      "Ctrl",
+      ". (ピリオド) / / (スラッシュ)"
+    ],
+    "title": "箇条書きリストを開始（Ctrl+.）/ 番号付きリストを開始（Ctrl+/）",
+    "desc": "現在の行を中黒（・）の箇条書き（Ctrl + .）または連番リスト（Ctrl + /）に変換します。",
+    "tip": "見出し1〜6スタイルは Word と同じく Ctrl + Alt + 1〜6 で一発適用できます！",
+    "level": 2,
+    "memory": "箇条書きの中黒「・」に見た目がそっくりな「.（ピリオド）」、番号の区切り線「/（スラッシュ）」！",
+    "funcGroup": "表作成・アウトライン・構造整理",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5150462
+  },
+  {
+    "id": "on-25",
+    "category": "onenote",
+    "subcategory": "チェックボックス・タグ・日時挿入",
+    "keys": [
+      "Alt",
+      "="
+    ],
+    "title": "数式エディタを起動して綺麗な数式・分数・記号を入力",
+    "desc": "WordやOneNote上で、分数・ルート・ギリシャ文字などの美しい数式ブロックを挿入します。",
+    "tip": "技術メモや統計・財務の計算式をノートに残すときに便利です。",
+    "level": 1,
+    "memory": "Alt + =（イコール＝数式の象徴）",
+    "funcGroup": "チェックボックス・タグ・日時挿入",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7150612
   },
   {
     "id": "on-26",
@@ -5679,94 +5658,25 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + Email page（ページをメール送信）の「E」",
     "funcGroup": "ページ・セクション・検索",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830269
+    "sortRank": 8120053
   },
   {
-    "id": "on-24",
+    "id": "on-9",
     "category": "onenote",
-    "subcategory": "ページ・セクション・検索",
+    "subcategory": "チェックボックス・タグ・日時挿入",
     "keys": [
       "Ctrl",
       "Shift",
-      "T"
+      "H"
     ],
-    "title": "ページの「タイトル行」へカーソルを一発ジャンプ",
-    "desc": "本文のどこを書いていても、ページ最上部のタイトル入力欄へ瞬時にカーソルを移動して題名を変更できます。",
-    "tip": "白紙ページを作って本文から書き始めたあと、タイトルを付けに戻るときに便利です。",
+    "title": "選択したテキストに蛍光ペン（ハイライト）を引く",
+    "desc": "直前に使った蛍光ペンの色で、選択した文字にマーカーを引きます。",
+    "tip": "重要箇所の色塗りがマウスなしでサクサク進みます。",
     "level": 2,
-    "memory": "Ctrl + Shift + Title（ページタイトル）の「T」",
-    "funcGroup": "ページ・セクション・検索",
+    "memory": "Highlight（ハイライト・蛍光ペン）の頭文字「H」に Ctrl + Shift",
+    "funcGroup": "チェックボックス・タグ・日時挿入",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830284
-  },
-  {
-    "id": "on-20",
-    "category": "onenote",
-    "subcategory": "ページ・セクション・検索",
-    "keys": [
-      "Ctrl",
-      "Alt",
-      "N"
-    ],
-    "title": "現在のページのすぐ下に「サブページ（子ページ）」を追加作成",
-    "desc": "通常のページ追加（Ctrl+N）と異なり、最初から1段インデントされた子ページとして直下に作成します。",
-    "tip": "プロジェクトの親ページの下に「第1回会議」「第2回会議」とぶら下げて整理するのに最適です！",
-    "memory": "Ctrl+N（新規ページ）に「Alt（サブ階層として作成）」をプラス！",
-    "level": 2,
-    "funcGroup": "ページ・セクション・検索",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 910278
-  },
-  {
-    "id": "on-10",
-    "category": "onenote",
-    "subcategory": "表作成・アウトライン・構造整理",
-    "keys": [
-      "文字入力",
-      "Tab"
-    ],
-    "title": "文字を打ってTabキーを押すだけでその場に「表（テーブル）」を作成",
-    "desc": "ノート上で文字を入力した直後に Tab キーを押すと、自動的に枠線付きの2列の表に変換されます！",
-    "tip": "さらに Tab を押せば3列、4列と増え、右端のセルで Enter を押せば新しい行が下に追加されます。",
-    "level": 3,
-    "memory": "Table（表）の「Tab」キー！文字を打ってTabを押すだけで即座に表になる直感操作",
-    "funcGroup": "表作成・アウトライン・構造整理",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 136491
-  },
-  {
-    "id": "on-11",
-    "category": "onenote",
-    "subcategory": "表作成・アウトライン・構造整理",
-    "keys": [
-      "Ctrl",
-      "Enter"
-    ],
-    "title": "表（テーブル）の現在の行の「すぐ下」に新しい行を挿入",
-    "desc": "OneNoteの表の中で、途中の行でも一発で下に新しい空白行を追加します（表内のセル内改行は Shift + Enter）。",
-    "tip": "Wordの表と異なり、OneNoteの表では Enter だけでセル内改行、Ctrl + Enter で行追加になります。",
-    "level": 2,
-    "memory": "表の中で「Ctrl + Enter」を押すと、現在の行のすぐ下に新しい行を追加！",
-    "funcGroup": "表作成・アウトライン・構造整理",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510406
-  },
-  {
-    "id": "on-14",
-    "category": "onenote",
-    "subcategory": "表作成・アウトライン・構造整理",
-    "keys": [
-      "Ctrl",
-      ". (ピリオド) / / (スラッシュ)"
-    ],
-    "title": "箇条書きリストを開始（Ctrl+.）/ 番号付きリストを開始（Ctrl+/）",
-    "desc": "現在の行を中黒（・）の箇条書き（Ctrl + .）または連番リスト（Ctrl + /）に変換します。",
-    "tip": "見出し1〜6スタイルは Word と同じく Ctrl + Alt + 1〜6 で一発適用できます！",
-    "level": 2,
-    "memory": "箇条書きの中黒「・」に見た目がそっくりな「.（ピリオド）」、番号の区切り線「/（スラッシュ）」！",
-    "funcGroup": "表作成・アウトライン・構造整理",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510546
+    "sortRank": 8120083
   },
   {
     "id": "on-19",
@@ -5784,7 +5694,25 @@ const SHORTCUTS_DATA = [
     "level": 2,
     "funcGroup": "表作成・アウトライン・構造整理",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810278
+    "sortRank": 8120143
+  },
+  {
+    "id": "on-24",
+    "category": "onenote",
+    "subcategory": "ページ・セクション・検索",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "T"
+    ],
+    "title": "ページの「タイトル行」へカーソルを一発ジャンプ",
+    "desc": "本文のどこを書いていても、ページ最上部のタイトル入力欄へ瞬時にカーソルを移動して題名を変更できます。",
+    "tip": "白紙ページを作って本文から書き始めたあと、タイトルを付けに戻るときに便利です。",
+    "level": 2,
+    "memory": "Ctrl + Shift + Title（ページタイトル）の「T」",
+    "funcGroup": "ページ・セクション・検索",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120203
   },
   {
     "id": "on-21",
@@ -5802,43 +5730,7 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "funcGroup": "表作成・アウトライン・構造整理",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 910101
-  },
-  {
-    "id": "on-12",
-    "category": "onenote",
-    "subcategory": "表作成・アウトライン・構造整理",
-    "keys": [
-      "Alt",
-      "Shift",
-      "↑ / ↓"
-    ],
-    "title": "現在の段落（または表の行）を上下に入れ替え移動",
-    "desc": "箇条書きの項目や表の行を、配下のサブ階層ごとそのまま上下にスライド移動します。",
-    "tip": "ブレインストーミングで書き出したメモの優先順位を後から並べ替える時に無敵の威力を発揮します！",
-    "level": 3,
-    "memory": "Word・PowerPointと完全共通！「Alt + Shift + ↑/↓」で行や段落を上下に入れ替え",
-    "funcGroup": "表作成・アウトライン・構造整理",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 920422
-  },
-  {
-    "id": "on-13",
-    "category": "onenote",
-    "subcategory": "表作成・アウトライン・構造整理",
-    "keys": [
-      "Alt",
-      "Shift",
-      "+ / -"
-    ],
-    "title": "見出し・親項目の下にある「サブ階層テキスト」を折りたたむ（-）/ 展開（+）",
-    "desc": "インデントで階層化したメモの子要素を折りたたんで隠し、見出しだけをスッキリ一覧表示します。",
-    "tip": "長くなった議事録やプロジェクトノートをアコーディオンのように整理できるOneNoteならではの機能です。",
-    "level": 2,
-    "memory": "アウトライン記号の見た目通り！「＋」で展開、「－」でサブ階層を折りたたむ",
-    "funcGroup": "表作成・アウトライン・構造整理",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 920543
+    "sortRank": 9110013
   },
   {
     "id": "on-22",
@@ -5856,7 +5748,131 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Alt + 見出しレベル（1・2・3）",
     "funcGroup": "表作成・アウトライン・構造整理",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 930101
+    "sortRank": 9110013
+  },
+  {
+    "id": "on-23",
+    "category": "onenote",
+    "subcategory": "チェックボックス・タグ・日時挿入",
+    "keys": [
+      "Ctrl",
+      "Alt",
+      "H"
+    ],
+    "title": "選択した文字に蛍光ペン（ハイライト）を引く",
+    "desc": "ノート内の重要箇所に黄色の蛍光ペンマーカーを即座に引きます。",
+    "tip": "もう一度同じ箇所で押すと蛍光ペンを解除できます。",
+    "level": 2,
+    "memory": "Ctrl + Alt + Highlight（蛍光ペン）の「H」",
+    "funcGroup": "チェックボックス・タグ・日時挿入",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9120083
+  },
+  {
+    "id": "on-20",
+    "category": "onenote",
+    "subcategory": "ページ・セクション・検索",
+    "keys": [
+      "Ctrl",
+      "Alt",
+      "N"
+    ],
+    "title": "現在のページのすぐ下に「サブページ（子ページ）」を追加作成",
+    "desc": "通常のページ追加（Ctrl+N）と異なり、最初から1段インデントされた子ページとして直下に作成します。",
+    "tip": "プロジェクトの親ページの下に「第1回会議」「第2回会議」とぶら下げて整理するのに最適です！",
+    "memory": "Ctrl+N（新規ページ）に「Alt（サブ階層として作成）」をプラス！",
+    "level": 2,
+    "funcGroup": "ページ・セクション・検索",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9120143
+  },
+  {
+    "id": "on-18",
+    "category": "onenote",
+    "subcategory": "チェックボックス・タグ・日時挿入",
+    "keys": [
+      "Alt",
+      "Shift",
+      "D / T"
+    ],
+    "title": "今日の日付のみを挿入（Alt+Shift+D）/ 現在時刻のみを挿入（Alt+Shift+T）",
+    "desc": "Alt+Shift+D で日付（例: 2026/11/05）、Alt+Shift+T で時刻（例: 14:30）を個別にスタンプ挿入します。",
+    "tip": "会議中に「14:35 〇〇さん発言」のように時刻スタンプ（Alt+Shift+T）を打ちながら議事録を取ると超便利です！",
+    "memory": "Date（日付）の「D」、Time（時刻）の「T」（両方同時は Full の Alt+Shift+F）",
+    "level": 3,
+    "funcGroup": "チェックボックス・タグ・日時挿入",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9220043
+  },
+  {
+    "id": "on-8",
+    "category": "onenote",
+    "subcategory": "チェックボックス・タグ・日時挿入",
+    "keys": [
+      "Alt",
+      "Shift",
+      "F"
+    ],
+    "title": "現在の日付と時刻（タイムスタンプ）を同時挿入",
+    "desc": "カーソル位置に「2026/11/05 14:30」のように現在の日時を一発で挿入します。",
+    "tip": "日付だけなら Alt + Shift + D（Date）、時刻だけなら Alt + Shift + T（Time）で個別に入力できます！",
+    "level": 3,
+    "memory": "Date（日付＝D）＋ Time（時刻＝T）＝ Full timestamp（日時両方＝F）に Alt + Shift！",
+    "funcGroup": "チェックボックス・タグ・日時挿入",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9220063
+  },
+  {
+    "id": "on-12",
+    "category": "onenote",
+    "subcategory": "表作成・アウトライン・構造整理",
+    "keys": [
+      "Alt",
+      "Shift",
+      "↑ / ↓"
+    ],
+    "title": "現在の段落（または表の行）を上下に入れ替え移動",
+    "desc": "箇条書きの項目や表の行を、配下のサブ階層ごとそのまま上下にスライド移動します。",
+    "tip": "ブレインストーミングで書き出したメモの優先順位を後から並べ替える時に無敵の威力を発揮します！",
+    "level": 3,
+    "memory": "Word・PowerPointと完全共通！「Alt + Shift + ↑/↓」で行や段落を上下に入れ替え",
+    "funcGroup": "表作成・アウトライン・構造整理",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9240203
+  },
+  {
+    "id": "on-13",
+    "category": "onenote",
+    "subcategory": "表作成・アウトライン・構造整理",
+    "keys": [
+      "Alt",
+      "Shift",
+      "+ / -"
+    ],
+    "title": "見出し・親項目の下にある「サブ階層テキスト」を折りたたむ（-）/ 展開（+）",
+    "desc": "インデントで階層化したメモの子要素を折りたたんで隠し、見出しだけをスッキリ一覧表示します。",
+    "tip": "長くなった議事録やプロジェクトノートをアコーディオンのように整理できるOneNoteならではの機能です。",
+    "level": 2,
+    "memory": "アウトライン記号の見た目通り！「＋」で展開、「－」でサブ階層を折りたたむ",
+    "funcGroup": "表作成・アウトライン・構造整理",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9250433
+  },
+  {
+    "id": "tz-11",
+    "category": "teams_zoom",
+    "subcategory": "会議中の音声・カメラ・共有制御",
+    "keys": [
+      "Space"
+    ],
+    "title": "【Zoom】押している間だけ一時的にミュート解除",
+    "desc": "Zoomでミュート中、スペースキーを長押ししている間だけマイクがONになり、離すと自動でミュートに戻ります。",
+    "tip": "相槌や短い返事のあと、ミュートに戻し忘れる事故を100%防げます！",
+    "level": 3,
+    "memory": "Space長押し＝トランシーバー方式で一時発言",
+    "funcGroup": "会議中の音声・カメラ・共有制御",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1140031
   },
   {
     "id": "tz-18",
@@ -5873,7 +5889,7 @@ const SHORTCUTS_DATA = [
     "memory": "左メニューの上から順番に Ctrl + 1, 2, 3, 4",
     "funcGroup": "チャット・画面移動・通話操作",
     "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 320101
+    "sortRank": 3110012
   },
   {
     "id": "tz-15",
@@ -5890,7 +5906,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Explore / sEarch（検索栏）の「E」",
     "funcGroup": "チャット・画面移動・通話操作",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 420269
+    "sortRank": 4120052
   },
   {
     "id": "tz-16",
@@ -5907,7 +5923,24 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + New chat（新規チャット）の「N」",
     "funcGroup": "チャット・画面移動・通話操作",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 420278
+    "sortRank": 4120142
+  },
+  {
+    "id": "tz-06",
+    "category": "teams_zoom",
+    "subcategory": "会議中の音声・カメラ・共有制御",
+    "keys": [
+      "Ctrl",
+      "Space"
+    ],
+    "title": "【Teams】押している間だけ一時的にミュート解除（プッシュトゥトーク）",
+    "desc": "ミュート中に Ctrl + Space を押し続けている間だけマイクがONになり、指を離すと自動でミュートに戻ります。",
+    "tip": "「はい、聞こえています」「了解しました」の一言だけ返事したいときに最高に便利です！",
+    "level": 3,
+    "memory": "トランシーバーのように Space を押している間だけ話す",
+    "funcGroup": "会議中の音声・カメラ・共有制御",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140032
   },
   {
     "id": "tz-23",
@@ -5924,7 +5957,41 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + .（ピリオド）でTeamsショートカット一覧",
     "funcGroup": "チャット・画面移動・通話操作",
     "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 520446
+    "sortRank": 5150462
+  },
+  {
+    "id": "tz-07",
+    "category": "teams_zoom",
+    "subcategory": "会議中の音声・カメラ・共有制御",
+    "keys": [
+      "Alt",
+      "A"
+    ],
+    "title": "【Zoom】マイクのミュート（消音）/ ミュート解除を切替",
+    "desc": "Zoomミーティング中に自分のマイク音声を瞬時にオン/オフします。",
+    "tip": "Zoomでは「Alt + アルファベット」が基本です。Audio（音声）のAと覚えましょう。",
+    "level": 3,
+    "memory": "Alt + Audio（音声マイク）の「A」",
+    "funcGroup": "会議中の音声・カメラ・共有制御",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7120012
+  },
+  {
+    "id": "tz-22",
+    "category": "teams_zoom",
+    "subcategory": "会議中の音声・カメラ・共有制御",
+    "keys": [
+      "Alt",
+      "F"
+    ],
+    "title": "【Zoom】会議画面の全画面表示（フルスクリーン）開始 / 終了",
+    "desc": "画面共有されている細かい資料を、モニターいっぱいのフルスクリーンに拡大して見やすくします。",
+    "tip": "共有資料の文字が小さくて読めないときにすぐ使えます。",
+    "level": 2,
+    "memory": "Alt + Fullscreen（全画面）の「F」",
+    "funcGroup": "会議中の音声・カメラ・共有制御",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7120062
   },
   {
     "id": "tz-13",
@@ -5941,7 +6008,41 @@ const SHORTCUTS_DATA = [
     "memory": "Alt + cHat（チャット）の「H」",
     "funcGroup": "チャット・画面移動・通話操作",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720272
+    "sortRank": 7120082
+  },
+  {
+    "id": "tz-21",
+    "category": "teams_zoom",
+    "subcategory": "会議中の音声・カメラ・共有制御",
+    "keys": [
+      "Alt",
+      "R"
+    ],
+    "title": "【Zoom】ローカル録画（レコーディング）の開始 / 停止",
+    "desc": "Zoomミーティングの録画を開始します（クラウド録画は Alt + C）。一時停止・再開は Alt + P です。",
+    "tip": "議事録用や欠席者向けに会議を録画するホスト必須のキーです。",
+    "level": 2,
+    "memory": "Alt + Record（録画）の「R」",
+    "funcGroup": "会議中の音声・カメラ・共有制御",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7120182
+  },
+  {
+    "id": "tz-09",
+    "category": "teams_zoom",
+    "subcategory": "会議中の音声・カメラ・共有制御",
+    "keys": [
+      "Alt",
+      "S"
+    ],
+    "title": "【Zoom】画面共有の開始 / 停止ウィンドウを開く",
+    "desc": "Zoomで画面共有の選択ウィンドウを開きます。共有中に押すと共有を停止します。",
+    "tip": "ホストや発表者として資料を投影するときにマウスいらずで操作できます。",
+    "level": 3,
+    "memory": "Alt + Share screen（画面共有）の「S」",
+    "funcGroup": "会議中の音声・カメラ・共有制御",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7120192
   },
   {
     "id": "tz-14",
@@ -5958,7 +6059,58 @@ const SHORTCUTS_DATA = [
     "memory": "Alt + Users（参加者一覧）の「U」",
     "funcGroup": "チャット・画面移動・通話操作",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720285
+    "sortRank": 7120212
+  },
+  {
+    "id": "tz-08",
+    "category": "teams_zoom",
+    "subcategory": "会議中の音声・カメラ・共有制御",
+    "keys": [
+      "Alt",
+      "V"
+    ],
+    "title": "【Zoom】カメラ（ビデオ）のオン / オフを切替",
+    "desc": "Zoomミーティング中に自分のカメラ映像を瞬時にオン/オフします。",
+    "tip": "Alt + A（マイク）と Alt + V（ビデオ）はZoomの2大必須ショートカットです。",
+    "level": 3,
+    "memory": "Alt + Video（ビデオ映像）の「V」",
+    "funcGroup": "会議中の音声・カメラ・共有制御",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7120222
+  },
+  {
+    "id": "tz-10",
+    "category": "teams_zoom",
+    "subcategory": "会議中の音声・カメラ・共有制御",
+    "keys": [
+      "Alt",
+      "Y"
+    ],
+    "title": "【Zoom】「挙手（手を挙げる / 下げる）」を切替",
+    "desc": "Zoomミーティングで「✋手を挙げる」リアクションをオン/オフします。",
+    "tip": "両手をバンザイして手を挙げている形「Y」と覚えると一生忘れません！",
+    "level": 3,
+    "memory": "Alt + Y（手を挙げている人の形「Y」！）",
+    "funcGroup": "会議中の音声・カメラ・共有制御",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7120252
+  },
+  {
+    "id": "tz-12",
+    "category": "teams_zoom",
+    "subcategory": "会議中の音声・カメラ・共有制御",
+    "keys": [
+      "Alt",
+      "F1 / F2"
+    ],
+    "title": "【Zoom】スピーカー表示(F1) ⇔ ギャラリー表示(F2) を切替",
+    "desc": "発言者を大きく映す「スピーカービュー(Alt+F1)」と、全員の顔を並べる「ギャラリービュー(Alt+F2)」を切り替えます。",
+    "tip": "1人の発表を聞くときと、全員の反応を見るときを瞬時に切り替えられます。",
+    "level": 2,
+    "memory": "F1（1人＝スピーカー表示）⇔ F2（複数人＝ギャラリー表示）",
+    "funcGroup": "会議中の音声・カメラ・共有制御",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7130012
   },
   {
     "id": "tz-19",
@@ -5976,195 +6128,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + Answer（応答）の「A」",
     "funcGroup": "チャット・画面移動・通話操作",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830265
-  },
-  {
-    "id": "tz-20",
-    "category": "teams_zoom",
-    "subcategory": "チャット・画面移動・通話操作",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "H"
-    ],
-    "title": "【Teams】現在の通話・会議から退出（切断）する",
-    "desc": "参加中のTeams会議や通話から即座に退出します。",
-    "tip": "Zoomで会議から退出する場合は Alt + Q（Quit）です。",
-    "level": 2,
-    "memory": "Ctrl + Shift + Hang up（電話を切る）の「H」",
-    "funcGroup": "チャット・画面移動・通話操作",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830272
-  },
-  {
-    "id": "tz-17",
-    "category": "teams_zoom",
-    "subcategory": "チャット・画面移動・通話操作",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "X"
-    ],
-    "title": "【Teams】メッセージ作成欄を「拡張（書式・箇条書き・表）」する",
-    "desc": "チャット入力欄をリッチテキストモードに広げ、Enterキーで誤送信されずに改行・太字・見出し付きの丁寧な文章を書けます。",
-    "tip": "拡張モード中は Enter 単体では送信されず改行になり、Ctrl + Enter で送信になるため誤爆防止に最適です！",
-    "level": 3,
-    "memory": "Ctrl + Shift + eXpand（入力欄を拡張）の「X」",
-    "funcGroup": "チャット・画面移動・通話操作",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830288
-  },
-  {
-    "id": "tz-11",
-    "category": "teams_zoom",
-    "subcategory": "会議中の音声・カメラ・共有制御",
-    "keys": [
-      "Space"
-    ],
-    "title": "【Zoom】押している間だけ一時的にミュート解除",
-    "desc": "Zoomでミュート中、スペースキーを長押ししている間だけマイクがONになり、離すと自動でミュートに戻ります。",
-    "tip": "相槌や短い返事のあと、ミュートに戻し忘れる事故を100%防げます！",
-    "level": 3,
-    "memory": "Space長押し＝トランシーバー方式で一時発言",
-    "funcGroup": "会議中の音声・カメラ・共有制御",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110483
-  },
-  {
-    "id": "tz-06",
-    "category": "teams_zoom",
-    "subcategory": "会議中の音声・カメラ・共有制御",
-    "keys": [
-      "Ctrl",
-      "Space"
-    ],
-    "title": "【Teams】押している間だけ一時的にミュート解除（プッシュトゥトーク）",
-    "desc": "ミュート中に Ctrl + Space を押し続けている間だけマイクがONになり、指を離すと自動でミュートに戻ります。",
-    "tip": "「はい、聞こえています」「了解しました」の一言だけ返事したいときに最高に便利です！",
-    "level": 3,
-    "memory": "トランシーバーのように Space を押している間だけ話す",
-    "funcGroup": "会議中の音声・カメラ・共有制御",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 520483
-  },
-  {
-    "id": "tz-07",
-    "category": "teams_zoom",
-    "subcategory": "会議中の音声・カメラ・共有制御",
-    "keys": [
-      "Alt",
-      "A"
-    ],
-    "title": "【Zoom】マイクのミュート（消音）/ ミュート解除を切替",
-    "desc": "Zoomミーティング中に自分のマイク音声を瞬時にオン/オフします。",
-    "tip": "Zoomでは「Alt + アルファベット」が基本です。Audio（音声）のAと覚えましょう。",
-    "level": 3,
-    "memory": "Alt + Audio（音声マイク）の「A」",
-    "funcGroup": "会議中の音声・カメラ・共有制御",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720265
-  },
-  {
-    "id": "tz-22",
-    "category": "teams_zoom",
-    "subcategory": "会議中の音声・カメラ・共有制御",
-    "keys": [
-      "Alt",
-      "F"
-    ],
-    "title": "【Zoom】会議画面の全画面表示（フルスクリーン）開始 / 終了",
-    "desc": "画面共有されている細かい資料を、モニターいっぱいのフルスクリーンに拡大して見やすくします。",
-    "tip": "共有資料の文字が小さくて読めないときにすぐ使えます。",
-    "level": 2,
-    "memory": "Alt + Fullscreen（全画面）の「F」",
-    "funcGroup": "会議中の音声・カメラ・共有制御",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720270
-  },
-  {
-    "id": "tz-21",
-    "category": "teams_zoom",
-    "subcategory": "会議中の音声・カメラ・共有制御",
-    "keys": [
-      "Alt",
-      "R"
-    ],
-    "title": "【Zoom】ローカル録画（レコーディング）の開始 / 停止",
-    "desc": "Zoomミーティングの録画を開始します（クラウド録画は Alt + C）。一時停止・再開は Alt + P です。",
-    "tip": "議事録用や欠席者向けに会議を録画するホスト必須のキーです。",
-    "level": 2,
-    "memory": "Alt + Record（録画）の「R」",
-    "funcGroup": "会議中の音声・カメラ・共有制御",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720282
-  },
-  {
-    "id": "tz-09",
-    "category": "teams_zoom",
-    "subcategory": "会議中の音声・カメラ・共有制御",
-    "keys": [
-      "Alt",
-      "S"
-    ],
-    "title": "【Zoom】画面共有の開始 / 停止ウィンドウを開く",
-    "desc": "Zoomで画面共有の選択ウィンドウを開きます。共有中に押すと共有を停止します。",
-    "tip": "ホストや発表者として資料を投影するときにマウスいらずで操作できます。",
-    "level": 3,
-    "memory": "Alt + Share screen（画面共有）の「S」",
-    "funcGroup": "会議中の音声・カメラ・共有制御",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720283
-  },
-  {
-    "id": "tz-08",
-    "category": "teams_zoom",
-    "subcategory": "会議中の音声・カメラ・共有制御",
-    "keys": [
-      "Alt",
-      "V"
-    ],
-    "title": "【Zoom】カメラ（ビデオ）のオン / オフを切替",
-    "desc": "Zoomミーティング中に自分のカメラ映像を瞬時にオン/オフします。",
-    "tip": "Alt + A（マイク）と Alt + V（ビデオ）はZoomの2大必須ショートカットです。",
-    "level": 3,
-    "memory": "Alt + Video（ビデオ映像）の「V」",
-    "funcGroup": "会議中の音声・カメラ・共有制御",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720286
-  },
-  {
-    "id": "tz-10",
-    "category": "teams_zoom",
-    "subcategory": "会議中の音声・カメラ・共有制御",
-    "keys": [
-      "Alt",
-      "Y"
-    ],
-    "title": "【Zoom】「挙手（手を挙げる / 下げる）」を切替",
-    "desc": "Zoomミーティングで「✋手を挙げる」リアクションをオン/オフします。",
-    "tip": "両手をバンザイして手を挙げている形「Y」と覚えると一生忘れません！",
-    "level": 3,
-    "memory": "Alt + Y（手を挙げている人の形「Y」！）",
-    "funcGroup": "会議中の音声・カメラ・共有制御",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720289
-  },
-  {
-    "id": "tz-12",
-    "category": "teams_zoom",
-    "subcategory": "会議中の音声・カメラ・共有制御",
-    "keys": [
-      "Alt",
-      "F1 / F2"
-    ],
-    "title": "【Zoom】スピーカー表示(F1) ⇔ ギャラリー表示(F2) を切替",
-    "desc": "発言者を大きく映す「スピーカービュー(Alt+F1)」と、全員の顔を並べる「ギャラリービュー(Alt+F2)」を切り替えます。",
-    "tip": "1人の発表を聞くときと、全員の反応を見るときを瞬時に切り替えられます。",
-    "level": 2,
-    "memory": "F1（1人＝スピーカー表示）⇔ F2（複数人＝ギャラリー表示）",
-    "funcGroup": "会議中の音声・カメラ・共有制御",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720301
+    "sortRank": 8120013
   },
   {
     "id": "tz-03",
@@ -6182,7 +6146,25 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + sEcond screen / ExposE（画面を見せる）の「E」",
     "funcGroup": "会議中の音声・カメラ・共有制御",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830269
+    "sortRank": 8120053
+  },
+  {
+    "id": "tz-20",
+    "category": "teams_zoom",
+    "subcategory": "チャット・画面移動・通話操作",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "H"
+    ],
+    "title": "【Teams】現在の通話・会議から退出（切断）する",
+    "desc": "参加中のTeams会議や通話から即座に退出します。",
+    "tip": "Zoomで会議から退出する場合は Alt + Q（Quit）です。",
+    "level": 2,
+    "memory": "Ctrl + Shift + Hang up（電話を切る）の「H」",
+    "funcGroup": "チャット・画面移動・通話操作",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120083
   },
   {
     "id": "tz-04",
@@ -6200,7 +6182,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + K（挙手 Kyoshu の「K」）",
     "funcGroup": "会議中の音声・カメラ・共有制御",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830275
+    "sortRank": 8120113
   },
   {
     "id": "tz-01",
@@ -6218,7 +6200,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + Mute（ミュート消音）の「M」",
     "funcGroup": "会議中の音声・カメラ・共有制御",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830277
+    "sortRank": 8120133
   },
   {
     "id": "tz-02",
@@ -6236,7 +6218,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + O（カメラレンズの丸い形「O」 / Video On-Off）",
     "funcGroup": "会議中の音声・カメラ・共有制御",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830279
+    "sortRank": 8120153
   },
   {
     "id": "tz-05",
@@ -6254,7 +6236,25 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + Privacy（背景プライバシー保護）の「P」",
     "funcGroup": "会議中の音声・カメラ・共有制御",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830280
+    "sortRank": 8120163
+  },
+  {
+    "id": "tz-17",
+    "category": "teams_zoom",
+    "subcategory": "チャット・画面移動・通話操作",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "X"
+    ],
+    "title": "【Teams】メッセージ作成欄を「拡張（書式・箇条書き・表）」する",
+    "desc": "チャット入力欄をリッチテキストモードに広げ、Enterキーで誤送信されずに改行・太字・見出し付きの丁寧な文章を書けます。",
+    "tip": "拡張モード中は Enter 単体では送信されず改行になり、Ctrl + Enter で送信になるため誤爆防止に最適です！",
+    "level": 3,
+    "memory": "Ctrl + Shift + eXpand（入力欄を拡張）の「X」",
+    "funcGroup": "チャット・画面移動・通話操作",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120243
   },
   {
     "id": "gw-13",
@@ -6270,7 +6270,7 @@ const SHORTCUTS_DATA = [
     "memory": "Compose（メールを作成する）の頭文字「C」",
     "funcGroup": "Gmail 高速メール処理",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110267
+    "sortRank": 1120031
   },
   {
     "id": "gw-14",
@@ -6286,55 +6286,7 @@ const SHORTCUTS_DATA = [
     "memory": "左手で一番押しやすい位置にある「E（Exit / 退避アーカイブ）」",
     "funcGroup": "Gmail 高速メール処理",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110269
-  },
-  {
-    "id": "gw-16",
-    "category": "google_ws",
-    "subcategory": "Gmail 高速メール処理",
-    "keys": [
-      "J / K"
-    ],
-    "title": "【Gmail】次の古いメール(J) / 前の新しいメール(K) へ移動",
-    "desc": "一覧に戻ることなく、メールを開いたまま前後のメールへ次々に移動して読み進められます。",
-    "tip": "J（次へ）と E（アーカイブ）を交互に押すだけで、数十件のメール処理が数分で終わります！",
-    "level": 2,
-    "memory": "ホームポジションの J（下・次へ）/ K（上・前へ）",
-    "funcGroup": "Gmail 高速メール処理",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110274
-  },
-  {
-    "id": "gw-15",
-    "category": "google_ws",
-    "subcategory": "Gmail 高速メール処理",
-    "keys": [
-      "R / A / F"
-    ],
-    "title": "【Gmail】返信(R) / 全員に返信(A) / 転送(F) を1キーで開始",
-    "desc": "メールを開いている状態で、R＝送信者へ返信、A＝CC含む全員に返信、F＝別メンバーへ転送を即座に開始します。",
-    "tip": "Shift を足すと（Shift+R / Shift+A）別ウィンドウをポップアップして返信できます。",
-    "level": 3,
-    "memory": "Reply（返信＝R）、Reply All（全員＝A）、Forward（転送＝F）",
-    "funcGroup": "Gmail 高速メール処理",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110282
-  },
-  {
-    "id": "gw-17",
-    "category": "google_ws",
-    "subcategory": "Gmail 高速メール処理",
-    "keys": [
-      "/"
-    ],
-    "title": "【Gmail / ドライブ】検索ボックスへ一発フォーカス",
-    "desc": "画面上部のメール検索欄（またはドライブ検索欄）に一瞬でカーソルを移し、すぐにキーワード検索を始められます。",
-    "tip": "GitHubやYouTube、Google検索結果画面でも「/」キーで検索欄に飛べます！",
-    "level": 3,
-    "memory": "「/（スラッシュ）」＝Webアプリ共通の検索ジャンプキー",
-    "funcGroup": "Gmail 高速メール処理",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110447
+    "sortRank": 1120051
   },
   {
     "id": "gw-18",
@@ -6351,7 +6303,39 @@ const SHORTCUTS_DATA = [
     "memory": "Go to（G）＋ Inbox（I・受信トレイ）",
     "funcGroup": "Gmail 高速メール処理",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 120271
+    "sortRank": 1120072
+  },
+  {
+    "id": "gw-16",
+    "category": "google_ws",
+    "subcategory": "Gmail 高速メール処理",
+    "keys": [
+      "J / K"
+    ],
+    "title": "【Gmail】次の古いメール(J) / 前の新しいメール(K) へ移動",
+    "desc": "一覧に戻ることなく、メールを開いたまま前後のメールへ次々に移動して読み進められます。",
+    "tip": "J（次へ）と E（アーカイブ）を交互に押すだけで、数十件のメール処理が数分で終わります！",
+    "level": 2,
+    "memory": "ホームポジションの J（下・次へ）/ K（上・前へ）",
+    "funcGroup": "Gmail 高速メール処理",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1120101
+  },
+  {
+    "id": "gw-15",
+    "category": "google_ws",
+    "subcategory": "Gmail 高速メール処理",
+    "keys": [
+      "R / A / F"
+    ],
+    "title": "【Gmail】返信(R) / 全員に返信(A) / 転送(F) を1キーで開始",
+    "desc": "メールを開いている状態で、R＝送信者へ返信、A＝CC含む全員に返信、F＝別メンバーへ転送を即座に開始します。",
+    "tip": "Shift を足すと（Shift+R / Shift+A）別ウィンドウをポップアップして返信できます。",
+    "level": 3,
+    "memory": "Reply（返信＝R）、Reply All（全員＝A）、Forward（転送＝F）",
+    "funcGroup": "Gmail 高速メール処理",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1120181
   },
   {
     "id": "gw-21",
@@ -6366,25 +6350,24 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "memory": "「#（シャープ）」の形がゴミ箱の網目に見える！",
     "funcGroup": "Gmail 高速メール処理",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 610435
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1150351
   },
   {
-    "id": "gw-22",
+    "id": "gw-17",
     "category": "google_ws",
     "subcategory": "Gmail 高速メール処理",
     "keys": [
-      "Shift",
-      "I / U"
+      "/"
     ],
-    "title": "【Gmail】選択メールを「既読にする(Shift+I) / 未読にする(Shift+U)」",
-    "desc": "Shift + I で既読化、Shift + U（Unread）で未読に戻し、あとで読み返す目印にします。",
-    "tip": "未読に戻して一覧へ戻る「U」単体キーもよく使われます。",
-    "level": 2,
-    "memory": "Shift + Unread（U＝未読）/ I（既読）",
+    "title": "【Gmail / ドライブ】検索ボックスへ一発フォーカス",
+    "desc": "画面上部のメール検索欄（またはドライブ検索欄）に一瞬でカーソルを移し、すぐにキーワード検索を始められます。",
+    "tip": "GitHubやYouTube、Google検索結果画面でも「/」キーで検索欄に飛べます！",
+    "level": 3,
+    "memory": "「/（スラッシュ）」＝Webアプリ共通の検索ジャンプキー",
     "funcGroup": "Gmail 高速メール処理",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 620273
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1150471
   },
   {
     "id": "gw-02",
@@ -6401,7 +6384,7 @@ const SHORTCUTS_DATA = [
     "memory": "「/」キーにある「?（ハテナ＝ヘルプ一覧）」",
     "funcGroup": "Google スプレッドシート・ドキュメント",
     "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 520447
+    "sortRank": 5150472
   },
   {
     "id": "gw-19",
@@ -6418,7 +6401,24 @@ const SHORTCUTS_DATA = [
     "memory": "Excelと同じく Ctrl + ;（セミコロン）＝今日の日付",
     "funcGroup": "Google スプレッドシート・ドキュメント",
     "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 520459
+    "sortRank": 5150592
+  },
+  {
+    "id": "gw-22",
+    "category": "google_ws",
+    "subcategory": "Gmail 高速メール処理",
+    "keys": [
+      "Shift",
+      "I / U"
+    ],
+    "title": "【Gmail】選択メールを「既読にする(Shift+I) / 未読にする(Shift+U)」",
+    "desc": "Shift + I で既読化、Shift + U（Unread）で未読に戻し、あとで読み返す目印にします。",
+    "tip": "未読に戻して一覧へ戻る「U」単体キーもよく使われます。",
+    "level": 2,
+    "memory": "Shift + Unread（U＝未読）/ I（既読）",
+    "funcGroup": "Gmail 高速メール処理",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6120092
   },
   {
     "id": "gw-09",
@@ -6436,7 +6436,7 @@ const SHORTCUTS_DATA = [
     "memory": "Alt + Edit(E) + Delete(D・削除)",
     "funcGroup": "Google スプレッドシート・ドキュメント",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 730269
+    "sortRank": 7220053
   },
   {
     "id": "gw-07",
@@ -6454,7 +6454,7 @@ const SHORTCUTS_DATA = [
     "memory": "Alt + Insert(I) + Row(R・行挿入)",
     "funcGroup": "Google スプレッドシート・ドキュメント",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 730273
+    "sortRank": 7220093
   },
   {
     "id": "gw-08",
@@ -6472,7 +6472,7 @@ const SHORTCUTS_DATA = [
     "memory": "Alt + Insert(I) + Column(C・列挿入)",
     "funcGroup": "Google スプレッドシート・ドキュメント",
     "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 730273
+    "sortRank": 7220093
   },
   {
     "id": "gw-11",
@@ -6490,7 +6490,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + 7（番号）・8（黒丸※アスタリスク*のキー）・9（チェックボックス）",
     "funcGroup": "Google スプレッドシート・ドキュメント",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830107
+    "sortRank": 8110073
   },
   {
     "id": "gw-12",
@@ -6508,7 +6508,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + Count（文字数カウント）の「C」",
     "funcGroup": "Google スプレッドシート・ドキュメント",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830267
+    "sortRank": 8120033
   },
   {
     "id": "gw-03",
@@ -6526,7 +6526,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + V（貼り付け）＋ Shift（余計な書式を削ぎ落とす）",
     "funcGroup": "Google スプレッドシート・ドキュメント",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830286
+    "sortRank": 8120223
   },
   {
     "id": "gw-10",
@@ -6544,25 +6544,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Alt + 見出し番号（0＝本文リセット）",
     "funcGroup": "Google スプレッドシート・ドキュメント",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 930101
-  },
-  {
-    "id": "gw-04",
-    "category": "google_ws",
-    "subcategory": "Google スプレッドシート・ドキュメント",
-    "keys": [
-      "Alt",
-      "Shift",
-      "5"
-    ],
-    "title": "【スプレッドシート / ドキュメント】取り消し線（打ち消し線）を引く",
-    "desc": "完了したタスクや修正前の文字列に、中央の取り消し線を引きます（もう一度押すと解除）。",
-    "tip": "Excelと同じ数字の「5」ですが、Google系では Alt + Shift + 5 になります。",
-    "level": 3,
-    "memory": "Excelの取り消し線「5」に Alt + Shift を組み合わせる",
-    "funcGroup": "Google スプレッドシート・ドキュメント",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 930105
+    "sortRank": 9110013
   },
   {
     "id": "gw-05",
@@ -6580,7 +6562,25 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Alt + coMment / Memo（コメント）の「M」",
     "funcGroup": "Google スプレッドシート・ドキュメント",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 930277
+    "sortRank": 9120133
+  },
+  {
+    "id": "gw-04",
+    "category": "google_ws",
+    "subcategory": "Google スプレッドシート・ドキュメント",
+    "keys": [
+      "Alt",
+      "Shift",
+      "5"
+    ],
+    "title": "【スプレッドシート / ドキュメント】取り消し線（打ち消し線）を引く",
+    "desc": "完了したタスクや修正前の文字列に、中央の取り消し線を引きます（もう一度押すと解除）。",
+    "tip": "Excelと同じ数字の「5」ですが、Google系では Alt + Shift + 5 になります。",
+    "level": 3,
+    "memory": "Excelの取り消し線「5」に Alt + Shift を組み合わせる",
+    "funcGroup": "Google スプレッドシート・ドキュメント",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9210053
   },
   {
     "id": "gw-06",
@@ -6599,7 +6599,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Alt + Shift + Activity history（変更履歴）",
     "funcGroup": "Google スプレッドシート・ドキュメント",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 940265
+    "sortRank": 9320014
   },
   {
     "id": "gw-01",
@@ -6618,7 +6618,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + /（スラッシュ＝「?」ヘルプ一覧表示）も超重要",
     "funcGroup": "Google スプレッドシート・ドキュメント",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 940272
+    "sortRank": 9320084
   },
   {
     "id": "gw-20",
@@ -6637,7 +6637,39 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl+;（日付）と Ctrl+Shift+:（時刻）を全部合体！",
     "funcGroup": "Google スプレッドシート・ドキュメント",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 940459
+    "sortRank": 9350594
+  },
+  {
+    "id": "vs-20",
+    "category": "vscode_term",
+    "subcategory": "ターミナル・PowerShell操作",
+    "keys": [
+      "Tab"
+    ],
+    "title": "【ターミナル / PowerShell】ファイル名・フォルダ名・コマンドの自動補完",
+    "desc": "頭文字を数文字打って Tab を押すだけで、長いフォルダ名やファイル名をミスなく自動入力します。",
+    "tip": "候補が複数ある場合は Tab を押すたびに次の候補へ切り替わります（Shift+Tabで逆順）。",
+    "level": 3,
+    "memory": "Tab ＝ 入力補完の魔法キー",
+    "funcGroup": "ターミナル・PowerShell操作",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1140021
+  },
+  {
+    "id": "vs-23",
+    "category": "vscode_term",
+    "subcategory": "高速行編集・マルチカーソル",
+    "keys": [
+      "F2"
+    ],
+    "title": "【VS Code】変数名・関数名を参照箇所も含めて一括リネーム（Rename Symbol）",
+    "desc": "単なる文字置換ではなく、別ファイルから呼ばれている箇所も含めて安全に変数名・関数名を一括変更します。",
+    "tip": "エクスプローラー・Excel・VS Codeすべて「F2＝名前の変更 / 編集」で統一されています！",
+    "level": 3,
+    "memory": "Windows共通の黄金ルール「F2＝名前変更」",
+    "funcGroup": "高速行編集・マルチカーソル",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130021
   },
   {
     "id": "vs-24",
@@ -6653,7 +6685,7 @@ const SHORTCUTS_DATA = [
     "memory": "F12 ＝ 定義元へダイブ（Alt + ← で帰還）",
     "funcGroup": "コマンド・ファイル検索・画面切替",
     "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210312
+    "sortRank": 2130121
   },
   {
     "id": "vs-04",
@@ -6670,7 +6702,75 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + sideBar（サイドバー）の「B」",
     "funcGroup": "コマンド・ファイル検索・画面切替",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 420266
+    "sortRank": 4120022
+  },
+  {
+    "id": "vs-16",
+    "category": "vscode_term",
+    "subcategory": "ターミナル・PowerShell操作",
+    "keys": [
+      "Ctrl",
+      "C"
+    ],
+    "title": "【ターミナル / PowerShell】実行中のコマンド・処理を強制中断",
+    "desc": "止まらなくなった処理やローカルサーバーの実行を即座にストップして入力待ちプロンプトに戻します。",
+    "tip": "ターミナル内で文字を選択しているときは「コピー」、未選択のときは「処理中断（Cancel）」として動きます。",
+    "level": 3,
+    "memory": "Ctrl + Cancel（処理を中断ストップ）の「C」",
+    "funcGroup": "ターミナル・PowerShell操作",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120032
+  },
+  {
+    "id": "vs-07",
+    "category": "vscode_term",
+    "subcategory": "高速行編集・マルチカーソル",
+    "keys": [
+      "Ctrl",
+      "D"
+    ],
+    "title": "【VS Code】同じ単語を次々に追加選択（マルチカーソル編集）",
+    "desc": "現在カーソルがある単語を選択し、もう一度 Ctrl+D を押すたびに下にある同じ単語を複数選択して同時書き換えできます。",
+    "tip": "ファイル内のすべての同じ単語を一気に同時選択したいときは Ctrl + Shift + L を押します！",
+    "level": 3,
+    "memory": "Ctrl + Duplicate selection（同じ単語を次々キャッチ）",
+    "funcGroup": "高速行編集・マルチカーソル",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120042
+  },
+  {
+    "id": "vs-14",
+    "category": "vscode_term",
+    "subcategory": "高速行編集・マルチカーソル",
+    "keys": [
+      "Ctrl",
+      "G"
+    ],
+    "title": "【VS Code】指定した「行番号」へダイレクトジャンプ",
+    "desc": "行番号を入力してEnterを押すだけで、何千行あるファイルの目的の行へも一瞬で移動します。",
+    "tip": "エラーメッセージで「142行目に問題あり」と出たときに1秒で飛べます。",
+    "level": 2,
+    "memory": "Ctrl + Go to line（行へ移動）の「G」",
+    "funcGroup": "高速行編集・マルチカーソル",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120072
+  },
+  {
+    "id": "vs-17",
+    "category": "vscode_term",
+    "subcategory": "ターミナル・PowerShell操作",
+    "keys": [
+      "Ctrl",
+      "L"
+    ],
+    "title": "【ターミナル / PowerShell】画面のログを消去して最上部へクリア",
+    "desc": "コマンド履歴を消さずに、画面いっぱいに溜まった出力ログを一瞬で綺麗にクリアします（cls / clear と同じ）。",
+    "tip": "文字を打たずに1キーで画面を真っさらにできる快感ショートカットです。",
+    "level": 3,
+    "memory": "Ctrl + cLear screen（画面クリア）の「L」",
+    "funcGroup": "ターミナル・PowerShell操作",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120122
   },
   {
     "id": "vs-02",
@@ -6687,7 +6787,24 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + P（Project file をパッと開く）",
     "funcGroup": "コマンド・ファイル検索・画面切替",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 420280
+    "sortRank": 4120162
+  },
+  {
+    "id": "vs-18",
+    "category": "vscode_term",
+    "subcategory": "ターミナル・PowerShell操作",
+    "keys": [
+      "Ctrl",
+      "R"
+    ],
+    "title": "【ターミナル / PowerShell】過去に実行したコマンド履歴をキーワード検索",
+    "desc": "昔打った長いコマンドの一部を入力するだけで、履歴から該当コマンドを呼び出してそのまま再実行できます。",
+    "tip": "↑キーを何十回も連打して過去のコマンドを探す手間がゼロになります！",
+    "level": 3,
+    "memory": "Ctrl + Reverse search（過去履歴の逆引き検索）の「R」",
+    "funcGroup": "ターミナル・PowerShell操作",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120182
   },
   {
     "id": "vs-06",
@@ -6704,7 +6821,41 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + ,（カンマ＝歯車設定を開く現代アプリの標準キー）",
     "funcGroup": "コマンド・ファイル検索・画面切替",
     "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 520444
+    "sortRank": 5150442
+  },
+  {
+    "id": "vs-11",
+    "category": "vscode_term",
+    "subcategory": "高速行編集・マルチカーソル",
+    "keys": [
+      "Ctrl",
+      "/"
+    ],
+    "title": "【VS Code】選択行のコメントアウト（無効化）/ 解除を切替",
+    "desc": "HTML・CSS・JavaScript・Pythonなど、そのファイルの言語に合わせたコメント記号（// や <!-- -->、#）を自動で付け外しします。",
+    "tip": "複数行まとめて一時的に無効化してテストしたいときに毎日使う必須キーです。",
+    "level": 3,
+    "memory": "コメント記号「//（スラッシュ）」そのもの！",
+    "funcGroup": "高速行編集・マルチカーソル",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5150472
+  },
+  {
+    "id": "vs-15",
+    "category": "vscode_term",
+    "subcategory": "ターミナル・PowerShell操作",
+    "keys": [
+      "Ctrl",
+      "@ (または `)"
+    ],
+    "title": "【VS Code】下部内蔵ターミナルの表示 / 非表示を切替",
+    "desc": "VS Code画面の下部にPowerShellやコマンドプロンプトのターミナルパネルを即座に開閉します。",
+    "tip": "新しいターミナルを追加起動する場合は Ctrl + Shift + @ です。",
+    "level": 3,
+    "memory": "キーボード左上の「`（バッククォート）」またはJIS配列の「@」",
+    "funcGroup": "ターミナル・PowerShell操作",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5150642
   },
   {
     "id": "vs-05",
@@ -6721,7 +6872,24 @@ const SHORTCUTS_DATA = [
     "memory": "「\\（バックスラッシュ・縦棒）」で画面を縦にスパッと割る",
     "funcGroup": "コマンド・ファイル検索・画面切替",
     "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 520492
+    "sortRank": 5150922
+  },
+  {
+    "id": "vs-08",
+    "category": "vscode_term",
+    "subcategory": "高速行編集・マルチカーソル",
+    "keys": [
+      "Alt",
+      "↑ / ↓"
+    ],
+    "title": "【VS Code】現在の1行（または選択行）をそのまま上下に移動",
+    "desc": "切り取り＆貼り付けを使わずに、カーソルのある行を上の行・下の行と丸ごと入れ替えます。",
+    "tip": "リストの順番入れ替えやコードの行移動が気持ちいいほど一瞬で終わります。",
+    "level": 3,
+    "memory": "Alt + 上下矢印で「行をつまんで上下に動かす」",
+    "funcGroup": "高速行編集・マルチカーソル",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7140202
   },
   {
     "id": "vs-21",
@@ -6739,7 +6907,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + Explorer（ファイル一覧）の「E」",
     "funcGroup": "コマンド・ファイル検索・画面切替",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830269
+    "sortRank": 8120053
   },
   {
     "id": "vs-03",
@@ -6757,7 +6925,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + F（ファイル内検索）＋ Shift（全ファイル横断に強化）",
     "funcGroup": "コマンド・ファイル検索・画面切替",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830270
+    "sortRank": 8120063
   },
   {
     "id": "vs-22",
@@ -6775,211 +6943,7 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + Git の「G」",
     "funcGroup": "コマンド・ファイル検索・画面切替",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830271
-  },
-  {
-    "id": "vs-01",
-    "category": "vscode_term",
-    "subcategory": "コマンド・ファイル検索・画面切替",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "P"
-    ],
-    "title": "【VS Code】コマンドパレットを開く（全機能の呼び出し）",
-    "desc": "VS Codeのあらゆる設定・拡張機能・整形コマンドをキーワードで検索して実行できる中枢パレットを開きます（F1でも可）。",
-    "tip": "ショートカットを忘れた機能も、ここを開いて日本語や英語で打てばすべて実行できます！",
-    "level": 3,
-    "memory": "Ctrl + Shift + Palette（コマンドパレット）の「P」",
-    "funcGroup": "コマンド・ファイル検索・画面切替",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830280
-  },
-  {
-    "id": "vs-20",
-    "category": "vscode_term",
-    "subcategory": "ターミナル・PowerShell操作",
-    "keys": [
-      "Tab"
-    ],
-    "title": "【ターミナル / PowerShell】ファイル名・フォルダ名・コマンドの自動補完",
-    "desc": "頭文字を数文字打って Tab を押すだけで、長いフォルダ名やファイル名をミスなく自動入力します。",
-    "tip": "候補が複数ある場合は Tab を押すたびに次の候補へ切り替わります（Shift+Tabで逆順）。",
-    "level": 3,
-    "memory": "Tab ＝ 入力補完の魔法キー",
-    "funcGroup": "ターミナル・PowerShell操作",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110484
-  },
-  {
-    "id": "vs-16",
-    "category": "vscode_term",
-    "subcategory": "ターミナル・PowerShell操作",
-    "keys": [
-      "Ctrl",
-      "C"
-    ],
-    "title": "【ターミナル / PowerShell】実行中のコマンド・処理を強制中断",
-    "desc": "止まらなくなった処理やローカルサーバーの実行を即座にストップして入力待ちプロンプトに戻します。",
-    "tip": "ターミナル内で文字を選択しているときは「コピー」、未選択のときは「処理中断（Cancel）」として動きます。",
-    "level": 3,
-    "memory": "Ctrl + Cancel（処理を中断ストップ）の「C」",
-    "funcGroup": "ターミナル・PowerShell操作",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 420267
-  },
-  {
-    "id": "vs-17",
-    "category": "vscode_term",
-    "subcategory": "ターミナル・PowerShell操作",
-    "keys": [
-      "Ctrl",
-      "L"
-    ],
-    "title": "【ターミナル / PowerShell】画面のログを消去して最上部へクリア",
-    "desc": "コマンド履歴を消さずに、画面いっぱいに溜まった出力ログを一瞬で綺麗にクリアします（cls / clear と同じ）。",
-    "tip": "文字を打たずに1キーで画面を真っさらにできる快感ショートカットです。",
-    "level": 3,
-    "memory": "Ctrl + cLear screen（画面クリア）の「L」",
-    "funcGroup": "ターミナル・PowerShell操作",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 420276
-  },
-  {
-    "id": "vs-18",
-    "category": "vscode_term",
-    "subcategory": "ターミナル・PowerShell操作",
-    "keys": [
-      "Ctrl",
-      "R"
-    ],
-    "title": "【ターミナル / PowerShell】過去に実行したコマンド履歴をキーワード検索",
-    "desc": "昔打った長いコマンドの一部を入力するだけで、履歴から該当コマンドを呼び出してそのまま再実行できます。",
-    "tip": "↑キーを何十回も連打して過去のコマンドを探す手間がゼロになります！",
-    "level": 3,
-    "memory": "Ctrl + Reverse search（過去履歴の逆引き検索）の「R」",
-    "funcGroup": "ターミナル・PowerShell操作",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 420282
-  },
-  {
-    "id": "vs-15",
-    "category": "vscode_term",
-    "subcategory": "ターミナル・PowerShell操作",
-    "keys": [
-      "Ctrl",
-      "@ (または `)"
-    ],
-    "title": "【VS Code】下部内蔵ターミナルの表示 / 非表示を切替",
-    "desc": "VS Code画面の下部にPowerShellやコマンドプロンプトのターミナルパネルを即座に開閉します。",
-    "tip": "新しいターミナルを追加起動する場合は Ctrl + Shift + @ です。",
-    "level": 3,
-    "memory": "キーボード左上の「`（バッククォート）」またはJIS配列の「@」",
-    "funcGroup": "ターミナル・PowerShell操作",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 520464
-  },
-  {
-    "id": "vs-19",
-    "category": "vscode_term",
-    "subcategory": "ターミナル・PowerShell操作",
-    "keys": [
-      "Alt",
-      "Shift",
-      "D"
-    ],
-    "title": "【Windows ターミナル】現在のタブ画面を2分割（ペイン分割）する",
-    "desc": "Windows Terminal で1つのタブの中を左右・上下に分割し、複数のシェルを同時に見ながら作業できます。",
-    "tip": "分割したペインを閉じるには Ctrl + Shift + W を押します。",
-    "level": 2,
-    "memory": "Alt + Shift + Duplicate pane / Divide（画面分割）の「D」",
-    "funcGroup": "ターミナル・PowerShell操作",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 930268
-  },
-  {
-    "id": "vs-23",
-    "category": "vscode_term",
-    "subcategory": "高速行編集・マルチカーソル",
-    "keys": [
-      "F2"
-    ],
-    "title": "【VS Code】変数名・関数名を参照箇所も含めて一括リネーム（Rename Symbol）",
-    "desc": "単なる文字置換ではなく、別ファイルから呼ばれている箇所も含めて安全に変数名・関数名を一括変更します。",
-    "tip": "エクスプローラー・Excel・VS Codeすべて「F2＝名前の変更 / 編集」で統一されています！",
-    "level": 3,
-    "memory": "Windows共通の黄金ルール「F2＝名前変更」",
-    "funcGroup": "高速行編集・マルチカーソル",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210302
-  },
-  {
-    "id": "vs-07",
-    "category": "vscode_term",
-    "subcategory": "高速行編集・マルチカーソル",
-    "keys": [
-      "Ctrl",
-      "D"
-    ],
-    "title": "【VS Code】同じ単語を次々に追加選択（マルチカーソル編集）",
-    "desc": "現在カーソルがある単語を選択し、もう一度 Ctrl+D を押すたびに下にある同じ単語を複数選択して同時書き換えできます。",
-    "tip": "ファイル内のすべての同じ単語を一気に同時選択したいときは Ctrl + Shift + L を押します！",
-    "level": 3,
-    "memory": "Ctrl + Duplicate selection（同じ単語を次々キャッチ）",
-    "funcGroup": "高速行編集・マルチカーソル",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 420268
-  },
-  {
-    "id": "vs-14",
-    "category": "vscode_term",
-    "subcategory": "高速行編集・マルチカーソル",
-    "keys": [
-      "Ctrl",
-      "G"
-    ],
-    "title": "【VS Code】指定した「行番号」へダイレクトジャンプ",
-    "desc": "行番号を入力してEnterを押すだけで、何千行あるファイルの目的の行へも一瞬で移動します。",
-    "tip": "エラーメッセージで「142行目に問題あり」と出たときに1秒で飛べます。",
-    "level": 2,
-    "memory": "Ctrl + Go to line（行へ移動）の「G」",
-    "funcGroup": "高速行編集・マルチカーソル",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 420271
-  },
-  {
-    "id": "vs-11",
-    "category": "vscode_term",
-    "subcategory": "高速行編集・マルチカーソル",
-    "keys": [
-      "Ctrl",
-      "/"
-    ],
-    "title": "【VS Code】選択行のコメントアウト（無効化）/ 解除を切替",
-    "desc": "HTML・CSS・JavaScript・Pythonなど、そのファイルの言語に合わせたコメント記号（// や <!-- -->、#）を自動で付け外しします。",
-    "tip": "複数行まとめて一時的に無効化してテストしたいときに毎日使う必須キーです。",
-    "level": 3,
-    "memory": "コメント記号「//（スラッシュ）」そのもの！",
-    "funcGroup": "高速行編集・マルチカーソル",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 520447
-  },
-  {
-    "id": "vs-08",
-    "category": "vscode_term",
-    "subcategory": "高速行編集・マルチカーソル",
-    "keys": [
-      "Alt",
-      "↑ / ↓"
-    ],
-    "title": "【VS Code】現在の1行（または選択行）をそのまま上下に移動",
-    "desc": "切り取り＆貼り付けを使わずに、カーソルのある行を上の行・下の行と丸ごと入れ替えます。",
-    "tip": "リストの順番入れ替えやコードの行移動が気持ちいいほど一瞬で終わります。",
-    "level": 3,
-    "memory": "Alt + 上下矢印で「行をつまんで上下に動かす」",
-    "funcGroup": "高速行編集・マルチカーソル",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 728993
+    "sortRank": 8120073
   },
   {
     "id": "vs-10",
@@ -6997,25 +6961,25 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + Kill line（行を消去）の「K」",
     "funcGroup": "高速行編集・マルチカーソル",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830275
+    "sortRank": 8120113
   },
   {
-    "id": "vs-13",
+    "id": "vs-01",
     "category": "vscode_term",
-    "subcategory": "高速行編集・マルチカーソル",
+    "subcategory": "コマンド・ファイル検索・画面切替",
     "keys": [
+      "Ctrl",
       "Shift",
-      "Alt",
-      "F"
+      "P"
     ],
-    "title": "【VS Code】ファイル全体のインデント・コードを自動整形（Format）",
-    "desc": "バラバラになったインデントやスペース・改行を、言語ルールに沿って一瞬で美しく整えます。",
-    "tip": "保存前に1回押すだけで誰が見ても読みやすい綺麗なファイルになります。",
+    "title": "【VS Code】コマンドパレットを開く（全機能の呼び出し）",
+    "desc": "VS Codeのあらゆる設定・拡張機能・整形コマンドをキーワードで検索して実行できる中枢パレットを開きます（F1でも可）。",
+    "tip": "ショートカットを忘れた機能も、ここを開いて日本語や英語で打てばすべて実行できます！",
     "level": 3,
-    "memory": "Shift + Alt + Format（コード整形）の「F」",
-    "funcGroup": "高速行編集・マルチカーソル",
-    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 930270
+    "memory": "Ctrl + Shift + Palette（コマンドパレット）の「P」",
+    "funcGroup": "コマンド・ファイル検索・画面切替",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120163
   },
   {
     "id": "vs-12",
@@ -7033,7 +6997,43 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Alt + 上下矢印でカーソルを縦に分身させる",
     "funcGroup": "高速行編集・マルチカーソル",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 938993
+    "sortRank": 9140203
+  },
+  {
+    "id": "vs-19",
+    "category": "vscode_term",
+    "subcategory": "ターミナル・PowerShell操作",
+    "keys": [
+      "Alt",
+      "Shift",
+      "D"
+    ],
+    "title": "【Windows ターミナル】現在のタブ画面を2分割（ペイン分割）する",
+    "desc": "Windows Terminal で1つのタブの中を左右・上下に分割し、複数のシェルを同時に見ながら作業できます。",
+    "tip": "分割したペインを閉じるには Ctrl + Shift + W を押します。",
+    "level": 2,
+    "memory": "Alt + Shift + Duplicate pane / Divide（画面分割）の「D」",
+    "funcGroup": "ターミナル・PowerShell操作",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9220043
+  },
+  {
+    "id": "vs-13",
+    "category": "vscode_term",
+    "subcategory": "高速行編集・マルチカーソル",
+    "keys": [
+      "Shift",
+      "Alt",
+      "F"
+    ],
+    "title": "【VS Code】ファイル全体のインデント・コードを自動整形（Format）",
+    "desc": "バラバラになったインデントやスペース・改行を、言語ルールに沿って一瞬で美しく整えます。",
+    "tip": "保存前に1回押すだけで誰が見ても読みやすい綺麗なファイルになります。",
+    "level": 3,
+    "memory": "Shift + Alt + Format（コード整形）の「F」",
+    "funcGroup": "高速行編集・マルチカーソル",
+    "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
+    "sortRank": 9220063
   },
   {
     "id": "vs-09",
@@ -7051,140 +7051,23 @@ const SHORTCUTS_DATA = [
     "memory": "Alt + 矢印（行移動）に Shift（強化＝複製増殖）をプラス",
     "funcGroup": "高速行編集・マルチカーソル",
     "keyGroup": "⑨ Ctrl ＋ Alt / Alt ＋ Shift ＋ キー",
-    "sortRank": 938995
+    "sortRank": 9240213
   },
   {
-    "id": "pdf-9",
+    "id": "pdf-21",
     "category": "pdf",
-    "subcategory": "ページ移動・ジャンプ・しおり",
+    "subcategory": "表示倍率・回転・画面モード",
     "keys": [
-      "Space（長押し）"
+      "H"
     ],
-    "title": "押している間だけ「手のひらツール」に切り替え（ドラッグで画面移動）",
-    "desc": "テキスト選択モード中でも、スペースキーを押している間はマウスドラッグでページを上下左右に掴んで動かせます。",
-    "tip": "拡大した図面や表を見回すときにツールを持ち替える必要がありません。",
+    "title": "「手のひらツール（ドラッグで画面移動）」に切替",
+    "desc": "PDFを拡大表示しているときに、マウスドラッグで紙面を上下左右に動かせる手のひらツールにします。",
+    "tip": "文字入力中でなければ「H」単体で切り替わります。また Space キーを押している間だけ一時的に手のひらツールにするワザも超便利です！",
     "level": 3,
-    "memory": "面積が一番広い「スペースバー」を押しっぱなしにすると、画面を掴んで動かせる「手のひら」に変身！",
-    "funcGroup": "ページ移動・ジャンプ・しおり",
+    "memory": "Hand tool（手のひら）の「H」",
+    "funcGroup": "表示倍率・回転・画面モード",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110404
-  },
-  {
-    "id": "pdf-13",
-    "category": "pdf",
-    "subcategory": "ページ移動・ジャンプ・しおり",
-    "keys": [
-      "Home / End"
-    ],
-    "title": "PDFの「最初のページ（Home）」/「最後のページ（End）」へ一瞬で移動",
-    "desc": "何百ページあるPDF資料でも、1ページ目（表紙）または最終ページへ1秒でジャンプします。",
-    "tip": "目次を見に1ページ目へ戻りたい時は Home キー単体押しが最速です！",
-    "memory": "Home（1ページ目のスタート地点）、End（最終ページのゴール地点）",
-    "level": 3,
-    "funcGroup": "ページ移動・ジャンプ・しおり",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110414
-  },
-  {
-    "id": "pdf-14",
-    "category": "pdf",
-    "subcategory": "ページ移動・ジャンプ・しおり",
-    "keys": [
-      "PageUp / PageDown"
-    ],
-    "title": "1画面分上へスクロール（PageUp）/ 1画面分下へスクロール（PageDown）",
-    "desc": "PDFを読み進めるとき、1画面分ずつ上下にスクロール移動します（Space / Shift+Space でも同じ）。",
-    "tip": "Ctrl + PageDown / PageUp にすると、途中のスクロールを飛ばして「次のページの先頭」へきっちり移動します。",
-    "memory": "PageUp（ページを上がる）、PageDown（ページを下りる）の名前そのまま！",
-    "level": 3,
-    "funcGroup": "ページ移動・ジャンプ・しおり",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110418
-  },
-  {
-    "id": "pdf-8",
-    "category": "pdf",
-    "subcategory": "ページ移動・ジャンプ・しおり",
-    "keys": [
-      "F4"
-    ],
-    "title": "左側のナビゲーションパネル（しおり・ページサムネイル）を開閉",
-    "desc": "PDFの「しおり（目次ツリー）」やページ一覧サムネイルを表示する左ペインを開いたり閉じたりします。",
-    "tip": "Acrobat（有料版）では Ctrl + B を押すことで、現在のページに新しい「しおり」を追加できます。",
-    "level": 3,
-    "memory": "「F4（4＝しおりの『し』！）」と覚えれば一発！左側のしおりパネルを開閉",
-    "funcGroup": "ページ移動・ジャンプ・しおり",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210004
-  },
-  {
-    "id": "pdf-18",
-    "category": "pdf",
-    "subcategory": "ページ移動・ジャンプ・しおり",
-    "keys": [
-      "Ctrl",
-      "B"
-    ],
-    "title": "現在見ているページに新しい「しおり（ブックマーク）」を追加（Acrobat）",
-    "desc": "Acrobatでしおり（目次項目）を新しく作成します。テキストを選択してから押すと、その文字列がそのまましおり名になります！",
-    "tip": "章タイトルを選択 → Ctrl + B を繰り返すだけで、あっという間に目次付きのPDFが作れます！",
-    "memory": "Bookmark（しおり・ブックマーク）の頭文字「B」",
-    "level": 2,
-    "funcGroup": "ページ移動・ジャンプ・しおり",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410266
-  },
-  {
-    "id": "pdf-20",
-    "category": "pdf",
-    "subcategory": "ページ移動・ジャンプ・しおり",
-    "keys": [
-      "Ctrl",
-      "PageDown / PageUp"
-    ],
-    "title": "次のページの先頭へ移動（PageDown）/ 前のページの先頭へ移動（PageUp）",
-    "desc": "スクロール位置に関わらず、きっちり1ページ単位で次/前のページの最上部へ切り替えます。",
-    "tip": "横長スライド資料のPDFを1枚ずつめくって読むときに最適です。",
-    "memory": "PageDown/Up に Ctrl を添えて「きっちり1ページ単位でめくる」",
-    "level": 2,
-    "funcGroup": "ページ移動・ジャンプ・しおり",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510418
-  },
-  {
-    "id": "pdf-7",
-    "category": "pdf",
-    "subcategory": "ページ移動・ジャンプ・しおり",
-    "keys": [
-      "Alt",
-      "← / →"
-    ],
-    "title": "直前に見ていたページ位置へ「戻る（Alt+←）」/「進む（Alt+→）」",
-    "desc": "PDF内の目次リンクをクリックして別ページへ飛んだあと、元のページ位置へワンタッチで戻ります！",
-    "tip": "「目次（3ページ）→ 本文（85ページ）→ また目次へ戻る」という往復がストレスゼロになります。",
-    "level": 3,
-    "memory": "Webブラウザの「戻る/進む」と完全共通の「Alt + ← / →」で、飛ぶ前のページ位置へすぐ戻れる！",
-    "funcGroup": "ページ移動・ジャンプ・しおり",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720426
-  },
-  {
-    "id": "pdf-6",
-    "category": "pdf",
-    "subcategory": "ページ移動・ジャンプ・しおり",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "N"
-    ],
-    "title": "指定したページ番号へ直接ジャンプ移動",
-    "desc": "ページ番号入力ボックスを開き、何百ページあるPDFでも目的のページへ1秒で移動します。",
-    "tip": "先頭ページへは Home、最終ページへは End キーで一瞬で飛べます。",
-    "level": 3,
-    "memory": "Page Number（ページ番号）の頭文字「N」に Ctrl + Shift で指定ページへジャンプ！",
-    "funcGroup": "ページ移動・ジャンプ・しおり",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810278
+    "sortRank": 1120081
   },
   {
     "id": "pdf-23",
@@ -7200,7 +7083,7 @@ const SHORTCUTS_DATA = [
     "memory": "Sticky note（付箋メモ）の「S」",
     "funcGroup": "検索・ハイライト注釈・文書情報",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110283
+    "sortRank": 1120191
   },
   {
     "id": "pdf-22",
@@ -7216,7 +7099,55 @@ const SHORTCUTS_DATA = [
     "memory": "矢印ポインターの先端の形「V」",
     "funcGroup": "検索・ハイライト注釈・文書情報",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110286
+    "sortRank": 1120221
+  },
+  {
+    "id": "pdf-9",
+    "category": "pdf",
+    "subcategory": "ページ移動・ジャンプ・しおり",
+    "keys": [
+      "Space（長押し）"
+    ],
+    "title": "押している間だけ「手のひらツール」に切り替え（ドラッグで画面移動）",
+    "desc": "テキスト選択モード中でも、スペースキーを押している間はマウスドラッグでページを上下左右に掴んで動かせます。",
+    "tip": "拡大した図面や表を見回すときにツールを持ち替える必要がありません。",
+    "level": 3,
+    "memory": "面積が一番広い「スペースバー」を押しっぱなしにすると、画面を掴んで動かせる「手のひら」に変身！",
+    "funcGroup": "ページ移動・ジャンプ・しおり",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1140031
+  },
+  {
+    "id": "pdf-13",
+    "category": "pdf",
+    "subcategory": "ページ移動・ジャンプ・しおり",
+    "keys": [
+      "Home / End"
+    ],
+    "title": "PDFの「最初のページ（Home）」/「最後のページ（End）」へ一瞬で移動",
+    "desc": "何百ページあるPDF資料でも、1ページ目（表紙）または最終ページへ1秒でジャンプします。",
+    "tip": "目次を見に1ページ目へ戻りたい時は Home キー単体押しが最速です！",
+    "memory": "Home（1ページ目のスタート地点）、End（最終ページのゴール地点）",
+    "level": 3,
+    "funcGroup": "ページ移動・ジャンプ・しおり",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1140081
+  },
+  {
+    "id": "pdf-14",
+    "category": "pdf",
+    "subcategory": "ページ移動・ジャンプ・しおり",
+    "keys": [
+      "PageUp / PageDown"
+    ],
+    "title": "1画面分上へスクロール（PageUp）/ 1画面分下へスクロール（PageDown）",
+    "desc": "PDFを読み進めるとき、1画面分ずつ上下にスクロール移動します（Space / Shift+Space でも同じ）。",
+    "tip": "Ctrl + PageDown / PageUp にすると、途中のスクロールを飛ばして「次のページの先頭」へきっちり移動します。",
+    "memory": "PageUp（ページを上がる）、PageDown（ページを下りる）の名前そのまま！",
+    "level": 3,
+    "funcGroup": "ページ移動・ジャンプ・しおり",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1140101
   },
   {
     "id": "pdf-15",
@@ -7232,7 +7163,106 @@ const SHORTCUTS_DATA = [
     "level": 2,
     "funcGroup": "検索・ハイライト注釈・文書情報",
     "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210003
+    "sortRank": 2130031
+  },
+  {
+    "id": "pdf-8",
+    "category": "pdf",
+    "subcategory": "ページ移動・ジャンプ・しおり",
+    "keys": [
+      "F4"
+    ],
+    "title": "左側のナビゲーションパネル（しおり・ページサムネイル）を開閉",
+    "desc": "PDFの「しおり（目次ツリー）」やページ一覧サムネイルを表示する左ペインを開いたり閉じたりします。",
+    "tip": "Acrobat（有料版）では Ctrl + B を押すことで、現在のページに新しい「しおり」を追加できます。",
+    "level": 3,
+    "memory": "「F4（4＝しおりの『し』！）」と覚えれば一発！左側のしおりパネルを開閉",
+    "funcGroup": "ページ移動・ジャンプ・しおり",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130041
+  },
+  {
+    "id": "pdf-16",
+    "category": "pdf",
+    "subcategory": "表示倍率・回転・画面モード",
+    "keys": [
+      "F8 / F9"
+    ],
+    "title": "ツールバーの表示切替（F8）/ メニューバーの表示切替（F9）",
+    "desc": "上部のアイコンバー（F8）やメニューバー（F9）を隠して、PDFの表示領域を上下に広く確保します。",
+    "tip": "「Acrobatの上のメニューバーが消えてしまった！」という時は F9 を押せば元通り復活します！",
+    "memory": "F8（バー＝8でツールバー開閉）、F9（メニューバー開閉）",
+    "level": 2,
+    "funcGroup": "表示倍率・回転・画面モード",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130081
+  },
+  {
+    "id": "pdf-24",
+    "category": "pdf",
+    "subcategory": "表示倍率・回転・画面モード",
+    "keys": [
+      "F9"
+    ],
+    "title": "上部メニューバーの表示 / 非表示を切替",
+    "desc": "誤って消えてしまったメニューバーを再表示したり、隠して表示領域を広げたりします。",
+    "tip": "「Acrobatのメニューバーが消えた！」というトラブルは F9 一発で直ります。",
+    "level": 2,
+    "memory": "F9 でメニューバーを復帰",
+    "funcGroup": "表示倍率・回転・画面モード",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130091
+  },
+  {
+    "id": "pdf-1",
+    "category": "pdf",
+    "subcategory": "表示倍率・回転・画面モード",
+    "keys": [
+      "Ctrl",
+      "0 (ゼロ)"
+    ],
+    "title": "「1ページ全体」がウィンドウに収まる倍率に合わせる",
+    "desc": "PDFの1ページ全体が画面内にピッタリ見えるように表示倍率を自動調整します。",
+    "tip": "スライド資料型のPDFや図面全体を見渡したい時に一瞬でフィットさせられます。",
+    "level": 3,
+    "memory": "「0（ゼロ＝丸ごと1ページ全体）」を画面枠にピッタリ収める「Ctrl + 0」",
+    "funcGroup": "表示倍率・回転・画面モード",
+    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
+    "sortRank": 3110002
+  },
+  {
+    "id": "pdf-17",
+    "category": "pdf",
+    "subcategory": "表示倍率・回転・画面モード",
+    "keys": [
+      "Ctrl",
+      "1"
+    ],
+    "title": "PDFを「実際のサイズ（100%原寸大）」倍率で表示",
+    "desc": "縮小や拡大されていた表示倍率を、100%の等倍（原寸サイズ）に一発で合わせます。",
+    "tip": "Adobe PDFでは「Ctrl+0＝全体表示」「Ctrl+1＝100%等倍」「Ctrl+2＝幅に合わせる」の0・1・2トリオが超重要です！",
+    "memory": "「1」＝「100%（原寸大1倍）」の Ctrl + 1！（0＝全体、2＝幅に合わせる）",
+    "level": 3,
+    "funcGroup": "表示倍率・回転・画面モード",
+    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
+    "sortRank": 3110012
+  },
+  {
+    "id": "pdf-2",
+    "category": "pdf",
+    "subcategory": "表示倍率・回転・画面モード",
+    "keys": [
+      "Ctrl",
+      "2"
+    ],
+    "title": "ページの「横幅」に合わせて拡大表示する",
+    "desc": "ウィンドウの左右幅いっぱいにページが広がるよう倍率を自動調整します。",
+    "tip": "A4縦の契約書や論文PDFの文字を大きく読みやすく表示する時の定番ショートカットです（Ctrl+1で100%等倍）。",
+    "level": 3,
+    "memory": "1（100%等倍）の次の「Ctrl + 2」で、左右の「2つの端（横幅いっぱい）」に合わせる！",
+    "funcGroup": "表示倍率・回転・画面モード",
+    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
+    "sortRank": 3110022
   },
   {
     "id": "pdf-11",
@@ -7249,7 +7279,24 @@ const SHORTCUTS_DATA = [
     "memory": "Sticky note（付箋ノート）は「6（ロク＝録・記録メモ）」の「Ctrl + 6」（単一キー設定なら S）",
     "funcGroup": "検索・ハイライト注釈・文書情報",
     "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310106
+    "sortRank": 3110062
+  },
+  {
+    "id": "pdf-18",
+    "category": "pdf",
+    "subcategory": "ページ移動・ジャンプ・しおり",
+    "keys": [
+      "Ctrl",
+      "B"
+    ],
+    "title": "現在見ているページに新しい「しおり（ブックマーク）」を追加（Acrobat）",
+    "desc": "Acrobatでしおり（目次項目）を新しく作成します。テキストを選択してから押すと、その文字列がそのまましおり名になります！",
+    "tip": "章タイトルを選択 → Ctrl + B を繰り返すだけで、あっという間に目次付きのPDFが作れます！",
+    "memory": "Bookmark（しおり・ブックマーク）の頭文字「B」",
+    "level": 2,
+    "funcGroup": "ページ移動・ジャンプ・しおり",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120022
   },
   {
     "id": "pdf-12",
@@ -7266,7 +7313,109 @@ const SHORTCUTS_DATA = [
     "memory": "Document properties（文書のプロパティ・フォント情報）の頭文字「D」",
     "funcGroup": "検索・ハイライト注釈・文書情報",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410268
+    "sortRank": 4120042
+  },
+  {
+    "id": "pdf-5",
+    "category": "pdf",
+    "subcategory": "表示倍率・回転・画面モード",
+    "keys": [
+      "Ctrl",
+      "H"
+    ],
+    "title": "閲覧モード（ツールバーを隠して画面を広く使う）/ 自動スクロール",
+    "desc": "上部のリボンや右側のツールパネルを隠し、PDF本文だけを広く表示します（Ctrl+Shift+Hで自動スクロール開始）。",
+    "tip": "F8（ツールバー表示切替）や F9（メニューバー表示切替）でも画面をスッキリ広くできます。",
+    "level": 2,
+    "memory": "Hide toolbars（ツールバーを隠して読書モードにする）の頭文字「H」",
+    "funcGroup": "表示倍率・回転・画面モード",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120082
+  },
+  {
+    "id": "pdf-25",
+    "category": "pdf",
+    "subcategory": "表示倍率・回転・画面モード",
+    "keys": [
+      "Ctrl",
+      "K"
+    ],
+    "title": "Acrobat / Reader の「環境設定」ダイアログを開く",
+    "desc": "初期表示倍率や単位、セキュリティ、アクセシビリティなどの詳細設定画面を一発で開きます。",
+    "tip": "上の「単一キーのショートカット（HやV）」が効かない場合、Ctrl+K ＞ 一般 ＞「ツール選択に単一キーのショートカットを使用」にチェックを入れると使えるようになります！",
+    "level": 2,
+    "memory": "Adobe製品（Acrobat / Photoshop / Illustrator）共通の環境設定キー「Ctrl + K」",
+    "funcGroup": "表示倍率・回転・画面モード",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120112
+  },
+  {
+    "id": "pdf-4",
+    "category": "pdf",
+    "subcategory": "表示倍率・回転・画面モード",
+    "keys": [
+      "Ctrl",
+      "L"
+    ],
+    "title": "フルスクリーン（全画面プレゼン）モードを開始 / 終了",
+    "desc": "メニューや枠をすべて消してPDFを全画面表示します（Escで終了）。",
+    "tip": "PDF化したスライドでそのままプレゼン発表するときに使います。",
+    "level": 2,
+    "memory": "Large screen（大画面フルスクリーン）の「L」",
+    "funcGroup": "表示倍率・回転・画面モード",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120122
+  },
+  {
+    "id": "pdf-20",
+    "category": "pdf",
+    "subcategory": "ページ移動・ジャンプ・しおり",
+    "keys": [
+      "Ctrl",
+      "PageDown / PageUp"
+    ],
+    "title": "次のページの先頭へ移動（PageDown）/ 前のページの先頭へ移動（PageUp）",
+    "desc": "スクロール位置に関わらず、きっちり1ページ単位で次/前のページの最上部へ切り替えます。",
+    "tip": "横長スライド資料のPDFを1枚ずつめくって読むときに最適です。",
+    "memory": "PageDown/Up に Ctrl を添えて「きっちり1ページ単位でめくる」",
+    "level": 2,
+    "funcGroup": "ページ移動・ジャンプ・しおり",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140112
+  },
+  {
+    "id": "pdf-19",
+    "category": "pdf",
+    "subcategory": "表示倍率・回転・画面モード",
+    "keys": [
+      "Ctrl",
+      "+ / -"
+    ],
+    "title": "PDFの表示倍率を拡大（ズームイン）/ 縮小（ズームアウト）",
+    "desc": "PDFのページ表示を大きく拡大（+）または小さく縮小（-）します（Ctrl + マウスホイールでも可能）。",
+    "tip": "細かい図面や小さな注釈文字を読むときに使います。",
+    "memory": "ブラウザと完全共通！「＋」で拡大、「－」で縮小",
+    "level": 3,
+    "funcGroup": "表示倍率・回転・画面モード",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5150432
+  },
+  {
+    "id": "pdf-7",
+    "category": "pdf",
+    "subcategory": "ページ移動・ジャンプ・しおり",
+    "keys": [
+      "Alt",
+      "← / →"
+    ],
+    "title": "直前に見ていたページ位置へ「戻る（Alt+←）」/「進む（Alt+→）」",
+    "desc": "PDF内の目次リンクをクリックして別ページへ飛んだあと、元のページ位置へワンタッチで戻ります！",
+    "tip": "「目次（3ページ）→ 本文（85ページ）→ また目次へ戻る」という往復がストレスゼロになります。",
+    "level": 3,
+    "memory": "Webブラウザの「戻る/進む」と完全共通の「Alt + ← / →」で、飛ぶ前のページ位置へすぐ戻れる！",
+    "funcGroup": "ページ移動・ジャンプ・しおり",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7240222
   },
   {
     "id": "pdf-10",
@@ -7284,174 +7433,25 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl+F（通常検索）に「Shift（機能強化）」を足して、複数PDFも一括で探せる「高度な検索」を起動！",
     "funcGroup": "検索・ハイライト注釈・文書情報",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810270
+    "sortRank": 8120063
   },
   {
-    "id": "pdf-21",
+    "id": "pdf-6",
     "category": "pdf",
-    "subcategory": "表示倍率・回転・画面モード",
+    "subcategory": "ページ移動・ジャンプ・しおり",
     "keys": [
-      "H"
+      "Ctrl",
+      "Shift",
+      "N"
     ],
-    "title": "「手のひらツール（ドラッグで画面移動）」に切替",
-    "desc": "PDFを拡大表示しているときに、マウスドラッグで紙面を上下左右に動かせる手のひらツールにします。",
-    "tip": "文字入力中でなければ「H」単体で切り替わります。また Space キーを押している間だけ一時的に手のひらツールにするワザも超便利です！",
+    "title": "指定したページ番号へ直接ジャンプ移動",
+    "desc": "ページ番号入力ボックスを開き、何百ページあるPDFでも目的のページへ1秒で移動します。",
+    "tip": "先頭ページへは Home、最終ページへは End キーで一瞬で飛べます。",
     "level": 3,
-    "memory": "Hand tool（手のひら）の「H」",
-    "funcGroup": "表示倍率・回転・画面モード",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110272
-  },
-  {
-    "id": "pdf-16",
-    "category": "pdf",
-    "subcategory": "表示倍率・回転・画面モード",
-    "keys": [
-      "F8 / F9"
-    ],
-    "title": "ツールバーの表示切替（F8）/ メニューバーの表示切替（F9）",
-    "desc": "上部のアイコンバー（F8）やメニューバー（F9）を隠して、PDFの表示領域を上下に広く確保します。",
-    "tip": "「Acrobatの上のメニューバーが消えてしまった！」という時は F9 を押せば元通り復活します！",
-    "memory": "F8（バー＝8でツールバー開閉）、F9（メニューバー開閉）",
-    "level": 2,
-    "funcGroup": "表示倍率・回転・画面モード",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210008
-  },
-  {
-    "id": "pdf-24",
-    "category": "pdf",
-    "subcategory": "表示倍率・回転・画面モード",
-    "keys": [
-      "F9"
-    ],
-    "title": "上部メニューバーの表示 / 非表示を切替",
-    "desc": "誤って消えてしまったメニューバーを再表示したり、隠して表示領域を広げたりします。",
-    "tip": "「Acrobatのメニューバーが消えた！」というトラブルは F9 一発で直ります。",
-    "level": 2,
-    "memory": "F9 でメニューバーを復帰",
-    "funcGroup": "表示倍率・回転・画面モード",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210309
-  },
-  {
-    "id": "pdf-1",
-    "category": "pdf",
-    "subcategory": "表示倍率・回転・画面モード",
-    "keys": [
-      "Ctrl",
-      "0 (ゼロ)"
-    ],
-    "title": "「1ページ全体」がウィンドウに収まる倍率に合わせる",
-    "desc": "PDFの1ページ全体が画面内にピッタリ見えるように表示倍率を自動調整します。",
-    "tip": "スライド資料型のPDFや図面全体を見渡したい時に一瞬でフィットさせられます。",
-    "level": 3,
-    "memory": "「0（ゼロ＝丸ごと1ページ全体）」を画面枠にピッタリ収める「Ctrl + 0」",
-    "funcGroup": "表示倍率・回転・画面モード",
-    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310100
-  },
-  {
-    "id": "pdf-17",
-    "category": "pdf",
-    "subcategory": "表示倍率・回転・画面モード",
-    "keys": [
-      "Ctrl",
-      "1"
-    ],
-    "title": "PDFを「実際のサイズ（100%原寸大）」倍率で表示",
-    "desc": "縮小や拡大されていた表示倍率を、100%の等倍（原寸サイズ）に一発で合わせます。",
-    "tip": "Adobe PDFでは「Ctrl+0＝全体表示」「Ctrl+1＝100%等倍」「Ctrl+2＝幅に合わせる」の0・1・2トリオが超重要です！",
-    "memory": "「1」＝「100%（原寸大1倍）」の Ctrl + 1！（0＝全体、2＝幅に合わせる）",
-    "level": 3,
-    "funcGroup": "表示倍率・回転・画面モード",
-    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310101
-  },
-  {
-    "id": "pdf-2",
-    "category": "pdf",
-    "subcategory": "表示倍率・回転・画面モード",
-    "keys": [
-      "Ctrl",
-      "2"
-    ],
-    "title": "ページの「横幅」に合わせて拡大表示する",
-    "desc": "ウィンドウの左右幅いっぱいにページが広がるよう倍率を自動調整します。",
-    "tip": "A4縦の契約書や論文PDFの文字を大きく読みやすく表示する時の定番ショートカットです（Ctrl+1で100%等倍）。",
-    "level": 3,
-    "memory": "1（100%等倍）の次の「Ctrl + 2」で、左右の「2つの端（横幅いっぱい）」に合わせる！",
-    "funcGroup": "表示倍率・回転・画面モード",
-    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310102
-  },
-  {
-    "id": "pdf-5",
-    "category": "pdf",
-    "subcategory": "表示倍率・回転・画面モード",
-    "keys": [
-      "Ctrl",
-      "H"
-    ],
-    "title": "閲覧モード（ツールバーを隠して画面を広く使う）/ 自動スクロール",
-    "desc": "上部のリボンや右側のツールパネルを隠し、PDF本文だけを広く表示します（Ctrl+Shift+Hで自動スクロール開始）。",
-    "tip": "F8（ツールバー表示切替）や F9（メニューバー表示切替）でも画面をスッキリ広くできます。",
-    "level": 2,
-    "memory": "Hide toolbars（ツールバーを隠して読書モードにする）の頭文字「H」",
-    "funcGroup": "表示倍率・回転・画面モード",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410272
-  },
-  {
-    "id": "pdf-4",
-    "category": "pdf",
-    "subcategory": "表示倍率・回転・画面モード",
-    "keys": [
-      "Ctrl",
-      "L"
-    ],
-    "title": "フルスクリーン（全画面プレゼン）モードを開始 / 終了",
-    "desc": "メニューや枠をすべて消してPDFを全画面表示します（Escで終了）。",
-    "tip": "PDF化したスライドでそのままプレゼン発表するときに使います。",
-    "level": 2,
-    "memory": "Large screen（大画面フルスクリーン）の「L」",
-    "funcGroup": "表示倍率・回転・画面モード",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410276
-  },
-  {
-    "id": "pdf-25",
-    "category": "pdf",
-    "subcategory": "表示倍率・回転・画面モード",
-    "keys": [
-      "Ctrl",
-      "K"
-    ],
-    "title": "Acrobat / Reader の「環境設定」ダイアログを開く",
-    "desc": "初期表示倍率や単位、セキュリティ、アクセシビリティなどの詳細設定画面を一発で開きます。",
-    "tip": "上の「単一キーのショートカット（HやV）」が効かない場合、Ctrl+K ＞ 一般 ＞「ツール選択に単一キーのショートカットを使用」にチェックを入れると使えるようになります！",
-    "level": 2,
-    "memory": "Adobe製品（Acrobat / Photoshop / Illustrator）共通の環境設定キー「Ctrl + K」",
-    "funcGroup": "表示倍率・回転・画面モード",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 420275
-  },
-  {
-    "id": "pdf-19",
-    "category": "pdf",
-    "subcategory": "表示倍率・回転・画面モード",
-    "keys": [
-      "Ctrl",
-      "+ / -"
-    ],
-    "title": "PDFの表示倍率を拡大（ズームイン）/ 縮小（ズームアウト）",
-    "desc": "PDFのページ表示を大きく拡大（+）または小さく縮小（-）します（Ctrl + マウスホイールでも可能）。",
-    "tip": "細かい図面や小さな注釈文字を読むときに使います。",
-    "memory": "ブラウザと完全共通！「＋」で拡大、「－」で縮小",
-    "level": 3,
-    "funcGroup": "表示倍率・回転・画面モード",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510543
+    "memory": "Page Number（ページ番号）の頭文字「N」に Ctrl + Shift で指定ページへジャンプ！",
+    "funcGroup": "ページ移動・ジャンプ・しおり",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120143
   },
   {
     "id": "pdf-3",
@@ -7469,24 +7469,352 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + 「＋（プラス方向＝時計回りに90度回転）」「－（反時計回りに回転）」",
     "funcGroup": "表示倍率・回転・画面モード",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810543
+    "sortRank": 8150433
   },
   {
-    "id": "br-6",
+    "id": "br-47",
     "category": "browser",
-    "subcategory": "タブ・ウィンドウ管理",
+    "subcategory": "ページ操作・表示・ズーム",
+    "keys": [
+      "F / M"
+    ],
+    "title": "YouTube等の動画を「全画面(F) / ミュート消音(M)」切替",
+    "desc": "「F」キーで動画のフルスクリーン表示切替、「M」キーで即座に音声ミュート/解除を行います。",
+    "tip": "急な来客や電話が来たときも「M」キー1つで動画の音を瞬時に消せます。",
+    "level": 3,
+    "memory": "Fullscreen の「F」、Mute（消音）の「M」",
+    "funcGroup": "ページ操作・表示・ズーム",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1120061
+  },
+  {
+    "id": "br-46",
+    "category": "browser",
+    "subcategory": "ページ操作・表示・ズーム",
+    "keys": [
+      "J / L"
+    ],
+    "title": "YouTube等の動画を「10秒戻す(J) / 10秒進める(L)」",
+    "desc": "キーボードの「J」で10秒巻き戻し、「L」で10秒早送りします。矢印キー（← / →）は5秒単位の移動になります。",
+    "tip": "学習動画やセミナーアーカイブの視聴効率が倍増します。",
+    "level": 3,
+    "memory": "K（停止）の左隣「J＝10秒戻る」、右隣「L＝10秒進む」",
+    "funcGroup": "ページ操作・表示・ズーム",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1120101
+  },
+  {
+    "id": "br-45",
+    "category": "browser",
+    "subcategory": "ページ操作・表示・ズーム",
+    "keys": [
+      "K"
+    ],
+    "title": "YouTube等の動画を「再生 / 一時停止」する",
+    "desc": "動画プレイヤーにフォーカスしていなくても、ページ上のどこでも「K」キーで確実に再生・一時停止できます。",
+    "tip": "Spaceキーだと画面が下にスクロールしてしまうことがあるため、動画操作は「K」が確実でおすすめです！",
+    "level": 3,
+    "memory": "動画操作のホームポジション J（戻す）・K（停止/再生）・L（進める）の中心「K」",
+    "funcGroup": "ページ操作・表示・ズーム",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1120111
+  },
+  {
+    "id": "br-33",
+    "category": "browser",
+    "subcategory": "ナビゲーション・アドレスバー・検索",
+    "keys": [
+      "Esc"
+    ],
+    "title": "ページの読み込みを途中で停止する / 検索バーや全画面を閉じる",
+    "desc": "重いWebページの読み込みをキャンセルして止めたり、ページ内検索バー（Ctrl+F）を閉じたりします。",
+    "tip": "通信が遅くて固まりかけているページを止めたい時は Esc です。",
+    "memory": "Escape（読み込みやポップアップを中断する）の「Esc」",
+    "level": 2,
+    "funcGroup": "ナビゲーション・アドレスバー・検索",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1140011
+  },
+  {
+    "id": "br-19",
+    "category": "browser",
+    "subcategory": "ページ操作・表示・ズーム",
+    "keys": [
+      "Space"
+    ],
+    "title": "1画面分下へスクロール（Shift+Space で1画面上へ）",
+    "desc": "Webページを読み進めるとき、ちょうど1画面分ずつ下へスムーズにスクロールします。",
+    "tip": "Shift + Space を押すと1画面分上へ戻ります。長文記事を読むときにマウスホイールいらずです。",
+    "level": 2,
+    "memory": "一番押しやすい大きな「Space」キーで1画面ずつ紙芝居のように下へ読み進める（Shiftで上へ戻る）",
+    "funcGroup": "ページ操作・表示・ズーム",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1140031
+  },
+  {
+    "id": "br-20",
+    "category": "browser",
+    "subcategory": "ページ操作・表示・ズーム",
+    "keys": [
+      "Home / End"
+    ],
+    "title": "ページの最上部（Home）/ 最下部（End）へ一瞬で移動",
+    "desc": "どんなに縦に長いWebページでも、一瞬でページの先頭またはフッターまでジャンプします。",
+    "tip": "ノートPCでHome/Endが独立していない場合は Fn + ← / → に割り当てられていることが多いです。",
+    "level": 3,
+    "memory": "Home（ページのスタート地点＝最上部）、End（ページのゴール地点＝最下部）",
+    "funcGroup": "ページ操作・表示・ズーム",
+    "keyGroup": "① 単独キー（1キー）",
+    "sortRank": 1140081
+  },
+  {
+    "id": "br-34",
+    "category": "browser",
+    "subcategory": "ページ操作・表示・ズーム",
+    "keys": [
+      "F3"
+    ],
+    "title": "ページ内の文字検索を開く / 次の検索一致箇所へジャンプ",
+    "desc": "Ctrl + F と同じくページ内検索を開き、すでに開いている場合は次の検索結果へ進みます（Shift+F3で前へ）。",
+    "tip": "片手（指1本）で検索を開始・移動したい時に便利です。",
+    "memory": "エクスプローラー・PDFと完全共通！「F3」＝Find（探す）",
+    "level": 2,
+    "funcGroup": "ページ操作・表示・ズーム",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130031
+  },
+  {
+    "id": "br-35",
+    "category": "browser",
+    "subcategory": "ナビゲーション・アドレスバー・検索",
+    "keys": [
+      "F5"
+    ],
+    "title": "現在のページを再読み込み（リロード / Ctrl+Rと同じ）",
+    "desc": "見ているWebページを最新の状態に更新します（Ctrl + F5 でキャッシュ無視のスーパーリロード）。",
+    "tip": "キー1つで押せる更新キーとして最も有名なショートカットです。",
+    "memory": "エクスプローラーと共通！「F5」＝画面をリフレッシュ（更新）",
+    "level": 3,
+    "funcGroup": "ナビゲーション・アドレスバー・検索",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130051
+  },
+  {
+    "id": "br-36",
+    "category": "browser",
+    "subcategory": "ナビゲーション・アドレスバー・検索",
+    "keys": [
+      "F6"
+    ],
+    "title": "アドレスバー ⇄ ブックマークバー ⇄ ページ本文 の間でフォーカス移動",
+    "desc": "F6を1回押すとアドレスバーが全選択され、さらにもう一度押すとブックマークバーや本文へフォーカスが移ります。",
+    "tip": "Ctrl + L や Alt + D と並んで、指1本でURL欄を選択できる便利キーです。",
+    "memory": "Officeやエクスプローラーと共通！「F6」＝画面内の枠（エリア）を順番に飛び移る",
+    "level": 2,
+    "funcGroup": "ナビゲーション・アドレスバー・検索",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130061
+  },
+  {
+    "id": "br-24",
+    "category": "browser",
+    "subcategory": "ページ操作・表示・ズーム",
+    "keys": [
+      "F9"
+    ],
+    "title": "イマーシブリーダー（記事の広告等を消して読書表示 / Edge）",
+    "desc": "Microsoft Edgeでニュースやブログ記事を開いている時、周囲の広告やメニューを消して本文だけを読みやすく整形します。",
+    "tip": "さらに Ctrl + Shift + U を押すと、AI音声で記事の本文をナチュラルに読み上げてくれます！",
+    "level": 2,
+    "memory": "Edgeの「F9（9＝くっきり本文だけ読む）」で広告を消すイマーシブリーダー起動",
+    "funcGroup": "ページ操作・表示・ズーム",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130091
+  },
+  {
+    "id": "br-23",
+    "category": "browser",
+    "subcategory": "ページ操作・表示・ズーム",
+    "keys": [
+      "F11"
+    ],
+    "title": "全画面表示（フルスクリーン）のON / OFF",
+    "desc": "タブバーやアドレスバーを隠し、モニター全面にWebページを表示します。",
+    "tip": "プレゼンやWebダッシュボード表示に最適。もう一度 F11 を押すと元に戻ります。",
+    "level": 2,
+    "memory": "Full screen の「F」＋「11（画面の左右の柱を広げるイメージ）」で全画面表示！",
+    "funcGroup": "ページ操作・表示・ズーム",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130111
+  },
+  {
+    "id": "br-30",
+    "category": "browser",
+    "subcategory": "ブックマーク・履歴・開発ツール",
+    "keys": [
+      "F12"
+    ],
+    "title": "デベロッパーツール（開発者ツール）を開く",
+    "desc": "HTML/CSSの検証、ネットワーク通信、スマホ表示確認などを行う開発者ツールを開きます（Ctrl + Shift + I でも同じ）。",
+    "tip": "コンソールを直接開くなら Ctrl + Shift + J、ページのHTMLソースを見るだけなら Ctrl + U です。",
+    "level": 2,
+    "memory": "ファンクションキーの最高峰「F12」はプロ用の「開発者ツール（DevTools）」！（または Inspector の Ctrl+Shift+I）",
+    "funcGroup": "ブックマーク・履歴・開発ツール",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130121
+  },
+  {
+    "id": "br-22",
+    "category": "browser",
+    "subcategory": "ページ操作・表示・ズーム",
     "keys": [
       "Ctrl",
-      "数字 (1〜8) / 9"
+      "0 (ゼロ)"
     ],
-    "title": "指定した番号のタブへ直接ジャンプ（9は常に右端タブ）",
-    "desc": "左から1〜8番目のタブへ一瞬で移動します。Ctrl + 9 はタブが何個あっても常に「一番右端のタブ」へ移動します。",
-    "tip": "メールやカレンダーを左端（1番・2番）にピン留めしておくと Ctrl + 1 でいつでも戻れます。",
-    "level": 2,
-    "memory": "左から「1番目〜8番目」の数字そのまま！「9」だけは常に「一番右端（最後）のタブ」へ直行",
-    "funcGroup": "タブ・ウィンドウ管理",
+    "title": "ページの拡大率を100%（標準サイズ）に戻す",
+    "desc": "拡大・縮小したページの表示倍率を一発でデフォルトの100%にリセットします。",
+    "tip": "うっかり Ctrl + マウスホイール で画面が大きくなりすぎた時も一瞬で直せます。",
+    "level": 3,
+    "memory": "「0（ゼロ＝プラマイゼロの初期状態100%）」にリセット！",
+    "funcGroup": "ページ操作・表示・ズーム",
     "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310115
+    "sortRank": 3110002
+  },
+  {
+    "id": "br-25",
+    "category": "browser",
+    "subcategory": "ブックマーク・履歴・開発ツール",
+    "keys": [
+      "Ctrl",
+      "D"
+    ],
+    "title": "現在のページをブックマーク（お気に入り）に登録",
+    "desc": "見ているページをワンタッチでブックマークに追加します。",
+    "tip": "Ctrl + Shift + D なら、現在開いているすべてのタブを1つのフォルダにまとめてブックマーク保存できます！",
+    "level": 3,
+    "memory": "Bookmark が B ではなく「D」なのは「大事な（Daiji）ページを登録する / Done」と覚えるのが定番！",
+    "funcGroup": "ブックマーク・履歴・開発ツール",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120042
+  },
+  {
+    "id": "br-18",
+    "category": "browser",
+    "subcategory": "ページ操作・表示・ズーム",
+    "keys": [
+      "Ctrl",
+      "G"
+    ],
+    "title": "ページ内検索（Ctrl+F）の「次の検索結果」へ移動",
+    "desc": "Ctrl + F で検索中、次の一致箇所へ移動します（Enterと同じ）。Ctrl + Shift + G（またはShift + Enter）で前の一致箇所へ戻ります。",
+    "tip": "F3 キーでもページ内検索の開始・次の一致箇所へのジャンプが可能です。",
+    "level": 2,
+    "memory": "Ctrl+F（検索）のすぐ右隣のキー「G（Go to next）」で次の検索一致箇所へ進む！",
+    "funcGroup": "ページ操作・表示・ズーム",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120072
+  },
+  {
+    "id": "br-27",
+    "category": "browser",
+    "subcategory": "ブックマーク・履歴・開発ツール",
+    "keys": [
+      "Ctrl",
+      "H"
+    ],
+    "title": "閲覧履歴（ヒストリー）を開く",
+    "desc": "過去に見たWebページの履歴一覧を開きます。",
+    "tip": "「昨日見たあのサイトどれだっけ？」という時にすぐ検索できます。",
+    "level": 3,
+    "memory": "History（ヒストリー・閲覧履歴）の頭文字「H」",
+    "funcGroup": "ブックマーク・履歴・開発ツール",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120082
+  },
+  {
+    "id": "br-28",
+    "category": "browser",
+    "subcategory": "ブックマーク・履歴・開発ツール",
+    "keys": [
+      "Ctrl",
+      "J"
+    ],
+    "title": "ダウンロード履歴を開く",
+    "desc": "ブラウザでダウンロードしたファイルの一覧と保存先フォルダへのリンクを表示します。",
+    "tip": "ダウンロードしたPDFやインストーラーがどこに行ったか分からない時に一発で見つかります。",
+    "level": 3,
+    "memory": "Ctrl+H（履歴）の1つ右隣（H→I→J）の「J」でダウンロード履歴！（または落とした荷物の釣り針「J」の形）",
+    "funcGroup": "ブックマーク・履歴・開発ツール",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120102
+  },
+  {
+    "id": "br-11",
+    "category": "browser",
+    "subcategory": "ナビゲーション・アドレスバー・検索",
+    "keys": [
+      "Ctrl",
+      "K"
+    ],
+    "title": "アドレスバーで既定の検索エンジン検索を開始（Ctrl+Eでも同じ）",
+    "desc": "アドレスバーに「? 検索」が入った状態でフォーカスし、URLではなく確実にキーワード検索として実行します。",
+    "tip": "社内ホスト名やドットを含む文字列をURLと誤認させずにGoogle/Bing検索したい時に便利です。",
+    "level": 2,
+    "memory": "Kensaku（検索）の「K」または Search Engine の「E」でアドレスバー検索モード！",
+    "funcGroup": "ナビゲーション・アドレスバー・検索",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120112
+  },
+  {
+    "id": "br-10",
+    "category": "browser",
+    "subcategory": "ナビゲーション・アドレスバー・検索",
+    "keys": [
+      "Ctrl",
+      "L"
+    ],
+    "title": "アドレスバー（URL欄）を選択して即座に検索・URL入力",
+    "desc": "ページ内のどこを見ていても、一瞬で上部のアドレスバーにフォーカスしてURLを全選択します（Alt + D や F6 でも同じ）。",
+    "tip": "Ctrl + L → Ctrl + C を押せば、今見ているページのURLを1秒でコピーできます！",
+    "level": 3,
+    "memory": "Location（Webの場所＝URLアドレスバー）の頭文字「L」（または Address の Alt+D）",
+    "funcGroup": "ナビゲーション・アドレスバー・検索",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120122
+  },
+  {
+    "id": "br-15",
+    "category": "browser",
+    "subcategory": "ナビゲーション・アドレスバー・検索",
+    "keys": [
+      "Ctrl",
+      "R"
+    ],
+    "title": "ページの再読み込み（リロード / F5と同じ）",
+    "desc": "現在のWebページを最新の状態に更新します（読み込み途中で止めたい時は Esc キー）。",
+    "tip": "ホームポジションから手を離さずにリロードできるため F5 より押しやすいです。",
+    "level": 3,
+    "memory": "Reload（リロード・再読み込み）の頭文字「R」",
+    "funcGroup": "ナビゲーション・アドレスバー・検索",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120182
+  },
+  {
+    "id": "br-37",
+    "category": "browser",
+    "subcategory": "ページ操作・表示・ズーム",
+    "keys": [
+      "Ctrl",
+      "S"
+    ],
+    "title": "現在見ているWebページをPCにファイル保存する",
+    "desc": "Webページ全体をHTMLファイル（またはWebアーカイブ）としてローカルフォルダに保存します。",
+    "tip": "オフライン環境でも後で読みたいページや証拠保全したいページを保存できます。",
+    "memory": "全アプリ共通！Save（保存する）の頭文字「S」",
+    "level": 2,
+    "funcGroup": "ページ操作・表示・ズーム",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120192
   },
   {
     "id": "br-1",
@@ -7503,7 +7831,24 @@ const SHORTCUTS_DATA = [
     "memory": "Tab（新しいタブ）の頭文字「T」",
     "funcGroup": "タブ・ウィンドウ管理",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410284
+    "sortRank": 4120202
+  },
+  {
+    "id": "br-38",
+    "category": "browser",
+    "subcategory": "ブックマーク・履歴・開発ツール",
+    "keys": [
+      "Ctrl",
+      "U"
+    ],
+    "title": "現在のWebページの「HTMLソースコード」を別タブで表示",
+    "desc": "ページの裏側にある生のHTMLソースコードを新しいタブで開いて確認します。",
+    "tip": "Web制作やSEOメタタグ（titleやdescription）の確認を一瞬で行えます。",
+    "memory": "Under the hood / Source（裏側のソースを見る）の「U」",
+    "level": 2,
+    "funcGroup": "ブックマーク・履歴・開発ツール",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120212
   },
   {
     "id": "br-2",
@@ -7520,7 +7865,7 @@ const SHORTCUTS_DATA = [
     "memory": "Window / Tab を閉じるの「W」（左手だけでサッと閉じられる位置）",
     "funcGroup": "タブ・ウィンドウ管理",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410287
+    "sortRank": 4120232
   },
   {
     "id": "br-4",
@@ -7537,97 +7882,160 @@ const SHORTCUTS_DATA = [
     "memory": "Tab（タブ）キーに Ctrl を合わせて右隣のタブへ（Shiftを足すと逆の左隣へ）",
     "funcGroup": "タブ・ウィンドウ管理",
     "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510402
+    "sortRank": 5140022
   },
   {
-    "id": "br-8",
+    "id": "br-13",
+    "category": "browser",
+    "subcategory": "ナビゲーション・アドレスバー・検索",
+    "keys": [
+      "Ctrl",
+      "Enter"
+    ],
+    "title": "アドレスバーの単語に「.com」を自動補完して開く",
+    "desc": "アドレスバーにサイト名（例: `github`）だけ打って Ctrl + Enter を押すと `https://www.github.com` へ移動します。",
+    "tip": ".com サイトを開くときに最後まで打つ手間が省けます。",
+    "level": 1,
+    "memory": ".com（ドットコム）の「Ctrl」＋ Enter で、単語の前後に www. と .com を自動装着",
+    "funcGroup": "ナビゲーション・アドレスバー・検索",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140042
+  },
+  {
+    "id": "br-21",
+    "category": "browser",
+    "subcategory": "ページ操作・表示・ズーム",
+    "keys": [
+      "Ctrl",
+      "+ / -"
+    ],
+    "title": "ページの拡大（ズームイン）/ 縮小（ズームアウト）",
+    "desc": "Webページの文字や画像サイズを拡大・縮小表示します（Ctrl + マウスホイールでも可能）。",
+    "tip": "文字が小さくて読みづらいサイトや、画面全体を1枚に収めてスクショしたい時に便利です。",
+    "level": 3,
+    "memory": "「＋（プラスで大きく拡大）」「－（マイナスで小さく縮小）」の記号そのまま！",
+    "funcGroup": "ページ操作・表示・ズーム",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5150432
+  },
+  {
+    "id": "br-17",
+    "category": "browser",
+    "subcategory": "ナビゲーション・アドレスバー・検索",
+    "keys": [
+      "Ctrl",
+      "クリック"
+    ],
+    "title": "リンクをバックグラウンドの「新しいタブ」で開く",
+    "desc": "現在のページを表示したまま、クリックしたリンク先を裏で新しいタブとして開きます（マウスホイール押し込みでも同じ）。",
+    "tip": "Ctrl + Shift + クリック なら「新しいタブで開くと同時にそのタブへ即座に移動」します！",
+    "level": 3,
+    "memory": "クリックに「Ctrl（裏で控えめに開く）」を添えて、今のページを見続けたまま新タブ追加",
+    "funcGroup": "ナビゲーション・アドレスバー・検索",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5274632
+  },
+  {
+    "id": "br-6",
     "category": "browser",
     "subcategory": "タブ・ウィンドウ管理",
     "keys": [
       "Ctrl",
-      "Shift",
-      "A"
+      "数字 (1〜8) / 9"
     ],
-    "title": "開いている全タブ・最近閉じたタブをタイトル検索",
-    "desc": "タブを大量に開きすぎて目的のページがどこにあるか分からない時、キーワードでタブを検索してジャンプできます。",
-    "tip": "タブを20個以上開きっぱなしにする人の最強の味方です。",
+    "title": "指定した番号のタブへ直接ジャンプ（9は常に右端タブ）",
+    "desc": "左から1〜8番目のタブへ一瞬で移動します。Ctrl + 9 はタブが何個あっても常に「一番右端のタブ」へ移動します。",
+    "tip": "メールやカレンダーを左端（1番・2番）にピン留めしておくと Ctrl + 1 でいつでも戻れます。",
     "level": 2,
-    "memory": "All tabs（すべてのタブから検索する）の頭文字「A」に Ctrl + Shift",
+    "memory": "左から「1番目〜8番目」の数字そのまま！「9」だけは常に「一番右端（最後）のタブ」へ直行",
     "funcGroup": "タブ・ウィンドウ管理",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810265
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5409682
   },
   {
-    "id": "br-9",
+    "id": "br-32",
     "category": "browser",
-    "subcategory": "タブ・ウィンドウ管理",
+    "subcategory": "ブックマーク・履歴・開発ツール",
     "keys": [
-      "Ctrl",
       "Shift",
-      "M"
+      "Esc"
     ],
-    "title": "ブラウザのプロファイル（アカウント）を切り替え",
-    "desc": "仕事用アカウントと個人用アカウントなど、ブラウザのユーザープロファイル選択メニューを開きます。",
-    "tip": "複数アカウントを使い分けている環境で素早く別プロファイルのウィンドウを開けます。",
+    "title": "ブラウザ内のタスクマネージャーを開く",
+    "desc": "どのタブや拡張機能がメモリ・CPUを大量消費しているかを特定し、重いタブだけを個別に強制終了できます。",
+    "tip": "ブラウザが急に重くなった時に原因のタブを一発で突き止められます。",
     "level": 1,
-    "memory": "Me（自分のアカウント・プロファイル）または Member の「M」に Ctrl + Shift",
-    "funcGroup": "タブ・ウィンドウ管理",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810277
+    "memory": "Windowsのタスクマネージャー（Ctrl+Shift+Esc）から Ctrl を抜いた「Shift + Esc」がブラウザ版タスクマネージャー！",
+    "funcGroup": "ブックマーク・履歴・開発ツール",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6140012
   },
   {
-    "id": "br-7",
+    "id": "br-43",
     "category": "browser",
-    "subcategory": "タブ・ウィンドウ管理",
+    "subcategory": "ブックマーク・履歴・開発ツール",
     "keys": [
-      "Ctrl",
       "Shift",
-      "N"
+      "Esc"
     ],
-    "title": "シークレット（InPrivate）ウィンドウを開く",
-    "desc": "閲覧履歴やCookie、ログイン情報を残さないプライベートウィンドウを開きます。",
-    "tip": "別アカウントでのログイン確認や、パーソナライズを除いた検索順位確認に最適です。",
+    "title": "ブラウザ専用のタスクマネージャーを開く",
+    "desc": "「どのタブや拡張機能がメモリ・CPUを食っているか」を特定し、重いタブだけを個別に強制終了できます。",
+    "tip": "ブラウザが急に重くなったとき、全体を再起動せずに原因タブだけ閉じられます。",
+    "level": 2,
+    "memory": "Windowsの Ctrl+Shift+Esc から Ctrl を抜いた「ブラウザ版タスクマネージャー」",
+    "funcGroup": "ブックマーク・履歴・開発ツール",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6140012
+  },
+  {
+    "id": "br-48",
+    "category": "browser",
+    "subcategory": "ページ操作・表示・ズーム",
+    "keys": [
+      "Shift",
+      "> / <"
+    ],
+    "title": "YouTube等の動画の「再生速度を上げる(>) / 下げる(<)」",
+    "desc": "Shift + .（>）で1.25倍・1.5倍・2倍速へとスピードアップし、Shift + ,（<）で速度を落とします。",
+    "tip": "歯車アイコンをクリックせずに倍速視聴を自在にコントロールできます。",
+    "level": 2,
+    "memory": "早送り記号「>」で速く、巻き戻し記号「<」で遅く",
+    "funcGroup": "ページ操作・表示・ズーム",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6150622
+  },
+  {
+    "id": "br-12",
+    "category": "browser",
+    "subcategory": "ナビゲーション・アドレスバー・検索",
+    "keys": [
+      "Alt",
+      "Enter"
+    ],
+    "title": "アドレスバーの検索ワード・URLを「新しいタブ」で開く",
+    "desc": "現在見ているページを残したまま、アドレスバーに入力した検索結果やURLを別タブで開きます。",
+    "tip": "Ctrl + L（アドレスバー選択）→ 検索語入力 → Alt + Enter のコンボは一度使うと手放せません！",
     "level": 3,
-    "memory": "Ctrl+N（新しいウィンドウ）に「Shift（秘密の裏モード）」を足してシークレットウィンドウ！",
-    "funcGroup": "タブ・ウィンドウ管理",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810278
+    "memory": "Enter（今のタブで開く）に「Alt（別タブへ逃がす）」を合わせて「新しいタブで検索結果を開く」！",
+    "funcGroup": "ナビゲーション・アドレスバー・検索",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7140042
   },
   {
-    "id": "br-3",
+    "id": "br-14",
     "category": "browser",
-    "subcategory": "タブ・ウィンドウ管理",
+    "subcategory": "ナビゲーション・アドレスバー・検索",
     "keys": [
-      "Ctrl",
-      "Shift",
-      "T"
+      "Alt",
+      "← / →"
     ],
-    "title": "直前に閉じたタブ（またはウィンドウ）を復元して開き直す",
-    "desc": "誤って閉じてしまったタブを、閲覧履歴ごと元の位置に復活させます。",
-    "tip": "連打すると過去に閉じたタブを順番に何個でも遡って復活できる救世主ショートカットです！",
+    "title": "前のページに戻る（Alt+←）/ 次のページに進む（Alt+→）",
+    "desc": "ブラウザ左上の「←（戻る）」「→（進む）」ボタンと同じ動作をします。",
+    "tip": "Alt + Home を押せば設定されているホームページ（初期画面）へ一発で戻れます。",
     "level": 3,
-    "memory": "Ctrl+T（タブを開く）に「Shift（時間を逆戻り）」を足して「閉じたタブを復活」！",
-    "funcGroup": "タブ・ウィンドウ管理",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810284
-  },
-  {
-    "id": "br-5",
-    "category": "browser",
-    "subcategory": "タブ・ウィンドウ管理",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "PageUp / PageDown"
-    ],
-    "title": "現在のタブの並び順を左（PageUp）/ 右（PageDown）へ移動",
-    "desc": "開いているタブ自体の位置を左右に入れ替えます。",
-    "tip": "関連するタブを隣同士に整理したい時、ドラッグ不要で並べ替えられます。",
-    "level": 1,
-    "memory": "Ctrl+PageUp/Down（タブ切替）に「Shift」を足して「タブそのものの並び順を移動」",
-    "funcGroup": "タブ・ウィンドウ管理",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810418
+    "memory": "矢印の向きそのまま！「Alt + ←（前のページへ戻る）」「Alt + →（次のページへ進む）」",
+    "funcGroup": "ナビゲーション・アドレスバー・検索",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7240222
   },
   {
     "id": "br-41",
@@ -7645,310 +8053,25 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + All tabs search（全タブ検索）の「A」",
     "funcGroup": "タブ・ウィンドウ管理",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830265
+    "sortRank": 8120013
   },
   {
-    "id": "br-33",
+    "id": "br-8",
     "category": "browser",
-    "subcategory": "ナビゲーション・アドレスバー・検索",
-    "keys": [
-      "Esc"
-    ],
-    "title": "ページの読み込みを途中で停止する / 検索バーや全画面を閉じる",
-    "desc": "重いWebページの読み込みをキャンセルして止めたり、ページ内検索バー（Ctrl+F）を閉じたりします。",
-    "tip": "通信が遅くて固まりかけているページを止めたい時は Esc です。",
-    "memory": "Escape（読み込みやポップアップを中断する）の「Esc」",
-    "level": 2,
-    "funcGroup": "ナビゲーション・アドレスバー・検索",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110400
-  },
-  {
-    "id": "br-35",
-    "category": "browser",
-    "subcategory": "ナビゲーション・アドレスバー・検索",
-    "keys": [
-      "F5"
-    ],
-    "title": "現在のページを再読み込み（リロード / Ctrl+Rと同じ）",
-    "desc": "見ているWebページを最新の状態に更新します（Ctrl + F5 でキャッシュ無視のスーパーリロード）。",
-    "tip": "キー1つで押せる更新キーとして最も有名なショートカットです。",
-    "memory": "エクスプローラーと共通！「F5」＝画面をリフレッシュ（更新）",
-    "level": 3,
-    "funcGroup": "ナビゲーション・アドレスバー・検索",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210005
-  },
-  {
-    "id": "br-36",
-    "category": "browser",
-    "subcategory": "ナビゲーション・アドレスバー・検索",
-    "keys": [
-      "F6"
-    ],
-    "title": "アドレスバー ⇄ ブックマークバー ⇄ ページ本文 の間でフォーカス移動",
-    "desc": "F6を1回押すとアドレスバーが全選択され、さらにもう一度押すとブックマークバーや本文へフォーカスが移ります。",
-    "tip": "Ctrl + L や Alt + D と並んで、指1本でURL欄を選択できる便利キーです。",
-    "memory": "Officeやエクスプローラーと共通！「F6」＝画面内の枠（エリア）を順番に飛び移る",
-    "level": 2,
-    "funcGroup": "ナビゲーション・アドレスバー・検索",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210006
-  },
-  {
-    "id": "br-11",
-    "category": "browser",
-    "subcategory": "ナビゲーション・アドレスバー・検索",
-    "keys": [
-      "Ctrl",
-      "K"
-    ],
-    "title": "アドレスバーで既定の検索エンジン検索を開始（Ctrl+Eでも同じ）",
-    "desc": "アドレスバーに「? 検索」が入った状態でフォーカスし、URLではなく確実にキーワード検索として実行します。",
-    "tip": "社内ホスト名やドットを含む文字列をURLと誤認させずにGoogle/Bing検索したい時に便利です。",
-    "level": 2,
-    "memory": "Kensaku（検索）の「K」または Search Engine の「E」でアドレスバー検索モード！",
-    "funcGroup": "ナビゲーション・アドレスバー・検索",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410275
-  },
-  {
-    "id": "br-10",
-    "category": "browser",
-    "subcategory": "ナビゲーション・アドレスバー・検索",
-    "keys": [
-      "Ctrl",
-      "L"
-    ],
-    "title": "アドレスバー（URL欄）を選択して即座に検索・URL入力",
-    "desc": "ページ内のどこを見ていても、一瞬で上部のアドレスバーにフォーカスしてURLを全選択します（Alt + D や F6 でも同じ）。",
-    "tip": "Ctrl + L → Ctrl + C を押せば、今見ているページのURLを1秒でコピーできます！",
-    "level": 3,
-    "memory": "Location（Webの場所＝URLアドレスバー）の頭文字「L」（または Address の Alt+D）",
-    "funcGroup": "ナビゲーション・アドレスバー・検索",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410276
-  },
-  {
-    "id": "br-15",
-    "category": "browser",
-    "subcategory": "ナビゲーション・アドレスバー・検索",
-    "keys": [
-      "Ctrl",
-      "R"
-    ],
-    "title": "ページの再読み込み（リロード / F5と同じ）",
-    "desc": "現在のWebページを最新の状態に更新します（読み込み途中で止めたい時は Esc キー）。",
-    "tip": "ホームポジションから手を離さずにリロードできるため F5 より押しやすいです。",
-    "level": 3,
-    "memory": "Reload（リロード・再読み込み）の頭文字「R」",
-    "funcGroup": "ナビゲーション・アドレスバー・検索",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410282
-  },
-  {
-    "id": "br-13",
-    "category": "browser",
-    "subcategory": "ナビゲーション・アドレスバー・検索",
-    "keys": [
-      "Ctrl",
-      "Enter"
-    ],
-    "title": "アドレスバーの単語に「.com」を自動補完して開く",
-    "desc": "アドレスバーにサイト名（例: `github`）だけ打って Ctrl + Enter を押すと `https://www.github.com` へ移動します。",
-    "tip": ".com サイトを開くときに最後まで打つ手間が省けます。",
-    "level": 1,
-    "memory": ".com（ドットコム）の「Ctrl」＋ Enter で、単語の前後に www. と .com を自動装着",
-    "funcGroup": "ナビゲーション・アドレスバー・検索",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510406
-  },
-  {
-    "id": "br-17",
-    "category": "browser",
-    "subcategory": "ナビゲーション・アドレスバー・検索",
-    "keys": [
-      "Ctrl",
-      "クリック"
-    ],
-    "title": "リンクをバックグラウンドの「新しいタブ」で開く",
-    "desc": "現在のページを表示したまま、クリックしたリンク先を裏で新しいタブとして開きます（マウスホイール押し込みでも同じ）。",
-    "tip": "Ctrl + Shift + クリック なら「新しいタブで開くと同時にそのタブへ即座に移動」します！",
-    "level": 3,
-    "memory": "クリックに「Ctrl（裏で控えめに開く）」を添えて、今のページを見続けたまま新タブ追加",
-    "funcGroup": "ナビゲーション・アドレスバー・検索",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 522963
-  },
-  {
-    "id": "br-12",
-    "category": "browser",
-    "subcategory": "ナビゲーション・アドレスバー・検索",
-    "keys": [
-      "Alt",
-      "Enter"
-    ],
-    "title": "アドレスバーの検索ワード・URLを「新しいタブ」で開く",
-    "desc": "現在見ているページを残したまま、アドレスバーに入力した検索結果やURLを別タブで開きます。",
-    "tip": "Ctrl + L（アドレスバー選択）→ 検索語入力 → Alt + Enter のコンボは一度使うと手放せません！",
-    "level": 3,
-    "memory": "Enter（今のタブで開く）に「Alt（別タブへ逃がす）」を合わせて「新しいタブで検索結果を開く」！",
-    "funcGroup": "ナビゲーション・アドレスバー・検索",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710406
-  },
-  {
-    "id": "br-14",
-    "category": "browser",
-    "subcategory": "ナビゲーション・アドレスバー・検索",
-    "keys": [
-      "Alt",
-      "← / →"
-    ],
-    "title": "前のページに戻る（Alt+←）/ 次のページに進む（Alt+→）",
-    "desc": "ブラウザ左上の「←（戻る）」「→（進む）」ボタンと同じ動作をします。",
-    "tip": "Alt + Home を押せば設定されているホームページ（初期画面）へ一発で戻れます。",
-    "level": 3,
-    "memory": "矢印の向きそのまま！「Alt + ←（前のページへ戻る）」「Alt + →（次のページへ進む）」",
-    "funcGroup": "ナビゲーション・アドレスバー・検索",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 720426
-  },
-  {
-    "id": "br-16",
-    "category": "browser",
-    "subcategory": "ナビゲーション・アドレスバー・検索",
+    "subcategory": "タブ・ウィンドウ管理",
     "keys": [
       "Ctrl",
       "Shift",
-      "R"
+      "A"
     ],
-    "title": "スーパーリロード（キャッシュを無視して完全再読み込み）",
-    "desc": "古いキャッシュ画像やCSSを破棄し、サーバーから最新データを強制的に再取得します（Ctrl + F5 と同じ）。",
-    "tip": "Webサイトの表示が崩れている時や更新が反映されない時の特効薬です。",
-    "level": 3,
-    "memory": "Ctrl+R（通常リロード）に「Shift（超強化）」を足して、キャッシュを吹き飛ばす「スーパーリロード」！",
-    "funcGroup": "ナビゲーション・アドレスバー・検索",
+    "title": "開いている全タブ・最近閉じたタブをタイトル検索",
+    "desc": "タブを大量に開きすぎて目的のページがどこにあるか分からない時、キーワードでタブを検索してジャンプできます。",
+    "tip": "タブを20個以上開きっぱなしにする人の最強の味方です。",
+    "level": 2,
+    "memory": "All tabs（すべてのタブから検索する）の頭文字「A」に Ctrl + Shift",
+    "funcGroup": "タブ・ウィンドウ管理",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810282
-  },
-  {
-    "id": "br-30",
-    "category": "browser",
-    "subcategory": "ブックマーク・履歴・開発ツール",
-    "keys": [
-      "F12"
-    ],
-    "title": "デベロッパーツール（開発者ツール）を開く",
-    "desc": "HTML/CSSの検証、ネットワーク通信、スマホ表示確認などを行う開発者ツールを開きます（Ctrl + Shift + I でも同じ）。",
-    "tip": "コンソールを直接開くなら Ctrl + Shift + J、ページのHTMLソースを見るだけなら Ctrl + U です。",
-    "level": 2,
-    "memory": "ファンクションキーの最高峰「F12」はプロ用の「開発者ツール（DevTools）」！（または Inspector の Ctrl+Shift+I）",
-    "funcGroup": "ブックマーク・履歴・開発ツール",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210012
-  },
-  {
-    "id": "br-25",
-    "category": "browser",
-    "subcategory": "ブックマーク・履歴・開発ツール",
-    "keys": [
-      "Ctrl",
-      "D"
-    ],
-    "title": "現在のページをブックマーク（お気に入り）に登録",
-    "desc": "見ているページをワンタッチでブックマークに追加します。",
-    "tip": "Ctrl + Shift + D なら、現在開いているすべてのタブを1つのフォルダにまとめてブックマーク保存できます！",
-    "level": 3,
-    "memory": "Bookmark が B ではなく「D」なのは「大事な（Daiji）ページを登録する / Done」と覚えるのが定番！",
-    "funcGroup": "ブックマーク・履歴・開発ツール",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410268
-  },
-  {
-    "id": "br-27",
-    "category": "browser",
-    "subcategory": "ブックマーク・履歴・開発ツール",
-    "keys": [
-      "Ctrl",
-      "H"
-    ],
-    "title": "閲覧履歴（ヒストリー）を開く",
-    "desc": "過去に見たWebページの履歴一覧を開きます。",
-    "tip": "「昨日見たあのサイトどれだっけ？」という時にすぐ検索できます。",
-    "level": 3,
-    "memory": "History（ヒストリー・閲覧履歴）の頭文字「H」",
-    "funcGroup": "ブックマーク・履歴・開発ツール",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410272
-  },
-  {
-    "id": "br-28",
-    "category": "browser",
-    "subcategory": "ブックマーク・履歴・開発ツール",
-    "keys": [
-      "Ctrl",
-      "J"
-    ],
-    "title": "ダウンロード履歴を開く",
-    "desc": "ブラウザでダウンロードしたファイルの一覧と保存先フォルダへのリンクを表示します。",
-    "tip": "ダウンロードしたPDFやインストーラーがどこに行ったか分からない時に一発で見つかります。",
-    "level": 3,
-    "memory": "Ctrl+H（履歴）の1つ右隣（H→I→J）の「J」でダウンロード履歴！（または落とした荷物の釣り針「J」の形）",
-    "funcGroup": "ブックマーク・履歴・開発ツール",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410274
-  },
-  {
-    "id": "br-38",
-    "category": "browser",
-    "subcategory": "ブックマーク・履歴・開発ツール",
-    "keys": [
-      "Ctrl",
-      "U"
-    ],
-    "title": "現在のWebページの「HTMLソースコード」を別タブで表示",
-    "desc": "ページの裏側にある生のHTMLソースコードを新しいタブで開いて確認します。",
-    "tip": "Web制作やSEOメタタグ（titleやdescription）の確認を一瞬で行えます。",
-    "memory": "Under the hood / Source（裏側のソースを見る）の「U」",
-    "level": 2,
-    "funcGroup": "ブックマーク・履歴・開発ツール",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410285
-  },
-  {
-    "id": "br-32",
-    "category": "browser",
-    "subcategory": "ブックマーク・履歴・開発ツール",
-    "keys": [
-      "Shift",
-      "Esc"
-    ],
-    "title": "ブラウザ内のタスクマネージャーを開く",
-    "desc": "どのタブや拡張機能がメモリ・CPUを大量消費しているかを特定し、重いタブだけを個別に強制終了できます。",
-    "tip": "ブラウザが急に重くなった時に原因のタブを一発で突き止められます。",
-    "level": 1,
-    "memory": "Windowsのタスクマネージャー（Ctrl+Shift+Esc）から Ctrl を抜いた「Shift + Esc」がブラウザ版タスクマネージャー！",
-    "funcGroup": "ブックマーク・履歴・開発ツール",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 610400
-  },
-  {
-    "id": "br-43",
-    "category": "browser",
-    "subcategory": "ブックマーク・履歴・開発ツール",
-    "keys": [
-      "Shift",
-      "Esc"
-    ],
-    "title": "ブラウザ専用のタスクマネージャーを開く",
-    "desc": "「どのタブや拡張機能がメモリ・CPUを食っているか」を特定し、重いタブだけを個別に強制終了できます。",
-    "tip": "ブラウザが急に重くなったとき、全体を再起動せずに原因タブだけ閉じられます。",
-    "level": 2,
-    "memory": "Windowsの Ctrl+Shift+Esc から Ctrl を抜いた「ブラウザ版タスクマネージャー」",
-    "funcGroup": "ブックマーク・履歴・開発ツール",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 620469
+    "sortRank": 8120013
   },
   {
     "id": "br-26",
@@ -7966,7 +8089,7 @@ const SHORTCUTS_DATA = [
     "memory": "Bookmark bar（ブックマークバー）の頭文字「B」に Ctrl + Shift",
     "funcGroup": "ブックマーク・履歴・開発ツール",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810266
+    "sortRank": 8120023
   },
   {
     "id": "br-31",
@@ -7984,43 +8107,7 @@ const SHORTCUTS_DATA = [
     "memory": "Check element / CSS（要素とCSSをチェックする）の「C」に Ctrl + Shift",
     "funcGroup": "ブックマーク・履歴・開発ツール",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810267
-  },
-  {
-    "id": "br-39",
-    "category": "browser",
-    "subcategory": "ブックマーク・履歴・開発ツール",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "O"
-    ],
-    "title": "ブックマークマネージャー（お気に入り整理画面）を開く",
-    "desc": "登録したブックマークのフォルダ整理、検索、インポート/エクスポートを行う管理画面を新しいタブで開きます。",
-    "tip": "溜まりすぎたブックマークを一括整理・検索したい時に一発で開けます。",
-    "memory": "Organize bookmarks（ブックマークを整理する）の頭文字「O」に Ctrl + Shift",
-    "level": 2,
-    "funcGroup": "ブックマーク・履歴・開発ツール",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810279
-  },
-  {
-    "id": "br-29",
-    "category": "browser",
-    "subcategory": "ブックマーク・履歴・開発ツール",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "Delete"
-    ],
-    "title": "閲覧履歴・キャッシュ・Cookieの削除画面を開く",
-    "desc": "期間を指定してブラウザキャッシュや閲覧履歴を削除するダイアログを直接開きます。",
-    "tip": "設定メニューの奥深くまで探す必要がなくなります。",
-    "level": 2,
-    "memory": "Delete（消去する）に Ctrl + Shift を合わせて「閲覧履歴・キャッシュの一括消去画面」を召喚！",
-    "funcGroup": "ブックマーク・履歴・開発ツール",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810410
+    "sortRank": 8120033
   },
   {
     "id": "br-44",
@@ -8038,7 +8125,61 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + Me（自分のプロファイル）/ Mobile（スマホ表示）の「M」",
     "funcGroup": "ブックマーク・履歴・開発ツール",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830277
+    "sortRank": 8120133
+  },
+  {
+    "id": "br-9",
+    "category": "browser",
+    "subcategory": "タブ・ウィンドウ管理",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "M"
+    ],
+    "title": "ブラウザのプロファイル（アカウント）を切り替え",
+    "desc": "仕事用アカウントと個人用アカウントなど、ブラウザのユーザープロファイル選択メニューを開きます。",
+    "tip": "複数アカウントを使い分けている環境で素早く別プロファイルのウィンドウを開けます。",
+    "level": 1,
+    "memory": "Me（自分のアカウント・プロファイル）または Member の「M」に Ctrl + Shift",
+    "funcGroup": "タブ・ウィンドウ管理",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120133
+  },
+  {
+    "id": "br-7",
+    "category": "browser",
+    "subcategory": "タブ・ウィンドウ管理",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "N"
+    ],
+    "title": "シークレット（InPrivate）ウィンドウを開く",
+    "desc": "閲覧履歴やCookie、ログイン情報を残さないプライベートウィンドウを開きます。",
+    "tip": "別アカウントでのログイン確認や、パーソナライズを除いた検索順位確認に最適です。",
+    "level": 3,
+    "memory": "Ctrl+N（新しいウィンドウ）に「Shift（秘密の裏モード）」を足してシークレットウィンドウ！",
+    "funcGroup": "タブ・ウィンドウ管理",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120143
+  },
+  {
+    "id": "br-39",
+    "category": "browser",
+    "subcategory": "ブックマーク・履歴・開発ツール",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "O"
+    ],
+    "title": "ブックマークマネージャー（お気に入り整理画面）を開く",
+    "desc": "登録したブックマークのフォルダ整理、検索、インポート/エクスポートを行う管理画面を新しいタブで開きます。",
+    "tip": "溜まりすぎたブックマークを一括整理・検索したい時に一発で開けます。",
+    "memory": "Organize bookmarks（ブックマークを整理する）の頭文字「O」に Ctrl + Shift",
+    "level": 2,
+    "funcGroup": "ブックマーク・履歴・開発ツール",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120153
   },
   {
     "id": "br-42",
@@ -8056,220 +8197,43 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Shift + Organize bookmarks（整理）の「O」",
     "funcGroup": "ブックマーク・履歴・開発ツール",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830279
+    "sortRank": 8120153
   },
   {
-    "id": "br-47",
+    "id": "br-16",
     "category": "browser",
-    "subcategory": "ページ操作・表示・ズーム",
-    "keys": [
-      "F / M"
-    ],
-    "title": "YouTube等の動画を「全画面(F) / ミュート消音(M)」切替",
-    "desc": "「F」キーで動画のフルスクリーン表示切替、「M」キーで即座に音声ミュート/解除を行います。",
-    "tip": "急な来客や電話が来たときも「M」キー1つで動画の音を瞬時に消せます。",
-    "level": 3,
-    "memory": "Fullscreen の「F」、Mute（消音）の「M」",
-    "funcGroup": "ページ操作・表示・ズーム",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110270
-  },
-  {
-    "id": "br-46",
-    "category": "browser",
-    "subcategory": "ページ操作・表示・ズーム",
-    "keys": [
-      "J / L"
-    ],
-    "title": "YouTube等の動画を「10秒戻す(J) / 10秒進める(L)」",
-    "desc": "キーボードの「J」で10秒巻き戻し、「L」で10秒早送りします。矢印キー（← / →）は5秒単位の移動になります。",
-    "tip": "学習動画やセミナーアーカイブの視聴効率が倍増します。",
-    "level": 3,
-    "memory": "K（停止）の左隣「J＝10秒戻る」、右隣「L＝10秒進む」",
-    "funcGroup": "ページ操作・表示・ズーム",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110274
-  },
-  {
-    "id": "br-45",
-    "category": "browser",
-    "subcategory": "ページ操作・表示・ズーム",
-    "keys": [
-      "K"
-    ],
-    "title": "YouTube等の動画を「再生 / 一時停止」する",
-    "desc": "動画プレイヤーにフォーカスしていなくても、ページ上のどこでも「K」キーで確実に再生・一時停止できます。",
-    "tip": "Spaceキーだと画面が下にスクロールしてしまうことがあるため、動画操作は「K」が確実でおすすめです！",
-    "level": 3,
-    "memory": "動画操作のホームポジション J（戻す）・K（停止/再生）・L（進める）の中心「K」",
-    "funcGroup": "ページ操作・表示・ズーム",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110275
-  },
-  {
-    "id": "br-19",
-    "category": "browser",
-    "subcategory": "ページ操作・表示・ズーム",
-    "keys": [
-      "Space"
-    ],
-    "title": "1画面分下へスクロール（Shift+Space で1画面上へ）",
-    "desc": "Webページを読み進めるとき、ちょうど1画面分ずつ下へスムーズにスクロールします。",
-    "tip": "Shift + Space を押すと1画面分上へ戻ります。長文記事を読むときにマウスホイールいらずです。",
-    "level": 2,
-    "memory": "一番押しやすい大きな「Space」キーで1画面ずつ紙芝居のように下へ読み進める（Shiftで上へ戻る）",
-    "funcGroup": "ページ操作・表示・ズーム",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110404
-  },
-  {
-    "id": "br-20",
-    "category": "browser",
-    "subcategory": "ページ操作・表示・ズーム",
-    "keys": [
-      "Home / End"
-    ],
-    "title": "ページの最上部（Home）/ 最下部（End）へ一瞬で移動",
-    "desc": "どんなに縦に長いWebページでも、一瞬でページの先頭またはフッターまでジャンプします。",
-    "tip": "ノートPCでHome/Endが独立していない場合は Fn + ← / → に割り当てられていることが多いです。",
-    "level": 3,
-    "memory": "Home（ページのスタート地点＝最上部）、End（ページのゴール地点＝最下部）",
-    "funcGroup": "ページ操作・表示・ズーム",
-    "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110414
-  },
-  {
-    "id": "br-34",
-    "category": "browser",
-    "subcategory": "ページ操作・表示・ズーム",
-    "keys": [
-      "F3"
-    ],
-    "title": "ページ内の文字検索を開く / 次の検索一致箇所へジャンプ",
-    "desc": "Ctrl + F と同じくページ内検索を開き、すでに開いている場合は次の検索結果へ進みます（Shift+F3で前へ）。",
-    "tip": "片手（指1本）で検索を開始・移動したい時に便利です。",
-    "memory": "エクスプローラー・PDFと完全共通！「F3」＝Find（探す）",
-    "level": 2,
-    "funcGroup": "ページ操作・表示・ズーム",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210003
-  },
-  {
-    "id": "br-24",
-    "category": "browser",
-    "subcategory": "ページ操作・表示・ズーム",
-    "keys": [
-      "F9"
-    ],
-    "title": "イマーシブリーダー（記事の広告等を消して読書表示 / Edge）",
-    "desc": "Microsoft Edgeでニュースやブログ記事を開いている時、周囲の広告やメニューを消して本文だけを読みやすく整形します。",
-    "tip": "さらに Ctrl + Shift + U を押すと、AI音声で記事の本文をナチュラルに読み上げてくれます！",
-    "level": 2,
-    "memory": "Edgeの「F9（9＝くっきり本文だけ読む）」で広告を消すイマーシブリーダー起動",
-    "funcGroup": "ページ操作・表示・ズーム",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210009
-  },
-  {
-    "id": "br-23",
-    "category": "browser",
-    "subcategory": "ページ操作・表示・ズーム",
-    "keys": [
-      "F11"
-    ],
-    "title": "全画面表示（フルスクリーン）のON / OFF",
-    "desc": "タブバーやアドレスバーを隠し、モニター全面にWebページを表示します。",
-    "tip": "プレゼンやWebダッシュボード表示に最適。もう一度 F11 を押すと元に戻ります。",
-    "level": 2,
-    "memory": "Full screen の「F」＋「11（画面の左右の柱を広げるイメージ）」で全画面表示！",
-    "funcGroup": "ページ操作・表示・ズーム",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210011
-  },
-  {
-    "id": "br-22",
-    "category": "browser",
-    "subcategory": "ページ操作・表示・ズーム",
+    "subcategory": "ナビゲーション・アドレスバー・検索",
     "keys": [
       "Ctrl",
-      "0 (ゼロ)"
-    ],
-    "title": "ページの拡大率を100%（標準サイズ）に戻す",
-    "desc": "拡大・縮小したページの表示倍率を一発でデフォルトの100%にリセットします。",
-    "tip": "うっかり Ctrl + マウスホイール で画面が大きくなりすぎた時も一瞬で直せます。",
-    "level": 3,
-    "memory": "「0（ゼロ＝プラマイゼロの初期状態100%）」にリセット！",
-    "funcGroup": "ページ操作・表示・ズーム",
-    "keyGroup": "③ Ctrl ＋ 数字（Ctrl + 0〜9）",
-    "sortRank": 310100
-  },
-  {
-    "id": "br-18",
-    "category": "browser",
-    "subcategory": "ページ操作・表示・ズーム",
-    "keys": [
-      "Ctrl",
-      "G"
-    ],
-    "title": "ページ内検索（Ctrl+F）の「次の検索結果」へ移動",
-    "desc": "Ctrl + F で検索中、次の一致箇所へ移動します（Enterと同じ）。Ctrl + Shift + G（またはShift + Enter）で前の一致箇所へ戻ります。",
-    "tip": "F3 キーでもページ内検索の開始・次の一致箇所へのジャンプが可能です。",
-    "level": 2,
-    "memory": "Ctrl+F（検索）のすぐ右隣のキー「G（Go to next）」で次の検索一致箇所へ進む！",
-    "funcGroup": "ページ操作・表示・ズーム",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410271
-  },
-  {
-    "id": "br-37",
-    "category": "browser",
-    "subcategory": "ページ操作・表示・ズーム",
-    "keys": [
-      "Ctrl",
-      "S"
-    ],
-    "title": "現在見ているWebページをPCにファイル保存する",
-    "desc": "Webページ全体をHTMLファイル（またはWebアーカイブ）としてローカルフォルダに保存します。",
-    "tip": "オフライン環境でも後で読みたいページや証拠保全したいページを保存できます。",
-    "memory": "全アプリ共通！Save（保存する）の頭文字「S」",
-    "level": 2,
-    "funcGroup": "ページ操作・表示・ズーム",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410283
-  },
-  {
-    "id": "br-21",
-    "category": "browser",
-    "subcategory": "ページ操作・表示・ズーム",
-    "keys": [
-      "Ctrl",
-      "+ / -"
-    ],
-    "title": "ページの拡大（ズームイン）/ 縮小（ズームアウト）",
-    "desc": "Webページの文字や画像サイズを拡大・縮小表示します（Ctrl + マウスホイールでも可能）。",
-    "tip": "文字が小さくて読みづらいサイトや、画面全体を1枚に収めてスクショしたい時に便利です。",
-    "level": 3,
-    "memory": "「＋（プラスで大きく拡大）」「－（マイナスで小さく縮小）」の記号そのまま！",
-    "funcGroup": "ページ操作・表示・ズーム",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510543
-  },
-  {
-    "id": "br-48",
-    "category": "browser",
-    "subcategory": "ページ操作・表示・ズーム",
-    "keys": [
       "Shift",
-      "> / <"
+      "R"
     ],
-    "title": "YouTube等の動画の「再生速度を上げる(>) / 下げる(<)」",
-    "desc": "Shift + .（>）で1.25倍・1.5倍・2倍速へとスピードアップし、Shift + ,（<）で速度を落とします。",
-    "tip": "歯車アイコンをクリックせずに倍速視聴を自在にコントロールできます。",
-    "level": 2,
-    "memory": "早送り記号「>」で速く、巻き戻し記号「<」で遅く",
-    "funcGroup": "ページ操作・表示・ズーム",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 620462
+    "title": "スーパーリロード（キャッシュを無視して完全再読み込み）",
+    "desc": "古いキャッシュ画像やCSSを破棄し、サーバーから最新データを強制的に再取得します（Ctrl + F5 と同じ）。",
+    "tip": "Webサイトの表示が崩れている時や更新が反映されない時の特効薬です。",
+    "level": 3,
+    "memory": "Ctrl+R（通常リロード）に「Shift（超強化）」を足して、キャッシュを吹き飛ばす「スーパーリロード」！",
+    "funcGroup": "ナビゲーション・アドレスバー・検索",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120183
+  },
+  {
+    "id": "br-3",
+    "category": "browser",
+    "subcategory": "タブ・ウィンドウ管理",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "T"
+    ],
+    "title": "直前に閉じたタブ（またはウィンドウ）を復元して開き直す",
+    "desc": "誤って閉じてしまったタブを、閲覧履歴ごと元の位置に復活させます。",
+    "tip": "連打すると過去に閉じたタブを順番に何個でも遡って復活できる救世主ショートカットです！",
+    "level": 3,
+    "memory": "Ctrl+T（タブを開く）に「Shift（時間を逆戻り）」を足して「閉じたタブを復活」！",
+    "funcGroup": "タブ・ウィンドウ管理",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8120203
   },
   {
     "id": "br-40",
@@ -8287,424 +8251,43 @@ const SHORTCUTS_DATA = [
     "level": 2,
     "funcGroup": "ページ操作・表示・ズーム",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810285
+    "sortRank": 8120213
   },
   {
-    "id": "cm-29",
-    "category": "common",
-    "subcategory": "ファイル・ウィンドウ・共通機能",
-    "keys": [
-      "F1"
-    ],
-    "title": "ヘルプ画面を開く（全アプリ共通）",
-    "desc": "現在使っているアプリの公式ヘルプやサポート検索パネルを起動します。",
-    "tip": "F2（編集）を押そうとして隣りの F1 を誤爆しがちですが、困った時の1番（F1）です。",
-    "memory": "一番最初の「F1」＝「1番に助け（SOS/ヘルプ）を呼ぶキー」",
-    "level": 1,
-    "funcGroup": "ファイル・ウィンドウ・共通機能",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210001
-  },
-  {
-    "id": "cm-30",
-    "category": "common",
-    "subcategory": "ファイル・ウィンドウ・共通機能",
-    "keys": [
-      "F4"
-    ],
-    "title": "直前の操作を繰り返す（Office共通）",
-    "desc": "Excel・Word・PowerPointで、直前に行った書式変更、色塗り、行の挿入・削除などをそのまま繰り返します。",
-    "tip": "Ctrl + Y でも同様に直前の操作を繰り返すことができます。",
-    "memory": "F4 ＝「For again（もう一度同じことを繰り返す）」の4",
-    "level": 3,
-    "funcGroup": "ファイル・ウィンドウ・共通機能",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210004
-  },
-  {
-    "id": "cm-11",
-    "category": "common",
-    "subcategory": "ファイル・ウィンドウ・共通機能",
-    "keys": [
-      "F12"
-    ],
-    "title": "名前を付けて保存（Office共通）",
-    "desc": "Excel・Word・PowerPointで「名前を付けて保存」ダイアログを直接開きます（Ctrl + Shift + S でも可）。",
-    "tip": "別名保存やコピーを作りたい時、ファイルメニューを開く手間がゼロになります。",
-    "level": 3,
-    "memory": "ファンクションキーの一番右端（最後＝F12）で「最終的に名前を付けて保存」",
-    "funcGroup": "ファイル・ウィンドウ・共通機能",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210012
-  },
-  {
-    "id": "cm-13",
-    "category": "common",
-    "subcategory": "ファイル・ウィンドウ・共通機能",
+    "id": "br-29",
+    "category": "browser",
+    "subcategory": "ブックマーク・履歴・開発ツール",
     "keys": [
       "Ctrl",
-      "N"
-    ],
-    "title": "新規作成 / 新しいウィンドウ",
-    "desc": "新しいファイル、ドキュメント、または新しいウィンドウを開きます。",
-    "tip": "New の N。アプリを問わず「新しく作る」ときの基本キーです。",
-    "level": 2,
-    "memory": "New（新しく作る）の頭文字「N」",
-    "funcGroup": "ファイル・ウィンドウ・共通機能",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410278
-  },
-  {
-    "id": "cm-14",
-    "category": "common",
-    "subcategory": "ファイル・ウィンドウ・共通機能",
-    "keys": [
-      "Ctrl",
-      "O"
-    ],
-    "title": "ファイルを開く",
-    "desc": "既存のファイルを開くためのダイアログを表示します。",
-    "tip": "Open の O と覚えると忘れません。",
-    "level": 2,
-    "memory": "Open（開く）の頭文字「O」",
-    "funcGroup": "ファイル・ウィンドウ・共通機能",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410279
-  },
-  {
-    "id": "cm-12",
-    "category": "common",
-    "subcategory": "ファイル・ウィンドウ・共通機能",
-    "keys": [
-      "Ctrl",
-      "P"
-    ],
-    "title": "印刷 / PDF出力",
-    "desc": "印刷プレビュー・印刷設定画面を開きます。",
-    "tip": "プリンタに「Microsoft Print to PDF」を選べばあらゆる画面をPDF保存できます。",
-    "level": 3,
-    "memory": "Print（プリント・印刷）の頭文字「P」",
-    "funcGroup": "ファイル・ウィンドウ・共通機能",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410280
-  },
-  {
-    "id": "cm-10",
-    "category": "common",
-    "subcategory": "ファイル・ウィンドウ・共通機能",
-    "keys": [
-      "Ctrl",
-      "S"
-    ],
-    "title": "上書き保存",
-    "desc": "現在作業中のファイルを上書き保存します。",
-    "tip": "作業の区切りごとにクセづけておくと不意のフリーズでも安心です。",
-    "level": 3,
-    "memory": "Save（保存する）の頭文字「S」",
-    "funcGroup": "ファイル・ウィンドウ・共通機能",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410283
-  },
-  {
-    "id": "cm-15",
-    "category": "common",
-    "subcategory": "ファイル・ウィンドウ・共通機能",
-    "keys": [
-      "Ctrl",
-      "W"
-    ],
-    "title": "現在のファイル・タブを閉じる",
-    "desc": "作業中のブック・文書・ブラウザタブ・エクスプローラーを閉じます（Ctrl + F4 と同じ）。",
-    "tip": "アプリ自体は終了せず、今開いているファイルやタブだけを閉じたい時に便利です。",
-    "level": 3,
-    "memory": "Window（ウィンドウ・タブ）を閉じるの「W」",
-    "funcGroup": "ファイル・ウィンドウ・共通機能",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410287
-  },
-  {
-    "id": "cm-31",
-    "category": "common",
-    "subcategory": "ファイル・ウィンドウ・共通機能",
-    "keys": [
-      "Ctrl",
-      "F1"
-    ],
-    "title": "リボンメニュー（上部ツールバー）の表示 / 折りたたみを切り替え",
-    "desc": "Excel・Word・PowerPoint・エクスプローラーの上部リボンを隠し、作業画面を縦に広く使います。",
-    "tip": "「あれ、上のメニューが消えた！？」というトラブルの9割はこの Ctrl + F1 をうっかり押したことが原因です！もう一度押せば直ります。",
-    "memory": "一番上のメニュー（1番＝F1）を Ctrl で開閉コントロールする",
-    "level": 3,
-    "funcGroup": "ファイル・ウィンドウ・共通機能",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510301
-  },
-  {
-    "id": "cm-32",
-    "category": "common",
-    "subcategory": "ファイル・ウィンドウ・共通機能",
-    "keys": [
-      "Ctrl",
-      "F2"
-    ],
-    "title": "印刷プレビュー画面を直接開く（Office共通）",
-    "desc": "印刷イメージを確認するプレビュー画面を一発で開きます（Ctrl + P と同じ）。",
-    "tip": "Excelで印刷範囲が1ページに収まっているか確認するときに便利です。",
-    "memory": "F2（見る・編集）に Ctrl を足して「印刷イメージをプレビューで見る」",
-    "level": 2,
-    "funcGroup": "ファイル・ウィンドウ・共通機能",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510302
-  },
-  {
-    "id": "cm-33",
-    "category": "common",
-    "subcategory": "ファイル・ウィンドウ・共通機能",
-    "keys": [
-      "Ctrl",
-      "F6"
-    ],
-    "title": "同じアプリの別ファイルウィンドウへ順番に切り替え",
-    "desc": "Excelブックを複数開いている時やWord文書を複数開いている時、他のアプリを挟まず同じアプリのウィンドウ間だけを移動します。",
-    "tip": "Alt + Tab だとブラウザやチャットまで混ざってしまいますが、Ctrl + F6 ならExcel同士・Word同士だけで行き来できます！",
-    "memory": "F6（画面枠・ペイン移動）に Ctrl を足して「同アプリの別ウィンドウ間を移動」",
-    "level": 2,
-    "funcGroup": "ファイル・ウィンドウ・共通機能",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510306
-  },
-  {
-    "id": "cm-36",
-    "category": "common",
-    "subcategory": "ファイル・ウィンドウ・共通機能",
-    "keys": [
-      "Alt",
-      "Space"
-    ],
-    "title": "ウィンドウのシステムメニューを開く（最小化・最大化・移動）",
-    "desc": "タイトルバー左上のアイコンをクリックした時と同じメニューを開きます（続けて N で最小化、X で最大化、C で閉じる）。",
-    "tip": "ウィンドウが画面外にはみ出てマウスで掴めなくなった時は「Alt + Space → M → 矢印キー」で画面内に救出できます！",
-    "memory": "Alt ＋ Space（タイトルバーの余白スペース）でウィンドウ操作メニューを起動",
-    "level": 2,
-    "funcGroup": "ファイル・ウィンドウ・共通機能",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 710404
-  },
-  {
-    "id": "cm-16",
-    "category": "common",
-    "subcategory": "文字入力・IME・ファンクション変換",
-    "keys": [
-      "F6"
-    ],
-    "title": "ひらがなに変換",
-    "desc": "入力中（変換確定前）の文字をすべて「ひらがな」に戻します。",
-    "tip": "勝手に漢字変換されてしまった部分をひらがな表記にしたい時に一発です。",
-    "level": 2,
-    "memory": "F6〜F10の変換5兄弟のスタート（6＝む＝「むかしからの、ひらがな」）",
-    "funcGroup": "文字入力・IME・ファンクション変換",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210006
-  },
-  {
-    "id": "cm-17",
-    "category": "common",
-    "subcategory": "文字入力・IME・ファンクション変換",
-    "keys": [
-      "F7"
-    ],
-    "title": "全角カタカナに変換",
-    "desc": "入力中の文字をすべて「全角カタカナ」に一発変換します。",
-    "tip": "スペースキーで何度も変換候補を探す手間が省けます。",
-    "level": 3,
-    "memory": "ラッキーセブン「F7」は一番よく使う「全角カタカナ」！（ナナ＝カタカナのナ）",
-    "funcGroup": "文字入力・IME・ファンクション変換",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210007
-  },
-  {
-    "id": "cm-18",
-    "category": "common",
-    "subcategory": "文字入力・IME・ファンクション変換",
-    "keys": [
-      "F8"
-    ],
-    "title": "半角カタカナに変換",
-    "desc": "入力中の文字を「半角カタカナ」に変換します。",
-    "tip": "銀行振込名義やシステム入力フォームなどで重宝します。",
-    "level": 2,
-    "memory": "F7（全角カナ）の1つ右隣「F8」で、幅が半分の「半角カタカナ」（8＝ハンカクのハ）",
-    "funcGroup": "文字入力・IME・ファンクション変換",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210008
-  },
-  {
-    "id": "cm-19",
-    "category": "common",
-    "subcategory": "文字入力・IME・ファンクション変換",
-    "keys": [
-      "F9"
-    ],
-    "title": "全角英数に変換",
-    "desc": "入力中の文字を「全角アルファベット・数字」に変換します。",
-    "tip": "押すたびに「すべて小文字 → すべて大文字 → 先頭のみ大文字」と切り替わります。",
-    "level": 2,
-    "memory": "F10（半角英数）の1つ手前「F9」で「全角英数」",
-    "funcGroup": "文字入力・IME・ファンクション変換",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210009
-  },
-  {
-    "id": "cm-20",
-    "category": "common",
-    "subcategory": "文字入力・IME・ファンクション変換",
-    "keys": [
-      "F10"
-    ],
-    "title": "半角英数に変換",
-    "desc": "日本語モードのまま入力してしまった英単語を「半角英数字」に変換します。",
-    "tip": "メールアドレスや英単語をうっかり「かな入力」した時に打ち直さず一発で直せます。",
-    "level": 3,
-    "memory": "F6〜F10のゴール「F10」は一番スマートな「半角英数」（10＝Ten＝英語！）",
-    "funcGroup": "文字入力・IME・ファンクション変換",
-    "keyGroup": "② ファンクションキー（F1〜F12）",
-    "sortRank": 210010
-  },
-  {
-    "id": "cm-21",
-    "category": "common",
-    "subcategory": "文字入力・IME・ファンクション変換",
-    "keys": [
-      "Ctrl",
-      "U / I / O / P"
-    ],
-    "title": "ホームポジションのまま文字種変換（F6〜F9相当）",
-    "desc": "文字入力中に Ctrl+U（ひらがな）、Ctrl+I（全角カナ）、Ctrl+O（半角カナ）、Ctrl+P（全角英数）に変換します。",
-    "tip": "ノートPCでファンクションキーが押しにくい環境でも指を動かさず高速変換できます（Ctrl+Tで半角英数）。",
-    "level": 1,
-    "memory": "F6〜F9のすぐ真下にある「U・I・O・P」の横並び4キーがそのまま対応！",
-    "funcGroup": "文字入力・IME・ファンクション変換",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410285
-  },
-  {
-    "id": "cm-23",
-    "category": "common",
-    "subcategory": "文字入力・IME・ファンクション変換",
-    "keys": [
-      "Ctrl",
-      "Backspace"
-    ],
-    "title": "確定直後の文字を未確定状態に戻す / 単語削除",
-    "desc": "IMEでEnter確定した直後に押すと確定を取り消して再変換でき、英文等では前の1単語をまとめて消去します。",
-    "tip": "「あっ、今の変換間違えた！」という瞬間にすぐ戻せます。",
-    "level": 2,
-    "memory": "Backspace（1文字消す）に Ctrl を足して「確定そのもの（または1単語丸ごと）を取り消す」",
-    "funcGroup": "文字入力・IME・ファンクション変換",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510408
-  },
-  {
-    "id": "cm-40",
-    "category": "common",
-    "subcategory": "文字入力・IME・ファンクション変換",
-    "keys": [
-      "Ctrl",
-      "Space"
-    ],
-    "title": "半角スペースを直接入力（全角入力中でも半角空白を入れる）",
-    "desc": "日本語（全角）モードのままでも、Shift+Space または Ctrl+Space（設定による）でスッキリした半角スペースを入力できます。",
-    "tip": "日本語の中に英単語や数字を混ぜるとき、全角スペースの混入を防げます。",
-    "level": 2,
-    "memory": "修飾キー ＋ Space でスマートな半角スペース",
-    "funcGroup": "文字入力・IME・ファンクション変換",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 520483
-  },
-  {
-    "id": "cm-25",
-    "category": "common",
-    "subcategory": "文字入力・IME・ファンクション変換",
-    "keys": [
       "Shift",
-      "F10"
+      "Delete"
     ],
-    "title": "右クリックメニュー（コンテキストメニュー）を開く",
-    "desc": "マウスで右クリックした時と同じメニューをキーボードから開きます（アプリケーションキーと同じ）。",
-    "tip": "Windows 11のエクスプローラーでは Shift + F10 を押すと「その他のオプションを表示」を開いた状態の旧メニューが直接出ます！",
+    "title": "閲覧履歴・キャッシュ・Cookieの削除画面を開く",
+    "desc": "期間を指定してブラウザキャッシュや閲覧履歴を削除するダイアログを直接開きます。",
+    "tip": "設定メニューの奥深くまで探す必要がなくなります。",
     "level": 2,
-    "memory": "F10（メニューバー活性）＋ Shift で「右クリックメニュー」を呼び出す",
-    "funcGroup": "文字入力・IME・ファンクション変換",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 610310
+    "memory": "Delete（消去する）に Ctrl + Shift を合わせて「閲覧履歴・キャッシュの一括消去画面」を召喚！",
+    "funcGroup": "ブックマーク・履歴・開発ツール",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8140063
   },
   {
-    "id": "cm-24",
-    "category": "common",
-    "subcategory": "文字入力・IME・ファンクション変換",
+    "id": "br-5",
+    "category": "browser",
+    "subcategory": "タブ・ウィンドウ管理",
     "keys": [
+      "Ctrl",
       "Shift",
-      "文字キー"
+      "PageUp / PageDown"
     ],
-    "title": "日本語モードのまま一時的に半角英数入力",
-    "desc": "日本語入力（あ）のままでも、Shiftを押しながらキーを打つとそのまま英字入力モードに入ります。",
-    "tip": "文中に英単語（例: Excel、PC、AIなど）を混ぜる時に「半角/全角」キーを押す回数が激減します。",
-    "level": 3,
-    "memory": "Shift（一時切り替え）を押しながら打つだけで、その瞬間だけ英語モードにシフト！",
-    "funcGroup": "文字入力・IME・ファンクション変換",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 636491
-  },
-  {
-    "id": "cm-42",
-    "category": "common",
-    "subcategory": "文字入力・IME・ファンクション変換",
-    "keys": [
-      "Alt",
-      "半角/全角"
-    ],
-    "title": "日本語入力（IME）のオン / オフを確実に切り替え",
-    "desc": "「半角/全角」キー単体と同じく、日本語入力（あ）と直接入力（A）を切り替えます。",
-    "tip": "英語配列キーボード（US配列）を使っている場合でも「Alt + `（バッククォート）」で日本語/英語を切り替えられます！",
-    "level": 2,
-    "memory": "Alt + 半角/全角（US配列なら Alt + `）でIME切替",
-    "funcGroup": "文字入力・IME・ファンクション変換",
-    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
-    "sortRank": 741722
-  },
-  {
-    "id": "cm-37",
-    "category": "common",
-    "subcategory": "文字入力・IME・ファンクション変換",
-    "keys": [
-      "Win",
-      "Space"
-    ],
-    "title": "入力言語・キーボードレイアウトを切り替え",
-    "desc": "日本語IMEと英語キーボードなど、インストールされている入力言語を切り替えます。",
-    "tip": "「@や記号の位置が急に英語配列になってズレた！」という時は、うっかり Win + Space を押して英語キーボードに切り替わっています！もう一度押せば直ります。",
-    "memory": "Win（OS設定）＋ Space（一番大きいキー）で言語そのものをスイッチ",
-    "level": 2,
-    "funcGroup": "文字入力・IME・ファンクション変換",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020404
-  },
-  {
-    "id": "cm-22",
-    "category": "common",
-    "subcategory": "文字入力・IME・ファンクション変換",
-    "keys": [
-      "Win",
-      "/ (スラッシュ)"
-    ],
-    "title": "確定済みの文字を「再変換」する（または変換キー）",
-    "desc": "すでにEnterで確定してしまった文字列をもう一度変換候補に戻して選び直します。",
-    "tip": "誤変換に気づいたとき、Backspaceで消して打ち直す必要がなくなります（文字列を選択して「変換」キーでも可）。",
-    "level": 2,
-    "memory": "「/（スラッシュ＝区切り直す）」またはキーボード下の「変換」キーで再変換",
-    "funcGroup": "文字入力・IME・ファンクション変換",
-    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
-    "sortRank": 1020547
+    "title": "現在のタブの並び順を左（PageUp）/ 右（PageDown）へ移動",
+    "desc": "開いているタブ自体の位置を左右に入れ替えます。",
+    "tip": "関連するタブを隣同士に整理したい時、ドラッグ不要で並べ替えられます。",
+    "level": 1,
+    "memory": "Ctrl+PageUp/Down（タブ切替）に「Shift」を足して「タブそのものの並び順を移動」",
+    "funcGroup": "タブ・ウィンドウ管理",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8140103
   },
   {
     "id": "cm-26",
@@ -8720,7 +8303,7 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "funcGroup": "移動・選択・検索・置換",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110400
+    "sortRank": 1140011
   },
   {
     "id": "cm-27",
@@ -8736,7 +8319,7 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "funcGroup": "移動・選択・検索・置換",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110402
+    "sortRank": 1140021
   },
   {
     "id": "cm-28",
@@ -8752,7 +8335,135 @@ const SHORTCUTS_DATA = [
     "level": 3,
     "funcGroup": "移動・選択・検索・置換",
     "keyGroup": "① 単独キー（1キー）",
-    "sortRank": 110414
+    "sortRank": 1140081
+  },
+  {
+    "id": "cm-29",
+    "category": "common",
+    "subcategory": "ファイル・ウィンドウ・共通機能",
+    "keys": [
+      "F1"
+    ],
+    "title": "ヘルプ画面を開く（全アプリ共通）",
+    "desc": "現在使っているアプリの公式ヘルプやサポート検索パネルを起動します。",
+    "tip": "F2（編集）を押そうとして隣りの F1 を誤爆しがちですが、困った時の1番（F1）です。",
+    "memory": "一番最初の「F1」＝「1番に助け（SOS/ヘルプ）を呼ぶキー」",
+    "level": 1,
+    "funcGroup": "ファイル・ウィンドウ・共通機能",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130011
+  },
+  {
+    "id": "cm-30",
+    "category": "common",
+    "subcategory": "ファイル・ウィンドウ・共通機能",
+    "keys": [
+      "F4"
+    ],
+    "title": "直前の操作を繰り返す（Office共通）",
+    "desc": "Excel・Word・PowerPointで、直前に行った書式変更、色塗り、行の挿入・削除などをそのまま繰り返します。",
+    "tip": "Ctrl + Y でも同様に直前の操作を繰り返すことができます。",
+    "memory": "F4 ＝「For again（もう一度同じことを繰り返す）」の4",
+    "level": 3,
+    "funcGroup": "ファイル・ウィンドウ・共通機能",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130041
+  },
+  {
+    "id": "cm-16",
+    "category": "common",
+    "subcategory": "文字入力・IME・ファンクション変換",
+    "keys": [
+      "F6"
+    ],
+    "title": "ひらがなに変換",
+    "desc": "入力中（変換確定前）の文字をすべて「ひらがな」に戻します。",
+    "tip": "勝手に漢字変換されてしまった部分をひらがな表記にしたい時に一発です。",
+    "level": 2,
+    "memory": "F6〜F10の変換5兄弟のスタート（6＝む＝「むかしからの、ひらがな」）",
+    "funcGroup": "文字入力・IME・ファンクション変換",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130061
+  },
+  {
+    "id": "cm-17",
+    "category": "common",
+    "subcategory": "文字入力・IME・ファンクション変換",
+    "keys": [
+      "F7"
+    ],
+    "title": "全角カタカナに変換",
+    "desc": "入力中の文字をすべて「全角カタカナ」に一発変換します。",
+    "tip": "スペースキーで何度も変換候補を探す手間が省けます。",
+    "level": 3,
+    "memory": "ラッキーセブン「F7」は一番よく使う「全角カタカナ」！（ナナ＝カタカナのナ）",
+    "funcGroup": "文字入力・IME・ファンクション変換",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130071
+  },
+  {
+    "id": "cm-18",
+    "category": "common",
+    "subcategory": "文字入力・IME・ファンクション変換",
+    "keys": [
+      "F8"
+    ],
+    "title": "半角カタカナに変換",
+    "desc": "入力中の文字を「半角カタカナ」に変換します。",
+    "tip": "銀行振込名義やシステム入力フォームなどで重宝します。",
+    "level": 2,
+    "memory": "F7（全角カナ）の1つ右隣「F8」で、幅が半分の「半角カタカナ」（8＝ハンカクのハ）",
+    "funcGroup": "文字入力・IME・ファンクション変換",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130081
+  },
+  {
+    "id": "cm-19",
+    "category": "common",
+    "subcategory": "文字入力・IME・ファンクション変換",
+    "keys": [
+      "F9"
+    ],
+    "title": "全角英数に変換",
+    "desc": "入力中の文字を「全角アルファベット・数字」に変換します。",
+    "tip": "押すたびに「すべて小文字 → すべて大文字 → 先頭のみ大文字」と切り替わります。",
+    "level": 2,
+    "memory": "F10（半角英数）の1つ手前「F9」で「全角英数」",
+    "funcGroup": "文字入力・IME・ファンクション変換",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130091
+  },
+  {
+    "id": "cm-20",
+    "category": "common",
+    "subcategory": "文字入力・IME・ファンクション変換",
+    "keys": [
+      "F10"
+    ],
+    "title": "半角英数に変換",
+    "desc": "日本語モードのまま入力してしまった英単語を「半角英数字」に変換します。",
+    "tip": "メールアドレスや英単語をうっかり「かな入力」した時に打ち直さず一発で直せます。",
+    "level": 3,
+    "memory": "F6〜F10のゴール「F10」は一番スマートな「半角英数」（10＝Ten＝英語！）",
+    "funcGroup": "文字入力・IME・ファンクション変換",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130101
+  },
+  {
+    "id": "cm-11",
+    "category": "common",
+    "subcategory": "ファイル・ウィンドウ・共通機能",
+    "keys": [
+      "F12"
+    ],
+    "title": "名前を付けて保存（Office共通）",
+    "desc": "Excel・Word・PowerPointで「名前を付けて保存」ダイアログを直接開きます（Ctrl + Shift + S でも可）。",
+    "tip": "別名保存やコピーを作りたい時、ファイルメニューを開く手間がゼロになります。",
+    "level": 3,
+    "memory": "ファンクションキーの一番右端（最後＝F12）で「最終的に名前を付けて保存」",
+    "funcGroup": "ファイル・ウィンドウ・共通機能",
+    "keyGroup": "② ファンクションキー（F1〜F12）",
+    "sortRank": 2130121
   },
   {
     "id": "cm-7",
@@ -8769,110 +8480,7 @@ const SHORTCUTS_DATA = [
     "memory": "All（すべて）の頭文字「A」",
     "funcGroup": "移動・選択・検索・置換",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410265
-  },
-  {
-    "id": "cm-8",
-    "category": "common",
-    "subcategory": "移動・選択・検索・置換",
-    "keys": [
-      "Ctrl",
-      "F"
-    ],
-    "title": "検索",
-    "desc": "ページ内やドキュメント内のキーワード検索ボックスを開きます。",
-    "tip": "長文ドキュメントやWebページから目的の言葉を瞬時に探せます。",
-    "level": 3,
-    "memory": "Find（見つける・検索する）の頭文字「F」",
-    "funcGroup": "移動・選択・検索・置換",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410270
-  },
-  {
-    "id": "cm-9",
-    "category": "common",
-    "subcategory": "移動・選択・検索・置換",
-    "keys": [
-      "Ctrl",
-      "H"
-    ],
-    "title": "置換",
-    "desc": "特定の文字列を検索して、別の文字列に一括または個別に置き換えます。",
-    "tip": "Word・Excel・メモ帳・各種エディタ共通で使えます（ブラウザでは閲覧履歴が開きます）。",
-    "level": 2,
-    "memory": "ReplaceのRが別機能で使われているため、検索（F）の隣の隣「F → G → H」で置換",
-    "funcGroup": "移動・選択・検索・置換",
-    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410272
-  },
-  {
-    "id": "cm-34",
-    "category": "common",
-    "subcategory": "移動・選択・検索・置換",
-    "keys": [
-      "Ctrl",
-      "← / →"
-    ],
-    "title": "単語・文節単位でカーソルを高速スキップ移動",
-    "desc": "1文字ずつではなく、英単語や日本語の区切り単位でカーソルを左右へポンポン飛ばします。",
-    "tip": "長文の途中を直したい時、矢印キーを押しっぱなしにするより何倍も速く目的箇所に到達できます。",
-    "memory": "Ctrl（ワープ加速キー）＋ 左右矢印で「1単語ずつ飛び越える」",
-    "level": 3,
-    "funcGroup": "移動・選択・検索・置換",
-    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
-    "sortRank": 510426
-  },
-  {
-    "id": "cm-35",
-    "category": "common",
-    "subcategory": "移動・選択・検索・置換",
-    "keys": [
-      "Shift",
-      "↑ / ↓ / ← / →"
-    ],
-    "title": "カーソル位置から文字を1文字・1行ずつ範囲選択",
-    "desc": "マウスドラッグを使わずに、キーボードの矢印キーだけで正確に文字列を選択します。",
-    "tip": "Ctrl + Shift + ← / → にすると、単語・文節単位でガバッと高速に範囲選択できます！",
-    "memory": "Shift（選択テープを伸ばすキー）を押しながら矢印で範囲を広げる",
-    "level": 3,
-    "funcGroup": "移動・選択・検索・置換",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 610422
-  },
-  {
-    "id": "cm-38",
-    "category": "common",
-    "subcategory": "移動・選択・検索・置換",
-    "keys": [
-      "Shift",
-      "Home / End"
-    ],
-    "title": "カーソル位置から「行頭(Home) / 行末(End)」まで一括選択",
-    "desc": "現在の位置からその行の先頭まで（Shift+Home）、または行末まで（Shift+End）を一瞬で選択します。",
-    "tip": "そのまま Backspace や Ctrl+C を押せば、1行の後半・前半だけを1秒で削除・コピーできます！",
-    "level": 3,
-    "memory": "Home（行頭）/ End（行末）に Shift（範囲選択）をプラス",
-    "funcGroup": "移動・選択・検索・置換",
-    "keyGroup": "⑥ Shift ＋ キー",
-    "sortRank": 620472
-  },
-  {
-    "id": "cm-39",
-    "category": "common",
-    "subcategory": "移動・選択・検索・置換",
-    "keys": [
-      "Ctrl",
-      "Shift",
-      "Home / End"
-    ],
-    "title": "カーソル位置から「文書の先頭 / 文書の末尾」まで一括選択",
-    "desc": "現在のカーソル位置から最初の1文字目まで、または最終行の最後までをまるごと範囲選択します。",
-    "tip": "「ここから下の文章を全部消したい・コピーしたい」というときにスクロール不要で一瞬です。",
-    "level": 3,
-    "memory": "Ctrl+Home/End（文書の先頭・末尾）＋ Shift（範囲選択）",
-    "funcGroup": "移動・選択・検索・置換",
-    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830472
+    "sortRank": 4120012
   },
   {
     "id": "cm-1",
@@ -8889,7 +8497,126 @@ const SHORTCUTS_DATA = [
     "memory": "Copy（コピー）の頭文字「C」",
     "funcGroup": "編集・クリップボード",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410267
+    "sortRank": 4120032
+  },
+  {
+    "id": "cm-8",
+    "category": "common",
+    "subcategory": "移動・選択・検索・置換",
+    "keys": [
+      "Ctrl",
+      "F"
+    ],
+    "title": "検索",
+    "desc": "ページ内やドキュメント内のキーワード検索ボックスを開きます。",
+    "tip": "長文ドキュメントやWebページから目的の言葉を瞬時に探せます。",
+    "level": 3,
+    "memory": "Find（見つける・検索する）の頭文字「F」",
+    "funcGroup": "移動・選択・検索・置換",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120062
+  },
+  {
+    "id": "cm-9",
+    "category": "common",
+    "subcategory": "移動・選択・検索・置換",
+    "keys": [
+      "Ctrl",
+      "H"
+    ],
+    "title": "置換",
+    "desc": "特定の文字列を検索して、別の文字列に一括または個別に置き換えます。",
+    "tip": "Word・Excel・メモ帳・各種エディタ共通で使えます（ブラウザでは閲覧履歴が開きます）。",
+    "level": 2,
+    "memory": "ReplaceのRが別機能で使われているため、検索（F）の隣の隣「F → G → H」で置換",
+    "funcGroup": "移動・選択・検索・置換",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120082
+  },
+  {
+    "id": "cm-13",
+    "category": "common",
+    "subcategory": "ファイル・ウィンドウ・共通機能",
+    "keys": [
+      "Ctrl",
+      "N"
+    ],
+    "title": "新規作成 / 新しいウィンドウ",
+    "desc": "新しいファイル、ドキュメント、または新しいウィンドウを開きます。",
+    "tip": "New の N。アプリを問わず「新しく作る」ときの基本キーです。",
+    "level": 2,
+    "memory": "New（新しく作る）の頭文字「N」",
+    "funcGroup": "ファイル・ウィンドウ・共通機能",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120142
+  },
+  {
+    "id": "cm-14",
+    "category": "common",
+    "subcategory": "ファイル・ウィンドウ・共通機能",
+    "keys": [
+      "Ctrl",
+      "O"
+    ],
+    "title": "ファイルを開く",
+    "desc": "既存のファイルを開くためのダイアログを表示します。",
+    "tip": "Open の O と覚えると忘れません。",
+    "level": 2,
+    "memory": "Open（開く）の頭文字「O」",
+    "funcGroup": "ファイル・ウィンドウ・共通機能",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120152
+  },
+  {
+    "id": "cm-12",
+    "category": "common",
+    "subcategory": "ファイル・ウィンドウ・共通機能",
+    "keys": [
+      "Ctrl",
+      "P"
+    ],
+    "title": "印刷 / PDF出力",
+    "desc": "印刷プレビュー・印刷設定画面を開きます。",
+    "tip": "プリンタに「Microsoft Print to PDF」を選べばあらゆる画面をPDF保存できます。",
+    "level": 3,
+    "memory": "Print（プリント・印刷）の頭文字「P」",
+    "funcGroup": "ファイル・ウィンドウ・共通機能",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120162
+  },
+  {
+    "id": "cm-10",
+    "category": "common",
+    "subcategory": "ファイル・ウィンドウ・共通機能",
+    "keys": [
+      "Ctrl",
+      "S"
+    ],
+    "title": "上書き保存",
+    "desc": "現在作業中のファイルを上書き保存します。",
+    "tip": "作業の区切りごとにクセづけておくと不意のフリーズでも安心です。",
+    "level": 3,
+    "memory": "Save（保存する）の頭文字「S」",
+    "funcGroup": "ファイル・ウィンドウ・共通機能",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120192
+  },
+  {
+    "id": "cm-21",
+    "category": "common",
+    "subcategory": "文字入力・IME・ファンクション変換",
+    "keys": [
+      "Ctrl",
+      "U / I / O / P"
+    ],
+    "title": "ホームポジションのまま文字種変換（F6〜F9相当）",
+    "desc": "文字入力中に Ctrl+U（ひらがな）、Ctrl+I（全角カナ）、Ctrl+O（半角カナ）、Ctrl+P（全角英数）に変換します。",
+    "tip": "ノートPCでファンクションキーが押しにくい環境でも指を動かさず高速変換できます（Ctrl+Tで半角英数）。",
+    "level": 1,
+    "memory": "F6〜F9のすぐ真下にある「U・I・O・P」の横並び4キーがそのまま対応！",
+    "funcGroup": "文字入力・IME・ファンクション変換",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120212
   },
   {
     "id": "cm-3",
@@ -8906,7 +8633,24 @@ const SHORTCUTS_DATA = [
     "memory": "校正記号の挿入マーク（∨）の形、または Z・X・C のすぐ右隣にある「V」",
     "funcGroup": "編集・クリップボード",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410286
+    "sortRank": 4120222
+  },
+  {
+    "id": "cm-15",
+    "category": "common",
+    "subcategory": "ファイル・ウィンドウ・共通機能",
+    "keys": [
+      "Ctrl",
+      "W"
+    ],
+    "title": "現在のファイル・タブを閉じる",
+    "desc": "作業中のブック・文書・ブラウザタブ・エクスプローラーを閉じます（Ctrl + F4 と同じ）。",
+    "tip": "アプリ自体は終了せず、今開いているファイルやタブだけを閉じたい時に便利です。",
+    "level": 3,
+    "memory": "Window（ウィンドウ・タブ）を閉じるの「W」",
+    "funcGroup": "ファイル・ウィンドウ・共通機能",
+    "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
+    "sortRank": 4120232
   },
   {
     "id": "cm-2",
@@ -8923,7 +8667,7 @@ const SHORTCUTS_DATA = [
     "memory": "ハサミ（✂️）で切る形に見える「X」（Cの左隣）",
     "funcGroup": "編集・クリップボード",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410288
+    "sortRank": 4120242
   },
   {
     "id": "cm-6",
@@ -8940,7 +8684,7 @@ const SHORTCUTS_DATA = [
     "memory": "Z（戻す）の相棒「Y」で「Yes、やっぱりやり直す！」",
     "funcGroup": "編集・クリップボード",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410289
+    "sortRank": 4120252
   },
   {
     "id": "cm-5",
@@ -8957,7 +8701,211 @@ const SHORTCUTS_DATA = [
     "memory": "アルファベットの最後「Z」から時間を巻き戻す（キーボードの左端）",
     "funcGroup": "編集・クリップボード",
     "keyGroup": "④ Ctrl ＋ 英字（Ctrl + A〜Z）",
-    "sortRank": 410290
+    "sortRank": 4120262
+  },
+  {
+    "id": "cm-31",
+    "category": "common",
+    "subcategory": "ファイル・ウィンドウ・共通機能",
+    "keys": [
+      "Ctrl",
+      "F1"
+    ],
+    "title": "リボンメニュー（上部ツールバー）の表示 / 折りたたみを切り替え",
+    "desc": "Excel・Word・PowerPoint・エクスプローラーの上部リボンを隠し、作業画面を縦に広く使います。",
+    "tip": "「あれ、上のメニューが消えた！？」というトラブルの9割はこの Ctrl + F1 をうっかり押したことが原因です！もう一度押せば直ります。",
+    "memory": "一番上のメニュー（1番＝F1）を Ctrl で開閉コントロールする",
+    "level": 3,
+    "funcGroup": "ファイル・ウィンドウ・共通機能",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5130012
+  },
+  {
+    "id": "cm-32",
+    "category": "common",
+    "subcategory": "ファイル・ウィンドウ・共通機能",
+    "keys": [
+      "Ctrl",
+      "F2"
+    ],
+    "title": "印刷プレビュー画面を直接開く（Office共通）",
+    "desc": "印刷イメージを確認するプレビュー画面を一発で開きます（Ctrl + P と同じ）。",
+    "tip": "Excelで印刷範囲が1ページに収まっているか確認するときに便利です。",
+    "memory": "F2（見る・編集）に Ctrl を足して「印刷イメージをプレビューで見る」",
+    "level": 2,
+    "funcGroup": "ファイル・ウィンドウ・共通機能",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5130022
+  },
+  {
+    "id": "cm-33",
+    "category": "common",
+    "subcategory": "ファイル・ウィンドウ・共通機能",
+    "keys": [
+      "Ctrl",
+      "F6"
+    ],
+    "title": "同じアプリの別ファイルウィンドウへ順番に切り替え",
+    "desc": "Excelブックを複数開いている時やWord文書を複数開いている時、他のアプリを挟まず同じアプリのウィンドウ間だけを移動します。",
+    "tip": "Alt + Tab だとブラウザやチャットまで混ざってしまいますが、Ctrl + F6 ならExcel同士・Word同士だけで行き来できます！",
+    "memory": "F6（画面枠・ペイン移動）に Ctrl を足して「同アプリの別ウィンドウ間を移動」",
+    "level": 2,
+    "funcGroup": "ファイル・ウィンドウ・共通機能",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5130062
+  },
+  {
+    "id": "cm-40",
+    "category": "common",
+    "subcategory": "文字入力・IME・ファンクション変換",
+    "keys": [
+      "Ctrl",
+      "Space"
+    ],
+    "title": "半角スペースを直接入力（全角入力中でも半角空白を入れる）",
+    "desc": "日本語（全角）モードのままでも、Shift+Space または Ctrl+Space（設定による）でスッキリした半角スペースを入力できます。",
+    "tip": "日本語の中に英単語や数字を混ぜるとき、全角スペースの混入を防げます。",
+    "level": 2,
+    "memory": "修飾キー ＋ Space でスマートな半角スペース",
+    "funcGroup": "文字入力・IME・ファンクション変換",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140032
+  },
+  {
+    "id": "cm-23",
+    "category": "common",
+    "subcategory": "文字入力・IME・ファンクション変換",
+    "keys": [
+      "Ctrl",
+      "Backspace"
+    ],
+    "title": "確定直後の文字を未確定状態に戻す / 単語削除",
+    "desc": "IMEでEnter確定した直後に押すと確定を取り消して再変換でき、英文等では前の1単語をまとめて消去します。",
+    "tip": "「あっ、今の変換間違えた！」という瞬間にすぐ戻せます。",
+    "level": 2,
+    "memory": "Backspace（1文字消す）に Ctrl を足して「確定そのもの（または1単語丸ごと）を取り消す」",
+    "funcGroup": "文字入力・IME・ファンクション変換",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140052
+  },
+  {
+    "id": "cm-34",
+    "category": "common",
+    "subcategory": "移動・選択・検索・置換",
+    "keys": [
+      "Ctrl",
+      "← / →"
+    ],
+    "title": "単語・文節単位でカーソルを高速スキップ移動",
+    "desc": "1文字ずつではなく、英単語や日本語の区切り単位でカーソルを左右へポンポン飛ばします。",
+    "tip": "長文の途中を直したい時、矢印キーを押しっぱなしにするより何倍も速く目的箇所に到達できます。",
+    "memory": "Ctrl（ワープ加速キー）＋ 左右矢印で「1単語ずつ飛び越える」",
+    "level": 3,
+    "funcGroup": "移動・選択・検索・置換",
+    "keyGroup": "⑤ Ctrl ＋ 記号・特殊キー・Fキー",
+    "sortRank": 5140222
+  },
+  {
+    "id": "cm-25",
+    "category": "common",
+    "subcategory": "文字入力・IME・ファンクション変換",
+    "keys": [
+      "Shift",
+      "F10"
+    ],
+    "title": "右クリックメニュー（コンテキストメニュー）を開く",
+    "desc": "マウスで右クリックした時と同じメニューをキーボードから開きます（アプリケーションキーと同じ）。",
+    "tip": "Windows 11のエクスプローラーでは Shift + F10 を押すと「その他のオプションを表示」を開いた状態の旧メニューが直接出ます！",
+    "level": 2,
+    "memory": "F10（メニューバー活性）＋ Shift で「右クリックメニュー」を呼び出す",
+    "funcGroup": "文字入力・IME・ファンクション変換",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6130102
+  },
+  {
+    "id": "cm-38",
+    "category": "common",
+    "subcategory": "移動・選択・検索・置換",
+    "keys": [
+      "Shift",
+      "Home / End"
+    ],
+    "title": "カーソル位置から「行頭(Home) / 行末(End)」まで一括選択",
+    "desc": "現在の位置からその行の先頭まで（Shift+Home）、または行末まで（Shift+End）を一瞬で選択します。",
+    "tip": "そのまま Backspace や Ctrl+C を押せば、1行の後半・前半だけを1秒で削除・コピーできます！",
+    "level": 3,
+    "memory": "Home（行頭）/ End（行末）に Shift（範囲選択）をプラス",
+    "funcGroup": "移動・選択・検索・置換",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6140082
+  },
+  {
+    "id": "cm-35",
+    "category": "common",
+    "subcategory": "移動・選択・検索・置換",
+    "keys": [
+      "Shift",
+      "↑ / ↓ / ← / →"
+    ],
+    "title": "カーソル位置から文字を1文字・1行ずつ範囲選択",
+    "desc": "マウスドラッグを使わずに、キーボードの矢印キーだけで正確に文字列を選択します。",
+    "tip": "Ctrl + Shift + ← / → にすると、単語・文節単位でガバッと高速に範囲選択できます！",
+    "memory": "Shift（選択テープを伸ばすキー）を押しながら矢印で範囲を広げる",
+    "level": 3,
+    "funcGroup": "移動・選択・検索・置換",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6140202
+  },
+  {
+    "id": "cm-24",
+    "category": "common",
+    "subcategory": "文字入力・IME・ファンクション変換",
+    "keys": [
+      "Shift",
+      "文字キー"
+    ],
+    "title": "日本語モードのまま一時的に半角英数入力",
+    "desc": "日本語入力（あ）のままでも、Shiftを押しながらキーを打つとそのまま英字入力モードに入ります。",
+    "tip": "文中に英単語（例: Excel、PC、AIなど）を混ぜる時に「半角/全角」キーを押す回数が激減します。",
+    "level": 3,
+    "memory": "Shift（一時切り替え）を押しながら打つだけで、その瞬間だけ英語モードにシフト！",
+    "funcGroup": "文字入力・IME・ファンクション変換",
+    "keyGroup": "⑥ Shift ＋ キー",
+    "sortRank": 6409912
+  },
+  {
+    "id": "cm-36",
+    "category": "common",
+    "subcategory": "ファイル・ウィンドウ・共通機能",
+    "keys": [
+      "Alt",
+      "Space"
+    ],
+    "title": "ウィンドウのシステムメニューを開く（最小化・最大化・移動）",
+    "desc": "タイトルバー左上のアイコンをクリックした時と同じメニューを開きます（続けて N で最小化、X で最大化、C で閉じる）。",
+    "tip": "ウィンドウが画面外にはみ出てマウスで掴めなくなった時は「Alt + Space → M → 矢印キー」で画面内に救出できます！",
+    "memory": "Alt ＋ Space（タイトルバーの余白スペース）でウィンドウ操作メニューを起動",
+    "level": 2,
+    "funcGroup": "ファイル・ウィンドウ・共通機能",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7140032
+  },
+  {
+    "id": "cm-42",
+    "category": "common",
+    "subcategory": "文字入力・IME・ファンクション変換",
+    "keys": [
+      "Alt",
+      "半角/全角"
+    ],
+    "title": "日本語入力（IME）のオン / オフを確実に切り替え",
+    "desc": "「半角/全角」キー単体と同じく、日本語入力（あ）と直接入力（A）を切り替えます。",
+    "tip": "英語配列キーボード（US配列）を使っている場合でも「Alt + `（バッククォート）」で日本語/英語を切り替えられます！",
+    "level": 2,
+    "memory": "Alt + 半角/全角（US配列なら Alt + `）でIME切替",
+    "funcGroup": "文字入力・IME・ファンクション変換",
+    "keyGroup": "⑦ Alt ＋ キー（Alt組み合わせ・順押し）",
+    "sortRank": 7140142
   },
   {
     "id": "cm-4",
@@ -8975,7 +8923,7 @@ const SHORTCUTS_DATA = [
     "memory": "貼り付け（Ctrl+V）に「Shift（余計な装飾を剥がす強化キー）」をプラス",
     "funcGroup": "編集・クリップボード",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 810286
+    "sortRank": 8120223
   },
   {
     "id": "cm-41",
@@ -8993,6 +8941,58 @@ const SHORTCUTS_DATA = [
     "memory": "Ctrl + Z（Undo）に逆方向キー Shift を足して Redo",
     "funcGroup": "編集・クリップボード",
     "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
-    "sortRank": 830290
+    "sortRank": 8120263
+  },
+  {
+    "id": "cm-39",
+    "category": "common",
+    "subcategory": "移動・選択・検索・置換",
+    "keys": [
+      "Ctrl",
+      "Shift",
+      "Home / End"
+    ],
+    "title": "カーソル位置から「文書の先頭 / 文書の末尾」まで一括選択",
+    "desc": "現在のカーソル位置から最初の1文字目まで、または最終行の最後までをまるごと範囲選択します。",
+    "tip": "「ここから下の文章を全部消したい・コピーしたい」というときにスクロール不要で一瞬です。",
+    "level": 3,
+    "memory": "Ctrl+Home/End（文書の先頭・末尾）＋ Shift（範囲選択）",
+    "funcGroup": "移動・選択・検索・置換",
+    "keyGroup": "⑧ Ctrl ＋ Shift ＋ キー",
+    "sortRank": 8140083
+  },
+  {
+    "id": "cm-37",
+    "category": "common",
+    "subcategory": "文字入力・IME・ファンクション変換",
+    "keys": [
+      "Win",
+      "Space"
+    ],
+    "title": "入力言語・キーボードレイアウトを切り替え",
+    "desc": "日本語IMEと英語キーボードなど、インストールされている入力言語を切り替えます。",
+    "tip": "「@や記号の位置が急に英語配列になってズレた！」という時は、うっかり Win + Space を押して英語キーボードに切り替わっています！もう一度押せば直ります。",
+    "memory": "Win（OS設定）＋ Space（一番大きいキー）で言語そのものをスイッチ",
+    "level": 2,
+    "funcGroup": "文字入力・IME・ファンクション変換",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10240032
+  },
+  {
+    "id": "cm-22",
+    "category": "common",
+    "subcategory": "文字入力・IME・ファンクション変換",
+    "keys": [
+      "Win",
+      "/ (スラッシュ)"
+    ],
+    "title": "確定済みの文字を「再変換」する（または変換キー）",
+    "desc": "すでにEnterで確定してしまった文字列をもう一度変換候補に戻して選び直します。",
+    "tip": "誤変換に気づいたとき、Backspaceで消して打ち直す必要がなくなります（文字列を選択して「変換」キーでも可）。",
+    "level": 2,
+    "memory": "「/（スラッシュ＝区切り直す）」またはキーボード下の「変換」キーで再変換",
+    "funcGroup": "文字入力・IME・ファンクション変換",
+    "keyGroup": "⑩ Win ＋ キー（Windowsキー）",
+    "sortRank": 10250472
   }
 ];
