@@ -33,9 +33,11 @@
   const exitFavModeBtn = document.getElementById('exitFavModeBtn');
 
   const subcategoryBarEl = document.getElementById('subcategoryBar');
+  const statusBarEl = document.getElementById('statusBar');
   const resultCountNumEl = document.getElementById('resultCountNum');
   const activeFilterSummaryEl = document.getElementById('activeFilterSummary');
   const shortcutsContainerEl = document.getElementById('shortcutsContainer');
+  const siteFooterEl = document.getElementById('siteFooter');
   const toastEl = document.getElementById('toast');
 
   const toggleSearchPanelBtn = document.getElementById('toggleSearchPanelBtn');
@@ -114,6 +116,7 @@
     document.querySelectorAll('.view-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.view === state.viewMode);
     });
+    document.body.classList.toggle('is-swipe-mode', state.viewMode === 'swipe');
   }
 
   // ==========================================
@@ -318,7 +321,6 @@
     goToShortcutIndex(state.currentIndex + offset, true);
   }
 
-  // インデックス変更時にDOM全体を再描画せず、ボタン・進捗バー・目次ハイライトだけを高速更新
   function syncActiveIndexUI() {
     const total = currentFilteredItems.length;
     if (total === 0) {
@@ -351,7 +353,6 @@
       swipeProgressFillEl.style.width = `${pct}%`;
     }
 
-    // ステージ下の前後ボタンのサブテキスト更新
     const stagePrevSub = document.getElementById('stagePrevSubText');
     const stageNextSub = document.getElementById('stageNextSubText');
     if (stagePrevSub && prevItem) {
@@ -361,12 +362,6 @@
       stageNextSub.textContent = `${nextItem.keys.join('+')}：${nextItem.title}`;
     }
 
-    // 目次リストの現在位置ハイライト更新
-    shortcutsContainerEl.querySelectorAll('.dir-item').forEach(btn => {
-      btn.classList.toggle('active', Number(btn.dataset.jumpIndex) === idx);
-    });
-
-    // 全件一覧モードのアクティブ枠更新
     if (state.viewMode === 'card' && currentItem) {
       shortcutsContainerEl.querySelectorAll('.shortcut-card.full-visible-card').forEach(card => {
         card.classList.toggle('active-shortcut-card', card.dataset.cardId === currentItem.id);
@@ -381,6 +376,7 @@
     currentFilteredItems = getFilteredShortcuts();
     const total = currentFilteredItems.length;
     resultCountNumEl.textContent = total;
+    document.body.classList.toggle('is-swipe-mode', state.viewMode === 'swipe');
 
     if (state.currentIndex >= total) {
       state.currentIndex = 0;
@@ -442,23 +438,17 @@
   }
 
   // ==========================================
-  // 1. 滑らかなネイティブ横スクロール・スワイプ表示モード
+  // 1. スワイプ表示モード（上部に固定されたスワイプカード＋下に全件全体表示一覧）
   // ==========================================
   function renderSmoothSwipeCarouselView(items) {
     const total = items.length;
-    const idx = state.currentIndex;
-    const prevIdx = (idx - 1 + total) % total;
-    const nextIdx = (idx + 1) % total;
-    const prevItem = items[prevIdx];
-    const nextItem = items[nextIdx];
 
-    // すべてのカードを横1列のネイティブスクロールスナップトラックに配置（指に吸い付く滑らかなスワイプ）
     const slidesHtml = items.map((item, itemIdx) => {
       const catMeta = CATEGORIES.find(c => c.id === item.category);
       const cardColor = catMeta ? catMeta.color : '#2563eb';
       const isFav = state.favorites.has(item.id);
       const comboText = item.keys.join(' + ');
-      const shortKeyGroup = item.keyGroup ? item.keyGroup.replace(/^[①-⑩]\s*/, '') : '';
+      const shortKeyGroup = item.keyGroup ? item.keyGroup.replace(/^[①-⑩]\s*/, '').replace(/（.*?）/g, '') : '';
 
       return `
         <article
@@ -473,12 +463,18 @@
               <span class="single-genre-badge">${escapeHtml(item.subcategory)}</span>
               ${shortKeyGroup ? `<span class="item-func-tag">${escapeHtml(shortKeyGroup)}</span>` : ''}
             </div>
-            <div class="single-card-counter">
-              <strong>${itemIdx + 1}</strong> / ${total} 件目
+            <div class="single-card-right-top">
+              <span class="single-card-counter"><strong>${itemIdx + 1}</strong>/${total}</span>
+              <button
+                type="button"
+                class="fav-btn single-top-fav-btn ${isFav ? 'is-fav' : ''}"
+                data-fav-id="${item.id}"
+                title="${isFav ? 'お気に入りから解除' : 'お気に入りに追加'}"
+              >${isFav ? '★' : '☆'}</button>
             </div>
           </div>
 
-          <div class="single-card-keys-area">
+          <div class="single-card-main-head">
             <div
               class="keys-combo single-keys-combo"
               data-copy="${escapeHtml(comboText)}"
@@ -486,110 +482,44 @@
             >
               ${renderKeysHtml(item.keys)}
             </div>
-            <span class="copy-hint-label">📋 キータップでコピー</span>
-          </div>
-
-          <div class="single-card-title-row">
-            <h2 class="single-card-title">${escapeHtml(item.title)}</h2>
-            ${renderLevelBadge(item.level)}
+            <div class="single-card-title-wrap">
+              <h2 class="single-card-title">${escapeHtml(item.title)}</h2>
+              ${renderLevelBadge(item.level)}
+            </div>
           </div>
 
           <p class="single-card-desc">${escapeHtml(item.desc)}</p>
 
           ${item.memory ? `
             <div class="card-memory single-card-memory">
-              <span class="card-memory-label">🧠 覚え方:</span>
-              <span class="card-memory-text">${escapeHtml(item.memory)}</span>
+              🧠 ${escapeHtml(item.memory)}
             </div>
           ` : ''}
 
           ${item.tip ? `
             <div class="card-tip single-card-tip">
-              <span class="card-tip-icon" aria-hidden="true">💡</span>
-              <span class="card-tip-text">${escapeHtml(item.tip)}</span>
+              💡 ${escapeHtml(item.tip)}
             </div>
           ` : ''}
-
-          <div class="single-card-footer">
-            <button
-              type="button"
-              class="single-fav-btn ${isFav ? 'is-fav' : ''}"
-              data-fav-id="${item.id}"
-            >
-              <span>${isFav ? '★' : '☆'}</span>
-              <span>${isFav ? 'お気に入り登録済み（タップで解除）' : 'お気に入りに追加する'}</span>
-            </button>
-          </div>
         </article>
       `;
     }).join('');
 
-    // ジャンル別目次リスト
+    // スワイプ表示カードの下にもジャンル別の全体表示カードを配置（上部固定スワイプ＋全体表示）
     const groups = groupShortcuts(items);
-    let globalCounter = 0;
-    const directoryHtml = groups.map(g => {
-      const listHtml = g.items.map(gItem => {
-        const itemIndex = globalCounter++;
-        const isCurrent = itemIndex === idx;
-        const gIsFav = state.favorites.has(gItem.id);
-        return `
-          <button
-            type="button"
-            class="dir-item ${isCurrent ? 'active' : ''}"
-            data-jump-index="${itemIndex}"
-          >
-            <span class="dir-num">${itemIndex + 1}</span>
-            <span class="dir-keys">${escapeHtml(gItem.keys.join(' + '))}</span>
-            <span class="dir-title">${escapeHtml(gItem.title)}</span>
-            ${gIsFav ? '<span class="dir-fav">★</span>' : ''}
-          </button>
-        `;
-      }).join('');
-
-      return `
-        <div class="dir-group" style="--section-color: ${g.color}">
-          <div class="dir-group-header">
-            <span class="section-badge">${escapeHtml(g.categoryIcon)} ${escapeHtml(g.categoryName)}</span>
-            <strong>${escapeHtml(g.subcategory)}</strong>
-            <span class="section-count">${g.items.length}件</span>
-          </div>
-          <div class="dir-group-list">
-            ${listHtml}
-          </div>
-        </div>
-      `;
-    }).join('');
+    const fullCardsBelowHtml = groups.map(group => renderCardGroup(group)).join('');
 
     return `
+      <!-- 上部固定のスワイプカードステージ -->
       <div class="swipe-single-stage" id="swipeSingleStage">
-        <!-- 滑らかな横スクロールスナップ・トラック -->
         <div class="swipe-carousel-track" id="swipeCarouselTrack">
           ${slidesHtml}
         </div>
+      </div>
 
-        <!-- カード直下の「前のショートカット / 次のショートカット」大型ボタン -->
-        <div class="single-step-controls">
-          <button type="button" class="step-card-btn prev" id="stagePrevBtn">
-            <span class="step-btn-dir">◀ 前のショートカット</span>
-            <span class="step-btn-sub" id="stagePrevSubText">${escapeHtml(prevItem.keys.join('+'))}：${escapeHtml(prevItem.title)}</span>
-          </button>
-          <button type="button" class="step-card-btn next" id="stageNextBtn">
-            <span class="step-btn-dir">次のショートカット ▶</span>
-            <span class="step-btn-sub" id="stageNextSubText">${escapeHtml(nextItem.keys.join('+'))}：${escapeHtml(nextItem.title)}</span>
-          </button>
-        </div>
-
-        <p class="swipe-guide-note">👆 カードを左右にスワイプすると、滑らかに次のショートカットへ移動します</p>
-
-        <!-- ジャンル別クイック目次 -->
-        <div class="swipe-directory-section">
-          <div class="swipe-directory-header">
-            <h3>📂 ジャンル別ショートカット目次（タップでその項目へ移動）</h3>
-          </div>
-          <div class="swipe-directory-body">
-            ${directoryHtml}
-          </div>
-        </div>
+      <!-- 下部に全ショートカットをジャンル別に全体表示 -->
+      <div class="swipe-below-full-list">
+        ${fullCardsBelowHtml}
       </div>
     `;
   }
@@ -626,7 +556,7 @@
   }
 
   // ==========================================
-  // 2. 全件一覧モード（クリック不要で全情報を常時表示）
+  // 2. 全件一覧（クリック不要で全情報を常時全体表示）
   // ==========================================
   function groupShortcuts(items) {
     const map = new Map();
@@ -671,12 +601,14 @@
       const isCurrent = activeItem && activeItem.id === item.id;
       const comboText = item.keys.join(' + ');
       const shortKeyGroup = item.keyGroup ? item.keyGroup.replace(/^[①-⑩]\s*/, '').replace(/（.*?）/g, '') : '';
+      const globalIdx = currentFilteredItems.findIndex(x => x.id === item.id);
 
       return `
         <article
           class="shortcut-card full-visible-card ${isCurrent ? 'active-shortcut-card' : ''}"
           style="--card-accent: ${group.color}"
           data-card-id="${item.id}"
+          data-jump-index="${globalIdx}"
         >
           <div class="card-top">
             <div
@@ -704,15 +636,13 @@
 
           ${item.memory ? `
             <div class="card-memory">
-              <span class="card-memory-label">🧠 覚え方:</span>
-              <span class="card-memory-text">${escapeHtml(item.memory)}</span>
+              🧠 ${escapeHtml(item.memory)}
             </div>
           ` : ''}
 
           ${item.tip ? `
             <div class="card-tip">
-              <span class="card-tip-icon" aria-hidden="true">💡</span>
-              <span class="card-tip-text">${escapeHtml(item.tip)}</span>
+              💡 ${escapeHtml(item.tip)}
             </div>
           ` : ''}
         </article>
@@ -753,7 +683,7 @@
           <td class="table-title-cell">${escapeHtml(item.title)}</td>
           <td class="table-desc-cell">
             ${escapeHtml(item.desc)}
-            ${item.memory ? `<br><span class="table-memory-line">🧠 覚え方: ${escapeHtml(item.memory)}</span>` : ''}
+            ${item.memory ? `<br><span class="table-memory-line">🧠 ${escapeHtml(item.memory)}</span>` : ''}
             ${item.tip ? `<br><span class="table-tip-line">💡 ${escapeHtml(item.tip)}</span>` : ''}
           </td>
           <td class="table-level-cell">${renderLevelBadge(item.level)}</td>
@@ -814,20 +744,12 @@
     updateFavBadge();
     syncFavModeUI();
 
-    // お気に入りモード表示中はリストが変わるため再描画、通常モード時はスクロール位置を保つためボタン状態のみ更新
     if (state.level === 'fav') {
       renderShortcuts();
     } else {
       shortcutsContainerEl.querySelectorAll(`[data-fav-id="${id}"]`).forEach(btn => {
         btn.classList.toggle('is-fav', isNowFav);
-        if (btn.classList.contains('single-fav-btn')) {
-          btn.innerHTML = `
-            <span>${isNowFav ? '★' : '☆'}</span>
-            <span>${isNowFav ? 'お気に入り登録済み（タップで解除）' : 'お気に入りに追加する'}</span>
-          `;
-        } else {
-          btn.textContent = isNowFav ? '★' : '☆';
-        }
+        btn.textContent = isNowFav ? '★' : '☆';
       });
     }
   }
@@ -949,7 +871,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // ヘッダー「★ お気に入りだけ開く」ボタン
+    // ヘッダー「★ お気に入り」ボタン
     if (favOnlyHeaderBtn) {
       favOnlyHeaderBtn.addEventListener('click', () => {
         toggleFavOnlyMode();
@@ -961,13 +883,13 @@
       });
     }
 
-    // スマホ用 検索パネル開閉トグル
+    // 検索パネル開閉トグル
     if (toggleSearchPanelBtn && controlsBarEl) {
       toggleSearchPanelBtn.addEventListener('click', () => {
-        const isOpen = controlsBarEl.classList.toggle('mobile-open');
-        toggleSearchPanelBtn.classList.toggle('active', isOpen);
-        toggleSearchPanelBtn.setAttribute('aria-expanded', String(isOpen));
-        if (isOpen) {
+        const isHidden = controlsBarEl.classList.toggle('hidden');
+        toggleSearchPanelBtn.classList.toggle('active', !isHidden);
+        toggleSearchPanelBtn.setAttribute('aria-expanded', String(!isHidden));
+        if (!isHidden) {
           setTimeout(() => searchInputEl.focus(), 50);
         }
       });
@@ -1048,9 +970,9 @@
       renderShortcuts();
     });
 
-    // コンテナ内クリック（お気に入り・コピー・前後移動・目次ジャンプ）
+    // コンテナ内クリック（お気に入り・コピー・カード選択ジャンプ）
     shortcutsContainerEl.addEventListener('click', e => {
-      const favBtn = e.target.closest('.fav-btn, .single-fav-btn');
+      const favBtn = e.target.closest('.fav-btn');
       if (favBtn && favBtn.dataset.favId) {
         e.stopPropagation();
         toggleFavorite(favBtn.dataset.favId);
@@ -1064,24 +986,11 @@
         return;
       }
 
-      if (e.target.closest('#stagePrevBtn')) {
-        stepShortcut(-1);
-        return;
-      }
-      if (e.target.closest('#stageNextBtn')) {
-        stepShortcut(1);
-        return;
-      }
-
-      const jumpBtn = e.target.closest('[data-jump-index]');
-      if (jumpBtn) {
-        const targetIdx = Number(jumpBtn.dataset.jumpIndex);
-        if (!Number.isNaN(targetIdx)) {
+      const jumpCard = e.target.closest('[data-jump-index]');
+      if (jumpCard && state.viewMode === 'swipe') {
+        const targetIdx = Number(jumpCard.dataset.jumpIndex);
+        if (!Number.isNaN(targetIdx) && targetIdx >= 0) {
           goToShortcutIndex(targetIdx, true);
-          const stageEl = document.getElementById('swipeSingleStage');
-          if (stageEl) {
-            stageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
         }
       }
     });
@@ -1147,7 +1056,7 @@
 
       if (e.key === '/' && !isTyping && !e.ctrlKey && !e.altKey && !e.metaKey) {
         e.preventDefault();
-        if (controlsBarEl) controlsBarEl.classList.add('mobile-open');
+        if (controlsBarEl) controlsBarEl.classList.remove('hidden');
         searchInputEl.focus();
         searchInputEl.select();
         return;
