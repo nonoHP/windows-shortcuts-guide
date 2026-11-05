@@ -727,11 +727,13 @@
       const shortMap = {
         'PRINTSCREEN': 'PrtSc',
         'PAGEUP': 'PgUp',
-        'PAGEDOWN': 'PgDn'
+        'PAGEDOWN': 'PgDn',
+        'DELETE': 'Del',
+        'INSERT': 'Ins'
       };
       const displayLabel = shortMap[upper] || mainText;
       return `
-        <kbd class="keycap keycap-fn">
+        <kbd class="keycap keycap-fn" title="${escapeHtml(token)}">
           <span class="key-main">${escapeHtml(displayLabel)}</span>
           ${subText ? `<span class="key-sub">${escapeHtml(subText)}</span>` : ''}
         </kbd>
@@ -741,7 +743,7 @@
     // 5. Tab / Backspace（1.4U 中幅キー）
     if (upper === 'TAB' || upper === 'BACKSPACE') {
       const icon = upper === 'TAB' ? '⇥' : '⌫';
-      const label = upper === 'BACKSPACE' ? 'Back' : 'Tab';
+      const label = upper === 'BACKSPACE' ? 'Bksp' : 'Tab';
       return `
         <kbd class="keycap keycap-tab-back" title="${escapeHtml(mainText)}">
           <span class="key-icon-mini">${icon}</span>
@@ -769,10 +771,19 @@
       `;
     }
 
-    // 8. 基本キー（文字キー・数字・記号・Ctrl・Alt・矢印 等）→ 正方形ベース（長い文字や補足付きは枠内に収まるよう自動拡幅）
-    const needsAutoWidth = mainText.length >= 2 || subText.length > 0;
+    // 8. Ctrl / Alt キー（1.25U〜1.3U やや横長で余裕を持たせ、文字が枠線に絶対当たらない設計）
+    if (upper === 'CTRL' || upper === 'ALT') {
+      return `
+        <kbd class="keycap keycap-mod" title="${escapeHtml(mainText)}キー">
+          <span class="key-main">${escapeHtml(mainText)}</span>
+        </kbd>
+      `;
+    }
+
+    // 9. 基本キー（文字キー・数字・記号・矢印 等）→ 正方形ベース（長い文字や補足付きは枠内に余裕をもって収まるよう自動拡幅）
+    const isSingleChar = Array.from(mainText).length === 1 && !subText;
     return `
-      <kbd class="keycap keycap-square ${needsAutoWidth ? 'keycap-square-fit' : ''}">
+      <kbd class="keycap keycap-square ${isSingleChar ? 'keycap-square-1u' : 'keycap-square-wide'}" title="${escapeHtml(token)}">
         <span class="key-main">${escapeHtml(mainText)}</span>
         ${subText ? `<span class="key-sub">${escapeHtml(subText)}</span>` : ''}
       </kbd>
@@ -782,19 +793,27 @@
   function renderKeyTokenWithSplits(rawKey) {
     const str = String(rawKey).trim();
 
-    // 順押し（例: "H → O → I"）が含まれる場合は矢印で繋いで各キーを正方形表示
+    // 順押し（例: "H → O → I" や "M → P / A"）が含まれる場合は矢印で繋いで各キーを分解表示
     if (str.includes('→') && !['← / →', '→ / ←', '↑ / ↓ / ← / →', '←', '→'].includes(str)) {
       return str
         .split(/\s*→\s*/)
-        .map(part => renderSingleKeycap(part))
+        .map(part => renderKeyTokenWithSplits(part))
         .join('<span class="key-seq-arrow">→</span>');
     }
 
-    // 複数候補（例: "J / L" や "F1 / F2"）はスラッシュで区切って個別キーキャップに分解
+    // 複数候補（例: "J / L" や "F1 / F2" や "+ / Ctrl + ="）はスラッシュで区切って個別キーキャップに分解
     if (str.includes(' / ')) {
       return str
         .split(/\s*\/\s*/)
-        .map(part => renderSingleKeycap(part))
+        .map(part => {
+          if (part.includes(' + ') || /^Shift\+/i.test(part)) {
+            return part
+              .split(/\s*\+\s*/)
+              .map(sub => renderSingleKeycap(sub))
+              .join('<span class="key-plus">+</span>');
+          }
+          return renderSingleKeycap(part);
+        })
         .join('<span class="key-or-slash">/</span>');
     }
 
