@@ -4,31 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Windows ショートカットキー パーフェクトガイド | Win11・Excel・Word・ブラウザ完全網羅</title>
-  <meta name="description" content="Windows 11、Excel、Word、Webブラウザ（Chrome/Edge）、基本共通のPCショートカットキーを分類・重要度別に完全網羅したシンプル＆高速検索ガイドサイト。">
+  <meta name="description" content="Windows 11、エクスプローラー、Excel、Word、PowerPoint、Outlook、OneNote、Adobe PDF、ブラウザのPCショートカットキーをジャンル別・キー順・覚え方付きで完全網羅したガイドサイト。">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ヘッダー -->
+  <!-- スリムヘッダー -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
         <span class="brand-icon" aria-hidden="true">⌨️</span>
         <div>
-          <h1 class="site-title">Windows ショートカットキー <span class="badge-perfect">PERFECT GUIDE</span></h1>
-          <p class="site-subtitle">全10カテゴリ・ジャンル別に整理（各ジャンル内は1キー・Fn・Ctrl・Shift・Alt・Win順）・全<span id="totalShortcutCount">357</span>種を完全網羅</p>
+          <h1 class="site-title">Windows ショートカット辞典 <span class="badge-perfect">357選</span></h1>
+          <p class="site-subtitle">全10カテゴリ・ジャンル別＆キー分類順・覚え方付き完全網羅ガイド</p>
         </div>
       </div>
 
       <div class="header-actions">
-        <button type="button" id="keyTesterBtn" class="action-btn" title="実際にキーボードを押して該当するショートカットを逆引きします">
-          <span>🎹</span> キー入力で逆引き
+        <button type="button" id="toggleSearchPanelBtn" class="action-btn mobile-search-toggle" aria-expanded="false" title="検索・詳細フィルタを開く">
+          <span>🔍</span> <span class="btn-label-text">検索・絞込</span>
         </button>
-        <button type="button" id="printBtn" class="action-btn" title="現在表示中のショートカット一覧をチートシートとして印刷・PDF保存します">
-          <span>🖨️</span> 印刷 / PDF
+        <button type="button" id="toggleRulesBtn" class="action-btn" aria-expanded="false" title="ショートカットキーの覚え方・6大法則を見る">
+          <span>🧠</span> <span class="btn-label-text">覚え方6法則</span>
+        </button>
+        <button type="button" id="keyTesterBtn" class="action-btn pc-only-btn" title="実際にキーボードを押して該当するショートカットを逆引きします">
+          <span>🎹</span> キー逆引き
+        </button>
+        <button type="button" id="printBtn" class="action-btn pc-only-btn" title="現在表示中のショートカット一覧をチートシートとして印刷・PDF保存します">
+          <span>🖨️</span> 印刷
         </button>
         <button type="button" id="themeToggleBtn" class="action-btn icon-only" aria-label="テーマ切り替え" title="ダークモード / ライトモード切り替え">
           <span id="themeIcon">🌙</span>
         </button>
+      </div>
+    </div>
+
+    <!-- カテゴリ選択タブ（横スワイプ対応） -->
+    <div class="category-bar-wrap">
+      <div class="container">
+        <nav class="category-nav" aria-label="カテゴリ選択">
+          <div class="category-tabs" id="categoryTabs" role="tablist">
+            <!-- JSで動的生成 -->
+          </div>
+        </nav>
       </div>
     </div>
   </header>
@@ -52,97 +69,81 @@
 
   <!-- メインコンテンツ -->
   <main class="container main-content">
-    <!-- カテゴリ選択タブ -->
-    <nav class="category-nav" aria-label="カテゴリ選択">
-      <div class="category-tabs" id="categoryTabs" role="tablist">
-        <!-- JSで動的生成 -->
+    <!-- 覚え方の6大法則ガイド（トグル開閉式・初期非表示でスッキリ） -->
+    <section id="memoryRulesPanel" class="memory-rules-box hidden" aria-label="ショートカットキーの覚え方・6大法則">
+      <div class="memory-rules-header">
+        <strong>🧠 丸暗記は不要！「ショートカットキーの覚え方・6大法則」</strong>
+        <button type="button" id="closeRulesBtn" class="panel-close-btn" aria-label="閉じる">✕ 閉じる</button>
       </div>
-      <p class="category-desc" id="categoryDesc"></p>
-    </nav>
-
-    <!-- 覚え方の6大法則ガイド（開閉式） -->
-    <details class="memory-rules-box">
-      <summary class="memory-rules-summary">
-        <span>🧠 <strong>ショートカットキーの覚え方・6大法則</strong>（英単語の頭文字・Shift/Altの役割）</span>
-        <span class="memory-rules-toggle-hint">開閉 ▼</span>
-      </summary>
       <div class="memory-rules-grid" id="memoryRulesGrid">
         <!-- JSで動的生成 -->
       </div>
-    </details>
+    </section>
 
-    <!-- 検索・フィルタコントロール -->
-    <section class="controls-bar" aria-label="検索と絞り込み">
+    <!-- 検索＆詳細フィルタパネル（スマホでは🔍ボタンで開閉、PCでは常時表示） -->
+    <section id="controlsBar" class="controls-bar" aria-label="検索と絞り込み">
       <div class="search-wrapper">
         <span class="search-icon" aria-hidden="true">🔍</span>
         <input
           type="search"
           id="searchInput"
           class="search-input"
-          placeholder="機能名・キー名・用途で検索（例: スクショ, 値貼り付け, タブ, Ctrl+Shift） [ / キーで移動 ]"
+          placeholder="全カテゴリから検索（例: スクショ, 値貼り付け, タブ, F2）"
           autocomplete="off"
         >
         <button type="button" id="clearSearchBtn" class="clear-search-btn hidden" aria-label="検索クリア">✕</button>
       </div>
 
       <div class="filters-row">
-        <!-- 重要度＆お気に入りフィルタ -->
-        <div class="level-filters" id="levelFilters" role="group" aria-label="重要度フィルタ">
-          <button type="button" class="filter-chip active" data-level="all">すべて</button>
-          <button type="button" class="filter-chip level-3-chip" data-level="3">★★★ 必須・最重要</button>
-          <button type="button" class="filter-chip level-2-chip" data-level="2">★★☆ 便利・時短</button>
-          <button type="button" class="filter-chip level-1-chip" data-level="1">★☆☆ 玄人ワザ</button>
-          <button type="button" class="filter-chip fav-chip" data-level="fav">
-            ★ お気に入り <span id="favCountBadge" class="fav-count">0</span>
-          </button>
-        </div>
-
         <!-- 表示形式切り替え -->
         <div class="view-switcher" role="group" aria-label="表示形式の切り替え">
-          <button type="button" class="view-btn active" data-view="card" title="解説付きカード表示">
-            <span>🗂️</span> カード
+          <button type="button" class="view-btn active" data-view="card" title="スッキリ見やすいリストカード表示（タップで詳細開閉）">
+            <span>📑</span> スッキリ一覧
           </button>
-          <button type="button" class="view-btn" data-view="swipe" title="ジャンルごとにカードを横スワイプでめくる表示">
+          <button type="button" class="view-btn" data-view="swipe" title="ジャンルごとにカードを横スワイプで1枚ずつめくる表示">
             <span>👆</span> 横スワイプ
           </button>
-          <button type="button" class="view-btn" data-view="table" title="一覧早見表（コンパクト表示）">
+          <button type="button" class="view-btn" data-view="table" title="一覧早見表（テーブル表示）">
             <span>📋</span> 早見表
           </button>
         </div>
-      </div>
 
-      <!-- サブカテゴリ絞り込みピル -->
-      <div class="subcategory-bar" id="subcategoryBar">
-        <!-- JSで動的生成 -->
+        <button type="button" id="expandAllDetailsBtn" class="expand-all-btn" title="すべての解説・ワンポイントを一括で開く/閉じる">
+          📖 解説をすべて開く
+        </button>
       </div>
     </section>
 
-    <!-- スマホ用 左右スワイプ・カテゴリ切替ナビバー -->
-    <div class="mobile-swipe-bar" id="mobileSwipeBar" aria-label="左右スワイプでカテゴリ切替">
-      <button type="button" class="swipe-nav-btn prev" id="swipePrevBtn" aria-label="前のカテゴリへ">
-        <span class="swipe-arrow">◀</span>
-        <span class="swipe-target-name" id="swipePrevName">前へ</span>
-      </button>
-      <div class="swipe-center-info">
-        <span class="swipe-hint-text" id="swipeHintText">👆 左右スワイプでカテゴリ切替</span>
-        <div class="swipe-dots" id="swipeDots" aria-hidden="true"></div>
+    <!-- 常時表示のスリム・クイックフィルタバー（重要度 ＋ ジャンルピル 1行横スワイプ） -->
+    <div class="quick-bar">
+      <div class="level-filters" id="levelFilters" role="group" aria-label="重要度フィルタ">
+        <button type="button" class="filter-chip active" data-level="all">すべて</button>
+        <button type="button" class="filter-chip level-3-chip" data-level="3">🔥 必須のみ</button>
+        <button type="button" class="filter-chip level-2-chip" data-level="2">★★ 便利</button>
+        <button type="button" class="filter-chip level-1-chip" data-level="1">★ 玄人</button>
+        <button type="button" class="filter-chip fav-chip" data-level="fav">
+          ★ 保存済 <span id="favCountBadge" class="fav-count">0</span>
+        </button>
       </div>
-      <button type="button" class="swipe-nav-btn next" id="swipeNextBtn" aria-label="次のカテゴリへ">
-        <span class="swipe-target-name" id="swipeNextName">次へ</span>
-        <span class="swipe-arrow">▶</span>
-      </button>
+
+      <!-- ジャンル（サブカテゴリ）絞り込みピル -->
+      <div class="subcategory-bar" id="subcategoryBar">
+        <!-- JSで動的生成 -->
+      </div>
     </div>
 
-    <!-- ステータスバー -->
+    <!-- ステータスバー（現在カテゴリ説明＆件数） -->
     <div class="status-bar">
       <div class="result-count">
-        表示中: <strong id="resultCountNum">0</strong> 件
+        <span id="activeCategoryLabel" class="active-cat-label"></span>
+        <strong id="resultCountNum">0</strong> 件
         <span id="activeFilterSummary" class="filter-summary"></span>
       </div>
       <div class="status-hint">
-        💡 カードのキーをクリックするとコピー、右上の「☆」でマイリスト登録できます
+        💡 行タップで詳細開閉・キーをタップでコピー
       </div>
     </div>
+    <p class="category-desc" id="categoryDesc"></p>
 
     <!-- ショートカット一覧コンテナ -->
     <div id="shortcutsContainer" class="shortcuts-container">
@@ -150,13 +151,29 @@
     </div>
   </main>
 
+  <!-- 画面下部固定・左右スワイプ＆カテゴリ切替ボトムバー（親指で操作しやすい配置） -->
+  <div class="mobile-swipe-bar" id="mobileSwipeBar" aria-label="左右スワイプでカテゴリ切替">
+    <button type="button" class="swipe-nav-btn prev" id="swipePrevBtn" aria-label="前のカテゴリへ">
+      <span class="swipe-arrow">◀</span>
+      <span class="swipe-target-name" id="swipePrevName">前へ</span>
+    </button>
+    <div class="swipe-center-info">
+      <span class="swipe-hint-text" id="swipeHintText">👆 左右スワイプで切替</span>
+      <div class="swipe-dots" id="swipeDots" aria-hidden="true"></div>
+    </div>
+    <button type="button" class="swipe-nav-btn next" id="swipeNextBtn" aria-label="次のカテゴリへ">
+      <span class="swipe-target-name" id="swipeNextName">次へ</span>
+      <span class="swipe-arrow">▶</span>
+    </button>
+  </div>
+
   <!-- フッター -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
-        <p class="footer-title">⌨️ Windows ショートカットキー パーフェクトガイド（全357種・キー分類順完全網羅版）</p>
+        <p class="footer-title">⌨️ Windows ショートカットキー パーフェクトガイド（全357種・ジャンル別＆キー順完全網羅版）</p>
         <p class="footer-note">
-          サイト内操作ショートカット: <kbd>/</kbd> で検索ボックスへ移動 ・ <kbd>1</kbd>〜<kbd>9</kbd> でカテゴリ切替 ・ <kbd>Esc</kbd> で検索クリア
+          PC操作: <kbd>/</kbd> で検索 ・ <kbd>1</kbd>〜<kbd>9</kbd> でカテゴリ切替 ・ スマホ操作: 画面の左右スワイプでカテゴリ切替
         </p>
       </div>
       <details class="sources-details">
@@ -176,4 +193,3 @@
   <script src="app.js"></script>
 </body>
 </html>
-

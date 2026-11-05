@@ -5,20 +5,24 @@
   const STORAGE_KEY_THEME = 'win_shortcuts_theme_v1';
   const STORAGE_KEY_VIEW = 'win_shortcuts_view_v1';
 
-  // アプリケーション状態
+  // アプリケーション状態（初期表示は「Windows 11」にして見やすく整理）
   const state = {
-    category: 'all',
+    category: 'win11',
     subcategory: 'all',
     level: 'all', // 'all' | '3' | '2' | '1' | 'fav'
     searchQuery: '',
-    viewMode: localStorage.getItem(STORAGE_KEY_VIEW) || 'card', // 'card' | 'table'
+    viewMode: localStorage.getItem(STORAGE_KEY_VIEW) || 'card', // 'card' | 'swipe' | 'table'
     favorites: new Set(JSON.parse(localStorage.getItem(STORAGE_KEY_FAVS) || '[]')),
-    keyTesterActive: false
+    keyTesterActive: false,
+    expandAllDetails: false,
+    collapsedSections: new Set()
   };
 
   // DOM要素
   const categoryTabsEl = document.getElementById('categoryTabs');
   const categoryDescEl = document.getElementById('categoryDesc');
+  const activeCategoryLabelEl = document.getElementById('activeCategoryLabel');
+  const controlsBarEl = document.getElementById('controlsBar');
   const searchInputEl = document.getElementById('searchInput');
   const clearSearchBtnEl = document.getElementById('clearSearchBtn');
   const levelFiltersEl = document.getElementById('levelFilters');
@@ -28,6 +32,12 @@
   const activeFilterSummaryEl = document.getElementById('activeFilterSummary');
   const shortcutsContainerEl = document.getElementById('shortcutsContainer');
   const toastEl = document.getElementById('toast');
+
+  const toggleSearchPanelBtn = document.getElementById('toggleSearchPanelBtn');
+  const toggleRulesBtn = document.getElementById('toggleRulesBtn');
+  const closeRulesBtn = document.getElementById('closeRulesBtn');
+  const memoryRulesPanelEl = document.getElementById('memoryRulesPanel');
+  const expandAllDetailsBtn = document.getElementById('expandAllDetailsBtn');
 
   const themeToggleBtn = document.getElementById('themeToggleBtn');
   const themeIconEl = document.getElementById('themeIcon');
@@ -55,8 +65,6 @@
   function init() {
     initTheme();
     initViewSwitcher();
-    const totalEl = document.getElementById('totalShortcutCount');
-    if (totalEl) totalEl.textContent = SHORTCUTS_DATA.length;
     const sourcesEl = document.getElementById('researchedSourcesList');
     if (sourcesEl && typeof RESEARCHED_SOURCES !== 'undefined') {
       sourcesEl.innerHTML = RESEARCHED_SOURCES.map(s => `<li>✓ ${escapeHtml(s)}</li>`).join('');
@@ -124,14 +132,19 @@
           aria-selected="${isActive}"
         >
           <span class="cat-icon" aria-hidden="true">${cat.icon}</span>
-          <span>${escapeHtml(cat.name)}</span>
+          <span class="cat-name">${escapeHtml(cat.name)}</span>
           <span class="cat-count">${count}</span>
         </button>
       `;
     }).join('');
 
     const currentCat = CATEGORIES.find(c => c.id === state.category);
-    categoryDescEl.textContent = currentCat ? currentCat.description : '';
+    if (categoryDescEl) {
+      categoryDescEl.textContent = currentCat ? currentCat.description : '';
+    }
+    if (activeCategoryLabelEl && currentCat) {
+      activeCategoryLabelEl.innerHTML = `<span class="active-cat-dot" style="background:${currentCat.color}"></span>${escapeHtml(currentCat.icon)} ${escapeHtml(currentCat.name)}: `;
+    }
     updateMobileSwipeBar();
     scrollActiveCategoryTab();
   }
@@ -162,7 +175,7 @@
       swipeNextNameEl.textContent = `${nextCat.icon} ${nextCat.name}`;
     }
     if (swipeHintTextEl && currentCat) {
-      swipeHintTextEl.textContent = `${currentCat.icon} ${currentCat.name}（左右スワイプで切替）`;
+      swipeHintTextEl.textContent = `${currentCat.icon} ${currentCat.name} (${idx + 1}/${CATEGORIES.length})`;
     }
     if (swipeDotsEl) {
       swipeDotsEl.innerHTML = CATEGORIES.map((c, i) => `
@@ -182,13 +195,16 @@
 
     state.category = targetCat.id;
     state.subcategory = 'all';
+    state.collapsedSections.clear();
     renderCategoryTabs();
     renderSubcategoryBar();
     renderShortcuts();
 
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     const animClass = offset > 0 ? 'swipe-slide-from-right' : 'swipe-slide-from-left';
     shortcutsContainerEl.classList.remove('swipe-slide-from-right', 'swipe-slide-from-left');
-    void shortcutsContainerEl.offsetWidth; // reflow
+    void shortcutsContainerEl.offsetWidth;
     shortcutsContainerEl.classList.add(animClass);
 
     if (showNotification) {
@@ -212,7 +228,7 @@
 
     subcategoryBarEl.classList.remove('hidden');
     const pillsHtml = [
-      `<span class="subcat-label">ジャンルで絞り込み:</span>`,
+      `<span class="subcat-label">ジャンル:</span>`,
       `<button type="button" class="subcat-pill ${state.subcategory === 'all' ? 'active' : ''}" data-subcat="all">すべて</button>`,
       ...subcats.map(sub => `
         <button
@@ -234,12 +250,16 @@
     const queryTokens = query ? query.split(/[\s+＋]+/).filter(Boolean) : [];
 
     return SHORTCUTS_DATA.filter(item => {
-      if (state.category !== 'all' && item.category !== state.category) {
-        return false;
+      // 検索キーワード入力時は全カテゴリから横断検索、未入力時は選択中カテゴリで絞り込み
+      if (queryTokens.length === 0) {
+        if (state.category !== 'all' && item.category !== state.category) {
+          return false;
+        }
+        if (state.subcategory !== 'all' && item.subcategory !== state.subcategory) {
+          return false;
+        }
       }
-      if (state.subcategory !== 'all' && item.subcategory !== state.subcategory) {
-        return false;
-      }
+
       if (state.level === 'fav') {
         if (!state.favorites.has(item.id)) return false;
       } else if (state.level !== 'all') {
@@ -273,16 +293,15 @@
     const filtered = getFilteredShortcuts();
     resultCountNumEl.textContent = filtered.length;
 
-    // フィルタサマリー表示
     const summaryParts = [];
-    if (state.category !== 'all') {
-      const catObj = CATEGORIES.find(c => c.id === state.category);
-      if (catObj) summaryParts.push(catObj.name);
+    if (state.searchQuery.trim()) {
+      summaryParts.push(`全カテゴリ横断検索:「${state.searchQuery.trim()}」`);
+    } else if (state.subcategory !== 'all') {
+      summaryParts.push(state.subcategory);
     }
-    if (state.subcategory !== 'all') summaryParts.push(state.subcategory);
-    if (state.level === 'fav') summaryParts.push('お気に入り');
-    else if (state.level !== 'all') summaryParts.push(`重要度★${state.level}`);
-    if (state.searchQuery.trim()) summaryParts.push(`「${state.searchQuery.trim()}」`);
+    if (state.level === 'fav') summaryParts.push('保存済');
+    else if (state.level === '3') summaryParts.push('必須のみ');
+    else if (state.level !== 'all') summaryParts.push(`★${state.level}`);
 
     activeFilterSummaryEl.textContent = summaryParts.length > 0
       ? `（${summaryParts.join(' / ')}）`
@@ -293,8 +312,8 @@
         <div class="empty-state">
           <div class="empty-icon">🔍</div>
           <p class="empty-title">一致するショートカットキーが見つかりませんでした</p>
-          <p class="empty-desc">検索キーワードを変えるか、フィルタ条件をリセットしてお試しください。</p>
-          <button type="button" class="reset-btn" id="resetFiltersBtn">すべての条件をリセット</button>
+          <p class="empty-desc">検索キーワードを変えるか、絞り込み条件をリセットしてお試しください。</p>
+          <button type="button" class="reset-btn" id="resetFiltersBtn">条件をリセット</button>
         </div>
       `;
       const resetBtn = document.getElementById('resetFiltersBtn');
@@ -304,7 +323,6 @@
       return;
     }
 
-    // グループ分け（すべて選択時はカテゴリ順、個別カテゴリ選択時はサブカテゴリ順）
     const groups = groupShortcuts(filtered);
 
     if (state.viewMode === 'table') {
@@ -345,72 +363,85 @@
   }
 
   function renderLevelBadge(level) {
-    if (level === 3) return `<span class="level-badge level-3" title="毎日使う最重要ショートカット">★★★ 必須</span>`;
-    if (level === 2) return `<span class="level-badge level-2" title="作業速度が上がる便利ショートカット">★★☆ 便利</span>`;
-    return `<span class="level-badge level-1" title="知っていると差がつく玄人ワザ">★☆☆ 玄人</span>`;
+    if (level === 3) return `<span class="level-badge level-3" title="毎日使う最重要ショートカット">必須</span>`;
+    if (level === 2) return `<span class="level-badge level-2" title="作業速度が上がる便利ショートカット">便利</span>`;
+    return `<span class="level-badge level-1" title="知っていると差がつく玄人ワザ">玄人</span>`;
   }
 
   function renderCardGroup(group) {
     const isSwipeCarousel = state.viewMode === 'swipe';
+    const isSectionCollapsed = !isSwipeCarousel && state.collapsedSections.has(group.key);
     const totalInGroup = group.items.length;
 
     const cardsHtml = group.items.map((item, idx) => {
       const isFav = state.favorites.has(item.id);
       const comboText = item.keys.join(' + ');
       const shortKeyGroup = item.keyGroup ? item.keyGroup.replace(/^[①-⑩]\s*/, '').replace(/（.*?）/g, '') : '';
-      const keyTagHtml = isSwipeCarousel
-        ? `<span class="item-func-tag">${idx + 1} / ${totalInGroup}</span>`
-        : (shortKeyGroup ? `<span class="item-func-tag">${escapeHtml(shortKeyGroup)}</span>` : '');
+      const isExpanded = state.expandAllDetails || isSwipeCarousel;
+
       return `
-        <article class="shortcut-card" style="--card-accent: ${group.color}">
-          <div>
-            <div class="card-top">
-              <div
-                class="keys-combo"
-                data-copy="${escapeHtml(comboText)}"
-                title="クリックして「${escapeHtml(comboText)}」をコピー"
-              >
-                ${renderKeysHtml(item.keys)}
-              </div>
-              <div class="card-meta-right">
-                ${keyTagHtml}
+        <article
+          class="shortcut-card ${isExpanded ? 'is-expanded' : ''}"
+          style="--card-accent: ${group.color}"
+          data-card-id="${item.id}"
+        >
+          <div class="card-main-row">
+            <div
+              class="keys-combo"
+              data-copy="${escapeHtml(comboText)}"
+              title="タップして「${escapeHtml(comboText)}」をコピー"
+            >
+              ${renderKeysHtml(item.keys)}
+            </div>
+
+            <div class="card-info-col">
+              <div class="card-title-line">
+                <h3 class="card-title">${escapeHtml(item.title)}</h3>
                 ${renderLevelBadge(item.level)}
-                <button
-                  type="button"
-                  class="fav-btn ${isFav ? 'is-fav' : ''}"
-                  data-fav-id="${item.id}"
-                  aria-label="お気に入り登録"
-                  title="${isFav ? 'お気に入りから解除' : 'お気に入りに追加'}"
-                >${isFav ? '★' : '☆'}</button>
+                ${isSwipeCarousel ? `<span class="item-func-tag">${idx + 1}/${totalInGroup}</span>` : ''}
               </div>
+              ${item.memory ? `
+                <p class="card-memory-inline">🧠 ${escapeHtml(item.memory)}</p>
+              ` : `<p class="card-memory-inline">${escapeHtml(item.desc)}</p>`}
             </div>
-            <h3 class="card-title">${escapeHtml(item.title)}</h3>
-            <p class="card-desc">${escapeHtml(item.desc)}</p>
+
+            <div class="card-actions-col">
+              <button
+                type="button"
+                class="fav-btn ${isFav ? 'is-fav' : ''}"
+                data-fav-id="${item.id}"
+                aria-label="お気に入り登録"
+                title="${isFav ? 'お気に入りから解除' : 'お気に入りに追加'}"
+              >${isFav ? '★' : '☆'}</button>
+              ${!isSwipeCarousel ? `<span class="expand-chevron" aria-hidden="true">⌄</span>` : ''}
+            </div>
           </div>
-          ${item.memory ? `
-            <div class="card-memory">
-              <span class="card-memory-label">🧠 覚え方:</span>
-              <span>${escapeHtml(item.memory)}</span>
-            </div>
-          ` : ''}
-          ${item.tip ? `
-            <div class="card-tip">
-              <span class="card-tip-icon" aria-hidden="true">💡</span>
-              <span>${escapeHtml(item.tip)}</span>
-            </div>
-          ` : ''}
+
+          <div class="card-details-drawer">
+            <p class="card-desc">${escapeHtml(item.desc)}</p>
+            ${item.tip ? `
+              <div class="card-tip">
+                <span class="card-tip-icon" aria-hidden="true">💡</span>
+                <span>${escapeHtml(item.tip)}</span>
+              </div>
+            ` : ''}
+            ${shortKeyGroup ? `<div class="card-drawer-meta"><span class="item-func-tag">キー系統: ${escapeHtml(shortKeyGroup)}</span></div>` : ''}
+          </div>
         </article>
       `;
     }).join('');
 
     return `
-      <section class="category-section" style="--section-color: ${group.color}">
-        <div class="section-header">
+      <section class="category-section ${isSectionCollapsed ? 'is-collapsed' : ''}" style="--section-color: ${group.color}" data-group-key="${escapeHtml(group.key)}">
+        <div class="section-header" role="button" tabindex="0" aria-expanded="${!isSectionCollapsed}" title="タップしてこのジャンルを開閉">
           <div class="section-title-wrap">
             <span class="section-badge">${escapeHtml(group.categoryIcon)} ${escapeHtml(group.categoryName)}</span>
             <h2 class="section-title">${escapeHtml(group.subcategory)}</h2>
           </div>
-          <span class="section-count">${isSwipeCarousel ? '👆 左右スワイプ ・ ' : ''}${group.items.length} 件</span>
+          <div class="section-header-right">
+            <span class="section-count">${isSwipeCarousel ? '👆 左右スワイプ ・ ' : ''}${group.items.length} 件</span>
+            ${!isSwipeCarousel ? `<span class="section-toggle-icon" aria-hidden="true">▼</span>` : ''}
+          </div>
         </div>
         <div class="cards-grid ${isSwipeCarousel ? 'cards-carousel' : ''}">
           ${cardsHtml}
@@ -420,6 +451,7 @@
   }
 
   function renderTableGroup(group) {
+    const isSectionCollapsed = state.collapsedSections.has(group.key);
     const rowsHtml = group.items.map(item => {
       const isFav = state.favorites.has(item.id);
       const comboText = item.keys.join(' + ');
@@ -454,13 +486,16 @@
     }).join('');
 
     return `
-      <section class="category-section" style="--section-color: ${group.color}">
-        <div class="section-header">
+      <section class="category-section ${isSectionCollapsed ? 'is-collapsed' : ''}" style="--section-color: ${group.color}" data-group-key="${escapeHtml(group.key)}">
+        <div class="section-header" role="button" tabindex="0" aria-expanded="${!isSectionCollapsed}">
           <div class="section-title-wrap">
             <span class="section-badge">${escapeHtml(group.categoryIcon)} ${escapeHtml(group.categoryName)}</span>
             <h2 class="section-title">${escapeHtml(group.subcategory)}</h2>
           </div>
-          <span class="section-count">${group.items.length} 件</span>
+          <div class="section-header-right">
+            <span class="section-count">${group.items.length} 件</span>
+            <span class="section-toggle-icon" aria-hidden="true">▼</span>
+          </div>
         </div>
         <div class="shortcuts-table-wrap">
           <table class="shortcuts-table">
@@ -491,7 +526,7 @@
       showToast('お気に入りから解除しました');
     } else {
       state.favorites.add(id);
-      showToast('★ お気に入りに追加しました');
+      showToast('★ お気に入りに保存しました');
     }
     localStorage.setItem(STORAGE_KEY_FAVS, JSON.stringify(Array.from(state.favorites)));
     updateFavBadge();
@@ -530,11 +565,10 @@
     if (toastTimer) clearTimeout(toastTimer);
     toastTimer = setTimeout(() => {
       toastEl.classList.remove('show');
-    }, 2200);
+    }, 2000);
   }
 
   function resetAllFilters() {
-    state.category = 'all';
     state.subcategory = 'all';
     state.level = 'all';
     state.searchQuery = '';
@@ -605,10 +639,54 @@
       if (!btn) return;
       state.category = btn.dataset.cat;
       state.subcategory = 'all';
+      state.collapsedSections.clear();
       renderCategoryTabs();
       renderSubcategoryBar();
       renderShortcuts();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // スマホ用 検索パネル開閉トグル
+    if (toggleSearchPanelBtn && controlsBarEl) {
+      toggleSearchPanelBtn.addEventListener('click', () => {
+        const isOpen = controlsBarEl.classList.toggle('mobile-open');
+        toggleSearchPanelBtn.classList.toggle('active', isOpen);
+        toggleSearchPanelBtn.setAttribute('aria-expanded', String(isOpen));
+        if (isOpen) {
+          setTimeout(() => searchInputEl.focus(), 50);
+        }
+      });
+    }
+
+    // 覚え方6大法則パネル開閉トグル
+    if (toggleRulesBtn && memoryRulesPanelEl) {
+      toggleRulesBtn.addEventListener('click', () => {
+        const isHidden = memoryRulesPanelEl.classList.toggle('hidden');
+        toggleRulesBtn.classList.toggle('active', !isHidden);
+        toggleRulesBtn.setAttribute('aria-expanded', String(!isHidden));
+      });
+    }
+    if (closeRulesBtn && memoryRulesPanelEl) {
+      closeRulesBtn.addEventListener('click', () => {
+        memoryRulesPanelEl.classList.add('hidden');
+        if (toggleRulesBtn) {
+          toggleRulesBtn.classList.remove('active');
+          toggleRulesBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // 解説一括開閉ボタン
+    if (expandAllDetailsBtn) {
+      expandAllDetailsBtn.addEventListener('click', () => {
+        state.expandAllDetails = !state.expandAllDetails;
+        expandAllDetailsBtn.textContent = state.expandAllDetails
+          ? '📕 解説をすべて閉じる'
+          : '📖 解説をすべて開く';
+        expandAllDetailsBtn.classList.toggle('active', state.expandAllDetails);
+        renderShortcuts();
+      });
+    }
 
     // スマホ用 前後カテゴリ切替ボタン＆タッチスワイプ
     if (swipePrevBtn) {
@@ -664,17 +742,45 @@
       renderShortcuts();
     });
 
-    // カード内のコピー＆お気に入りクリック（イベント委譲）
+    // カード内のコピー・お気に入り・詳細展開・セクション開閉（イベント委譲）
     shortcutsContainerEl.addEventListener('click', e => {
+      // 1. お気に入りボタン
       const favBtn = e.target.closest('.fav-btn');
       if (favBtn) {
+        e.stopPropagation();
         toggleFavorite(favBtn.dataset.favId);
         return;
       }
 
+      // 2. キーバッジのコピー
       const comboEl = e.target.closest('.keys-combo');
       if (comboEl && comboEl.dataset.copy) {
+        e.stopPropagation();
         copyShortcutText(comboEl.dataset.copy);
+        return;
+      }
+
+      // 3. セクション見出しの折りたたみ開閉
+      const sectionHeader = e.target.closest('.section-header');
+      if (sectionHeader) {
+        const sectionEl = sectionHeader.closest('.category-section');
+        if (sectionEl && sectionEl.dataset.groupKey) {
+          const gKey = sectionEl.dataset.groupKey;
+          const isCollapsed = sectionEl.classList.toggle('is-collapsed');
+          sectionHeader.setAttribute('aria-expanded', String(!isCollapsed));
+          if (isCollapsed) {
+            state.collapsedSections.add(gKey);
+          } else {
+            state.collapsedSections.delete(gKey);
+          }
+        }
+        return;
+      }
+
+      // 4. カードタップで詳細ドロワーを開閉
+      const cardEl = e.target.closest('.shortcut-card');
+      if (cardEl && state.viewMode === 'card') {
+        cardEl.classList.toggle('is-expanded');
       }
     });
 
@@ -702,7 +808,6 @@
 
     // グローバルキーボード操作
     window.addEventListener('keydown', e => {
-      // キー入力逆引きモード起動中
       if (state.keyTesterActive) {
         if (e.key === 'Escape') {
           toggleKeyTester(false);
@@ -723,15 +828,14 @@
 
       const isTyping = ['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName);
 
-      // 「/」で検索ボックスにフォーカス
       if (e.key === '/' && !isTyping && !e.ctrlKey && !e.altKey && !e.metaKey) {
         e.preventDefault();
+        if (controlsBarEl) controlsBarEl.classList.add('mobile-open');
         searchInputEl.focus();
         searchInputEl.select();
         return;
       }
 
-      // 「Esc」で検索クリア
       if (e.key === 'Escape') {
         if (state.searchQuery) {
           state.searchQuery = '';
@@ -745,12 +849,12 @@
         return;
       }
 
-      // 1〜9キーでカテゴリ切り替え（入力中でない時）
       if (!isTyping && !e.ctrlKey && !e.altKey && !e.metaKey && /^[1-9]$/.test(e.key)) {
         const idx = Number(e.key) - 1;
         if (CATEGORIES[idx]) {
           state.category = CATEGORIES[idx].id;
           state.subcategory = 'all';
+          state.collapsedSections.clear();
           renderCategoryTabs();
           renderSubcategoryBar();
           renderShortcuts();
@@ -763,7 +867,7 @@
     let startX = 0;
     let startY = 0;
     let startTime = 0;
-    let directionLock = null; // null | 'horizontal' | 'vertical'
+    let directionLock = null;
     let isTracking = false;
 
     const resetSwipeVisuals = () => {
@@ -778,18 +882,17 @@
     document.addEventListener('touchstart', e => {
       if (e.touches.length !== 1) return;
       const target = e.target;
-      // 横スクロール要素（カルーセル・早見表・タブバー・入力欄）内のタッチは除外
       if (
         target.closest('.cards-carousel') ||
         target.closest('.shortcuts-table-wrap') ||
         target.closest('.category-tabs') ||
         target.closest('.subcategory-bar') ||
+        target.closest('.level-filters') ||
         target.closest('input, textarea, select')
       ) {
         isTracking = false;
         return;
       }
-      // ショートカット一覧またはスワイプバー上のタッチのみ対象
       if (!target.closest('#shortcutsContainer') && !target.closest('#mobileSwipeBar')) {
         isTracking = false;
         return;
@@ -862,7 +965,6 @@
         (Math.abs(dx) >= 35 && elapsed < 260 && Math.abs(dx) > Math.abs(dy) * 1.5);
 
       if (isValidSwipe) {
-        // 左スワイプ(dx < 0)で次のカテゴリ、右スワイプ(dx > 0)で前のカテゴリ
         switchCategoryByOffset(dx < 0 ? 1 : -1, true);
       }
     }, { passive: true });
@@ -885,4 +987,3 @@
 
   init();
 })();
-
