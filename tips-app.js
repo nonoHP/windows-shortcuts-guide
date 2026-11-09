@@ -639,7 +639,7 @@
             </div>
           </div>
 
-          <div class="card-title-header">
+          <div class="card-title-banner">
             <h3 class="card-title">${escapeHtml(item.title)}</h3>
           </div>
 
